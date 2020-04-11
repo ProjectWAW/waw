@@ -1,0 +1,47 @@
+<?php
+if ($username_banned == "anal" || $username_banned == "a_nal" || $username_banned == "an_al" || $username_banned == "ana_l" || $username_banned == "a_n_al" || $username_banned == "a_n_a_l" || $username_banned == "an_a_l" || $username_banned == "a_na_l" ||
+  $username_banned == "anus" || $username_banned == "a_nus" || $username_banned == "an_us" || $username_banned == "anu_s" || $username_banned == "a_n_us" || $username_banned == "a_n_u_s" || $username_banned == "an_u_s" || $username_banned == "a_nu_s" ||
+  $username_banned == "arse" || $username_banned == "a_rse" || $username_banned == "ar_se" || $username_banned == "ars_e" || $username_banned == "a_r_se" || $username_banned == "a_r_s_e" || $username_banned == "ar_s_e" || $username_banned == "a_rs_e" ||
+  $username_banned == "ballsack" ||
+  $username_banned == "bitch" || $username_banned == "b_itch" || $username_banned == "bi_tch" || $username_banned == "bit_ch" || $username_banned == "bitc_h" || $username_banned == "b_i_tch" || $username_banned == "b_i_t_ch" || $username_banned == "b_i_t_c_h" || $username_banned == "bi_t_c_h" || $username_banned == "bit_c_h" || $username_banned == "b_itc_h" || $username_banned == "bi_tc_h" || $username_banned == "bi_t_ch" || $username_banned == "b_it_ch" || $username_banned == "b_i_tc_h" || $username_banned == "b_it_c_h" ||
+  $username_banned == "blowjob" ||
+  $username_banned == "bollock" ||
+  $username_banned == "bollok" ||
+  $username_banned == "boner" || $username_banned == "b_oner" || $username_banned == "bo_ner" || $username_banned == "bon_er" || $username_banned == "bone_r" || $username_banned == "b_o_ner" || $username_banned == "b_o_n_er" || $username_banned == "b_o_n_e_r" || $username_banned == "bo_n_e_r" || $username_banned == "bon_e_r" || $username_banned == "b_one_r" || $username_banned == "bo_ne_r" || $username_banned == "bo_n_er" || $username_banned == "b_on_er" || $username_banned == "b_o_ne_r" || $username_banned == "b_on_e_r" ||
+  $username_banned == "boob" || $username_banned == "b_oob" || $username_banned == "bo_ob" || $username_banned == "boo_b" || $username_banned == "b_o_ob" || $username_banned == "b_o_o_b" || $username_banned == "bo_o_b" || $username_banned == "b_oo_b" ||
+  $username_banned == "boobs" || $username_banned == "b_oobs" || $username_banned == "bo_obs" || $username_banned == "boo_bs" || $username_banned == "boob_s" || $username_banned == "b_o_obs" || $username_banned == "b_o_o_bs" || $username_banned == "b_o_o_b_s" || $username_banned == "bo_o_b_s" || $username_banned == "boo_b_s" || $username_banned == "b_oob_s" || $username_banned == "bo_ob_s" || $username_banned == "bo_o_bs" || $username_banned == "b_oo_bs" || $username_banned == "b_o_ob_s" || $username_banned == "b_oo_b_s" ||
+  $username_banned == "bugger" ||
+  $username_banned == "butt" || $username_banned == "b_utt" || $username_banned == "bu_tt" || $username_banned == "but_t" || $username_banned == "b_u_tt" || $username_banned == "b_u_t_t" || $username_banned == "bu_t_t" || $username_banned == "b_ut_t" ||
+  $username_banned == "buttplug" ||
+  $username_banned == "clitoris" ||
+  $username_banned == "clit" || $username_banned == "c_lit" || $username_banned == "cl_it" || $username_banned == "cli_t" || $username_banned == "c_l_it" || $username_banned == "c_l_i_t" || $username_banned == "cl_i_t" || $username_banned == "c_li_t" ||
+  $username_banned == "cock" || $username_banned == "c_ock" || $username_banned == "co_ck" || $username_banned == "coc_k" || $username_banned == "c_o_ck" || $username_banned == "c_o_c_k" || $username_banned == "co_c_k" || $username_banned == "c_oc_k" ||
+  $username_banned == "coon" || $username_banned == "c_oon" || $username_banned == "co_on" || $username_banned == "coo_n" || $username_banned == "c_o_on" || $username_banned == "c_o_o_n" || $username_banned == "co_o_n" || $username_banned == "c_oo_n" ||
+  $username_banned == "crap" || $username_banned == "c_rap" || $username_banned == "cr_ap" || $username_banned == "cra_p" || $username_banned == "c_r_ap" || $username_banned == "c_r_a_p" || $username_banned == "cr_a_p" || $username_banned == "c_ra_p" ||
+  $username_banned == "cunt" || $username_banned == "c_unt" || $username_banned == "cu_nt" || $username_banned == "cun_t" || $username_banned == "c_u_nt" || $username_banned == "c_u_n_t" || $username_banned == "cu_n_t" || $username_banned == "c_un_t" ||
+  $username_banned == "dick" || $username_banned == "d_ick" || $username_banned == "di_ck" || $username_banned == "dic_k" || $username_banned == "d_i_ck" || $username_banned == "d_i_c_k" || $username_banned == "di_c_k" || $username_banned == "d_ic_k" ||
+  $username_banned == "dildo" || $username_banned == "d_ildo" || $username_banned == "di_ldo" || $username_banned == "dil_do" || $username_banned == "dild_o" || $username_banned == "d_i_ldo" || $username_banned == "d_i_l_do" || $username_banned == "d_i_l_d_o" || $username_banned == "di_l_d_o" || $username_banned == "dil_d_o" || $username_banned == "d_ild_o" || $username_banned == "di_ld_o" || $username_banned == "di_l_do" || $username_banned == "d_il_do" || $username_banned == "d_i_ld_o" || $username_banned == "d_il_d_o" ||
+  $username_banned == "fag" || $username_banned == "f_ag" || $username_banned == "fa_g" || $username_banned == "f_a_g" ||
+  $username_banned == "faggot" ||
+  $username_banned == "fegget" ||
+  $username_banned == "feck" || $username_banned == "f_eck" || $username_banned == "fe_ck" || $username_banned == "fec_k" || $username_banned == "f_e_ck" || $username_banned == "f_e_c_k" || $username_banned == "fe_c_k" || $username_banned == "f_ec_k" ||
+  $username_banned == "fuck" || $username_banned == "f_uck" || $username_banned == "fu_ck" || $username_banned == "fuc_k" || $username_banned == "f_u_ck" || $username_banned == "f_u_c_k" || $username_banned == "fu_c_k" || $username_banned == "f_uc_k" ||
+  $username_banned == "nigger" || $username_banned == "n_igger" || $username_banned == "ni_gger" || $username_banned == "nig_ger" || $username_banned == "nigg_er" || $username_banned == "nigge_r" || $username_banned == "n_i_gger" ||
+  $username_banned == "nigga" || $username_banned == "n_igga" || $username_banned == "ni_gga" || $username_banned == "nig_ga" || $username_banned == "nigg_a" || $username_banned == "n_i_gga" || $username_banned == "n_i_g_ga" || $username_banned == "n_i_g_g_a" || $username_banned == "ni_g_g_a" || $username_banned == "nig_g_a" || $username_banned == "n_igg_a" || $username_banned == "ni_gg_a" || $username_banned == "ni_g_ga" || $username_banned == "n_ig_ga" || $username_banned == "n_i_gg_a" || $username_banned == "n_ig_g_a" ||
+  $username_banned == "penis" || $username_banned == "p_enis" || $username_banned == "pe_nis" || $username_banned == "pen_is" || $username_banned == "peni_s" || $username_banned == "p_e_nis" || $username_banned == "p_e_n_is" || $username_banned == "p_e_n_i_s" || $username_banned == "pe_n_i_s" || $username_banned == "pen_i_s" || $username_banned == "p_eni_s" || $username_banned == "pe_ni_s" || $username_banned == "pe_n_is" || $username_banned == "p_en_is" || $username_banned == "p_e_ni_s" || $username_banned == "p_en_i_s" ||
+  $username_banned == "piss" || $username_banned == "p_iss" || $username_banned == "pi_ss" || $username_banned == "pis_s" || $username_banned == "p_i_ss" || $username_banned == "p_i_s_s" || $username_banned == "pi_s_s" || $username_banned == "p_is_s" ||
+  $username_banned == "poop" || $username_banned == "p_oop" || $username_banned == "po_op" || $username_banned == "poo_p" || $username_banned == "p_o_op" || $username_banned == "p_o_o_p" || $username_banned == "po_o_p" || $username_banned == "p_oo_p" ||
+  $username_banned == "prick" ||
+  $username_banned == "pube" || $username_banned == "p_ube" || $username_banned == "pu_be" || $username_banned == "pub_e" || $username_banned == "p_u_be" || $username_banned == "p_u_b_e" || $username_banned == "pu_b_e" || $username_banned == "p_ub_e" ||
+  $username_banned == "pussy" ||
+  $username_banned == "sex" || $username_banned == "s_ex" || $username_banned == "se_x" || $username_banned == "s_e_x" ||
+  $username_banned == "shit" || $username_banned == "s_hit" || $username_banned == "sh_it" || $username_banned == "shi_t" || $username_banned == "s_h_it" || $username_banned == "s_h_i_t" || $username_banned == "sh_i_t" || $username_banned == "s_hi_t" ||
+  $username_banned == "slut" || $username_banned == "s_lut" || $username_banned == "sl_ut" || $username_banned == "slu_t" || $username_banned == "s_l_ut" || $username_banned == "s_l_u_t" || $username_banned == "sl_u_t" || $username_banned == "s_lu_t" ||
+  $username_banned == "testicles" ||
+  $username_banned == "twat" || $username_banned == "t_wat" || $username_banned == "tw_at" || $username_banned == "twa_t" || $username_banned == "t_w_at" || $username_banned == "t_w_a_t" || $username_banned == "tw_a_t" || $username_banned == "t_wa_t" ||
+  $username_banned == "vagina" ||
+  $username_banned == "wank" || $username_banned == "w_ank" || $username_banned == "wa_nk" || $username_banned == "wan_k" || $username_banned == "w_a_nk" || $username_banned == "w_a_n_k" || $username_banned == "wa_n_k" || $username_banned == "w_an_k" ||
+  $username_banned == "whore" ||
+  $username_banned == "wtf" || $username_banned == "w_tf" || $username_banned == "wt_f" || $username_banned == "w_t_f"
+) { array_push($errors, "That username is inappropriate!"; }
+?>
