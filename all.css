@@ -35,3 +35,8 @@
 body {
     background-color: #fff;
 }
+nav {
+    box-shadow: 0 8px 8px rgba(0,0,0,0.19);
+  -moz-box-shadow: 0 8px 8px rgba(0,0,0,0.19);
+  -webkit-box-shadow: 0 8px 8px rgba(0,0,0,0.19);
+}

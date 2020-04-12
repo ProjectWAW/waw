@@ -8,5 +8,6 @@
 <title>Home - Project: World at War</title>
 </head>
 <body>
+<?php include 'loader.php'; include 'navbar.php';?>
 </body>
 </html>
