@@ -11,13 +11,13 @@ if (isset($_SESSION['username']) == true ) {
   session_destroy();
 }
 
-$dsn = 'mysql:host=127.0.0.1;dbname=users;charset=utf8';
-
-$conn = new PDO($dsn, $username1, $password);
-$conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
 if (isset($_POST['login_user'])) {
+  $dsn = 'mysql:host=127.0.0.1;dbname=users;charset=utf8';
+
+  $conn = new PDO($dsn, $username1, $password);
+  $conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
   $username20  = isset($_POST['username']) ? $_POST['username'] : null;
   $password120 = isset($_POST['password']) ? $_POST['password'] : null;
 
