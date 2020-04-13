@@ -1,8 +1,8 @@
 <?php
 if (count($errors) > 0):?>
-  <div class="error">
+  <br><div class="error">
     <?php foreach ($errors as $error):?>
-  	  <p><?php echo $error;?></p>
+  	  <p style="margin-top:10px;"><?php echo $error;?></p>
   	<?php endforeach?>
-  </div><br>
+  </div>
 <?php endif?>

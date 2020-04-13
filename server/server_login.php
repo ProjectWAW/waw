@@ -41,7 +41,7 @@ if (count($errors) == 0) {
     if (password_verify($password120, $row['password'])) {
       $_SESSION['username'] = $username20;
       $hour = time() + 15 * 24 * 60 * 60;
-      header('location: home.php');
+      header('location: index.php');
     } else {
       array_push($errors, "Password and username do not match!");
     }

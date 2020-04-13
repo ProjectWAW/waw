@@ -47,7 +47,7 @@ if (strlen($username) <= 2) {
 if (strlen($username) >= 22) {
   array_push($errors, "Your username must have below 22 characters.");
 }
-if (strlen($password) <= 6) {
+if (strlen($password_1) <= 6) {
   array_push($errors, "Your password must have at least 7 characters.");
 }
 
@@ -72,7 +72,7 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {} else {
 }
 if (count($errors) == 0) {
   $password2 = password_hash($password_1, PASSWORD_DEFAULT);
-  $stm_reg_fin = $conn->prepare("INSERT INTO `users` (username, email, password, date_created, date_active, deleted, date_deleted) VALUES (:username, :email, :password2, curdate(), curdate(), 0, NULL)");
+  $stm_reg_fin = $conn->prepare("INSERT INTO `users` (username, email, password, date_created, date_active, deleted, date_deleted, role) VALUES (:username, :email, :password2, curdate(), curdate(), 0, NULL, 'member')");
   $stm_reg_fin->execute(array(':username' => $_POST['username'], ':email' => $_POST['email'], ':password2' => $password2));
   $_SESSION['username'] = $username;
   require 'verify.php';

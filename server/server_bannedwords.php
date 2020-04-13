@@ -43,5 +43,5 @@ if ($username_banned == "anal" || $username_banned == "a_nal" || $username_banne
   $username_banned == "wank" || $username_banned == "w_ank" || $username_banned == "wa_nk" || $username_banned == "wan_k" || $username_banned == "w_a_nk" || $username_banned == "w_a_n_k" || $username_banned == "wa_n_k" || $username_banned == "w_an_k" ||
   $username_banned == "whore" ||
   $username_banned == "wtf" || $username_banned == "w_tf" || $username_banned == "wt_f" || $username_banned == "w_t_f"
-) { array_push($errors, "That username is inappropriate!"; }
+) { array_push($errors, "That username is inappropriate!"); }
 ?>
