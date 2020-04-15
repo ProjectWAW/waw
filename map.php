@@ -6,7 +6,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+<link rel="stylesheet" href="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.css" />
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+<script src="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.js"></script>
 <title>Map - Project: World at War</title>
 <style>
 .navbar {
@@ -25,7 +27,7 @@ require 'navbar.php';
 ?>
 <div id='map' style='width:100%;height:100%;position:absolute;'></div>
 <script>
-var mymap = L.map('map').setView([29.843026, 10.079956], 10);
+var mymap = L.map('map').setView([27.377865, 10.144501], 10);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -43,7 +45,16 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   ]
 }).addTo(mymap);
 
-mymap.zoomControl.setPosition('bottomright');
+L.control.mapCenterCoord({
+  icon: false,
+  position: 'bottomright'
+}).addTo(mymap);
+
+L.control.scale({
+  position: 'bottomright'
+}).addTo(mymap);
+
+mymap.zoomControl.setPosition('bottomleft');
 
 /***** COLORS *****/
 /*var axis = black;
@@ -56,12 +67,15 @@ var neutral = ffca8a;*/
 <?php include 'map/italian_somaliland.js';?>
 
 /************ NEUTRAL *************/
+var yugoslavia = [
+  /* albania */
+  
+]
 var luxembourg = [
   /* belgium */
   [49.546208, 5.818462],
   [49.551777, 5.826015],
   [49.549995, 5.827904],
-
 ]
 var czechoslovakia = [
   /* poland */
@@ -119,6 +133,7 @@ var czechoslovakia = [
   [47.911337, 24.201508],
 ]
 
+var yugoslavia1 = L.polygon(yugoslavia, {color: '#ffca8a'}).addTo(mymap);
 var luxembourg1 = L.polygon(luxembourg, {color: '#ffca8a'}).addTo(mymap);
 var czechoslovakia1 = L.polygon(czechoslovakia, {color: '#ffca8a'}).addTo(mymap);
 
