@@ -25,7 +25,7 @@ require 'navbar.php';
 ?>
 <div id='map' style='width:100%;height:100%;position:absolute;'></div>
 <script>
-var mymap = L.map('map').setView([43.444943, 47.49939], 10);
+var mymap = L.map('map').setView([32.363143, 11.467667], 10);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -61,10 +61,14 @@ var luxembourg = [
 var czechoslovakia = [
   /* romania */
   [47.96464, 24.583454],
-
+  [47.968261, 24.563541],
+  [47.958663, 24.551868],
+  [47.960272, 24.530067],
+  [47.952225, 24.512901],
 ]
 
 var luxembourg1 = L.polygon(luxembourg, {color: '#ffca8a'}).addTo(mymap);
+var czechoslovakia1 = L.polygon(czechoslovakia, {color: '#ffca8a'}).addTo(mymap);
 
 /************** AXIS **************/
 var germany = [
