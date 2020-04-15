@@ -27,7 +27,7 @@ require 'navbar.php';
 ?>
 <div id='map' style='width:100%;height:100%;position:absolute;'></div>
 <script>
-var mymap = L.map('map').setView([27.377865, 10.144501], 10);
+var mymap = L.map('map').setView([31.728167, 22.049561], 10);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -35,6 +35,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   maxZoom: 14,
   id: 'mapbox/light-v10',
   tileSize: 512,
+  fullscreenControl: true,
   zoomOffset: -1,
   accessToken: 'pk.eyJ1IjoiYW50aXNvY2lhbGVsZXBoYW50IiwiYSI6ImNrOHg4bXJ1NzAzcXYzZWs0cnpyem16OWUifQ.o7KFeNSG2NkS1vdRt9TIew',
   zoomControl: true,
@@ -44,6 +45,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     [90, 180]
   ]
 }).addTo(mymap);
+
 
 L.control.mapCenterCoord({
   icon: false,
@@ -68,8 +70,61 @@ var neutral = ffca8a;*/
 
 /************ NEUTRAL *************/
 var yugoslavia = [
+  /* adriatic */
+  [41.901702, 19.26856],
+  [41.868666, 19.333706],
   /* albania */
-  
+  [41.84546, 19.373102],
+  [41.875057, 19.374647],
+  [41.882406, 19.380484],
+  [41.885346, 19.381599],
+  [41.886432, 19.380226],
+  [41.886624, 19.372845],
+  [41.888413, 19.368725],
+  [41.897102, 19.365635],
+  [41.898955, 19.362803],
+  [41.90151, 19.347954],
+  [41.90611, 19.341259],
+  [41.912242, 19.34392],
+  [41.917926, 19.365463],
+  [41.922078, 19.371042],
+  [41.930443, 19.366751],
+  [41.939893, 19.3507],
+  [41.956809, 19.351215],
+  [41.959809, 19.360657],
+  [41.961213, 19.376364],
+  [41.963064, 19.385805],
+  [41.965936, 19.388208],
+  [41.970084, 19.384003],
+  [41.974487, 19.376278],
+  [41.979656, 19.376707],
+  [41.98476, 19.381342],
+  [41.995414, 19.381771],
+  [42.012698, 19.372673],
+  [42.028894, 19.36821],
+  [42.053117, 19.379539],
+  [42.062739, 19.37808],
+  [42.072615, 19.379196],
+  [42.078094, 19.38529],
+  [42.103317, 19.402456],
+  [42.179815, 19.281263],
+  [42.2411, 19.349585],
+  [42.258953, 19.353619],
+  [42.258254, 19.359713],
+  [42.282897, 19.385204],
+  [42.29477, 19.385118],
+  [42.327395, 19.42219],
+  [42.334629, 19.416103],
+  [42.350996, 19.413528],
+  [42.356007, 19.42297],
+  [42.371608, 19.425373],
+  [42.383021, 19.442024],
+  [42.393037, 19.472752],
+  [42.439421, 19.510517],
+  [42.483492, 19.548626],
+  [42.500326, 19.562874],
+  [42.514247, 19.562187],
+  [42.531959, 19.603386],
 ]
 var luxembourg = [
   /* belgium */
