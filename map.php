@@ -25,17 +25,22 @@ require 'navbar.php';
 ?>
 <div id='map' style='width:100%;height:100%;position:absolute;'></div>
 <script>
-var mymap = L.map('map').setView([30.757179, 10.379333], 10);
+var mymap = L.map('map').setView([29.843026, 10.079956], 10);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-  minZoom: 2,
+  minZoom: 3,
   maxZoom: 14,
   id: 'mapbox/light-v10',
   tileSize: 512,
   zoomOffset: -1,
   accessToken: 'pk.eyJ1IjoiYW50aXNvY2lhbGVsZXBoYW50IiwiYSI6ImNrOHg4bXJ1NzAzcXYzZWs0cnpyem16OWUifQ.o7KFeNSG2NkS1vdRt9TIew',
-  zoomControl: true
+  zoomControl: true,
+  noWrap: true,
+  bounds: [
+    [-90, -180],
+    [90, 180]
+  ]
 }).addTo(mymap);
 
 mymap.zoomControl.setPosition('bottomright');
@@ -97,6 +102,21 @@ var czechoslovakia = [
   [47.958663, 24.551868],
   [47.960272, 24.530067],
   [47.952225, 24.512901],
+  [47.961537, 24.464836],
+  [47.969813, 24.435654],
+  [47.952685, 24.392223],
+  [47.933942, 24.38055],
+  [47.926465, 24.381752],
+  [47.914616, 24.344673],
+  [47.925545, 24.324675],
+  [47.911395, 24.29781],
+  [47.905871, 24.27927],
+  [47.906102, 24.25498],
+  [47.899139, 24.240389],
+  [47.896435, 24.228458],
+  [47.89724, 24.218845],
+  [47.902592, 24.2173],
+  [47.911337, 24.201508],
 ]
 
 var luxembourg1 = L.polygon(luxembourg, {color: '#ffca8a'}).addTo(mymap);
