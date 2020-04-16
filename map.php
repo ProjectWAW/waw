@@ -24,6 +24,7 @@
 <body>
 <?php include 'loader.php';
 require 'navbar.php';
+require 'server/server_map.php';
 ?>
 <div id='map' style='width:100%;height:100%;position:absolute;'></div>
 <script>
