@@ -170,29 +170,11 @@ var libya = [
   [31.401707, 24.859314],
   [31.549282, 25.077667],
   
-  
- 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
   /* algeria */
 
   /* french west africa */
 
   /*french equatorial africa */
-
 
   /* egypt */
 
