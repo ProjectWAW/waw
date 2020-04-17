@@ -181,4 +181,4 @@ var libya = [
   /* sudan */
 ]
 
-var libya1 = L.polygon(libya, {color: 'black'}).addTo(mymap);
+var libya1 = L.polygon(libya, {color: axis}).addTo(mymap);

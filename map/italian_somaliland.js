@@ -6,4 +6,4 @@ var italian_somalia = [
     /* british_somaliland */
   ]
   
-  var italian_somalia1 = L.polygon(italian_somalia, {color: 'black'}).addTo(mymap);
+  var italian_somalia1 = L.polygon(italian_somalia, {color: axis}).addTo(mymap);

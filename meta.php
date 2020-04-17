@@ -16,6 +16,6 @@
 <link rel="apple-touch-icon" sizes="167x167" href=""> <!-- /images/apple-touch-icon_167x167.png -->
 <link rel="apple-touch-icon" sizes="180x180" href=""> <!-- /images/apple-touch-icon_180x180.png -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content=""> <!-- -->
+<meta property="og:site_name" content="Project: World at War"> <!-- -->
 <meta property="og:description" content=""> <!-- -->
 <meta property="og:image" content=""> <!-- -->
