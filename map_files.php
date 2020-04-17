@@ -3,6 +3,7 @@ if (strpos($date, "1936") === 0) {
   if (strpos($date, "1936.07") === 0) {
     if (strpos($date, "1936.07.16") === 0) {
       require 'map/eritrea.js';
+      require 'map/djibouti.js';
     } elseif (strpos($date, "1936/07/17") === 0) {
 
     } elseif (strpos($date, "1936/07/18") === 0) {
