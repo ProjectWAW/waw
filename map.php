@@ -1,3 +1,10 @@
+<?php
+if (isset($_GET['d'])) {
+  $date = $_GET['d'];
+} else {
+  $date = "1936.07.16";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +31,8 @@
 <body>
 <?php include 'loader.php';
 require 'navbar.php';
-require 'server/server_map.php';
 ?>
+<!--<a href="map.php?d=1936.07.16">s</a>-->
 <div id='map' style='width:100%;height:100%;position:absolute;'></div>
 <script>
 var mymap = L.map('map').setView([40.85563, 20.982513], 10);
@@ -64,8 +71,9 @@ var allies = 'dodgerblue'
 var comintern = 'red'
 var neutral = '#ffca8a'
 
+<?php require 'map_files.php';?>
+
 <?php include 'map/libya.js';?>
-<?php include 'map/eritrea.js';?>
 <?php include 'map/italian_somaliland.js';?>
 
 /************ NEUTRAL *************/
