@@ -7,13 +7,14 @@ if (strpos($date, "1936") === 0) {
       require 'map/liechtenstein.js';
       require 'map/luxembourg.js'; /* INCOMPLETE */
       require 'map/andorra.js';
+      require 'map/albania.js';
       require 'map/portugal.js'; /* INCOMPLETE */
       require 'map/romania.js'; /* INCOMPLETE */
       require 'map/czechoslovakia.js'; /* INCOMPLETE */
       require 'map/yugoslavia.js'; /* INCOMPLETE */
       require 'map/greece.js'; /* INCOMPLETE */
       require 'map/turkey.js'; /* INCOMPLETE */
-      require 'map/iraq.js'; /* INCOMPLETE */ /* FIX NEUTRAL ZONE */
+      require 'map/iraq.js'; /* INCOMPLETE */ /* FIX NEUTRAL ZONE */ /* FIX SAUDI BORDER */
       require 'map/bhutan.js';
       require 'map/spanish_sahara.js'; /* FIX MORROCAN BORDER */
       require 'map/spanish_africa.js';
@@ -22,8 +23,9 @@ if (strpos($date, "1936") === 0) {
       require 'map/gibraltar.js';
       require 'map/malta.js';
       require 'map/british_africa.js'; /* INCOMPLETE */
+      require 'map/swaziland.js';
       require 'map/gambia.js';
-      require 'map/kuwait.js'; /* FIX NEUTRAL ZONE */
+      require 'map/kuwait.js';
       require 'map/bahrain.js';
       require 'map/qatar.js';
       require 'map/djibouti.js';
