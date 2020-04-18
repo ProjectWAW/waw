@@ -111,7 +111,7 @@ if (isset($_GET['d'])) {
       ["czechoslovakia",axis],
       ["djibouti",axis],
       ["eritrea",axis],
-      ["france",axis],
+      ["france",allies],
       ["gambia",axis],
       ["german_prussia",axis],
       ["germany",axis],
