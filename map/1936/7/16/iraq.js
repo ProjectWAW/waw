@@ -59,6 +59,8 @@ var iraq = [
   [30.022733, 48.160286],
   [29.966237, 48.25367],
   [29.853449, 48.412971],
+  /* persian gulf */
+  [29.928755, 48.620338],
 ]
 
 var iraq1 = L.polygon(iraq, {color: neutral}).addTo(mymap);

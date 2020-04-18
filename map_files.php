@@ -2,45 +2,48 @@
 if (strpos($date, "1936") === 0) {
   if (strpos($date, "1936.07") === 0) {
     if (strpos($date, "1936.07.16") === 0) {
-      require 'map/neutral_zone_iraq.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/neutral_zone_iraq.js'; /* INCOMPLETE */
       /* NEUTRAL */
-      require 'map/liechtenstein.js';
-      require 'map/luxembourg.js'; /* INCOMPLETE */
-      require 'map/andorra.js';
-      require 'map/albania.js';
-      require 'map/portugal.js'; /* INCOMPLETE */
-      require 'map/romania.js'; /* INCOMPLETE */
-      require 'map/poland.js'; /* INCOMPLETE */
-      require 'map/czechoslovakia.js'; /* INCOMPLETE */
-      require 'map/yugoslavia.js'; /* INCOMPLETE */
-      require 'map/greece.js'; /* INCOMPLETE */
-      require 'map/turkey.js'; /* INCOMPLETE */
-      require 'map/iraq.js'; /* INCOMPLETE */ /* FIX NEUTRAL ZONE */ /* FIX SAUDI BORDER */
-      require 'map/bhutan.js';
-      require 'map/spanish_sahara.js'; /* FIX MORROCAN BORDER */
-      require 'map/spanish_africa.js';
+      require 'map/1936/7/16/liechtenstein.js';
+      require 'map/1936/7/16/luxembourg.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/andorra.js';
+      require 'map/1936/7/16/albania.js';
+      require 'map/1936/7/16/portugal.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/romania.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/poland.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/czechoslovakia.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/yugoslavia.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/greece.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/turkey.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/iraq.js'; /* INCOMPLETE */ /* FIX NEUTRAL ZONE */ /* FIX SAUDI BORDER */
+      require 'map/1936/7/16/bhutan.js';
+      require 'map/1936/7/16/spanish_sahara.js'; /* FIX MORROCAN BORDER */
+      require 'map/1936/7/16/spanish_africa.js';
       /* ALLIES */
-      require 'map/uk.js'; /* INCOMPLETE */
-      require 'map/gibraltar.js';
-      require 'map/malta.js';
-      require 'map/british_africa.js'; /* INCOMPLETE */
-      require 'map/swaziland.js';
-      require 'map/gambia.js';
-      require 'map/kuwait.js';
-      require 'map/bahrain.js';
-      require 'map/qatar.js';
-      require 'map/djibouti.js';
-      require 'map/bermuda.js';
-      require 'map/france.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/uk.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/gibraltar.js';
+      require 'map/1936/7/16/malta.js';
+      require 'map/1936/7/16/cyprus.js';
+      require 'map/1936/7/16/british_africa.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/swaziland.js';
+      require 'map/1936/7/16/gambia.js';
+      require 'map/1936/7/16/kuwait.js';
+      require 'map/1936/7/16/bahrain.js';
+      require 'map/1936/7/16/qatar.js';
+      require 'map/1936/7/16/djibouti.js';
+      require 'map/1936/7/16/mauritius.js';
+      require 'map/1936/7/16/bermuda.js';
+      require 'map/1936/7/16/south_georgia.js';
+      require 'map/1936/7/16/france.js'; /* INCOMPLETE */
       /* AXIS */
-      require 'map/germany.js'; /* INCOMPLETE */
-      require 'map/german_prussia.js'; /* INCOMPLETE */
-      require 'map/italian_dodecanese.js';
-      require 'map/libya.js'; /* INCOMPLETE */
-      require 'map/eritrea.js';
-      require 'map/italian_somaliland.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/germany.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/german_prussia.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/italian_dodecanese.js';
+      require 'map/1936/7/16/libya.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/eritrea.js';
+      require 'map/1936/7/16/italian_somaliland.js'; /* INCOMPLETE */
       /* COMINTERN */
-      require 'map/ussr.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/ussr.js'; /* INCOMPLETE */
 
     } elseif (strpos($date, "1936.07.17") === 0) {
 

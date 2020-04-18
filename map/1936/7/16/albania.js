@@ -1,6 +1,6 @@
 var albania = [
-/* yugoslavia */
-[41.84546, 19.373102],
+  /* yugoslavia */
+  [41.84546, 19.373102],
   [41.875057, 19.374647],
   [41.882406, 19.380484],
   [41.885346, 19.381599],
@@ -655,4 +655,4 @@ var albania = [
   [41.84693982345453, 19.377644203705604],
 ]
 
-var albania1 = L.polygon(albania, {color: axis}).addTo(mymap);
+var albania1 = L.polygon(albania, {color: neutral}).addTo(mymap);
