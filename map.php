@@ -134,7 +134,8 @@ if (isset($_GET['d'])) {
       ["spanish_sahara",axis],
       ["swaziland",axis],
       ["turkey",axis],
-      ["uk",axis],
+      ["uk",allies],
+      ["ussr", allies],
       ["yugoslavia", axis]
     ]
 
