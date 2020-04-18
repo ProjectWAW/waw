@@ -109,7 +109,7 @@ if (isset($_GET['d'])) {
       "luxembourg",
       "malta",
       "neutral_zone_iraq",
-      "polan",
+      "poland",
       "portugal",
       "quatar",
       "romania",
