@@ -1,0 +1,57 @@
+body {
+  font-family: Arial;
+  color: black;
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+img {
+  width: 50%;
+  height: 50%;
+}
+
+.left {
+  left: 0;
+  background-color: white;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.right {
+  right: 0;
+  background-color: white;
+  border-style: solid;
+  border-width: 5px;
+}
+.section {
+	right: 0;
+	background-color: white;
+	border-style: solid;
+	border-width: 4px;
+    width: 50%;
+    position: fixed;
+    overflow-x: hidden;
+	padding-right: 10px;
+}
+.container {
+	left: 0;
+	background-color: white;
+	border-style: solid;
+	border-width: 2px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
