@@ -51,27 +51,6 @@ require 'navbar.php';
 <div id='map'></div>
 <script>
 
-
-var border2change;
-
-var mymap = L.map('map', {
-	contextmenu: true,
-    contextmenuWidth: 140,
-	contextmenuItems: [{
-	    text: 'Spain',
-	    callback: set2Spain
-	}]
-}).setView([40.85563, 20.982513], 10);
-
-function set2Spain (e) {
-  border2change = "spain";
-}
-
-
-
-
-
-
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
   minZoom: 3,
@@ -89,11 +68,28 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   ]
 }).addTo(mymap);
 
-var geojsonLayer = new L.GeoJSON.AJAX("/waw/geojson_files/1936_07_16.geojson");   
-console.log(geojsonLayer);    
-geojsonLayer.on('data:loaded', function(){
-  geojsonLayer.addTo(mymap);
+
+var franceLayer = new L.GeoJSON.AJAX("/waw/geojson_files/1936_07_16/france.geojson");   
+console.log(franceLayer);    
+franceLayer.on('data:loaded', function(){
+  franceLayer.setStyle({color: "green"});
+  franceLayer.addTo(mymap);
 });
+
+
+///////// Add your country layer here /////////
+// example
+/* 
+var franceLayer = new L.GeoJSON.AJAX("/waw/geojson_files/1936_07_16/france.geojson");   
+console.log(franceLayer);    
+franceLayer.on('data:loaded', function(){
+  franceLayer.setStyle({color: "green"});
+  franceLayer.addTo(mymap);
+}); 
+*/
+
+
+//////// ---------------------------- /////////
 
 L.control.mapCenterCoord({
   icon: false,
