@@ -16,6 +16,9 @@ if (isset($_GET['d'])) {
 <link rel="stylesheet" href="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.css" />
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 <script src="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.js"></script>
+<script src="http://localhost/waw/js/leaflet.ajax.min.js"></script>
+
+
 <title>Map - Project: World at War</title>
 <style>
 .navbar {
@@ -37,10 +40,37 @@ if (isset($_GET['d'])) {
 <?php include 'loader.php';
 require 'navbar.php';
 ?>
+
+
+
+
+
+
+
 <!--<a href="map.php?d=1936.07.16">s</a>-->
 <div id='map'></div>
 <script>
-var mymap = L.map('map').setView([40.85563, 20.982513], 10);
+
+
+var border2change;
+
+var mymap = L.map('map', {
+	contextmenu: true,
+    contextmenuWidth: 140,
+	contextmenuItems: [{
+	    text: 'Spain',
+	    callback: set2Spain
+	}]
+}).setView([40.85563, 20.982513], 10);
+
+function set2Spain (e) {
+  border2change = "spain";
+}
+
+
+
+
+
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -58,6 +88,12 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     [90, 180]
   ]
 }).addTo(mymap);
+
+var geojsonLayer = new L.GeoJSON.AJAX("/waw/geojson_files/1936_07_16.geojson");   
+console.log(geojsonLayer);    
+geojsonLayer.on('data:loaded', function(){
+  geojsonLayer.addTo(mymap);
+});
 
 L.control.mapCenterCoord({
   icon: false,
@@ -84,7 +120,6 @@ var finland_occupied = '#ac68cc'
 
 var neutral = '#ffca8a'
 
-<?php require 'map_files.php';?>
 
 var popup = L.popup();
 function onMapClick(e) {
