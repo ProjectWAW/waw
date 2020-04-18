@@ -84,47 +84,63 @@ if (isset($_GET['d'])) {
     });
     }
 
+        /***** COLORS *****/
+        var axis = 'black';
+    var axis_puppet = 'gray';
+    var axis_occupied = '#a1a1a1';
+
+    var allies = 'dodgerblue';
+
+    var comintern = 'red';
+
+    var finland = 'purple';
+    var finland_occupied = '#ac68cc';
+
+    var neutral = '#ffca8a';
+
+
     var countries = [
-      "andorra",
-      "albania",
-      "bahrain",
-      "bermuda",
-      "bhutan",
-      "british_africa",
-      "british_somaliland",
-      "cyprus",
-      "czechoslovakia",
-      "djibouti",
-      "eritrea",
-      "france",
-      "gambia",
-      "german_prussia",
-      "germany",
-      "gibraltar",
-      "greece",
-      "iraq",
-      "italian_dodecanese",
-      "kuwait",
-      "libya",
-      "lichtenstein",
-      "luxembourg",
-      "malta",
-      "neutral_zone_iraq",
-      "poland",
-      "portugal",
-      "quatar",
-      "romania",
-      "south_georgia",
-      "spanish_africa",
-      "spanish_sahara",
-      "swaziland",
-      "turkey",
-      "uk",
-      "yugoslavia"
+      ["andorra", axis],
+      ["albania",axis],
+      ["bahrain",axis],
+      ["bermuda",axis],
+      ["bhutan",axis],
+      ["british_africa",axis],
+      ["british_somaliland",axis],
+      ["cyprus",axis],
+      ["czechoslovakia",axis],
+      ["djibouti",axis],
+      ["eritrea",axis],
+      ["france",axis],
+      ["gambia",axis],
+      ["german_prussia",axis],
+      ["germany",axis],
+      ["gibraltar",axis],
+      ["greece",allies],
+      ["iraq",axis],
+      ["italian_dodecanese",axis],
+      ["kuwait",axis],
+      ["libya",axis],
+      ["lichtenstein",axis],
+      ["luxembourg",axis],
+      ["malta",axis],
+      ["neutral_zone_iraq",axis],
+      ["poland",axis],
+      ["portugal",axis],
+      ["quatar",axis],
+      ["romania",axis],
+      ["south_georgia",axis],
+      ["spanish_africa",axis],
+      ["spanish_sahara",axis],
+      ["swaziland",axis],
+      ["turkey",axis],
+      ["uk",axis],
+      ["yugoslavia", axis]
     ]
 
     for (country of countries){
-      add_geojson_layer(country, "green");
+      console.log(country);
+      add_geojson_layer(country[0], country[1]);
     }
 
     L.control.mapCenterCoord({
@@ -138,19 +154,7 @@ if (isset($_GET['d'])) {
 
     mymap.zoomControl.setPosition('bottomleft');
 
-    /***** COLORS *****/
-    var axis = 'black'
-    var axis_puppet = 'gray'
-    var axis_occupied = '#a1a1a1'
 
-    var allies = 'dodgerblue'
-
-    var comintern = 'red'
-
-    var finland = 'purple'
-    var finland_occupied = '#ac68cc'
-
-    var neutral = '#ffca8a'
 
 
     var popup = L.popup();
