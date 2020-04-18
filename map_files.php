@@ -10,6 +10,7 @@ if (strpos($date, "1936") === 0) {
       require 'map/albania.js';
       require 'map/portugal.js'; /* INCOMPLETE */
       require 'map/romania.js'; /* INCOMPLETE */
+      require 'map/poland.js'; /* INCOMPLETE */
       require 'map/czechoslovakia.js'; /* INCOMPLETE */
       require 'map/yugoslavia.js'; /* INCOMPLETE */
       require 'map/greece.js'; /* INCOMPLETE */
