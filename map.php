@@ -297,9 +297,13 @@ var axis = 'black'
 var axis_puppet = 'gray'
 var axis_occupied = '#a1a1a1'
 
-var allies = 'dodgerblue'
+var allies = '#296d98'
+var allies_puppet = '#3792cb'
+var allies_occupied = '#45b6fe'
 
-var comintern = 'red'
+var comintern = '#B30000'
+var comintern_puppet = 'red'
+var comintern_occupied = '#ff7f7f'
 
 var finland = 'purple'
 var finland_occupied = '#ac68cc'
