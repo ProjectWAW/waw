@@ -114,6 +114,7 @@ if (isset($_GET['d'])) {
       "portugal",
       "quatar",
       "romania",
+      "south_georgia",
       "spanish_africa",
       "spanish_sahara",
       "swaziland",
