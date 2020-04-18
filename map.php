@@ -38,17 +38,10 @@ if (isset($_GET['d'])) {
     }
   </style>
 </head>
-
 <body>
-  <?php include 'loader.php';
-  require 'navbar.php';
-  ?>
-
-
-
-
-
-
+<?php include 'loader.php';
+require 'navbar.php';
+?>
 
   <!--<a href="map.php?d=1936.07.16">s</a>-->
   <div id='map'></div>
@@ -84,63 +77,66 @@ if (isset($_GET['d'])) {
     });
     }
 
-        /***** COLORS *****/
-        var axis = 'black';
-    var axis_puppet = 'gray';
-    var axis_occupied = '#a1a1a1';
+    /***** COLORS *****/
+    var axis = 'black'
+    var axis_puppet = 'gray'
+    var axis_occupied = '#a1a1a1'
 
-    var allies = 'dodgerblue';
+    var allies = '#296d98'
+    var allies_puppet = '#3792cb'
+    var allies_occupied = '#45b6fe'
 
-    var comintern = 'red';
+    var comintern = '#B30000'
+    var comintern_puppet = 'red'
+    var comintern_occupied = '#ff7f7f'
 
-    var finland = 'purple';
-    var finland_occupied = '#ac68cc';
+    var finland = 'purple'
+    var finland_occupied = '#ac68cc'
 
-    var neutral = '#ffca8a';
+    var neutral = '#ffca8a'
 
 
     var countries = [
-      ["andorra", axis],
-      ["albania",axis],
-      ["bahrain",axis],
-      ["bermuda",axis],
-      ["bhutan",axis],
-      ["british_africa",axis],
-      ["british_somaliland",axis],
-      ["cyprus",axis],
-      ["czechoslovakia",axis],
-      ["djibouti",axis],
-      ["eritrea",axis],
-      ["france",allies],
-      ["gambia",axis],
-      ["german_prussia",axis],
-      ["germany",axis],
-      ["gibraltar",allies],
-      ["greece",allies],
-      ["iraq",axis],
-      ["italian_dodecanese",axis],
-      ["kuwait",axis],
-      ["libya",axis],
-      ["lichtenstein",axis],
-      ["luxembourg",axis],
-      ["malta",axis],
-      ["neutral_zone_iraq",axis],
-      ["poland",axis],
-      ["portugal",axis],
-      ["quatar",axis],
-      ["romania",axis],
-      ["south_georgia",axis],
-      ["spanish_africa",axis],
-      ["spanish_sahara",axis],
-      ["swaziland",axis],
-      ["turkey",axis],
+      ["andorra", neutral],
+      ["albania", neutral],
+      ["bahrain", allies],
+      ["bermuda", allies],
+      ["bhutan", neutral],
+      ["british_africa", allies],
+      ["british_somaliland", allies],
+      ["cyprus", allies],
+      ["czechoslovakia", neutral],
+      ["djibouti", allies],
+      ["eritrea", neutral],
+      ["france", allies],
+      ["gambia", allies],
+      ["german_prussia", axis],
+      ["germany", axis],
+      ["gibraltar", allies],
+      ["greece", neutral],
+      ["iraq", neutral],
+      ["italian_dodecanese", axis],
+      ["kuwait", allies],
+      ["libya", axis],
+      ["lichtenstein", neutral],
+      ["luxembourg", neutral],
+      ["malta", axis],
+      ["neutral_zone_iraq", 'white'],
+      ["poland", neutral],
+      ["portugal", neutral],
+      ["qatar", allies],
+      ["romania", neutral],
+      ["south_georgia", allies],
+      ["spanish_africa", neutral],
+      ["spanish_sahara", neutral],
+      ["swaziland", allies],
+      ["turkey", neutral],
       ["uk",allies],
-      ["ussr", allies],
-      ["yugoslavia", axis]
+      ["ussr", comintern],
+      ["yugoslavia", neutral]
     ]
 
     for (country of countries){
-
       add_geojson_layer(country[0], country[1]);
     }
 
@@ -155,9 +151,6 @@ if (isset($_GET['d'])) {
 
     mymap.zoomControl.setPosition('bottomleft');
 
-
-
-
     var popup = L.popup();
 
     function onMapClick(e) {
@@ -170,5 +163,4 @@ if (isset($_GET['d'])) {
     mymap.on('click', onMapClick);
   </script>
 </body>
-
 </html>
