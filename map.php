@@ -75,7 +75,7 @@ if (isset($_GET['d'])) {
     function add_geojson_layer(name, color="red") {
 
       var ll = new L.GeoJSON.AJAX("/waw/geojson_files/1936_07_16/"+name+".geojson");
-    console.log(ll);
+
     ll.on('data:loaded', function() {
       ll.setStyle({
         color: color
@@ -115,7 +115,7 @@ if (isset($_GET['d'])) {
       ["gambia",axis],
       ["german_prussia",axis],
       ["germany",axis],
-      ["gibraltar",axis],
+      ["gibraltar",allies],
       ["greece",allies],
       ["iraq",axis],
       ["italian_dodecanese",axis],
@@ -139,7 +139,7 @@ if (isset($_GET['d'])) {
     ]
 
     for (country of countries){
-      console.log(country);
+
       add_geojson_layer(country[0], country[1]);
     }
 
