@@ -178,33 +178,15 @@ var libya = [
   [31.971022, 24.979649],
   [32.015645, 24.763184],
   
-  
- 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
   /* algeria */
 
   /* french west africa */
 
   /*french equatorial africa */
 
-
   /* egypt */
 
   /* sudan */
 ]
 
-var libya1 = L.polygon(libya, {color: 'black'}).addTo(mymap);
+var libya1 = L.polygon(libya, {color: axis}).addTo(mymap);
