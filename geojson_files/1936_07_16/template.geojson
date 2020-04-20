@@ -1,25 +1,30 @@
 {
   "type": "FeatureCollection",
   "features": [
-     {
+    {
       "type": "Feature",
-
       "properties": {},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
-[
-    
-    
-
-DELETE THIS LINE. PUT YOUR COORDINATES HERE.
-
-
-
-
-
-
-]
+          [
+            [
+              17.578125,
+              65.80277639340238
+            ],
+            [
+              -3.8671874999999996,
+              50.064191736659104
+            ],
+            [
+              25.6640625,
+              37.16031654673677
+            ],
+            [
+              17.578125,
+              65.80277639340238
+            ]
+          ]
         ]
       }
     }

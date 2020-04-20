@@ -6,6 +6,7 @@
     <ul class="nav navbar-nav">
       <li <?php if($_SERVER['PHP_SELF']=='/index.php'){echo 'class=active';}?>><a href="/index.php">Home</a></li>
       <li <?php if($_SERVER['PHP_SELF']=='/map.php'){echo 'class=active';}?>><a href="map.php">Map</a></li>
+      <li <?php if($_SERVER['PHP_SELF']=='/editor.php'){echo 'class=active';}?>><a href="editor.php">Editor</a></li>
       <li><a href="#">Page 2</a></li>
       <li><a href="#">Page 3</a></li>
     </ul>
