@@ -67,7 +67,7 @@ require 'navbar.php';
 
     function add_geojson_layer(name, color="red") {
 
-      var ll = new L.GeoJSON.AJAX("/waw/geojson_files/1936_07_16/"+name+".geojson");
+      var ll = new L.GeoJSON.AJAX("geojson_files/1936_07_16/"+name+".geojson");
 
     ll.on('data:loaded', function() {
       ll.setStyle({
@@ -120,7 +120,7 @@ require 'navbar.php';
       ["libya", axis],
       ["lichtenstein", neutral],
       ["luxembourg", neutral],
-      ["malta", axis],
+      ["malta", allies],
       ["neutral_zone_iraq", 'white'],
       ["poland", neutral],
       ["portugal", neutral],
