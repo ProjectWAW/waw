@@ -7,43 +7,38 @@ if (isset($_GET['d'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <?php require 'page_head.php'; ?>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
-  <link rel="stylesheet" href="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.css" />
-  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
-  <script src="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.js"></script>
-  <script src="http://localhost/waw/js/leaflet.ajax.min.js"></script>
-
-
-  <title>Map - Project: World at War</title>
-  <style>
-    .navbar {
-      position: fixed;
-      margin-bottom: 0;
-      z-index: 500;
-      width: 100%;
-      box-shadow: 0 0 0;
-      -webkit-box-shadow: 0 0 0;
-    }
-
-    #map {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-    }
-  </style>
+<?php require 'page_head.php';?>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+<link rel="stylesheet" href="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.css" />
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+<script src="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.js"></script>
+<script src="http://localhost/waw/js/leaflet.ajax.min.js"></script>
+<title>Map - Project: World at War</title>
+<style>
+.navbar {
+  position: fixed;
+  margin-bottom: 0;
+  z-index: 500;
+  width: 100%;
+  box-shadow: 0 0 0;
+  -webkit-box-shadow: 0 0 0;
+}
+#map {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+</style>
 </head>
 <body>
 <?php include 'loader.php';
 require 'navbar.php';
 ?>
-
-  <!--<a href="map.php?d=1936.07.16">s</a>-->
+<!--<a href="map.php?d=1936.07.16">s</a>-->
   <div id='map'></div>
   <script>
     var mymap = L.map('map').setView([40.85563, 20.982513], 10);
@@ -63,7 +58,6 @@ require 'navbar.php';
         [90, 180]
       ]
     }).addTo(mymap);
-
 
     function add_geojson_layer(name, color="red") {
 
@@ -107,7 +101,7 @@ require 'navbar.php';
       ["cyprus", allies],
       ["czechoslovakia", neutral],
       ["djibouti", allies],
-      ["eritrea", neutral],
+      ["eritrea", axis],
       ["france", allies],
       ["gambia", allies],
       ["german_prussia", axis],
@@ -136,7 +130,7 @@ require 'navbar.php';
       ["yugoslavia", neutral]
     ]
 
-    for (country of countries){
+    for (country of countries) {
       add_geojson_layer(country[0], country[1]);
     }
 
@@ -161,6 +155,6 @@ require 'navbar.php';
     }
 
     mymap.on('click', onMapClick);
-  </script>
+</script>
 </body>
 </html>
