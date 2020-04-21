@@ -124,6 +124,7 @@ require 'navbar.php';
       ["spanish_africa", neutral],
       ["spanish_sahara", neutral],
       ["swaziland", allies],
+      ["tannu_tuva", comintern_puppet],
       ["turkey", neutral],
       ["uk",allies],
       ["ussr", comintern],
