@@ -102,6 +102,7 @@ require 'navbar.php';
       ["czechoslovakia", neutral],
       ["djibouti", allies],
       ["eritrea", axis],
+      ["finland", neutral],
       ["france", allies],
       ["gambia", allies],
       ["german_prussia", axis],
@@ -128,7 +129,8 @@ require 'navbar.php';
       ["turkey", neutral],
       ["uk",allies],
       ["ussr", comintern],
-      ["yugoslavia", neutral]
+      ["yugoslavia", neutral],
+      ["zara", axis]
     ]
 
     for (country of countries) {

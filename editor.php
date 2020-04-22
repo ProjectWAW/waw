@@ -56,6 +56,7 @@ require 'navbar.php';
   <option value="czechoslovakia">czechoslovakia</option>
   <option value="djibouti">djibouti</option>
   <option value="eritrea">eritrea</option>
+  <option value="finland">finland</option>
   <option value="france">france</option>
   <option value="gambia">gambia</option>
   <option value="german_prussia">german_prussia</option>
@@ -83,6 +84,7 @@ require 'navbar.php';
   <option value="uk">uk</option>
   <option value="ussr">ussr</option>
   <option value="yugoslavia">yugoslavia</option>
+  <option value="zara">zara</option>
   </select>
   <br>
   <br>
