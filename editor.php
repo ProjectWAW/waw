@@ -70,6 +70,7 @@ require 'navbar.php';
   <option value="lichtenstein">lichtenstein</option>
   <option value="luxembourg">luxembourg</option>
   <option value="malta">malta</option>
+  <option value="mongolia">mongolia</option>
   <option value="neutral_zone_iraq">neutral_zone_iraq</option>
   <option value="poland">poland</option>
   <option value="portugal">portugal</option>
