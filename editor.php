@@ -45,6 +45,7 @@ require 'navbar.php';
 ?>
 <br><br><br>
 <select id="countries_dropdown" onchange="start(this.value)">
+  <option value="a">a</option>
   <option value="andorra">andorra</option>
   <option value="albania">albania</option>
   <option value="bahrain">bahrain</option>
@@ -54,10 +55,12 @@ require 'navbar.php';
   <option value="british_somaliland">british_somaliland</option>
   <option value="cyprus">cyprus</option>
   <option value="czechoslovakia">czechoslovakia</option>
+  <option value="danzig">danzig</option>
   <option value="djibouti">djibouti</option>
   <option value="eritrea">eritrea</option>
   <option value="finland">finland</option>
   <option value="france">france</option>
+  <option value="french_syria">french_syria</option>
   <option value="gambia">gambia</option>
   <option value="german_prussia">german_prussia</option>
   <option value="germany">germany</option>

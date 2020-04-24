@@ -51,12 +51,7 @@ require 'navbar.php';
       fullscreenControl: true,
       zoomOffset: -1,
       accessToken: 'pk.eyJ1IjoiYW50aXNvY2lhbGVsZXBoYW50IiwiYSI6ImNrOHg4bXJ1NzAzcXYzZWs0cnpyem16OWUifQ.o7KFeNSG2NkS1vdRt9TIew',
-      zoomControl: true,
-      noWrap: true,
-      bounds: [
-        [-90, -180],
-        [90, 180]
-      ]
+      zoomControl: true
     }).addTo(mymap);
 
     function add_geojson_layer(name, color="red") {
@@ -88,49 +83,56 @@ require 'navbar.php';
     var finland_occupied = '#ac68cc'
 
     var neutral = '#ffca8a'
+    var neutral_zone = 'white'
 
 
     var countries = [
+      ["neutral_zone_iraq", 'white'],
+
       ["andorra", neutral],
       ["albania", neutral],
-      ["bahrain", allies],
-      ["bermuda", allies],
       ["bhutan", neutral],
-      ["british_africa", allies_puppet],
-      ["british_somaliland", allies],
-      ["cyprus", allies],
       ["czechoslovakia", neutral],
-      ["djibouti", allies],
-      ["eritrea", axis],
       ["finland", neutral],
-      ["france", allies],
-      ["gambia", allies],
-      ["german_prussia", axis],
-      ["germany", axis],
-      ["gibraltar", allies],
+      ["danzig", neutral],
       ["greece", neutral],
       ["iraq", neutral],
-      ["italian_dodecanese", axis],
-      ["kuwait", allies],
-      ["libya", axis],
       ["lichtenstein", neutral],
       ["luxembourg", neutral],
-      ["malta", allies],
-      ["mongolia", comintern_puppet],
-      ["neutral_zone_iraq", 'white'],
       ["poland", neutral],
       ["portugal", neutral],
-      ["qatar", allies],
       ["romania", neutral],
-      ["south_georgia", allies],
       ["spanish_africa", neutral],
       ["spanish_sahara", neutral],
-      ["swaziland", allies],
-      ["tannu_tuva", comintern_puppet],
       ["turkey", neutral],
-      ["uk",allies],
-      ["ussr", comintern],
       ["yugoslavia", neutral],
+
+      ["bahrain", allies_puppet],
+      ["bermuda", allies_puppet],
+      ["british_africa", allies_puppet],
+      ["british_somaliland", allies_puppet],
+      ["cyprus", allies_puppet],
+      ["djibouti", allies_puppet],
+      ["france", allies],
+      ["french_syria", allies_puppet],
+      ["gambia", allies_puppet],
+      ["gibraltar", allies_puppet],
+      ["kuwait", allies_puppet],
+      ["malta", allies_puppet],
+      ["qatar", allies_puppet],
+      ["south_georgia", allies_puppet],
+      ["swaziland", allies_puppet],
+      ["uk", allies],
+
+      ["mongolia", comintern_puppet],
+      ["tannu_tuva", comintern_puppet],
+      ["ussr", comintern],
+
+      ["eritrea", axis],
+      ["german_prussia", axis],
+      ["germany", axis],
+      ["italian_dodecanese", axis],
+      ["libya", axis],
       ["zara", axis]
     ]
 
@@ -149,6 +151,14 @@ require 'navbar.php';
 
     mymap.zoomControl.setPosition('bottomleft');
 
+    var southWest = L.latLng(-90, -180), northEast = L.latLng(90, 180);
+    var bounds = L.latLngBounds(southWest, northEast);
+
+    mymap.setMaxBounds(bounds);
+
+    mymap.on('drag', function() {
+	    mymap.panInsideBounds(bounds, { animate: false });
+    });
     var popup = L.popup();
 
     function onMapClick(e) {
