@@ -13,9 +13,11 @@ if (isset($_GET['d'])) {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
-<link rel="stylesheet" href="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.css" />
+<link rel="stylesheet" href="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.css"/>
+<link rel="stylesheet" href="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.css" />
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 <script src="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.js"></script>
+<script src="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.js"></script>
 <script src="http://localhost/waw/js/leaflet.ajax.min.js"></script>
 <title>Map - Project: World at War</title>
 <style>
@@ -27,10 +29,30 @@ if (isset($_GET['d'])) {
   box-shadow: 0 0 0;
   -webkit-box-shadow: 0 0 0;
 }
+.nav>li>a {
+  color: #777;
+}
+.nav>li>a:hover {
+  background-color: transparent;
+  color: #333;
+}
+.nav>li>a:focus {
+  background-color: transparent;
+  color: #333;
+}
 #map {
-  width: 100%;
+  width: 80%;
   height: 100%;
   position: absolute;
+}
+#sidebar {
+  width: 20%;
+  position: absolute;
+  right: 0;
+  top: 50px;
+}
+.sidebar-nav {
+
 }
 </style>
 </head>
@@ -40,17 +62,38 @@ require 'navbar.php';
 ?>
 <!--<a href="map.php?d=1936.07.16">s</a>-->
   <div id='map'></div>
+  <!--<div class="sidebar-nav">
+    <ul class="nav navbar-nav">
+      <li><a href="#">Info</a></li>
+      <li><a href="#">Keys</a></li>
+      <li><a href="#">Date</a></li>
+    </ul>
+  </div>-->
+  <div id="sidebar">
+    <div class="sidebar-nav">
+      <ul class="nav navbar-nav">
+      <div class="row">
+      <div class="col-sm-4">
+        <li><a href="#">Info</a></li>
+      </div>
+      <div class="col-sm-4">
+        <li><a href="#">Keys</a></li>
+      </div>
+      <div class="col-sm-4">
+        <li><a href="#">Date</a></li>
+      </div>
+      </div>
+      </ul>
+    </div>
+  </div>
   <script>
     var mymap = L.map('map').setView([40.85563, 20.982513], 10);
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>',
       minZoom: 3,
       maxZoom: 14,
-      id: 'mapbox/light-v10',
-      tileSize: 512,
       fullscreenControl: true,
-      zoomOffset: -1,
-      accessToken: 'pk.eyJ1IjoiYW50aXNvY2lhbGVsZXBoYW50IiwiYSI6ImNrOHg4bXJ1NzAzcXYzZWs0cnpyem16OWUifQ.o7KFeNSG2NkS1vdRt9TIew',
       zoomControl: true
     }).addTo(mymap);
 
@@ -142,7 +185,8 @@ require 'navbar.php';
 
     L.control.mapCenterCoord({
       icon: false,
-      position: 'bottomright'
+      position: 'bottomright',
+      latlngFormat: 'DMS'
     }).addTo(mymap);
 
     L.control.scale({
@@ -150,6 +194,10 @@ require 'navbar.php';
     }).addTo(mymap);
 
     mymap.zoomControl.setPosition('bottomleft');
+
+    L.control.polylineMeasure({
+      position: 'bottomleft'
+    }).addTo(mymap);
 
     var southWest = L.latLng(-90, -180), northEast = L.latLng(90, 180);
     var bounds = L.latLngBounds(southWest, northEast);
@@ -169,6 +217,45 @@ require 'navbar.php';
     }
 
     mymap.on('click', onMapClick);
+</script>
+<script>
+var elem = document.documentElement;
+function hideSidebar() {
+  var sidebar = document.getElementById("sidebar");
+  var leafletmap = document.getElementById('map')
+  if (sidebar.style.display === "none") {
+    sidebar.style.display = "block";
+    leafletmap.style.width = "80%";
+    $("#map").load(" #map > *");
+  } else {
+    sidebar.style.display = "none";
+    leafletmap.style.width = "100%";
+    $("#map").load(" #map > *");
+  }
+}
+function openFullscreen() {
+  if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }
+  } else {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { /* Firefox */
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+      elem.msRequestFullscreen();
+    }
+  }
+}
 </script>
 </body>
 </html>

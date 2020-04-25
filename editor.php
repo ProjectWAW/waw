@@ -96,21 +96,13 @@ require 'navbar.php';
   <div id='map'></div>
   <script>
     var mymap = L.map('map').setView([40.85563, 20.982513], 10);
-    var tilelayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>',
       minZoom: 3,
-      maxZoom: 15,
-      id: 'mapbox/light-v10',
-      tileSize: 512,
+      maxZoom: 14,
       fullscreenControl: true,
-      zoomOffset: -1,
-      accessToken: 'pk.eyJ1IjoiYW50aXNvY2lhbGVsZXBoYW50IiwiYSI6ImNrOHg4bXJ1NzAzcXYzZWs0cnpyem16OWUifQ.o7KFeNSG2NkS1vdRt9TIew',
-      zoomControl: true,
-      noWrap: true,
-      bounds: [
-        [-90, -180],
-        [90, 180]
-      ]
+      zoomControl: true
     }).addTo(mymap);
 
     /***** COLORS *****/
