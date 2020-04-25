@@ -74,21 +74,30 @@ require 'navbar.php';
       <ul class="nav navbar-nav">
       <div class="row">
       <div class="col-sm-4">
-        <li><a href="#">Info</a></li>
+        <li><a href="#" onclick="openHelp(event, 'Info')" id="defaultOpen">Info</a></li>
       </div>
       <div class="col-sm-4">
-        <li><a href="#">Keys</a></li>
+        <li><a href="#" onclick="openHelp(event, 'Date')">Date</a></li>
       </div>
       <div class="col-sm-4">
-        <li><a href="#">Date</a></li>
+        <li><a href="#" onclick="openHelp(event, 'Keys')">Keys</a></li>
       </div>
       </div>
       </ul>
+      <div id="Info" class="tabcontent">
+
+      </div>
+      <div id="Date" class="tabcontent">
+
+      </div>
+      <div id="Keys" class="tabcontent">
+
+      </div>
     </div>
   </div>
   <script>
     var mymap = L.map('map').setView([40.85563, 20.982513], 10);
-    
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>',
       minZoom: 3,
@@ -130,7 +139,7 @@ require 'navbar.php';
 
 
     var countries = [
-      ["neutral_zone_iraq", 'white'],
+      ["neutral_zone_iraq", neutral_zone],
 
       ["andorra", neutral],
       ["albania", neutral],
@@ -222,7 +231,7 @@ require 'navbar.php';
 var elem = document.documentElement;
 function hideSidebar() {
   var sidebar = document.getElementById("sidebar");
-  var leafletmap = document.getElementById('map')
+  var leafletmap = document.getElementById('map');
   if (sidebar.style.display === "none") {
     sidebar.style.display = "block";
     leafletmap.style.width = "80%";
@@ -256,6 +265,20 @@ function openFullscreen() {
     }
   }
 }
+function openHelp(evt, contentName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(contentName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
 </script>
 </body>
 </html>
