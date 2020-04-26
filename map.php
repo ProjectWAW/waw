@@ -40,27 +40,91 @@ if (isset($_GET['d'])) {
   background-color: transparent;
   color: #333;
 }
-#map {
-  width: 80%;
-  height: 100%;
-  position: absolute;
+.sidebar-nav ul li {
+  float: left;
+  width: 33%;
+  text-align: center;
 }
-#sidebar {
-  width: 20%;
-  position: absolute;
-  right: 0;
-  top: 50px;
+.sidebar-links-nav {
+  color: #777;
+  background-color: #f8f8f8;
+  margin-top: 0;
+  margin-bottom: 0;
 }
-.sidebar-nav {
-
+.sidebar-links {
+  border-bottom: 2px solid #e7e7e7;
 }
+/*@media screen and (min-width:1001px) {*/
+  #map {
+    width: 80%;
+    height: 100%;
+    position: absolute;
+  }
+  #sidebar {
+    width: 20%;
+    position: absolute;
+    right: 0;
+    top: 52px;
+  }
+  .sidebar-nav {
+    box-sizing: border-box;
+  }
+@media screen and (max-width: 450px) {
+  #mobile-nav {
+    display: block;
+    z-index: 400;
+    position: fixed;
+    width: 100%;
+    height: 28px;
+    top: 52px;
+  }
+  .mobile-nav-button {
+    height: 100%;
+    width: 50%;
+    float: left;
+    border: 0;
+    color: #777;
+    background-color: #f8f8f8;
+    border-bottom: 2px solid #e7e7e7;
+  }
+  .mobile-nav-button:focus, .mobile-nav-button:active {
+    outline: none;
+  }
+  #map {
+    width: 100%;
+    z-index: 200;
+  }
+  #sidebar {
+    top: 78px;
+    margin: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: white;
+  }
+  .mobile-active {
+    color: dodgerblue;
+    border-bottom: 2px solid dodgerblue;
+  }
+}
+/*}*/
 </style>
 </head>
 <body>
+<noscript>This website requires javascript to run properly.</noscript>
 <?php include 'loader.php';
 require 'navbar.php';
 ?>
 <!--<a href="map.php?d=1936.07.16">s</a>-->
+  <div id="mobile-nav">
+    <button id="showMap" class="mobile-nav-button mobile-active" onClick="showMap()">
+      Map
+    </button>
+    <button id="showSidebar" class="mobile-nav-button" onClick="showSidebar()">
+      Sidebar
+    </button>
+  </div>
   <div id='map'></div>
   <!--<div class="sidebar-nav">
     <ul class="nav navbar-nav">
@@ -71,18 +135,10 @@ require 'navbar.php';
   </div>-->
   <div id="sidebar">
     <div class="sidebar-nav">
-      <ul class="nav navbar-nav">
-      <div class="row">
-      <div class="col-sm-4">
-        <li><a href="#" onclick="openHelp(event, 'Info')" id="defaultOpen">Info</a></li>
-      </div>
-      <div class="col-sm-4">
-        <li><a href="#" onclick="openHelp(event, 'Date')">Date</a></li>
-      </div>
-      <div class="col-sm-4">
-        <li><a href="#" onclick="openHelp(event, 'Keys')">Keys</a></li>
-      </div>
-      </div>
+      <ul class="nav navbar-nav sidebar-links-nav">
+        <li><a id="info-button" class="sidebar-links mobile-active" href="#" onclick="openHelp(event, 'Info');showInfo();" id="defaultOpen">Info</a></li>
+        <li><a id="date-button" class="sidebar-links" href="#" onclick="openHelp(event, 'Date');showDate();">Date</a></li>
+        <li><a id="keys-button" class="sidebar-links" href="#" onclick="openHelp(event, 'Keys');showKeys();">Keys</a></li>
       </ul>
       <div id="Info" class="tabcontent">
 
@@ -96,19 +152,18 @@ require 'navbar.php';
     </div>
   </div>
   <script>
-    var mymap = L.map('map').setView([40.85563, 20.982513], 10);
+    var mymap = L.map('map').setView([58.229553, -6.206524], 9);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>',
       minZoom: 3,
       maxZoom: 14,
-      fullscreenControl: true,
       zoomControl: true
     }).addTo(mymap);
 
     function add_geojson_layer(name, color="red") {
 
-      var ll = new L.GeoJSON.AJAX("geojson_files/1936_07_16/"+name+".geojson");
+      var ll = new L.GeoJSON.AJAX("geojson_files/1935_10_02/"+name+".geojson");
 
     ll.on('data:loaded', function() {
       ll.setStyle({
@@ -120,7 +175,7 @@ require 'navbar.php';
 
     /***** COLORS *****/
     var axis = 'black'
-    var axis_puppet = 'gray'
+    var axis_puppet = '#666666'
     var axis_occupied = '#a1a1a1'
 
     var allies = '#296d98'
@@ -166,6 +221,7 @@ require 'navbar.php';
       ["cyprus", allies_puppet],
       ["djibouti", allies_puppet],
       ["france", allies],
+      ["french_africa", allies_puppet],
       ["french_syria", allies_puppet],
       ["gambia", allies_puppet],
       ["gibraltar", allies_puppet],
@@ -180,11 +236,11 @@ require 'navbar.php';
       ["tannu_tuva", comintern_puppet],
       ["ussr", comintern],
 
-      ["eritrea", axis],
+      ["eritrea", axis_puppet],
       ["german_prussia", axis],
       ["germany", axis],
       ["italian_dodecanese", axis],
-      ["libya", axis],
+      ["libya", axis_puppet],
       ["zara", axis]
     ]
 
@@ -203,6 +259,18 @@ require 'navbar.php';
     }).addTo(mymap);
 
     mymap.zoomControl.setPosition('bottomleft');
+
+    /*var myButtonOptions = {
+      'text': 'MyButton',  // string
+      'iconUrl': 'radar2.png',  // string
+      'onClick': closeIcons,  // callback function
+      'hideText': true,  // bool
+      'maxWidth': 30,  // number
+      'doToggle': false,  // bool
+      'toggleStatus': false  // bool
+    }   
+
+    var myButton = new L.Control.Button(myButtonOptions).addTo(mymap);*/
 
     L.control.polylineMeasure({
       position: 'bottomleft'
@@ -226,8 +294,22 @@ require 'navbar.php';
     }
 
     mymap.on('click', onMapClick);
+
+    var radar = L.icon({
+    iconUrl: 'radar2.png',
+    iconSize: [20, 20],
+    iconAnchor: [20, 20],
+    popupAnchor: [-10, -15],
+    /*shadowUrl: 'my-icon-shadow.png',*/
+    shadowSize: [20, 20],
+    shadowAnchor: [20, 20]
+});
+
+/*var radars = L.layerGroup([]);*/
+
 </script>
 <script>
+
 var elem = document.documentElement;
 function hideSidebar() {
   var sidebar = document.getElementById("sidebar");
@@ -235,13 +317,64 @@ function hideSidebar() {
   if (sidebar.style.display === "none") {
     sidebar.style.display = "block";
     leafletmap.style.width = "80%";
-    $("#map").load(location.href+" #map>*","");
+    mymap.invalidateSize();
   } else {
     sidebar.style.display = "none";
     leafletmap.style.width = "100%";
-    $("#map").load(location.href+" #map>*","");
+    mymap.invalidateSize();
   }
 }
+
+
+function showMap() {
+  var sidebarButton = document.getElementById("showSidebar");
+  sidebarButton.classList.remove("mobile-active");
+  var mapButton = document.getElementById("showMap");
+  mapButton.classList.add("mobile-active");
+  var sidebar = document.getElementById("sidebar");
+  var leafletmap = document.getElementById('map');
+  sidebar.style.display = "block";
+  leafletmap.style.zIndex = 200;
+}
+function showSidebar() {
+  var sidebarButton = document.getElementById("showMap");
+  sidebarButton.classList.remove("mobile-active");
+  var mapButton = document.getElementById("showSidebar");
+  mapButton.classList.add("mobile-active");
+  var sidebar = document.getElementById("sidebar");
+  var leafletmap = document.getElementById('map');
+  sidebar.style.display = "block";
+  leafletmap.style.zIndex = 1;
+}
+
+
+
+function showInfo() {
+  var infoButton = document.getElementById("info-button");
+  infoButton.classList.add("mobile-active");
+  var dateButton = document.getElementById("date-button");
+  dateButton.classList.remove("mobile-active");
+  var keysButton = document.getElementById("keys-button");
+  keysButton.classList.remove("mobile-active");
+}
+function showDate() {
+  var infoButton = document.getElementById("info-button");
+  infoButton.classList.remove("mobile-active");
+  var dateButton = document.getElementById("date-button");
+  dateButton.classList.add("mobile-active");
+  var keysButton = document.getElementById("keys-button");
+  keysButton.classList.remove("mobile-active");
+}
+function showKeys() {
+  var infoButton = document.getElementById("info-button");
+  infoButton.classList.remove("mobile-active");
+  var dateButton = document.getElementById("date-button");
+  dateButton.classList.remove("mobile-active");
+  var keysButton = document.getElementById("keys-button");
+  keysButton.classList.add("mobile-active");
+}
+
+
 function openFullscreen() {
   if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
     if (document.exitFullscreen) {
@@ -279,6 +412,19 @@ function openHelp(evt, contentName) {
   evt.currentTarget.className += " active";
 }
 document.getElementById("defaultOpen").click();
+/*function closeIcons() {
+    event.preventDefault();
+    if(map.hasLayer(radars)) {
+        $(this).removeClass('selected');
+        map.removeLayer(radars);
+    } else {
+        map.addLayer(radars);        
+        $(this).addClass('selected');
+   }
+}*/
+window.onresize = function() {
+  mymap.invalidateSize();
+}
 </script>
 </body>
 </html>

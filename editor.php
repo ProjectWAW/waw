@@ -60,6 +60,7 @@ require 'navbar.php';
   <option value="eritrea">eritrea</option>
   <option value="finland">finland</option>
   <option value="france">france</option>
+  <option value="french_africa">french_africa</option>
   <option value="french_syria">french_syria</option>
   <option value="gambia">gambia</option>
   <option value="german_prussia">german_prussia</option>
@@ -135,7 +136,7 @@ require 'navbar.php';
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1936_07_16/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1935_10_02/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);
