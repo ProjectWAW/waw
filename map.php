@@ -235,11 +235,11 @@ function hideSidebar() {
   if (sidebar.style.display === "none") {
     sidebar.style.display = "block";
     leafletmap.style.width = "80%";
-    $("#map").load(" #map > *");
+    $("#map").load(location.href+" #map>*","");
   } else {
     sidebar.style.display = "none";
     leafletmap.style.width = "100%";
-    $("#map").load(" #map > *");
+    $("#map").load(location.href+" #map>*","");
   }
 }
 function openFullscreen() {
