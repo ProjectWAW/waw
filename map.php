@@ -268,7 +268,7 @@ a
 
   function add_geojson_layer(name, color) {
 
-  var ll = new L.GeoJSON.AJAX("/geojson_files/1935_10_03/"+name+".geojson");
+  var ll = new L.GeoJSON.AJAX("geojson_files/1935_10_03/"+name+".geojson");
 
   ll.on('data:loaded', function() {
     ll.setStyle({
