@@ -1,6 +1,34 @@
 <?php
 if (isset($_GET['d'])) {
   $date = $_GET['d'];
+  if (strpos($date, '_01_') !== false) {
+    $date_month = "January";
+  } elseif (strpos($date, '_02_') !== false) {
+    $date_month = "February";
+  } elseif (strpos($date, '_03_') !== false) {
+    $date_month = "March";
+  } elseif (strpos($date, '_04_') !== false) {
+    $date_month = "April";
+  } elseif (strpos($date, '_05_') !== false) {
+    $date_month = "May";
+  } elseif (strpos($date, '_06_') !== false) {
+    $date_month = "June";
+  } elseif (strpos($date, '_07_') !== false) {
+    $date_month = "July";
+  } elseif (strpos($date, '_08_') !== false) {
+    $date_month = "August";
+  } elseif (strpos($date, '_09_') !== false) {
+    $date_month = "September";
+  } elseif (strpos($date, '_10_') !== false) {
+    $date_month = "October";
+  } elseif (strpos($date, '_11_') !== false) {
+    $date_month = "November";
+  } else {
+    $date_month = "Decmber";
+  }
+  $date_year = substr($date, 0, 4);
+  $date_day = substr($date, 8, 10);
+  $date_info = "".$date_day." ".$date_month." ".$date_year."";
 } else {
   $date = "1935_10_03";
   $date_info = "03 October 1935";
@@ -190,53 +218,13 @@ require 'navbar.php';
       <li><a id="keys-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="#" onclick="openHelp(event, 'Keys');showKeys();">Keys</a></li>
     </ul>
   </div>
+
   <div id="Info" class="tabcontent">
     <h4><?php echo $date_info; ?></h4>
     <hr>
     <?php include 'map/'.$date.'.php';?>
-    <div>
-      <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_10_03_1()"></i> <b>Germany</b>
-      <div class="info-content">
-        <?php echo $info_1;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
-      </div>
-    </div>
-    <hr>
-    <div>
-      <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_10_03_1()"></i> <b>Germany</b>
-      <div class="info-content">
-        <?php echo $info_1;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
-      </div>
-    </div>
-    <hr>
-    <div>
-      <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_10_03_1()"></i> <b>Germany</b>
-      <div class="info-content">
-        <?php echo $info_1;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
-      </div>
-    </div>
-    <hr>
-    <div>
-      <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_10_03_1()"></i> <b>Germany</b>
-      <div class="info-content">
-        <?php echo $info_1;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
-      </div>
-    </div>
-    <hr>
-    <div>
-      <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_10_03_1()"></i> <b>Germany</b>
-      <div class="info-content">
-        <?php echo $info_1;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
-      </div>
-    </div>
-    <hr>
-    <div id="test2">
-      <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_10_03_1()"></i> <b>Germany</b>
-      <div class="info-content">
-        <?php echo $info_1;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
-      </div>
-    </div>
-    <hr>
   </div>
+
   <div id="Date" class="tabcontent" style="display:none">
   <div class="date-selection">
     <div class="year">1935</div>
@@ -276,9 +264,11 @@ a
     zoomControl: true
   }).addTo(mymap);
 
+  console.log("1");
+
   function add_geojson_layer(name, color) {
 
-  var ll = new L.GeoJSON.AJAX("geojson_files/1935_10_03/"+name+".geojson");
+  var ll = new L.GeoJSON.AJAX("/geojson_files/1935_10_03/"+name+".geojson");
 
   ll.on('data:loaded', function() {
     ll.setStyle({
@@ -287,6 +277,8 @@ a
     ll.addTo(mymap);
   });
   }
+
+  console.log("2");
 
   /***** COLORS *****/
   var axis = 'black'
@@ -307,12 +299,15 @@ a
   var neutral = '#ffca8a'
   var neutral_zone = 'white'
 
+  console.log("3");
+
   var countries = [
     ["neutral_zone_iraq", neutral_zone],
 
     ["andorra", neutral],
     ["albania", neutral],
     ["bhutan", neutral],
+    ["bulgaria", neutral],
     ["czechoslovakia", neutral],
     ["finland", neutral],
     ["danzig", neutral],
@@ -339,6 +334,7 @@ a
     ["french_syria", allies_puppet],
     ["gambia", allies_puppet],
     ["gibraltar", allies_puppet],
+    ["isle_of_man", allies],
     ["kuwait", allies_puppet],
     ["malta", allies_puppet],
     ["qatar", allies_puppet],
@@ -358,9 +354,13 @@ a
     ["zara", axis]
   ]
 
+  console.log("4");
+
   for (country of countries) {
     add_geojson_layer(country[0], country[1]);
   }
+
+  console.log("5");
 
 <?php include 'map_markers/'.$date.'.js'; ?>
 

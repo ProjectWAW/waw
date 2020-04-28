@@ -53,6 +53,7 @@ require 'navbar.php';
   <option value="bhutan">bhutan</option>
   <option value="british_africa">british_africa</option>
   <option value="british_somaliland">british_somaliland</option>
+  <option value="bulgaria">bulgaria</option>
   <option value="cyprus">cyprus</option>
   <option value="czechoslovakia">czechoslovakia</option>
   <option value="danzig">danzig</option>
@@ -68,6 +69,7 @@ require 'navbar.php';
   <option value="gibraltar">gibraltar</option>
   <option value="greece">greece</option>
   <option value="iraq">iraq</option>
+  <option value="isle_of_man">isle_of_man</option>
   <option value="italian_dodecanese">italian_dodecanese</option>
   <option value="kuwait">kuwait</option>
   <option value="libya">libya</option>
