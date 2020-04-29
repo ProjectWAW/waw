@@ -78,6 +78,7 @@ require 'navbar.php';
   <option value="malta">malta</option>
   <option value="mongolia">mongolia</option>
   <option value="neutral_zone_iraq">neutral_zone_iraq</option>
+  <option value="northern_ireland">northern_ireland</option>
   <option value="poland">poland</option>
   <option value="portugal">portugal</option>
   <option value="qatar">qatar</option>
