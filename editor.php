@@ -9,16 +9,13 @@ if (isset($_GET['d'])) {
 <html lang="en">
 <head>
 <?php require 'page_head.php';?>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
 <link rel="stylesheet" href="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.css" />
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 <script src="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.js"></script>
-<script src="http://localhost/waw/js/leaflet.ajax.min.js"></script>
-<link rel="stylesheet" href="http://localhost/waw/js/leaflet-geoman.css" />
-<script src="http://localhost/waw/js/leaflet-geoman.min.js"></script>
+<script src="js/leaflet.ajax.min.js"></script>
+<link rel="stylesheet" href="js/leaflet-geoman.css"/>
+<script src="js/leaflet-geoman.min.js"></script>
 <title>Map - Project: World at War</title>
 <style>
 .navbar {
@@ -230,6 +227,7 @@ require 'navbar.php';
   <option value="malta">malta</option>
   <option value="mongolia">mongolia</option>
   <option value="neutral_zone_iraq">neutral_zone_iraq</option>
+  <option value="netherlands">netherlands</option>
   <option value="northern_ireland">northern_ireland</option>
   <option value="poland">poland</option>
   <option value="portugal">portugal</option>
@@ -248,7 +246,7 @@ require 'navbar.php';
   </select>
   <br>
   <br>
-  <!--<a href="map.php?d=1936.07.16">s</a>-->
+
   <div id='map'></div>
   <script>
     var mymap = L.map('map').setView([40.85563, 20.982513], 10);
@@ -257,19 +255,18 @@ require 'navbar.php';
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>',
       minZoom: 3,
       maxZoom: 14,
-      fullscreenControl: true,
       zoomControl: true
     }).addTo(mymap);
 
-    var topleft    = L.latLng(61.339797, 27.982864),
+/*  var topleft    = L.latLng(61.339797, 27.982864),
 	topright   = L.latLng(61.277823, 31.232071),
   bottomleft = L.latLng(59.808577, 27.989044);
   
   var marker1 = L.marker(topleft, {draggable: true} ).addTo(mymap),
-		    marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
-		    marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
+	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
+	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://upload.wikimedia.org/wikipedia/commons/c/c6/Lithuania_territory_1939-1940.svg", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://upload.wikimedia.org/wikipedia/commons/a/a4/Belarus_today_%26_Belorussian_SSR_in_1940.png", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
@@ -281,7 +278,7 @@ function repositionImage() {
 		
 		marker1.on('drag dragend', repositionImage);
 		marker2.on('drag dragend', repositionImage);
-		marker3.on('drag dragend', repositionImage);
+		marker3.on('drag dragend', repositionImage);*/
 
     country = "france";
 
@@ -328,9 +325,7 @@ function repositionImage() {
 
 
     mymap.pm.addControls({
-
       editPolygon: true,
-
     });
   </script>
 </body>

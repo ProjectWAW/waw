@@ -167,7 +167,7 @@ b {
 @media screen and (max-width: 767px) {
   #mobile-nav {
     display: block;
-    z-index: 400;
+    z-index: 499;
     position: fixed;
     width: 100%;
     height: 28px;
@@ -175,7 +175,7 @@ b {
   }
   #map {
     width: 100%;
-    z-index: 200;
+    z-index: 498;
     right: 0;
   }
   #sidebar {
@@ -305,6 +305,7 @@ a
     ["lichtenstein", neutral],
     ["lithuania", neutral],
     ["luxembourg", neutral],
+    ["netherlands", neutral],
     ["poland", neutral],
     ["portugal", neutral],
     ["romania", neutral],
