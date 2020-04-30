@@ -250,7 +250,7 @@ a
   </div>
 </div>
 <script>
-  var mymap = L.map('map').setView([58.229553, -6.206524], 9);
+  var mymap = L.map('map').setView([49.75288, 12.216797], 5);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>',
@@ -300,6 +300,7 @@ a
     ["czechoslovakia", neutral],
     ["finland", neutral],
     ["danzig", neutral],
+    ["denmark", neutral],
     ["greece", neutral],
     ["iraq", neutral],
     ["lichtenstein", neutral],
