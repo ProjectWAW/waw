@@ -167,7 +167,7 @@ b {
 @media screen and (max-width: 767px) {
   #mobile-nav {
     display: block;
-    z-index: 400;
+    z-index: 499;
     position: fixed;
     width: 100%;
     height: 28px;
@@ -175,7 +175,7 @@ b {
   }
   #map {
     width: 100%;
-    z-index: 200;
+    z-index: 498;
     right: 0;
   }
   #sidebar {
@@ -259,8 +259,6 @@ a
     zoomControl: true
   }).addTo(mymap);
 
-  console.log("1");
-
   function add_geojson_layer(name, color) {
 
   var ll = new L.GeoJSON.AJAX("geojson_files/1935_10_03/"+name+".geojson");
@@ -272,8 +270,6 @@ a
     ll.addTo(mymap);
   });
   }
-
-  console.log("2");
 
   /***** COLORS *****/
   var axis = 'black'
@@ -294,8 +290,6 @@ a
   var neutral = '#ffc176' //'#ffca8a'
   var neutral_zone = 'white'
 
-  console.log("3");
-
   var countries = [
     ["neutral_zone_iraq", neutral_zone],
 
@@ -309,7 +303,9 @@ a
     ["greece", neutral],
     ["iraq", neutral],
     ["lichtenstein", neutral],
+    ["lithuania", neutral],
     ["luxembourg", neutral],
+    ["netherlands", neutral],
     ["poland", neutral],
     ["portugal", neutral],
     ["romania", neutral],
@@ -350,13 +346,9 @@ a
     ["zara", axis]
   ]
 
-  console.log("4");
-
   for (country of countries) {
     add_geojson_layer(country[0], country[1]);
   }
-
-  console.log("5");
 
 <?php include 'map_markers/'.$date.'.js'; ?>
 
