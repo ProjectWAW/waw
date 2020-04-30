@@ -258,7 +258,7 @@ require 'navbar.php';
       zoomControl: true
     }).addTo(mymap);
 
-/*  var topleft    = L.latLng(61.339797, 27.982864),
+  var topleft    = L.latLng(61.339797, 27.982864),
 	topright   = L.latLng(61.277823, 31.232071),
   bottomleft = L.latLng(59.808577, 27.989044);
   
@@ -266,7 +266,7 @@ require 'navbar.php';
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://upload.wikimedia.org/wikipedia/commons/a/a4/Belarus_today_%26_Belorussian_SSR_in_1940.png", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/German_territorial_losses_1919_and_1945.svg/1200px-German_territorial_losses_1919_and_1945.svg.png", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
@@ -278,7 +278,7 @@ function repositionImage() {
 		
 		marker1.on('drag dragend', repositionImage);
 		marker2.on('drag dragend', repositionImage);
-		marker3.on('drag dragend', repositionImage);*/
+		marker3.on('drag dragend', repositionImage);
 
     country = "france";
 
@@ -322,7 +322,6 @@ function repositionImage() {
     }).addTo(mymap);
 
     mymap.zoomControl.setPosition('bottomleft');
-
 
     mymap.pm.addControls({
       editPolygon: true,

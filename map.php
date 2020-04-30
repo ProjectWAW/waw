@@ -287,7 +287,7 @@ a
   var finland = 'purple'
   var finland_occupied = '#ac68cc'
 
-  var neutral = '#ffc176' //'#ffca8a'
+  var neutral = '#ffb961' //'#ffc176' //'#ffca8a'
   var neutral_zone = 'white'
 
   var countries = [
