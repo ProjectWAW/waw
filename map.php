@@ -287,10 +287,12 @@ a
   var finland = 'purple'
   var finland_occupied = '#ac68cc'
 
-  var neutral = '#ffb961' //'#ffc176' //'#ffca8a'
+  var neutral = '#ffad46' //'#ffb961' //'#ffc176' //'#ffca8a'
   var neutral_zone = 'white'
 
   var countries = [
+    ["poland", neutral],
+
     ["neutral_zone_iraq", neutral_zone],
 
     ["andorra", neutral],
@@ -301,18 +303,22 @@ a
     ["finland", neutral],
     ["danzig", neutral],
     ["denmark", neutral],
+    ["estonia", neutral],
     ["greece", neutral],
     ["iraq", neutral],
+    ["latvia", neutral],
     ["lichtenstein", neutral],
     ["lithuania", neutral],
     ["luxembourg", neutral],
     ["netherlands", neutral],
-    ["poland", neutral],
+    /*["poland", neutral],*/
     ["portugal", neutral],
     ["romania", neutral],
+    ["spain", neutral],
     ["spanish_africa", neutral],
     ["spanish_sahara", neutral],
     ["turkey", neutral],
+    ["vatican", neutral],
     ["yugoslavia", neutral],
 
     ["bahrain", allies_puppet],
@@ -343,6 +349,7 @@ a
     ["german_prussia", axis],
     ["germany", axis],
     ["italian_dodecanese", axis],
+    ["italy", axis],
     ["libya", axis_puppet],
     ["zara", axis]
   ]
