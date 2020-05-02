@@ -242,6 +242,7 @@ require 'navbar.php';
   <option value="spanish_africa">spanish_africa</option>
   <option value="spanish_sahara">spanish_sahara</option>
   <option value="swaziland">swaziland</option>
+  <option value="sweden">sweden</option>
   <option value="tannu_tuva">tannu_tuva</option>>
   <option value="turkey">turkey</option>
   <option value="uk">uk</option>

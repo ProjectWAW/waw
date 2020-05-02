@@ -317,6 +317,7 @@ a
     ["spain", neutral],
     ["spanish_africa", neutral],
     ["spanish_sahara", neutral],
+    ["sweden", neutral],
     ["turkey", neutral],
     ["vatican", neutral],
     ["yugoslavia", neutral],
