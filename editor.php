@@ -246,6 +246,7 @@ require 'navbar.php';
   <option value="turkey">turkey</option>
   <option value="uk">uk</option>
   <option value="ussr">ussr</option>
+  <option value="vatican">vatican</option>
   <option value="yugoslavia">yugoslavia</option>
   <option value="zara">zara</option>
   </select>

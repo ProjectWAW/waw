@@ -318,6 +318,7 @@ a
     ["spanish_africa", neutral],
     ["spanish_sahara", neutral],
     ["turkey", neutral],
+    ["vatican", neutral],
     ["yugoslavia", neutral],
 
     ["bahrain", allies_puppet],
