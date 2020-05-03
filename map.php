@@ -297,6 +297,7 @@ a
 
     ["andorra", neutral],
     ["albania", neutral],
+    ["austria", neutral],
     ["bhutan", neutral],
     ["bulgaria", neutral],
     ["czechoslovakia", neutral],
@@ -305,6 +306,7 @@ a
     ["denmark", neutral],
     ["estonia", neutral],
     ["greece", neutral],
+    ["hungary", neutral],
     ["iraq", neutral],
     ["latvia", neutral],
     ["lichtenstein", neutral],
