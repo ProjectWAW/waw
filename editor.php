@@ -236,10 +236,12 @@ require 'navbar.php';
   <option value="neutral_zone_iraq">neutral_zone_iraq</option>
   <option value="netherlands">netherlands</option>
   <option value="northern_ireland">northern_ireland</option>
+  <option value="norway">norway</option>
   <option value="poland">poland</option>
   <option value="portugal">portugal</option>
   <option value="qatar">qatar</option>
   <option value="romania">romania</option>
+  <option value="san_marino">san_marino</option>
   <option value="south_georgia">south_georgia</option>
   <option value="spain">spain</option>
   <option value="spanish_africa">spanish_africa</option>
