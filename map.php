@@ -310,6 +310,7 @@ a
     ["lichtenstein", neutral],
     ["lithuania", neutral],
     ["luxembourg", neutral],
+    ["monaco", neutral],
     ["netherlands", neutral],
     /*["poland", neutral],*/
     ["portugal", neutral],

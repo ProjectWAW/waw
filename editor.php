@@ -229,6 +229,7 @@ require 'navbar.php';
   <option value="lithuania">lithuania</option>
   <option value="luxembourg">luxembourg</option>
   <option value="malta">malta</option>
+  <option value="monaco">monaco</option>
   <option value="mongolia">mongolia</option>
   <option value="neutral_zone_iraq">neutral_zone_iraq</option>
   <option value="netherlands">netherlands</option>
