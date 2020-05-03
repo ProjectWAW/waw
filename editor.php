@@ -198,6 +198,7 @@ require 'navbar.php';
   <option value="albania">albania</option>
   <option value="austria">austria</option>
   <option value="bahrain">bahrain</option>
+  <option value="belgium">belgium</option>
   <option value="bermuda">bermuda</option>
   <option value="bhutan">bhutan</option>
   <option value="british_africa">british_africa</option>
@@ -221,6 +222,7 @@ require 'navbar.php';
   <option value="greece">greece</option>
   <option value="hungary">hungary</option>
   <option value="iraq">iraq</option>
+  <option value="ireland">ireland</option>
   <option value="isle_of_man">isle_of_man</option>
   <option value="italian_dodecanese">italian_dodecanese</option>
   <option value="italy">italy</option>
@@ -270,7 +272,7 @@ require 'navbar.php';
       zoomControl: true
     }).addTo(mymap);
 
-  /*var topleft    = L.latLng(61.339797, 27.982864),
+  var topleft    = L.latLng(61.339797, 27.982864),
 	topright   = L.latLng(61.277823, 31.232071),
   bottomleft = L.latLng(59.808577, 27.989044);
   
@@ -278,7 +280,7 @@ require 'navbar.php';
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/704230942985682974/705397542028050462/Karjala.jpg", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/700516221556359318/706534428092137572/2.png", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
@@ -290,7 +292,7 @@ function repositionImage() {
 		
 		marker1.on('drag dragend', repositionImage);
 		marker2.on('drag dragend', repositionImage);
-		marker3.on('drag dragend', repositionImage);*/
+		marker3.on('drag dragend', repositionImage);
 
     country = "france";
 

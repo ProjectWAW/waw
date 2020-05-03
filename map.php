@@ -292,12 +292,14 @@ a
 
   var countries = [
     ["poland", neutral],
+    ["turkey", neutral],
 
     ["neutral_zone_iraq", neutral_zone],
 
     ["andorra", neutral],
     ["albania", neutral],
     ["austria", neutral],
+    ["belgium", neutral],
     ["bhutan", neutral],
     ["bulgaria", neutral],
     ["czechoslovakia", neutral],
@@ -308,6 +310,7 @@ a
     ["greece", neutral],
     ["hungary", neutral],
     ["iraq", neutral],
+    ["ireland", neutral],
     ["latvia", neutral],
     ["lichtenstein", neutral],
     ["lithuania", neutral],
@@ -323,7 +326,7 @@ a
     ["spanish_africa", neutral],
     ["spanish_sahara", neutral],
     ["sweden", neutral],
-    ["turkey", neutral],
+    /*["turkey", neutral],*/
     ["vatican", neutral],
     ["yugoslavia", neutral],
 
