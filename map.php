@@ -314,9 +314,11 @@ a
     ["luxembourg", neutral],
     ["monaco", neutral],
     ["netherlands", neutral],
+    ["norway", neutral],
     /*["poland", neutral],*/
     ["portugal", neutral],
     ["romania", neutral],
+    ["san_marino", neutral],
     ["spain", neutral],
     ["spanish_africa", neutral],
     ["spanish_sahara", neutral],
