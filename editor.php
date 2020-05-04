@@ -250,6 +250,7 @@ require 'navbar.php';
   <option value="spanish_sahara">spanish_sahara</option>
   <option value="swaziland">swaziland</option>
   <option value="sweden">sweden</option>
+  <option value="switzerland">switzerland</option>
   <option value="tannu_tuva">tannu_tuva</option>>
   <option value="turkey">turkey</option>
   <option value="uk">uk</option>
@@ -272,7 +273,7 @@ require 'navbar.php';
       zoomControl: true
     }).addTo(mymap);
 
-  var topleft    = L.latLng(61.339797, 27.982864),
+  /*var topleft    = L.latLng(61.339797, 27.982864),
 	topright   = L.latLng(61.277823, 31.232071),
   bottomleft = L.latLng(59.808577, 27.989044);
   
@@ -280,7 +281,7 @@ require 'navbar.php';
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/700516221556359318/706534428092137572/2.png", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/700516221556359318/706807279223046254/1.jpg", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
@@ -292,7 +293,7 @@ function repositionImage() {
 		
 		marker1.on('drag dragend', repositionImage);
 		marker2.on('drag dragend', repositionImage);
-		marker3.on('drag dragend', repositionImage);
+		marker3.on('drag dragend', repositionImage);*/
 
     country = "france";
 

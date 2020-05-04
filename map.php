@@ -160,6 +160,9 @@ b {
   box-shadow: 0px 0px 2px #888;
   padding: 0.5em 0.6em;
 }
+.circle-fa:hover {
+  cursor: pointer;
+}
 .info-clicked {
   border-left: 2px solid dodgerblue;
   padding-left: 6px;
@@ -293,6 +296,7 @@ a
   var countries = [
     ["poland", neutral],
     ["turkey", neutral],
+    ["spain", neutral],
 
     ["neutral_zone_iraq", neutral_zone],
 
@@ -322,10 +326,11 @@ a
     ["portugal", neutral],
     ["romania", neutral],
     ["san_marino", neutral],
-    ["spain", neutral],
+    /*["spain", neutral],*/
     ["spanish_africa", neutral],
     ["spanish_sahara", neutral],
     ["sweden", neutral],
+    ["switzerland", neutral],
     /*["turkey", neutral],*/
     ["vatican", neutral],
     ["yugoslavia", neutral],
