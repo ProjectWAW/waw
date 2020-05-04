@@ -224,6 +224,8 @@ require 'navbar.php';
   </div>
 
   <div id="Date" class="tabcontent" style="display:none">
+    <h4>Date Selection</h4>
+    <hr>
   <div class="date-selection">
     <div class="year">1935</div>
 
@@ -249,7 +251,8 @@ require 'navbar.php';
   </div>
   </div>
   <div id="Keys" class="tabcontent" style="display:none">
-a   
+    <h4>Date Selection</h4>
+    <hr>
   </div>
 </div>
 <script>
