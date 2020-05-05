@@ -98,7 +98,7 @@ if (isset($_GET['d'])) {
   right: 0;
   bottom: 0;
   top: 52px;
-  background-color: white;
+  background-color: #fafaf5;
 }
 .sidebar-nav {
   position: -webkit-sticky;
@@ -177,9 +177,11 @@ b {
 .keys-content {
   padding-left: 5px;
   padding-right: 5px;
+  margin-bottom: 5px;
 }
 .key-header {
-  font-size: 16px;
+  font-size: 18px;
+  padding-bottom: 5px;
 }
 .key-color {
   width: 35%;
@@ -285,43 +287,143 @@ require 'navbar.php';
     <hr>
     <div class="keys-content">
       <h5 class="territories">Territories</h5>
-      <br><br>
+      <br>
+      <div class="key-header">Neutral</div>
+        <div class="key-row">
+          <div class="key-color">
+            <div class="key-color-inner" style="background-color:#ffad46;">
+            </div>
+          </div>
+          <div class="key-description">
+            - Neutral Countries
+          </div>
+        </div>
+      </div>
+
+
+     <br><br><br><br><hr class="key-hr" style="margin-top:-20px;">
+      <div class="key-header">Finland</div>
+        <div class="key-row">
+          <div class="key-color">
+            <div class="key-color-inner" style="background-color:purple;">
+            </div>
+          </div>
+          <div class="key-description">
+            - Mainland Finland
+          </div>
+        </div>
+        <div class="key-row">
+          <div class="key-color">
+            <div class="key-color-inner" style="background-color:#ac68cc;">
+            </div>
+          </div>
+          <div class="key-description">
+            - Finnish Occupied Territory
+          </div>
+        </div>
+
+
+      <br><br><br><br><hr class="key-hr" style="margin-top:10px;">
       <div class="key-header">Axis</div>
         <div class="key-row">
-          <div class="key-color" style="">
+          <div class="key-color">
             <div class="key-color-inner" style="background-color:black;">
             </div>
           </div>
-          <div class="key-description" style="">
+          <div class="key-description">
             - Axis Members
           </div>
         </div>
         <div class="key-row">
-          <div class="key-color" style="">
+          <div class="key-color">
             <div class="key-color-inner" style="background-color:#666666;">
             </div>
           </div>
-          <div class="key-description" style="">
+          <div class="key-description">
             - Axis Puppets / Colonies
           </div>
         </div>
         <div class="key-row">
-          <div class="key-color" style="">
+          <div class="key-color">
             <div class="key-color-inner" style="background-color:#a1a1a1;">
             </div>
           </div>
-          <div class="key-description" style="">
+          <div class="key-description">
             - Axis Occupied Territory
           </div>
         </div>
         
 
-      <br><br><br><br><hr class="key-hr"><br>
+      <br><br><br><br><hr class="key-hr" style="margin-top:60px;">
       <div class="key-header">Allies</div>
-      <br><hr class="key-hr"><br>
+        <div class="key-row">
+          <div class="key-color">
+            <div class="key-color-inner" style="background-color:#296d98;">
+            </div>
+          </div>
+          <div class="key-description">
+            - Allied Members
+          </div>
+        </div>
+        <div class="key-row">
+          <div class="key-color">
+            <div class="key-color-inner" style="background-color:#3792cb;">
+            </div>
+          </div>
+          <div class="key-description">
+            - Allied Puppets / Colonies
+          </div>
+        </div>
+        <div class="key-row">
+          <div class="key-color">
+            <div class="key-color-inner" style="background-color:#45b6fe;">
+            </div>
+          </div>
+          <div class="key-description">
+            - Allied Occupied Territory
+          </div>
+        </div>
+        <br><br><br><br><hr class="key-hr" style="margin-top:60px;">
+      
+      
       <div class="key-header">Comintern</div>
+        <div class="key-row">
+          <div class="key-color">
+            <div class="key-color-inner" style="background-color:#B30000;">
+            </div>
+          </div>
+          <div class="key-description">
+            - Comintern Members
+          </div>
+        </div>
+        <div class="key-row">
+          <div class="key-color">
+            <div class="key-color-inner" style="background-color:red;">
+            </div>
+          </div>
+          <div class="key-description">
+            - Comintern Puppets / Colonies
+          </div>
+        </div>
+        <div class="key-row" style="margin-bottom:105px;">
+          <div class="key-color">
+            <div class="key-color-inner" style="background-color:#ff7f7f;">
+            </div>
+          </div>
+          <div class="key-description">
+            - Comintern Occupied Territory
+          </div>
+        </div>
+
       <br><br>
     </div>
+  </div>
+  <div class="sidebar-nav">
+    <ul class="nav navbar-nav sidebar-links-nav">
+      <li><a id="info-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links mobile-active" href="#" onclick="openHelp(event, 'Info');showInfo();" id="defaultOpen">Info</a></li>
+      <li><a id="date-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="#" onclick="openHelp(event, 'Date');showDate();">Date</a></li>
+      <li><a id="keys-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="#" onclick="openHelp(event, 'Keys');showKeys();">Keys</a></li>
+    </ul>
   </div>
 </div>
 <script>
@@ -407,9 +509,9 @@ require 'navbar.php';
     ["vatican", neutral],
     ["yugoslavia", neutral],
 
-    ["bahrain", allies_puppet],
     ["bermuda", allies_puppet],
     ["british_africa", allies_puppet],
+    ["british_arabia", allies_puppet],
     ["british_somaliland", allies_puppet],
     ["cyprus", allies_puppet],
     ["djibouti", allies_puppet],
@@ -422,7 +524,6 @@ require 'navbar.php';
     ["kuwait", allies_puppet],
     ["malta", allies_puppet],
     ["northern_ireland", allies],
-    ["qatar", allies_puppet],
     ["south_georgia", allies_puppet],
     ["swaziland", allies_puppet],
     ["uk", allies],
@@ -451,7 +552,10 @@ require 'navbar.php';
   var alliesMarkerStroke = ''
 
   var cominternMarkerColor = ''
-  var cominternMarkerColor = ''
+  var cominternMarkerStroke = ''
+
+  var finlandMarkerColor = ''
+  var finlandMarkerStroke = ''
 
   var axisMarkerColor = '#474747'
   var axisMarkerStroke = '#2e2e2e'

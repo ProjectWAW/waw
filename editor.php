@@ -197,11 +197,11 @@ require 'navbar.php';
   <option value="andorra">andorra</option>
   <option value="albania">albania</option>
   <option value="austria">austria</option>
-  <option value="bahrain">bahrain</option>
   <option value="belgium">belgium</option>
   <option value="bermuda">bermuda</option>
   <option value="bhutan">bhutan</option>
   <option value="british_africa">british_africa</option>
+  <option value="british_arabia">british_arabia</option>
   <option value="british_somaliland">british_somaliland</option>
   <option value="bulgaria">bulgaria</option>
   <option value="cyprus">cyprus</option>
@@ -241,7 +241,6 @@ require 'navbar.php';
   <option value="norway">norway</option>
   <option value="poland">poland</option>
   <option value="portugal">portugal</option>
-  <option value="qatar">qatar</option>
   <option value="romania">romania</option>
   <option value="san_marino">san_marino</option>
   <option value="south_georgia">south_georgia</option>
@@ -273,7 +272,7 @@ require 'navbar.php';
       zoomControl: true
     }).addTo(mymap);
 
-  /*var topleft    = L.latLng(61.339797, 27.982864),
+  var topleft    = L.latLng(61.339797, 27.982864),
 	topright   = L.latLng(61.277823, 31.232071),
   bottomleft = L.latLng(59.808577, 27.989044);
   
@@ -281,7 +280,7 @@ require 'navbar.php';
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/700516221556359318/706807279223046254/1.jpg", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://www.worldstatesmen.org/yemen-aden.jpg", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
@@ -293,7 +292,7 @@ function repositionImage() {
 		
 		marker1.on('drag dragend', repositionImage);
 		marker2.on('drag dragend', repositionImage);
-		marker3.on('drag dragend', repositionImage);*/
+		marker3.on('drag dragend', repositionImage);
 
     country = "france";
 
