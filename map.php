@@ -137,6 +137,9 @@ hr {
   margin-top: 18px;
   margin-bottom: 18px;
 }
+.key-hr {
+  background-color: #DEDEDE;
+}
 h4 {
   text-align: center;
   margin-top: 60px;
@@ -166,6 +169,33 @@ b {
 .info-clicked {
   border-left: 2px solid dodgerblue;
   padding-left: 6px;
+}
+.territories {
+  font-size: 18px;
+  text-align: center;
+}
+.keys-content {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.key-header {
+  font-size: 16px;
+}
+.key-color {
+  width: 35%;
+  float: left;
+  height: 40px;
+}
+.key-color-inner {
+  height: 100%;
+}
+.key-description {
+  width: 65%;
+  float: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 @media screen and (max-width: 767px) {
   #mobile-nav {
@@ -251,8 +281,47 @@ require 'navbar.php';
   </div>
   </div>
   <div id="Keys" class="tabcontent" style="display:none">
-    <h4>Date Selection</h4>
+    <h4>Map Keys</h4>
     <hr>
+    <div class="keys-content">
+      <h5 class="territories">Territories</h5>
+      <br><br>
+      <div class="key-header">Axis</div>
+        <div class="key-row">
+          <div class="key-color" style="">
+            <div class="key-color-inner" style="background-color:black;">
+            </div>
+          </div>
+          <div class="key-description" style="">
+            - Axis Members
+          </div>
+        </div>
+        <div class="key-row">
+          <div class="key-color" style="">
+            <div class="key-color-inner" style="background-color:#666666;">
+            </div>
+          </div>
+          <div class="key-description" style="">
+            - Axis Puppets / Colonies
+          </div>
+        </div>
+        <div class="key-row">
+          <div class="key-color" style="">
+            <div class="key-color-inner" style="background-color:#a1a1a1;">
+            </div>
+          </div>
+          <div class="key-description" style="">
+            - Axis Occupied Territory
+          </div>
+        </div>
+        
+
+      <br><br><br><br><hr class="key-hr"><br>
+      <div class="key-header">Allies</div>
+      <br><hr class="key-hr"><br>
+      <div class="key-header">Comintern</div>
+      <br><br>
+    </div>
   </div>
 </div>
 <script>
@@ -293,7 +362,7 @@ require 'navbar.php';
   var finland = 'purple'
   var finland_occupied = '#ac68cc'
 
-  var neutral = '#ffad46' //'#ffb961' //'#ffc176' //'#ffca8a'
+  var neutral = '#ffad46'
   var neutral_zone = 'white'
 
   var countries = [
@@ -375,7 +444,19 @@ require 'navbar.php';
     add_geojson_layer(country[0], country[1]);
   }
 
-<?php include 'map_markers/'.$date.'.js'; ?>
+  var neutralMarkerColor = ''
+  var neutralMarkerStroke = ''
+
+  var alliesMarkerColor = ''
+  var alliesMarkerStroke = ''
+
+  var cominternMarkerColor = ''
+  var cominternMarkerColor = ''
+
+  var axisMarkerColor = '#474747'
+  var axisMarkerStroke = '#2e2e2e'
+
+<?php include 'map/'.$date.'.js'; ?>
 
   L.control.mapCenterCoord({
     icon: false,
