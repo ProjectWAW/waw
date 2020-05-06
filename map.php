@@ -69,7 +69,7 @@ if (isset($_GET['d'])) {
   background-color: transparent;
   color: #333;
 }
-.sidebar-nav ul li {
+#sidebar ul li {
   float: left;
   width: 33%;
   text-align: center;
@@ -99,6 +99,22 @@ if (isset($_GET['d'])) {
   bottom: 0;
   top: 52px;
   background-color: #fafaf5;
+}
+.sidebar-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 200;
+  box-sizing: border-box;
+}
+.sidebar-bottom-nav {
+  position: absolute;
+  bottom: 0px;
+  width :100%;
+  z-index: 200;
+  box-sizing: border-box;
+}
+.sidebar-bottom-links-nav {
+  width: 100%;
 }
 .sidebar-nav {
   position: -webkit-sticky;
@@ -245,10 +261,16 @@ require 'navbar.php';
     <ul class="nav navbar-nav sidebar-links-nav">
       <li><a id="info-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links mobile-active" href="#" onclick="openHelp(event, 'Info');showInfo();" id="defaultOpen">Info</a></li>
       <li><a id="date-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="#" onclick="openHelp(event, 'Date');showDate();">Date</a></li>
-      <li><a id="keys-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="#" onclick="openHelp(event, 'Keys');showKeys();">Keys</a></li>
+      <li style="width:34%;"><a id="keys-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="#" onclick="openHelp(event, 'Keys');showKeys();">Keys</a></li>
     </ul>
   </div>
-
+  <!--<div class="sidebar-bottom-nav">
+    <ul class="nav navbar-nav sidebar-bottom-links-nav">
+      <li><a id="info-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="https://discord.gg/qftqDpY" target="_blank">Discord</a></li>
+      <li><a id="date-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="#" target="_blank">Patreon</a></li>
+      <li><a id="keys-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="#" target="_blank">Twitter</a></li>
+    </ul>
+  </div>-->
   <div id="Info" class="tabcontent">
     <h4><?php echo $date_info; ?></h4>
     <hr>
@@ -258,7 +280,7 @@ require 'navbar.php';
   <div id="Date" class="tabcontent" style="display:none">
     <h4>Date Selection</h4>
     <hr>
-  <div class="date-selection">
+    <div class="date-selection">
     <div class="year">1935</div>
 
     <div class="year">1936</div>
@@ -280,7 +302,7 @@ require 'navbar.php';
     <div class="year">1944</div>
 
     <div class="year">1945</div>
-  </div>
+    </div>
   </div>
   <div id="Keys" class="tabcontent" style="display:none">
     <h4>Map Keys</h4>
@@ -418,13 +440,6 @@ require 'navbar.php';
       <br><br>
     </div>
   </div>
-  <div class="sidebar-nav">
-    <ul class="nav navbar-nav sidebar-links-nav">
-      <li><a id="info-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links mobile-active" href="#" onclick="openHelp(event, 'Info');showInfo();" id="defaultOpen">Info</a></li>
-      <li><a id="date-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="#" onclick="openHelp(event, 'Date');showDate();">Date</a></li>
-      <li><a id="keys-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="#" onclick="openHelp(event, 'Keys');showKeys();">Keys</a></li>
-    </ul>
-  </div>
 </div>
 <script>
   var mymap = L.map('map').setView([49.75288, 12.216797], 5);
@@ -494,6 +509,7 @@ require 'navbar.php';
     ["lithuania", neutral],
     ["luxembourg", neutral],
     ["monaco", neutral],
+    ["nepal", neutral],
     ["netherlands", neutral],
     ["norway", neutral],
     /*["poland", neutral],*/
@@ -506,15 +522,17 @@ require 'navbar.php';
     ["sweden", neutral],
     ["switzerland", neutral],
     /*["turkey", neutral],*/
+    ["usa", neutral],
     ["vatican", neutral],
     ["yugoslavia", neutral],
 
+    ["bahrain", allies_puppet],
     ["bermuda", allies_puppet],
     ["british_africa", allies_puppet],
-    ["british_arabia", allies_puppet],
     ["british_somaliland", allies_puppet],
     ["cyprus", allies_puppet],
     ["djibouti", allies_puppet],
+    ["falklands", allies_puppet],
     ["france", allies],
     ["french_africa", allies_puppet],
     ["french_syria", allies_puppet],
@@ -524,8 +542,10 @@ require 'navbar.php';
     ["kuwait", allies_puppet],
     ["malta", allies_puppet],
     ["northern_ireland", allies],
+    ["qatar", allies_puppet],
     ["south_georgia", allies_puppet],
     ["swaziland", allies_puppet],
+    ["trucial_states", allies_puppet],
     ["uk", allies],
 
     ["mongolia", comintern_puppet],

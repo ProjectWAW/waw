@@ -201,7 +201,6 @@ require 'navbar.php';
   <option value="bermuda">bermuda</option>
   <option value="bhutan">bhutan</option>
   <option value="british_africa">british_africa</option>
-  <option value="british_arabia">british_arabia</option>
   <option value="british_somaliland">british_somaliland</option>
   <option value="bulgaria">bulgaria</option>
   <option value="cyprus">cyprus</option>
@@ -211,6 +210,7 @@ require 'navbar.php';
   <option value="djibouti">djibouti</option>
   <option value="eritrea">eritrea</option>
   <option value="estonia">estonia</option>
+  <option value="falklands">falklands</option>
   <option value="finland">finland</option>
   <option value="france">france</option>
   <option value="french_africa">french_africa</option>
@@ -235,12 +235,14 @@ require 'navbar.php';
   <option value="malta">malta</option>
   <option value="monaco">monaco</option>
   <option value="mongolia">mongolia</option>
+  <option value="nepal">nepal</option>
   <option value="neutral_zone_iraq">neutral_zone_iraq</option>
   <option value="netherlands">netherlands</option>
   <option value="northern_ireland">northern_ireland</option>
   <option value="norway">norway</option>
   <option value="poland">poland</option>
   <option value="portugal">portugal</option>
+  <option value="qatar">qatar</option>
   <option value="romania">romania</option>
   <option value="san_marino">san_marino</option>
   <option value="south_georgia">south_georgia</option>
@@ -253,6 +255,7 @@ require 'navbar.php';
   <option value="tannu_tuva">tannu_tuva</option>>
   <option value="turkey">turkey</option>
   <option value="uk">uk</option>
+  <option value="usa">usa</option>
   <option value="ussr">ussr</option>
   <option value="vatican">vatican</option>
   <option value="yugoslavia">yugoslavia</option>
