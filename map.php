@@ -508,6 +508,7 @@ require 'navbar.php';
     ["estonia", neutral],
     ["france", neutral],
     ["french_africa", neutral],
+    ["french_indochina", neutral],
     ["french_syria", neutral],
     ["greece", neutral],
     ["hungary", neutral],
@@ -531,7 +532,9 @@ require 'navbar.php';
     ["spanish_sahara", neutral],
     ["sweden", neutral],
     ["switzerland", neutral],
+    ["siam", neutral],
     /*["turkey", neutral],*/
+    ["uruguay", neutral],
     ["usa", neutral],
     ["vatican", neutral],
     ["yugoslavia", neutral],
@@ -563,10 +566,12 @@ require 'navbar.php';
 
     ["ethiopia", finland],
 
-    ["eritrea", italy_puppet],
+    
     ["italian_dodecanese", italy],
     ["italy", italy],
+    ["eritrea", italy_puppet],
     ["libya", italy_puppet],
+    ["italian_somalia", italy_puppet],
     ["italian_ethiopia", italy_occupied],
   ]
 

@@ -215,6 +215,7 @@ require 'navbar.php';
   <option value="finland">finland</option>
   <option value="france">france</option>
   <option value="french_africa">french_africa</option>
+  <option value="french_indochina">french_indochina</option>
   <option value="french_syria">french_syria</option>
   <option value="gambia">gambia</option>
   <option value="german_prussia">german_prussia</option>
@@ -226,6 +227,8 @@ require 'navbar.php';
   <option value="ireland">ireland</option>
   <option value="isle_of_man">isle_of_man</option>
   <option value="italian_dodecanese">italian_dodecanese</option>
+  <option value="italian_ethiopia">italian_ethiopia</option>
+  <option value="italian_somalia">italian_somalia</option>
   <option value="italy">italy</option>
   <option value="japan">japan</option>
   <option value="kuwait">kuwait</option>
@@ -255,8 +258,10 @@ require 'navbar.php';
   <option value="sweden">sweden</option>
   <option value="switzerland">switzerland</option>
   <option value="tannu_tuva">tannu_tuva</option>
+  <option value="siam">siam</option>
   <option value="turkey">turkey</option>
   <option value="uk">uk</option>
+  <option value="uruguay">uruguay</option>
   <option value="usa">usa</option>
   <option value="ussr">ussr</option>
   <option value="vatican">vatican</option>
@@ -276,7 +281,7 @@ require 'navbar.php';
       zoomControl: true
     }).addTo(mymap);
 
-  var topleft    = L.latLng(61.339797, 27.982864),
+ /* var topleft    = L.latLng(61.339797, 27.982864),
 	topright   = L.latLng(61.277823, 31.232071),
   bottomleft = L.latLng(59.808577, 27.989044);
   
@@ -296,7 +301,7 @@ function repositionImage() {
 		
 		marker1.on('drag dragend', repositionImage);
 		marker2.on('drag dragend', repositionImage);
-		marker3.on('drag dragend', repositionImage);
+		marker3.on('drag dragend', repositionImage);*/
 
     country = "france";
 
