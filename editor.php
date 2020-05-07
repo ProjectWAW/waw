@@ -203,6 +203,7 @@ require 'navbar.php';
   <option value="british_africa">british_africa</option>
   <option value="british_somaliland">british_somaliland</option>
   <option value="bulgaria">bulgaria</option>
+  <option value="cuba">cuba</option>
   <option value="cyprus">cyprus</option>
   <option value="czechoslovakia">czechoslovakia</option>
   <option value="danzig">danzig</option>
@@ -226,6 +227,7 @@ require 'navbar.php';
   <option value="isle_of_man">isle_of_man</option>
   <option value="italian_dodecanese">italian_dodecanese</option>
   <option value="italy">italy</option>
+  <option value="japan">japan</option>
   <option value="kuwait">kuwait</option>
   <option value="latvia">latvia</option>
   <option value="libya">libya</option>
@@ -252,14 +254,13 @@ require 'navbar.php';
   <option value="swaziland">swaziland</option>
   <option value="sweden">sweden</option>
   <option value="switzerland">switzerland</option>
-  <option value="tannu_tuva">tannu_tuva</option>>
+  <option value="tannu_tuva">tannu_tuva</option>
   <option value="turkey">turkey</option>
   <option value="uk">uk</option>
   <option value="usa">usa</option>
   <option value="ussr">ussr</option>
   <option value="vatican">vatican</option>
   <option value="yugoslavia">yugoslavia</option>
-  <option value="zara">zara</option>
   </select>
   <br>
   <br>

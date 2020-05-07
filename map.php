@@ -479,6 +479,10 @@ require 'navbar.php';
   var finland = 'purple'
   var finland_occupied = '#ac68cc'
 
+  var italy = 'green'
+  var italy_puppet = '#66a103'
+  var italy_occupied = '#80c904'
+
   var neutral = '#ffad46'
   var neutral_zone = 'white'
 
@@ -495,15 +499,21 @@ require 'navbar.php';
     ["belgium", neutral],
     ["bhutan", neutral],
     ["bulgaria", neutral],
+    ["cuba", neutral],
     ["czechoslovakia", neutral],
     ["finland", neutral],
     ["danzig", neutral],
     ["denmark", neutral],
+    ["djibouti", neutral],
     ["estonia", neutral],
+    ["france", neutral],
+    ["french_africa", neutral],
+    ["french_syria", neutral],
     ["greece", neutral],
     ["hungary", neutral],
     ["iraq", neutral],
     ["ireland", neutral],
+    ["japan", neutral],
     ["latvia", neutral],
     ["lichtenstein", neutral],
     ["lithuania", neutral],
@@ -531,11 +541,7 @@ require 'navbar.php';
     ["british_africa", allies_puppet],
     ["british_somaliland", allies_puppet],
     ["cyprus", allies_puppet],
-    ["djibouti", allies_puppet],
     ["falklands", allies_puppet],
-    ["france", allies],
-    ["french_africa", allies_puppet],
-    ["french_syria", allies_puppet],
     ["gambia", allies_puppet],
     ["gibraltar", allies_puppet],
     ["isle_of_man", allies],
@@ -552,13 +558,16 @@ require 'navbar.php';
     ["tannu_tuva", comintern_puppet],
     ["ussr", comintern],
 
-    ["eritrea", axis_puppet],
     ["german_prussia", axis],
     ["germany", axis],
-    ["italian_dodecanese", axis],
-    ["italy", axis],
-    ["libya", axis_puppet],
-    ["zara", axis]
+
+    ["ethiopia", finland],
+
+    ["eritrea", italy_puppet],
+    ["italian_dodecanese", italy],
+    ["italy", italy],
+    ["libya", italy_puppet],
+    ["italian_ethiopia", italy_occupied],
   ]
 
   for (country of countries) {
