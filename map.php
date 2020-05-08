@@ -511,6 +511,8 @@ require 'navbar.php';
     ["french_africa", neutral],
     ["french_indochina", neutral],
     ["french_syria", neutral],
+    ["german_prussia", neutral],
+    ["germany", neutral],
     ["greece", neutral],
     ["hungary", neutral],
     ["iran", neutral],
@@ -545,6 +547,7 @@ require 'navbar.php';
     ["bahrain", allies_puppet],
     ["bermuda", allies_puppet],
     ["british_africa", allies_puppet],
+    ["british_malaya", allies_puppet],
     ["british_somaliland", allies_puppet],
     ["cyprus", allies_puppet],
     ["falklands", allies_puppet],
@@ -564,11 +567,7 @@ require 'navbar.php';
     ["tannu_tuva", comintern_puppet],
     ["ussr", comintern],
 
-    ["german_prussia", axis],
-    ["germany", axis],
-
     ["ethiopia", finland],
-
     
     ["italian_dodecanese", italy],
     ["italy", italy],
