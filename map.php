@@ -493,8 +493,9 @@ require 'navbar.php';
 
     ["neutral_zone_iraq", neutral_zone],
 
-    ["andorra", neutral],
     ["albania", neutral],
+    ["andorra", neutral],
+    ["argentina", neutral],
     ["austria", neutral],
     ["belgium", neutral],
     ["bhutan", neutral],
@@ -512,6 +513,7 @@ require 'navbar.php';
     ["french_syria", neutral],
     ["greece", neutral],
     ["hungary", neutral],
+    ["iran", neutral],
     ["iraq", neutral],
     ["ireland", neutral],
     ["japan", neutral],
@@ -519,6 +521,7 @@ require 'navbar.php';
     ["lichtenstein", neutral],
     ["lithuania", neutral],
     ["luxembourg", neutral],
+    ["mexico", neutral],
     ["monaco", neutral],
     ["nepal", neutral],
     ["netherlands", neutral],

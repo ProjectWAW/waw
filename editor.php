@@ -196,6 +196,7 @@ require 'navbar.php';
   <option value="a">a</option>
   <option value="andorra">andorra</option>
   <option value="albania">albania</option>
+  <option value="argentina">argentina</option>
   <option value="austria">austria</option>
   <option value="belgium">belgium</option>
   <option value="bermuda">bermuda</option>
@@ -223,6 +224,7 @@ require 'navbar.php';
   <option value="gibraltar">gibraltar</option>
   <option value="greece">greece</option>
   <option value="hungary">hungary</option>
+  <option value="iran">iran</option>
   <option value="iraq">iraq</option>
   <option value="ireland">ireland</option>
   <option value="isle_of_man">isle_of_man</option>
@@ -238,6 +240,7 @@ require 'navbar.php';
   <option value="lithuania">lithuania</option>
   <option value="luxembourg">luxembourg</option>
   <option value="malta">malta</option>
+  <option value="mexico">mexico</option>
   <option value="monaco">monaco</option>
   <option value="mongolia">mongolia</option>
   <option value="nepal">nepal</option>
