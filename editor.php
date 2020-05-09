@@ -197,11 +197,13 @@ require 'navbar.php';
   <option value="andorra">andorra</option>
   <option value="albania">albania</option>
   <option value="argentina">argentina</option>
+  <option value="australia">australia</option>
   <option value="austria">austria</option>
   <option value="belgium">belgium</option>
   <option value="bermuda">bermuda</option>
   <option value="bhutan">bhutan</option>
   <option value="british_africa">british_africa</option>
+  <option value="british_burma">british_burma</option>
   <option value="british_malaya">british_malaya</option>
   <option value="british_somaliland">british_somaliland</option>
   <option value="bulgaria">bulgaria</option>

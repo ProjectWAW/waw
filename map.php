@@ -107,11 +107,14 @@ if (isset($_GET['d'])) {
   box-sizing: border-box;
 }
 .sidebar-bottom-nav {
-  position: absolute;
+  position: fixed;
+  padding-top:12px;
   bottom: 0px;
-  width :100%;
+  width :33%;
   z-index: 200;
   box-sizing: border-box;
+  background-color: #f8f8f8;
+  border-bottom: 2px solid #e7e7e7;
 }
 .sidebar-bottom-links-nav {
   width: 100%;
@@ -264,13 +267,13 @@ require 'navbar.php';
       <li style="width:34%;"><a id="keys-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="#" onclick="openHelp(event, 'Keys');showKeys();">Keys</a></li>
     </ul>
   </div>
-  <!--<div class="sidebar-bottom-nav">
+  <div class="sidebar-bottom-nav">
     <ul class="nav navbar-nav sidebar-bottom-links-nav">
       <li><a id="info-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="https://discord.gg/qftqDpY" target="_blank">Discord</a></li>
       <li><a id="date-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="#" target="_blank">Patreon</a></li>
       <li><a id="keys-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="#" target="_blank">Twitter</a></li>
     </ul>
-  </div>-->
+  </div>
   <div id="Info" class="tabcontent">
     <h4><?php echo $date_info; ?></h4>
     <hr>
@@ -442,6 +445,7 @@ require 'navbar.php';
   </div>
 </div>
 <script>
+
   var mymap = L.map('map').setView([49.75288, 12.216797], 5);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -542,9 +546,11 @@ require 'navbar.php';
     ["vatican", neutral],
     ["yugoslavia", neutral],
   
+    ["australia", neutral],
     ["bahrain", neutral],
     ["bermuda", neutral],
     ["british_africa", neutral],
+    ["british_burma", neutral],
     ["british_malaya", neutral],
     ["british_somaliland", neutral],
     ["cyprus", neutral],
@@ -581,6 +587,20 @@ require 'navbar.php';
   for (country of countries) {
     add_geojson_layer(country[0], country[1]);
   }
+
+  /*$.getJSON("mymap.geojson", function(data) {
+
+    function onEachFeature(feature, layer) {
+      layer.bindPopup("Name: " + feature.properties.name + "<br>"+ "Population: " + feature.properties.population);
+    }   
+
+    var geojson = L.geoJson(data, {
+      onEachFeature: onEachFeature
+    });
+
+    geojson.addTo(mymap);
+  });*/
+
 
   var neutralMarkerColor = ''
   var neutralMarkerStroke = ''
