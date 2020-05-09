@@ -202,6 +202,7 @@ require 'navbar.php';
   <option value="bermuda">bermuda</option>
   <option value="bhutan">bhutan</option>
   <option value="british_africa">british_africa</option>
+  <option value="british_malaya">british_malaya</option>
   <option value="british_somaliland">british_somaliland</option>
   <option value="bulgaria">bulgaria</option>
   <option value="cuba">cuba</option>
