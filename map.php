@@ -455,6 +455,12 @@ require 'navbar.php';
     zoomControl: true
   }).addTo(mymap);
 
+  /*function forEachFeature(feature, layer) {
+		var popupContent = "<p>" + feature.properties.Name + "</p>";
+
+		layer.bindPopup(popupContent);
+	}*/
+
   function add_geojson_layer(name, color) {
 
   var ll = new L.GeoJSON.AJAX("geojson_files/1935_10_03/"+name+".geojson");
@@ -516,6 +522,7 @@ require 'navbar.php';
     ["french_indochina", neutral],
     ["french_syria", neutral],
     ["greece", neutral],
+    ["guatemala", neutral],
     ["hungary", neutral],
     ["iran", neutral],
     ["iraq", neutral],
@@ -561,13 +568,14 @@ require 'navbar.php';
     ["kuwait", neutral],
     ["malta", neutral],
     ["northern_ireland", neutral],
+    ["palestine", neutral],
     ["qatar", neutral],
     ["south_georgia", neutral],
     ["swaziland", neutral],
+    ["transjordania", neutral],
     ["trucial_states", neutral],
     ["uk", neutral],
 
-    ["german_prussia", neutral],
     ["germany", neutral],
 
     ["mongolia", neutral],
@@ -581,26 +589,19 @@ require 'navbar.php';
     ["eritrea", italy_puppet],
     ["libya", italy_puppet],
     ["italian_somalia", italy_puppet],
-    ["italian_ethiopia", italy_occupied],
+    ["italian_ethiopia", italy_occupied]
   ]
 
-  for (country of countries) {
-    add_geojson_layer(country[0], country[1]);
-  }
-
-  /*$.getJSON("mymap.geojson", function(data) {
-
-    function onEachFeature(feature, layer) {
-      layer.bindPopup("Name: " + feature.properties.name + "<br>"+ "Population: " + feature.properties.population);
-    }   
-
-    var geojson = L.geoJson(data, {
-      onEachFeature: onEachFeature
+for (let country of countries) {
+  $.getJSON('geojson_files/1935_10_03/'+country[0]+'.geojson', function(data) {
+    sites = L.geoJson(data, {
+      /*"onEachFeature": forEachFeature,*/
+      "style": {color: country[1]}
     });
-
-    geojson.addTo(mymap);
-  });*/
-
+    sites.addTo(mymap);
+    });
+  }
+  
 
   var neutralMarkerColor = ''
   var neutralMarkerStroke = ''
@@ -614,8 +615,8 @@ require 'navbar.php';
   var finlandMarkerColor = ''
   var finlandMarkerStroke = ''
 
-  var axisMarkerColor = '#474747'
-  var axisMarkerStroke = '#2e2e2e'
+  var blackMarkerColor = '#474747'
+  var blackMarkerStroke = '#2e2e2e'
 
 <?php include 'map/'.$date.'.js'; ?>
 
