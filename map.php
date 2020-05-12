@@ -110,8 +110,7 @@ if (isset($_GET['d'])) {
   position: fixed;
   padding-top:12px;
   bottom: 0px;
-  width :33%;
-  z-index: 200;
+  width: 399px;
   box-sizing: border-box;
   background-color: #f8f8f8;
   border-bottom: 2px solid #e7e7e7;
@@ -163,7 +162,7 @@ h4 {
   text-align: center;
   margin-top: 60px;
 }
-b {
+.country-name {
   padding-left: 4px;
   font-size: 20px;
 }
@@ -262,16 +261,16 @@ require 'navbar.php';
 <div id="sidebar">
   <div class="sidebar-nav">
     <ul class="nav navbar-nav sidebar-links-nav">
-      <li><a id="info-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links mobile-active" href="#" onclick="openHelp(event, 'Info');showInfo();" id="defaultOpen">Info</a></li>
-      <li><a id="date-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="#" onclick="openHelp(event, 'Date');showDate();">Date</a></li>
-      <li style="width:34%;"><a id="keys-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="#" onclick="openHelp(event, 'Keys');showKeys();">Keys</a></li>
+      <li><a id="info-button" class="sidebar-links mobile-active" href="#" onclick="openHelp(event, 'Info');showInfo();" id="defaultOpen">Info</a></li>
+      <li><a id="date-button" class="sidebar-links" href="#" onclick="openHelp(event, 'Date');showDate();">Date</a></li>
+      <li style="width:34%;"><a id="keys-button" class="sidebar-links" href="#" onclick="openHelp(event, 'Keys');showKeys();">Keys</a></li>
     </ul>
   </div>
   <div class="sidebar-bottom-nav">
     <ul class="nav navbar-nav sidebar-bottom-links-nav">
-      <li><a id="info-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="https://discord.gg/qftqDpY" target="_blank">Discord</a></li>
-      <li><a id="date-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="#" target="_blank">Patreon</a></li>
-      <li><a id="keys-button" style="padding-top:15px;padding-bottom:15px;" class="sidebar-links" href="#" target="_blank">Twitter</a></li>
+      <li><a id="info-button" class="sidebar-links" href="https://discord.gg/qftqDpY" target="_blank">Discord</a></li>
+      <li><a id="date-button" class="sidebar-links" href="#" target="_blank">Patreon</a></li>
+      <li style="width:34%"><a id="keys-button" class="sidebar-links" href="#" target="_blank">Twitter</a></li>
     </ul>
   </div>
   <div id="Info" class="tabcontent">
@@ -455,23 +454,11 @@ require 'navbar.php';
     zoomControl: true
   }).addTo(mymap);
 
-  /*function forEachFeature(feature, layer) {
-		var popupContent = "<p>" + feature.properties.Name + "</p>";
+  function forEachFeature(feature, layer) {
+  var popupContent = "<b>Name</b>: "+feature.properties.Name+"<br><b>Status</b>: "+feature.properties.Status+"<br><b>Government</b>: "+feature.properties.Government+"<br><b>Head of State</b>: "+feature.properties.HoS+"<br><b>Head of Government</b>: "+feature.properties.HoG+"";
 
-		layer.bindPopup(popupContent);
-	}*/
-
-  function add_geojson_layer(name, color) {
-
-  var ll = new L.GeoJSON.AJAX("geojson_files/1935_10_03/"+name+".geojson");
-
-  ll.on('data:loaded', function() {
-    ll.setStyle({
-      color: color
-    });
-    ll.addTo(mymap);
-  });
-  }
+	layer.bindPopup(popupContent);
+}
 
   /***** COLORS *****/
   var axis = 'black'
@@ -497,10 +484,6 @@ require 'navbar.php';
   var neutral_zone = 'white'
 
   var countries = [
-    ["poland", neutral],
-    ["turkey", neutral],
-    ["spain", neutral],
-
     ["neutral_zone_iraq", neutral_zone],
 
     ["albania", neutral],
@@ -509,10 +492,15 @@ require 'navbar.php';
     ["austria", neutral],
     ["belgium", neutral],
     ["bhutan", neutral],
+    ["bolivia", neutral],
+    ["brazil", neutral],
     ["bulgaria", neutral],
+    ["chile", neutral],
+    ["colombia", neutral],
     ["cuba", neutral],
     ["czechoslovakia", neutral],
     ["finland", neutral],
+    ["ecuador", neutral],
     ["danzig", neutral],
     ["denmark", neutral],
     ["djibouti", neutral],
@@ -527,7 +515,6 @@ require 'navbar.php';
     ["iran", neutral],
     ["iraq", neutral],
     ["ireland", neutral],
-    ["japan", neutral],
     ["latvia", neutral],
     ["lichtenstein", neutral],
     ["lithuania", neutral],
@@ -537,20 +524,23 @@ require 'navbar.php';
     ["nepal", neutral],
     ["netherlands", neutral],
     ["norway", neutral],
-    /*["poland", neutral],*/
+    ["paraguay", neutral],
+    ["peru", neutral],
+    ["poland", neutral],
     ["portugal", neutral],
     ["romania", neutral],
     ["san_marino", neutral],
-    /*["spain", neutral],*/
+    ["spain", neutral],
     ["spanish_africa", neutral],
     ["spanish_sahara", neutral],
     ["sweden", neutral],
     ["switzerland", neutral],
     ["siam", neutral],
-    /*["turkey", neutral],*/
+    ["turkey", neutral],
     ["uruguay", neutral],
     ["usa", neutral],
     ["vatican", neutral],
+    ["venezuela", neutral],
     ["yugoslavia", neutral],
   
     ["australia", neutral],
@@ -568,6 +558,7 @@ require 'navbar.php';
     ["kuwait", neutral],
     ["malta", neutral],
     ["northern_ireland", neutral],
+    ["oman", neutral],
     ["palestine", neutral],
     ["qatar", neutral],
     ["south_georgia", neutral],
@@ -576,11 +567,14 @@ require 'navbar.php';
     ["trucial_states", neutral],
     ["uk", neutral],
 
-    ["germany", neutral],
-
     ["mongolia", neutral],
     ["tannu_tuva", neutral],
     ["ussr", neutral],
+
+    ["japan", neutral],
+    ["manchukuo", neutral],
+
+    ["germany", neutral],
 
     ["ethiopia", finland],
     
@@ -595,30 +589,33 @@ require 'navbar.php';
 for (let country of countries) {
   $.getJSON('geojson_files/1935_10_03/'+country[0]+'.geojson', function(data) {
     sites = L.geoJson(data, {
-      /*"onEachFeature": forEachFeature,*/
+      "onEachFeature": forEachFeature,
       "style": {color: country[1]}
     });
     sites.addTo(mymap);
-    });
-  }
+  });
+}
   
 
-  var neutralMarkerColor = ''
-  var neutralMarkerStroke = ''
+  var orangeMarkerColor = ''
+  var orangeMarkerStroke = ''
 
-  var alliesMarkerColor = ''
-  var alliesMarkerStroke = ''
+  var blueMarkerColor = ''
+  var blueMarkerStroke = ''
 
-  var cominternMarkerColor = ''
-  var cominternMarkerStroke = ''
+  var redMarkerColor = ''
+  var redMarkerStroke = ''
 
-  var finlandMarkerColor = ''
-  var finlandMarkerStroke = ''
+  var greenMarkerColor = ''
+  var greenMarkerStroke = ''
+
+  var purpleMarkerColor = ''
+  var purpleMarkerStroke = ''
 
   var blackMarkerColor = '#474747'
   var blackMarkerStroke = '#2e2e2e'
 
-<?php include 'map/'.$date.'.js'; ?>
+<?php include 'map/'.$date.'.js';?>
 
   L.control.mapCenterCoord({
     icon: false,
@@ -658,12 +655,12 @@ for (let country of countries) {
   });
   var popup = L.popup();
 
-  function onMapClick(e) {
+ /* function onMapClick(e) {
     popup
       .setLatLng(e.latlng)
       .setContent("You clicked the map at " + e.latlng.toString())
       .openOn(mymap);
-  }
+  }*/
 
   mymap.on('click', onMapClick);
 

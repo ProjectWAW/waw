@@ -1,9 +1,9 @@
 // Germany declares war on Poland
 var i1939_09_01_1 = L.icon.fontAwesome({
   iconClasses: "fas fa-bullhorn",
-  markerColor: axisMarkerColor,
+  markerColor: blackMarkerColor,
   markerStrokeWidth: 1,
-  markerStrokeColor: axisMarkerStroke,
+  markerStrokeColor: blackMarkerStroke,
   iconColor: "#FFF",
   iconSize: [15, 15],
   iconXOffset: -2.5,

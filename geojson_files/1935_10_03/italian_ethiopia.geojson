@@ -1,0 +1,17 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"Name": "", "Status": "", "Government": "", "HoS": "", "HoG": ""},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            
+          ]
+        ]
+      }
+    }
+  ]
+}

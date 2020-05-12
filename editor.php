@@ -206,13 +206,18 @@ require 'navbar.php';
   <option value="british_burma">british_burma</option>
   <option value="british_malaya">british_malaya</option>
   <option value="british_somaliland">british_somaliland</option>
+  <option value="bolivia">bolivia</option>
+  <option value="brazil">brazil</option>
   <option value="bulgaria">bulgaria</option>
+  <option value="chile">chile</option>
+  <option value="colombia">colombia</option>
   <option value="cuba">cuba</option>
   <option value="cyprus">cyprus</option>
   <option value="czechoslovakia">czechoslovakia</option>
   <option value="danzig">danzig</option>
   <option value="denmark">denmark</option>
   <option value="djibouti">djibouti</option>
+  <option value="ecuador">ecuador</option>
   <option value="eritrea">eritrea</option>
   <option value="estonia">estonia</option>
   <option value="falklands">falklands</option>
@@ -244,6 +249,7 @@ require 'navbar.php';
   <option value="lithuania">lithuania</option>
   <option value="luxembourg">luxembourg</option>
   <option value="malta">malta</option>
+  <option value="manchukuo">manchukuo</option>
   <option value="mexico">mexico</option>
   <option value="monaco">monaco</option>
   <option value="mongolia">mongolia</option>
@@ -253,6 +259,8 @@ require 'navbar.php';
   <option value="northern_ireland">northern_ireland</option>
   <option value="norway">norway</option>
   <option value="palestine">palestine</option>
+  <option value="paraguay">paraguay</option>
+  <option value="peru">peru</option>
   <option value="poland">poland</option>
   <option value="portugal">portugal</option>
   <option value="qatar">qatar</option>
@@ -275,6 +283,7 @@ require 'navbar.php';
   <option value="usa">usa</option>
   <option value="ussr">ussr</option>
   <option value="vatican">vatican</option>
+  <option value="venezuela">venezuela</option>
   <option value="yugoslavia">yugoslavia</option>
   </select>
   <br>
@@ -291,7 +300,7 @@ require 'navbar.php';
       zoomControl: true
     }).addTo(mymap);
 
- /* var topleft    = L.latLng(61.339797, 27.982864),
+/* var topleft    = L.latLng(61.339797, 27.982864),
 	topright   = L.latLng(61.277823, 31.232071),
   bottomleft = L.latLng(59.808577, 27.989044);
   
@@ -299,7 +308,7 @@ require 'navbar.php';
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://www.worldstatesmen.org/yemen-aden.jpg", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://upload.wikimedia.org/wikipedia/commons/8/89/Map_of_Manchukuo_Outline.svg", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
@@ -311,9 +320,9 @@ function repositionImage() {
 		
 		marker1.on('drag dragend', repositionImage);
 		marker2.on('drag dragend', repositionImage);
-		marker3.on('drag dragend', repositionImage);*/
+		marker3.on('drag dragend', repositionImage);
 
-    country = "france";
+    country = "france";*/
 
     function start(val) {
 
