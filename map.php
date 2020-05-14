@@ -483,119 +483,7 @@ require 'navbar.php';
   var neutral = '#ffad46'
   var neutral_zone = 'white'
 
-  var countries = [
-    ["neutral_zone_iraq", neutral_zone],
-
-    ["albania", neutral],
-    ["andorra", neutral],
-    ["argentina", neutral],
-    ["austria", neutral],
-    ["belgium", neutral],
-    ["bhutan", neutral],
-    ["bolivia", neutral],
-    ["brazil", neutral],
-    ["bulgaria", neutral],
-    ["chile", neutral],
-    ["colombia", neutral],
-    ["cuba", neutral],
-    ["czechoslovakia", neutral],
-    ["finland", neutral],
-    ["ecuador", neutral],
-    ["danzig", neutral],
-    ["denmark", neutral],
-    ["djibouti", neutral],
-    ["estonia", neutral],
-    ["france", neutral],
-    ["french_africa", neutral],
-    ["french_indochina", neutral],
-    ["french_syria", neutral],
-    ["greece", neutral],
-    ["guatemala", neutral],
-    ["hungary", neutral],
-    ["iran", neutral],
-    ["iraq", neutral],
-    ["ireland", neutral],
-    ["latvia", neutral],
-    ["lichtenstein", neutral],
-    ["lithuania", neutral],
-    ["luxembourg", neutral],
-    ["mexico", neutral],
-    ["monaco", neutral],
-    ["nepal", neutral],
-    ["netherlands", neutral],
-    ["norway", neutral],
-    ["paraguay", neutral],
-    ["peru", neutral],
-    ["poland", neutral],
-    ["portugal", neutral],
-    ["romania", neutral],
-    ["san_marino", neutral],
-    ["spain", neutral],
-    ["spanish_africa", neutral],
-    ["spanish_sahara", neutral],
-    ["sweden", neutral],
-    ["switzerland", neutral],
-    ["siam", neutral],
-    ["turkey", neutral],
-    ["uruguay", neutral],
-    ["usa", neutral],
-    ["vatican", neutral],
-    ["venezuela", neutral],
-    ["yugoslavia", neutral],
-  
-    ["australia", neutral],
-    ["bahrain", neutral],
-    ["bermuda", neutral],
-    ["british_africa", neutral],
-    ["british_burma", neutral],
-    ["british_malaya", neutral],
-    ["british_somaliland", neutral],
-    ["cyprus", neutral],
-    ["falklands", neutral],
-    ["gambia", neutral],
-    ["gibraltar", neutral],
-    ["isle_of_man", neutral],
-    ["kuwait", neutral],
-    ["malta", neutral],
-    ["northern_ireland", neutral],
-    ["oman", neutral],
-    ["palestine", neutral],
-    ["qatar", neutral],
-    ["south_georgia", neutral],
-    ["swaziland", neutral],
-    ["transjordania", neutral],
-    ["trucial_states", neutral],
-    ["uk", neutral],
-
-    ["mongolia", neutral],
-    ["tannu_tuva", neutral],
-    ["ussr", neutral],
-
-    ["japan", neutral],
-    ["manchukuo", neutral],
-
-    ["germany", neutral],
-
-    ["ethiopia", finland],
-    
-    ["italian_dodecanese", italy],
-    ["italy", italy],
-    ["eritrea", italy_puppet],
-    ["libya", italy_puppet],
-    ["italian_somalia", italy_puppet],
-    ["italian_ethiopia", italy_occupied]
-  ]
-
-for (let country of countries) {
-  $.getJSON('geojson_files/1935_10_03/'+country[0]+'.geojson', function(data) {
-    sites = L.geoJson(data, {
-      "onEachFeature": forEachFeature,
-      "style": {color: country[1]}
-    });
-    sites.addTo(mymap);
-  });
-}
-  
+  var date = "<?php echo $date;?>";
 
   var orangeMarkerColor = ''
   var orangeMarkerStroke = ''
@@ -655,14 +543,14 @@ for (let country of countries) {
   });
   var popup = L.popup();
 
- /* function onMapClick(e) {
+ /*function onMapClick(e) {
     popup
       .setLatLng(e.latlng)
       .setContent("You clicked the map at " + e.latlng.toString())
       .openOn(mymap);
-  }*/
+  }
 
-  mymap.on('click', onMapClick);
+  mymap.on('click', onMapClick);*/
 
   var radar = L.icon({
     iconUrl: 'radar2.png',

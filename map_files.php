@@ -24,7 +24,7 @@ if (strpos($date, "1936") === 0) {
       require 'map/1936/7/16/gibraltar.js';
       require 'map/1936/7/16/malta.js';
       require 'map/1936/7/16/cyprus.js';
-      require 'map/1936/7/16/british_africa.js'; /* INCOMPLETE */
+      require 'map/1936/7/16/egypt.js'; /* INCOMPLETE */
       require 'map/1936/7/16/swaziland.js';
       require 'map/1936/7/16/gambia.js';
       require 'map/1936/7/16/kuwait.js';

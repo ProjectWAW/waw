@@ -1,3 +1,8 @@
+
+
+
+
+
 // Germany declares war on Poland
 var i1939_09_01_1 = L.icon.fontAwesome({
   iconClasses: "fas fa-bullhorn",
@@ -10,7 +15,8 @@ var i1939_09_01_1 = L.icon.fontAwesome({
   iconYOffset: 0
 });
 var info_1 = "<?php echo $info_1; ?>";
-var marker1 = L.marker([52.518623, 13.376198], {
+var marker1_location = [52.518623, 13.376198];
+var marker1 = L.marker(marker1_location, {
   icon: i1939_09_01_1,
   title: info_1
 })
@@ -25,6 +31,9 @@ marker1.on("click", function (event) {
     hideSidebar();
   }
   showInfo();
+  document.getElementById('Info').style.display = "block";
+  document.getElementById('Date').style.display = "none";
+  document.getElementById('Keys').style.display = "none";
   location.href='#1939_09_01_1';
   var infoClicked = document.getElementById("1939_09_01_1");
   infoClicked.classList.add("info-clicked");
@@ -35,5 +44,5 @@ marker1.on("click", function (event) {
 
 
 function zoom1939_09_01_1() {
-  mymap.setView([52.518623, 13.376198]);
+  mymap.setView(marker1_location);
 }
