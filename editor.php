@@ -13,6 +13,7 @@ if (isset($_GET['d'])) {
 <link rel="stylesheet" href="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.css" />
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 <script src="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.js"></script>
+<script src="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.js"></script>
 <script src="js/leaflet.ajax.min.js"></script>
 <link rel="stylesheet" href="js/leaflet-geoman.css"/>
 <script src="js/leaflet-geoman.min.js"></script>
@@ -58,7 +59,6 @@ require 'navbar.php';
     L.setOptions(this, options);
   },
 
-
   onAdd: function (map) {
     if (!this._image) {
       this._initImage();
@@ -81,8 +81,8 @@ require 'navbar.php';
 
 
     onRemove: function(map) {
-        map.off('zoomend resetview', this._reset, this);
-        L.ImageOverlay.prototype.onRemove.call(this, map);
+      map.off('zoomend resetview', this._reset, this);
+      L.ImageOverlay.prototype.onRemove.call(this, map);
     },
 
 
@@ -199,76 +199,131 @@ require 'navbar.php';
   <option value="argentina">argentina</option>
   <option value="australia">australia</option>
   <option value="austria">austria</option>
+  <option value="bahamas">bahamas</option>
+  <option value="bahrain">bahrain</option>
+  <option value="barbados">barbados</option>
+  <option value="basutoland">basutoland</option>
+  <option value="bechuanaland">bechuanaland</option>
+  <option value="belgian_congo">belgian_congo</option>
   <option value="belgium">belgium</option>
   <option value="bermuda">bermuda</option>
   <option value="bhutan">bhutan</option>
   <option value="british_burma">british_burma</option>
+  <option value="british_guiana">british_guiana</option>
+  <option value="british_honduras">british_honduras</option>
+  <option value="british_hong_kong">british_hong_kong</option>
+  <option value="british_leeward_islands">british_leeward_islands</option>
   <option value="british_malaya">british_malaya</option>
   <option value="british_somaliland">british_somaliland</option>
+  <option value="british_western_pacific_territories">british_western_pacific_territories</option>
+  <option value="british_windward_islands">british_windward_islands</option>
+  <option value="brunei">brunei</option>
   <option value="bolivia">bolivia</option>
   <option value="brazil">brazil</option>
   <option value="bulgaria">bulgaria</option>
   <option value="canada">canada</option>
+  <option value="ceylon">ceylon</option>
   <option value="chile">chile</option>
+  <option value="china">china</option>
+  <option value="chinese_soviet_republic">chinese_soviet_republic</option>
   <option value="colombia">colombia</option>
+  <option value="costarica">costarica</option>
   <option value="cuba">cuba</option>
   <option value="cyprus">cyprus</option>
   <option value="czechoslovakia">czechoslovakia</option>
   <option value="danzig">danzig</option>
   <option value="denmark">denmark</option>
-  <option value="djibouti">djibouti</option>
+  <option value="dominican_republic">dominican_republic</option>
+  <option value="dutch_east_indies">dutch_east_indies</option>
+  <option value="east_hebei">east_hebei</option>
   <option value="ecuador">ecuador</option>
   <option value="egypt">egypt</option>
+  <option value="el_salvador">el_salvador</option>
   <option value="eritrea">eritrea</option>
   <option value="estonia">estonia</option>
   <option value="falklands">falklands</option>
   <option value="finland">finland</option>
   <option value="france">france</option>
+  <option value="french_cameroon">french_cameroon</option>
+  <option value="french_equatorial_africa">french_equatorial_africa</option>
+  <option value="french_guiana">french_guiana</option>
+  <option value="french_india">french_india</option>
   <option value="french_indochina">french_indochina</option>
+  <option value="french_madagascar">french_madagascar</option>
+  <option value="french_oceania">french_oceania</option>
   <option value="french_syria">french_syria</option>
   <option value="french_west_africa">french_west_africa</option>
+  <option value="french_togoland">french_togoland</option>
+  <option value="french_somaliland">french_somaliland</option>
   <option value="gambia">gambia</option>
   <option value="german_prussia">german_prussia</option>
   <option value="germany">germany</option>
   <option value="gibraltar">gibraltar</option>
+  <option value="gold_coast">gold_coast</option>
   <option value="greece">greece</option>
+  <option value="guangdong_clique">guangdong_clique</option>
   <option value="guatemala">guatemala</option>
+  <option value="guizhou_clique">guizhou_clique</option>
+  <option value="haiti">haiti</option>
+  <option value="honduras">honduras</option>
+  <option value="hunan_clique">hunan_clique</option>
   <option value="hungary">hungary</option>
+  <option value="iceland">iceland</option>
+  <option value="india">india</option>
   <option value="iran">iran</option>
   <option value="iraq">iraq</option>
   <option value="ireland">ireland</option>
-  <option value="isle_of_man">isle_of_man</option>
-  <option value="italian_dodecanese">italian_dodecanese</option>
   <option value="italian_ethiopia">italian_ethiopia</option>
   <option value="italian_somalia">italian_somalia</option>
   <option value="italy">italy</option>
+  <option value="jamaica">jamaica</option>
   <option value="japan">japan</option>
+  <option value="kenya">kenya</option>
+  <option value="kumul_khanate">kumul_khanate</option>
   <option value="kuwait">kuwait</option>
   <option value="latvia">latvia</option>
+  <option value="liberia">liberia</option>
   <option value="libya">libya</option>
   <option value="lichtenstein">lichtenstein</option>
   <option value="lithuania">lithuania</option>
   <option value="luxembourg">luxembourg</option>
+  <option value="maldives">maldives</option>
   <option value="malta">malta</option>
   <option value="manchukuo">manchukuo</option>
+  <option value="mauritius">mauritius</option>
   <option value="mexico">mexico</option>
   <option value="monaco">monaco</option>
   <option value="mongolia">mongolia</option>
+  <option value="morocco">morocco</option>
   <option value="nepal">nepal</option>
   <option value="neutral_zone_iraq">neutral_zone_iraq</option>
+  <option value="new_guanxi_clique">new_guanxi_clique</option>
+  <option value="new_zealand">new_zealand<option>
+  <option value="nicaragua">nicaragua</option>
+  <option value="nigeria">nigeria</option>
+  <option value="ningxia_ma_clique">ningxia_ma_clique</option>
+  <option value="northeastern_army">northeastern_army</option>
   <option value="netherlands">netherlands</option>
-  <option value="northern_ireland">northern_ireland</option>
   <option value="norway">norway</option>
   <option value="oman">oman</option>
+  <option value="pailingmiao_council">pailingmiao_council</option>
   <option value="palestine">palestine</option>
   <option value="panama">panama</option>
   <option value="paraguay">paraguay</option>
   <option value="peru">peru</option>
+  <option value="philippines">philippines</option>
   <option value="poland">poland</option>
   <option value="portugal">portugal</option>
   <option value="qatar">qatar</option>
+  <option value="qinghai_ma_clique">qinghai_ma_clique</option>
   <option value="romania">romania</option>
   <option value="san_marino">san_marino</option>
+  <option value="saudi_arabia">saudi_arabia</option>
+  <option value="shandong_clique">shandong_clique</option>
+  <option value="shanxi_clique">shanxi_clique</option>
+  <option value="siam">siam</option>
+  <option value="sichuan_clique">sichuan_clique</option>
+  <option value="south_africa">south_africa</option>
   <option value="south_georgia">south_georgia</option>
   <option value="spain">spain</option>
   <option value="spanish_africa">spanish_africa</option>
@@ -277,9 +332,11 @@ require 'navbar.php';
   <option value="sweden">sweden</option>
   <option value="switzerland">switzerland</option>
   <option value="tannu_tuva">tannu_tuva</option>
-  <option value="siam">siam</option>
+  <option value="tibet">tibet</option>
   <option value="transjordania">transjordania</option>
   <option value="trucial_states">trucial_states</option>
+  <option value="tunganistan">tunganistan</option>
+  <option value="tunis">tunis</option>
   <option value="turkey">turkey</option>
   <option value="uk">uk</option>
   <option value="uruguay">uruguay</option>
@@ -287,7 +344,11 @@ require 'navbar.php';
   <option value="ussr">ussr</option>
   <option value="vatican">vatican</option>
   <option value="venezuela">venezuela</option>
+  <option value="xikang_clique">xikang_clique</option>
+  <option value="xinjiang">xinjiang</option>
+  <option value="yemen">yemen</option>
   <option value="yugoslavia">yugoslavia</option>
+  <option value="yunnan_clique">yunnan_clique</option>
   </select>
   <br>
   <br>
@@ -366,7 +427,11 @@ function repositionImage() {
       position: 'bottomright'
     }).addTo(mymap);
 
-    mymap.zoomControl.setPosition('bottomleft');
+    L.control.polylineMeasure({
+      position: 'bottomright'
+    }).addTo(mymap);
+
+    mymap.zoomControl.setPosition('bottomright');
 
     mymap.pm.addControls({
       editPolygon: true,

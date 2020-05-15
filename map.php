@@ -252,7 +252,7 @@ h4 {
 <?php include 'loader.php';
 require 'navbar.php';
 ?>
-<!--<a href="map.php?d=1936.07.16">s</a>-->
+<!--<a href="map.php?d=1935_10_03">s</a>-->
 <div id="mobile-nav">
   <button id="showMap" class="mobile-nav-button mobile-active" onClick="showMap()">Map</button>
   <button id="showSidebar" class="mobile-nav-button" onClick="showSidebar()">Sidebar</button>
@@ -444,123 +444,143 @@ require 'navbar.php';
   </div>
 </div>
 <script>
+var mymap = L.map('map').setView([49.75288, 12.216797], 5);
 
-  var mymap = L.map('map').setView([49.75288, 12.216797], 5);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>',
+  minZoom: 3,
+  maxZoom: 14,
+  zoomControl: true
+}).addTo(mymap);
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>',
-    minZoom: 3,
-    maxZoom: 14,
-    zoomControl: true
-  }).addTo(mymap);
-
-  function forEachFeature(feature, layer) {
-  var popupContent = "<b>Name</b>: "+feature.properties.Name+"<br><b>Status</b>: "+feature.properties.Status+"<br><b>Government</b>: "+feature.properties.Government+"<br><b>Head of State</b>: "+feature.properties.HoS+"<br><b>Head of Government</b>: "+feature.properties.HoG+"";
-
-	layer.bindPopup(popupContent);
+function forEachFeature(feature, layer) {
+  var popupContent = "<b>Name</b>: "+feature.properties.Name+"<br><b>Status</b>: "+feature.properties.Status+"<br><b>Government</b>: "+feature.properties.Government+"<br><b>Ruling Party</b>: "+feature.properties.Party+"<br><b>Head of Government</b>: "+feature.properties.HoG+"";
+  layer.bindPopup(popupContent);
 }
 
-  /***** COLORS *****/
-  var axis = 'black'
-  var axis_puppet = '#666666'
-  var axis_occupied = '#a1a1a1'
+/***** COLORS *****/
+var axis = 'black'
+var axis_puppet = '#666666'
+var axis_occupied = '#a1a1a1'
 
-  var allies = '#296d98'
-  var allies_puppet = '#3792cb'
-  var allies_occupied = '#45b6fe'
+var allies = '#296d98'
+var allies_puppet = '#3792cb'
+var allies_occupied = '#45b6fe'
 
-  var comintern = '#B30000'
-  var comintern_puppet = 'red'
-  var comintern_occupied = '#ff7f7f'
+var comintern = '#B30000'
+var comintern_puppet = 'red'
+var comintern_occupied = '#ff7f7f'
 
-  var finland = 'purple'
-  var finland_occupied = '#ac68cc'
+var finland = 'purple'
+var finland_occupied = '#ac68cc'
 
-  var italy = 'green'
-  var italy_puppet = '#66a103'
-  var italy_occupied = '#80c904'
+var italy = 'green'
+var italy_puppet = '#66a103'
+var italy_occupied = '#80c904'
 
-  var neutral = '#ffad46'
-  var neutral_zone = 'white'
+var neutral = '#ffad46'
+var neutral_zone = 'white'
 
-  var date = "<?php echo $date;?>";
+var date = "<?php echo $date;?>";
 
-  var orangeMarkerColor = ''
-  var orangeMarkerStroke = ''
+var orangeMarkerColor = ''
+var orangeMarkerStroke = ''
 
-  var blueMarkerColor = ''
-  var blueMarkerStroke = ''
+var blueMarkerColor = ''
+var blueMarkerStroke = ''
 
-  var redMarkerColor = ''
-  var redMarkerStroke = ''
+var redMarkerColor = ''
+var redMarkerStroke = ''
 
-  var greenMarkerColor = ''
-  var greenMarkerStroke = ''
+var greenMarkerColor = ''
+var greenMarkerStroke = ''
 
-  var purpleMarkerColor = ''
-  var purpleMarkerStroke = ''
+var purpleMarkerColor = ''
+var purpleMarkerStroke = ''
 
-  var blackMarkerColor = '#474747'
-  var blackMarkerStroke = '#2e2e2e'
+var blackMarkerColor = '#474747'
+var blackMarkerStroke = '#2e2e2e'
 
 <?php include 'map/'.$date.'.js';?>
 
-  L.control.mapCenterCoord({
-    icon: false,
-    position: 'bottomright',
-    latlngFormat: 'DMS'
-  }).addTo(mymap);
+L.control.mapCenterCoord({
+  icon: false,
+  position: 'bottomright',
+  latlngFormat: 'DMS'
+}).addTo(mymap);
 
-  L.control.scale({
-    position: 'bottomright'
-  }).addTo(mymap);
+L.control.scale({
+  position: 'bottomright'
+}).addTo(mymap);
 
-  mymap.zoomControl.setPosition('bottomleft');
+mymap.zoomControl.setPosition('bottomleft');
 
-  L.control.polylineMeasure({
+L.control.polylineMeasure({
+  position: 'bottomleft'
+}).addTo(mymap);
+
+var customControl = L.Control.extend({        
+  options: {
     position: 'bottomleft'
-  }).addTo(mymap);
-
-    /*var myButtonOptions = {
-    'text': 'MyButton',  // string
-    'iconUrl': 'radar2.png',  // string
-    'onClick': closeIcons,  // callback function
-    'hideText': true,  // bool
-    'maxWidth': 30,  // number
-    'doToggle': false,  // bool
-    'toggleStatus': false  // bool
-  }   
-
-  var myButton = new L.Control.Button(myButtonOptions).addTo(mymap);*/
-
-  var southWest = L.latLng(-90, -180), northEast = L.latLng(90, 180);
-  var bounds = L.latLngBounds(southWest, northEast);
-
-  mymap.setMaxBounds(bounds);
-
-  mymap.on('drag', function() {
-    mymap.panInsideBounds(bounds, { animate: false });
-  });
-  var popup = L.popup();
-
- /*function onMapClick(e) {
-    popup
-      .setLatLng(e.latlng)
-      .setContent("You clicked the map at " + e.latlng.toString())
-      .openOn(mymap);
+  },
+  onAdd: function (mymap) {
+    var container = L.DomUtil.create('div');
+    container.innerHTML = '<a>command</a>';
+    container.type="button";
+    container.title="Hide events from the map";
+    container.style.backgroundImage = "url(http://t1.gstatic.com/images?q=tbn:ANd9GcR6FCUMW5bPn8C4PbKak2BJQQsmC-K9-mbYBeFZm1ZM2w2GRy40Ew)";
+    container.classList.add("leaflet-bar");
+    var number = 1;
+    container.onclick = function(){
+      if (number == 1) {
+        if (typeof marker_group !== 'undefined') {
+          marker_group.remove();
+        }
+        number = 2;
+      } else {
+        if (typeof marker_group !== 'undefined') {
+          marker_group.addTo(mymap);
+        }
+        number = 1;
+      }
+    }
+    container.onmouseover = function(){
+      container.style.cursor = 'pointer'; 
+    }
+    return container;
   }
+});
 
-  mymap.on('click', onMapClick);*/
+mymap.addControl(new customControl());
 
-  var radar = L.icon({
-    iconUrl: 'radar2.png',
-    iconSize: [20, 20],
-    iconAnchor: [20, 20],
-    popupAnchor: [-10, -15],
-    /*shadowUrl: 'my-icon-shadow.png',*/
-    shadowSize: [20, 20],
-    shadowAnchor: [20, 20]
-  });
+var southWest = L.latLng(-90, -180), northEast = L.latLng(90, 180);
+var bounds = L.latLngBounds(southWest, northEast);
+
+mymap.setMaxBounds(bounds);
+
+mymap.on('drag', function() {
+  mymap.panInsideBounds(bounds, { animate: false });
+});
+var popup = L.popup();
+
+/*function onMapClick(e) {
+  popup
+    .setLatLng(e.latlng)
+    .setContent("You clicked the map at " + e.latlng.toString())
+    .openOn(mymap);
+}
+
+mymap.on('click', onMapClick);*/
+
+var radar = L.icon({
+  iconUrl: 'radar2.png',
+  iconSize: [20, 20],
+  iconAnchor: [20, 20],
+  popupAnchor: [-10, -15],
+  //shadowUrl: 'my-icon-shadow.png',
+  shadowSize: [20, 20],
+  shadowAnchor: [20, 20]
+});
 
 /*var radars = L.layerGroup([]);*/
 
@@ -578,7 +598,6 @@ function hideSidebar() {
     mymap.invalidateSize();
   }
 }
-
 
 function showMap() {
   var sidebarButton = document.getElementById("showSidebar");
@@ -600,8 +619,6 @@ function showSidebar() {
   sidebar.style.display = "block";
   leafletmap.style.zIndex = 1;
 }
-
-
 
 function showInfo() {
   var infoButton = document.getElementById("info-button");
@@ -628,7 +645,6 @@ function showKeys() {
   keysButton.classList.add("mobile-active");
 }
 
-
 function openFullscreen() {
   if((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
     if (document.exitFullscreen) {
@@ -652,6 +668,7 @@ function openFullscreen() {
     }
   }
 }
+
 function openHelp(evt, contentName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -665,16 +682,7 @@ function openHelp(evt, contentName) {
   document.getElementById(contentName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-/*function closeIcons() {
-    event.preventDefault();
-    if(map.hasLayer(radars)) {
-        $(this).removeClass('selected');
-        map.removeLayer(radars);
-    } else {
-        map.addLayer(radars);        
-        $(this).addClass('selected');
-   }
-}*/
+
 window.onresize = function() {
   mymap.invalidateSize();
 }

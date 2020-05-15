@@ -18,12 +18,15 @@ var info_1 = "<?php echo $info_1; ?>";
 var marker1_location = [52.518623, 13.376198];
 var marker1 = L.marker(marker1_location, {
   icon: i1939_09_01_1,
-  title: info_1
-})
-.addTo(mymap);
+  title: info_1,
+  id: "marker1"
+});
 
+marker_group = new L.FeatureGroup();
+marker_group.addLayer(marker1)
+mymap.addLayer(marker_group);
 
-marker1.on("click", function (event) {
+marker1.on("click", function () {
   if ($(window).width() < 768) {
     showSidebar();
   }
