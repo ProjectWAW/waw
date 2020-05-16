@@ -1,10 +1,3 @@
-<?php
-if (isset($_GET['d'])) {
-  $date = $_GET['d'];
-} else {
-  $date = "1936.07.16";
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -261,6 +254,7 @@ require 'navbar.php';
   <option value="gibraltar">gibraltar</option>
   <option value="gold_coast">gold_coast</option>
   <option value="greece">greece</option>
+  <option value="guadelupe">guadelupe</option>
   <option value="guangdong_clique">guangdong_clique</option>
   <option value="guatemala">guatemala</option>
   <option value="guizhou_clique">guizhou_clique</option>
@@ -269,7 +263,9 @@ require 'navbar.php';
   <option value="hunan_clique">hunan_clique</option>
   <option value="hungary">hungary</option>
   <option value="iceland">iceland</option>
+  <option value="ifni">ifni</option>
   <option value="india">india</option>
+  <option value="inini">inini</option>
   <option value="iran">iran</option>
   <option value="iraq">iraq</option>
   <option value="ireland">ireland</option>
@@ -287,24 +283,29 @@ require 'navbar.php';
   <option value="lichtenstein">lichtenstein</option>
   <option value="lithuania">lithuania</option>
   <option value="luxembourg">luxembourg</option>
+  <option value="macau">macau</option>
   <option value="maldives">maldives</option>
   <option value="malta">malta</option>
   <option value="manchukuo">manchukuo</option>
+  <option value="martinique">martinique</option>
   <option value="mauritius">mauritius</option>
   <option value="mexico">mexico</option>
   <option value="monaco">monaco</option>
   <option value="mongolia">mongolia</option>
   <option value="morocco">morocco</option>
   <option value="nepal">nepal</option>
+  <option value="netherlands">netherlands</option>
   <option value="neutral_zone_iraq">neutral_zone_iraq</option>
   <option value="new_guanxi_clique">new_guanxi_clique</option>
   <option value="new_zealand">new_zealand<option>
   <option value="nicaragua">nicaragua</option>
   <option value="nigeria">nigeria</option>
   <option value="ningxia_ma_clique">ningxia_ma_clique</option>
+  <option value="north_borneo">north_borneo</option>
   <option value="northeastern_army">northeastern_army</option>
-  <option value="netherlands">netherlands</option>
+  <option value="northern_rhodesia">northern_rhodesia</option>
   <option value="norway">norway</option>
+  <option value="nyasaland">nyasaland</option>
   <option value="oman">oman</option>
   <option value="pailingmiao_council">pailingmiao_council</option>
   <option value="palestine">palestine</option>
@@ -314,19 +315,30 @@ require 'navbar.php';
   <option value="philippines">philippines</option>
   <option value="poland">poland</option>
   <option value="portugal">portugal</option>
+  <option value="portuguese_cape_verde">portuguese_cape_verde</option>
+  <option value="portuguese_east_africa">portuguese_east_africa</option>
+  <option value="portuguese_india">portuguese_india</option>
+  <option value="portuguese_guinea">portuguese_guinea</option>
+  <option value="portuguese_timor">portuguese_timor</option>
+  <option value="portuguese_west_africa">portuguese_west_africa</option>
   <option value="qatar">qatar</option>
   <option value="qinghai_ma_clique">qinghai_ma_clique</option>
   <option value="romania">romania</option>
+  <option value="saint_helena">saint_helena</option>
   <option value="san_marino">san_marino</option>
+  <option value="san_marino">sao_tome_and_principe</option>
+  <option value="sarawak">sarawak</option>
   <option value="saudi_arabia">saudi_arabia</option>
+  <option value="seychelles">seychelles</option>
   <option value="shandong_clique">shandong_clique</option>
   <option value="shanxi_clique">shanxi_clique</option>
   <option value="siam">siam</option>
   <option value="sichuan_clique">sichuan_clique</option>
   <option value="south_africa">south_africa</option>
-  <option value="south_georgia">south_georgia</option>
+  <option value="southern_rhodesia">southern_rhodesia</option>
   <option value="spain">spain</option>
   <option value="spanish_africa">spanish_africa</option>
+  <option value="spanish_morocco">spanish_morocco</option>
   <option value="spanish_sahara">spanish_sahara</option>
   <option value="swaziland">swaziland</option>
   <option value="sweden">sweden</option>
@@ -334,10 +346,13 @@ require 'navbar.php';
   <option value="tannu_tuva">tannu_tuva</option>
   <option value="tibet">tibet</option>
   <option value="transjordania">transjordania</option>
+  <option value="trinidad_and_tobago">trinidad_and_tobago</option>
+  <option value="tristan_de_cunha">tristan_de_cunha</option>
   <option value="trucial_states">trucial_states</option>
   <option value="tunganistan">tunganistan</option>
   <option value="tunis">tunis</option>
   <option value="turkey">turkey</option>
+  <option value="uganda">uganda</option>
   <option value="uk">uk</option>
   <option value="uruguay">uruguay</option>
   <option value="usa">usa</option>
@@ -349,6 +364,7 @@ require 'navbar.php';
   <option value="yemen">yemen</option>
   <option value="yugoslavia">yugoslavia</option>
   <option value="yunnan_clique">yunnan_clique</option>
+  <option value="zanzibar">zanzibar</option>
   </select>
   <br>
   <br>
@@ -393,7 +409,7 @@ function repositionImage() {
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1935_10_03/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1935_10_05/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);
