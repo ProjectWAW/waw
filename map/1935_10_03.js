@@ -190,20 +190,3 @@ var countries = [
   ["libya", italy_puppet, "1935_10_03"],
   ["italian_somalia", italy_puppet, "1935_10_03"]
 ]
-
-for (let country of countries) {
-if (typeof country_layers == 'undefined') {
-  country_layers = L.layerGroup();
-} else {
-  delete g_b;
-  country_layers = L.layerGroup();
-}
-$.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
-  sites = L.geoJson(data, {
-    "onEachFeature": forEachFeature,
-    "style": {color: country[1]}
-  });
-  sites.addTo(country_layers);
-  mymap.addLayer(country_layers);
-});
-}

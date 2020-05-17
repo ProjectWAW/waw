@@ -447,7 +447,7 @@ require 'navbar.php';
     </div>
   </div>
 </div>
-<script>
+<script id="scripts">
 var mymap = L.map('map').setView([49.75288, 12.216797], 5);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -505,7 +505,106 @@ var purpleMarkerStroke = ''
 var blackMarkerColor = '#474747'
 var blackMarkerStroke = '#2e2e2e'
 
+country_layers_neutral_zone = L.layerGroup();
+country_layers_neutral = L.layerGroup();
+country_layers_allies_occupied = L.layerGroup();
+country_layers_allies_puppet = L.layerGroup();
+country_layers_allies = L.layerGroup();
+country_layers_comintern_occupied = L.layerGroup();
+country_layers_comintern_puppet = L.layerGroup();
+country_layers_comintern = L.layerGroup();
+country_layers_finland_occupied = L.layerGroup();
+country_layers_finland = L.layerGroup();
+country_layers_italy_occupied = L.layerGroup();
+country_layers_italy_puppet = L.layerGroup();
+country_layers_italy = L.layerGroup();
+country_layers_axis_occupied = L.layerGroup();
+country_layers_axis_puppet = L.layerGroup();
+country_layers_axis = L.layerGroup();
+
+country_layers_neutral_zone.setZIndex(695);
+country_layers_neutral.setZIndex(700);
+country_layers_allies_occupied.setZIndex(705);
+country_layers_allies_puppet.setZIndex(706);
+country_layers_allies.setZIndex(707);
+country_layers_comintern_occupied.setZIndex(711);
+country_layers_comintern_puppet.setZIndex(712);
+country_layers_comintern.setZIndex(713);
+country_layers_finland_occupied.setZIndex(716);
+country_layers_finland.setZIndex(717);
+country_layers_italy_occupied.setZIndex(720);
+country_layers_italy_puppet.setZIndex(721);
+country_layers_italy.setZIndex(722);
+country_layers_axis_occupied.setZIndex(720);
+country_layers_axis_puppet.setZIndex(721);
+country_layers_axis.setZIndex(722);
+
 <?php include 'map/'.$date.'.js';?>
+
+for (let country of countries) {
+//if (typeof country_layers == 'undefined') {
+  
+/*} else {
+  delete country_layers;
+  country_layers_neutral = L.layerGroup();
+  country_layers_neutral.setZIndex(700);
+}*/
+$.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
+  sites = L.geoJson(data, {
+    "onEachFeature": forEachFeature,
+    "style": {color: country[1]}
+  });
+  if (country[1] == neutral_zone) {
+    sites.addTo(country_layers_neutral_zone);
+    mymap.addLayer(country_layers_neutral_zone);
+  } else if (country[1] == neutral) {
+    sites.addTo(country_layers_neutral);
+    mymap.addLayer(country_layers_neutral);
+  } else if (country[1] == allies_occupied) {
+    sites.addTo(country_layers_allies_occupied);
+    mymap.addLayer(country_layers_allies_occupied);
+  } else if (country[1] == allies_puppet) {
+    sites.addTo(country_layers_allies_puppet);
+    mymap.addLayer(country_layers_allies_puppet);
+  } else if (country[1] == allies) {
+    sites.addTo(country_layers_allies);
+    mymap.addLayer(country_layers_allies);
+  } else if (country[1] == comintern_occupied) {
+    sites.addTo(country_layers_comintern_occupied);
+    mymap.addLayer(country_layers_comintern_occupied);
+  } else if (country[1] == comintern_puppet) {
+    sites.addTo(country_layers_comintern_puppet);
+    mymap.addLayer(country_layers_comintern_puppet);
+  } else if (country[1] == comintern) {
+    sites.addTo(country_layers_comintern);
+    mymap.addLayer(country_layers_comintern);
+  } else if (country[1] == finland_occupied) {
+    sites.addTo(country_layers_finland_occupied);
+    mymap.addLayer(country_layers_finland_occupied);
+  } else if (country[1] == finland) {
+    sites.addTo(country_layers_finland);
+    mymap.addLayer(country_layers_finland);
+  } else if (country[1] == italy_occupied) {
+    sites.addTo(country_layers_italy_occupied);
+    mymap.addLayer(country_layers_italy_occupied);
+  } else if (country[1] == italy_puppet) {
+    sites.addTo(country_layers_italy_puppet);
+    mymap.addLayer(country_layers_italy_puppet);
+  } else if (country[1] == italy) {
+    sites.addTo(country_layers_italy);
+    mymap.addLayer(country_layers_italy);
+  } else if (country[1] == axis_occupied) {
+    sites.addTo(country_layers_axis_occupied);
+    mymap.addLayer(country_layers_axis_occupied);
+  } else if (country[1] == axis_puppet) {
+    sites.addTo(country_layers_axis_puppet);
+    mymap.addLayer(country_layers_axis_puppet);
+  } else if (country[1] == axis) {
+    sites.addTo(country_layers_axis);
+    mymap.addLayer(country_layers_axis);
+  }
+});
+}
 
 L.control.mapCenterCoord({
   icon: false,
@@ -577,41 +676,30 @@ function onMapClick(e) {
 mymap.on('click', onMapClick);
 
 function changeLayer() {
-  country_layers.remove();
-  <?php
-  function addLayer() {
-    if ((strpos($date, '01_31')) || (strpos($date, '1937_02_28')) || (strpos($date, '1938_02_28')) || (strpos($date, '1939_02_28')) || (strpos($date, '1941_02_28')) || (strpos($date, '1942_02_28')) || (strpos($date, '1943_02_28')) || (strpos($date, '1945_02_28')) || (strpos($date, '1936_02_29')) || (strpos($date, '1940_02_29')) || (strpos($date, '03_31')) || (strpos($date, '04_30')) || (strpos($date, '05_31')) || (strpos($date, '06_30')) || (strpos($date, '07_31')) || (strpos($date, '08_31')) || (strpos($date, '09_30')) || (strpos($date, '10_31')) || (strpos($date, '11_30'))) {
-      $date_day = '01';
-      $date_month2 = substr($date, 5, 7);
-      $date_month2++;
-      $date = "".$date_year."_".$date_month2."_".$date_day."";
-      include 'map/'.$date.'.js';
-    } elseif (strpos($date, '12_31')) {
-      $date_year++;
-      $date_day = '01';
-      $date_month2 = '01';
-      $date = "".$date_year."_".$date_month2."_".$date_day."";
-      include 'map/'.$date.'.js';
-    } else {
-      if ($date_day == '01') {
-        $date_day = '02';
-      } elseif ($date_day == '02') {
-        $date_day = '03';
-      } elseif ($date_day == '03') {
-        $date_day = '04';
-      } elseif ($date_day == '04') {
-        $date_day = '05';
-      } elseif ($date_day == '05') {
-        $date_day = '06';
-      }
-      $date_month2 = substr($date, 4, 4);
-      $date = "".$date_year."".$date_month2."".$date_day."";
-      include 'map/'.$date.'.js';
-      $date_year = substr($date, 0, 4);
-      $date_month2 = substr($date, 4,4);
-      $date_day = substr($date, 8, 10);
-    }}
-  ?>
+  country_layers_neutral_zone.remove();
+  country_layers_neutral.remove();
+  country_layers_allies_occupied.remove();
+  country_layers_allies_puppet.remove();
+  country_layers_allies.remove();
+  country_layers_comintern_occupied.remove();
+  country_layers_comintern_puppet.remove();
+  country_layers_comintern.remove();
+  country_layers_finland_occupied.remove();
+  country_layers_finland.remove();
+  country_layers_italy_occupied.remove();
+  country_layers_italy_puppet.remove();
+  country_layers_italy.remove();
+  country_layers_axis_occupied.remove();
+  country_layers_axis_puppet.remove();
+  country_layers_axis.remove();
+  var date = '<?php echo $date ?>';
+  $.ajax({ url: 'ajax_map.php',
+         data: {date: date},
+         type: 'post',
+         success: function(output) {
+              $("#scripts").html(output);
+                  }
+});
 }
 
 var radar = L.icon({
