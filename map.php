@@ -24,7 +24,7 @@ if (isset($_GET['d'])) {
   } elseif (strpos($date, '_11_') !== false) {
     $date_month = "November";
   } else {
-    $date_month = "Decmber";
+    $date_month = "December";
   }
   $date_year = substr($date, 0, 4);
   $date_day = substr($date, 8, 10);
