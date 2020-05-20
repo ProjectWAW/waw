@@ -505,7 +505,7 @@ var purpleMarkerStroke = ''
 var blackMarkerColor = '#474747'
 var blackMarkerStroke = '#2e2e2e'
 
-country_layers_neutral_zone = L.layerGroup();
+/*country_layers_neutral_zone = L.layerGroup();
 country_layers_neutral = L.layerGroup();
 country_layers_allies_occupied = L.layerGroup();
 country_layers_allies_puppet = L.layerGroup();
@@ -537,18 +537,35 @@ country_layers_italy_puppet.setZIndex(721);
 country_layers_italy.setZIndex(722);
 country_layers_axis_occupied.setZIndex(720);
 country_layers_axis_puppet.setZIndex(721);
-country_layers_axis.setZIndex(722);
+country_layers_axis.setZIndex(722);*/
 
 <?php include 'map/'.$date.'.js';?>
 
 for (let country of countries) {
+if (typeof country_layers == 'undefined') {
+  country_layers = L.layerGroup();
+} else {
+  delete g_b;
+  country_layers = L.layerGroup();
+}
+$.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
+  sites = L.geoJson(data, {
+    //"onEachFeature": forEachFeature,
+    "style": {color: country[1]}
+  });
+  sites.addTo(country_layers);
+  mymap.addLayer(country_layers);
+});
+}
+
+/*for (let country of countries) {
 //if (typeof country_layers == 'undefined') {
   
 /*} else {
   delete country_layers;
   country_layers_neutral = L.layerGroup();
   country_layers_neutral.setZIndex(700);
-}*/
+}
 $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
   sites = L.geoJson(data, {
     "onEachFeature": forEachFeature,
@@ -604,7 +621,7 @@ $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) 
     mymap.addLayer(country_layers_axis);
   }
 });
-}
+}*/
 
 L.control.mapCenterCoord({
   icon: false,
