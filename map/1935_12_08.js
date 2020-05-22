@@ -106,6 +106,7 @@ var countries = [
   ["india", neutral, "1935_10_03"],
   ["jamaica", neutral, "1935_10_03"],
   ["kenya", neutral, "1935_10_03"],
+  ["kingdom_of_sikkim", neutral, "1935_10_03"],
   ["kuwait", neutral, "1935_10_03"],
   ["maldives", neutral, "1935_10_03"],
   ["malta", neutral, "1935_10_03"],
@@ -149,6 +150,7 @@ var countries = [
   ["inini", neutral, "1935_10_03"],
   ["martinique", neutral, "1935_10_03"],
   ["morocco", neutral, "1935_10_03"],
+  ["tangiers", neutral, "1935_10_03"],
   ["tunis", neutral, "1935_10_03"],
   
   ["mongolia", neutral, "1935_10_03"],
@@ -161,6 +163,7 @@ var countries = [
   ["japan", neutral, "1935_10_03"],
   ["manchukuo", neutral, "1935_10_03"],
   
+  ["hebei_chahar_council", neutral, "1935_12_08"],
   ["pailingmiao_council", neutral, "1935_10_03"],
   ["xinjiang", neutral, "1935_10_03"],
   

@@ -9,13 +9,19 @@
       <a class="navbar-brand" href="#">WebSiteName</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav mr-auto">
         <li <?php if($_SERVER['PHP_SELF']=='/index.php'){echo 'class=active';}?>><a href="/index.php">Home</a></li>
         <li <?php if($_SERVER['PHP_SELF']=='/map.php'){echo 'class=active';}?>><a href="/map.php">Map</a></li>
         <li <?php if($_SERVER['PHP_SELF']=='/editor.php'){echo 'class=active';}?>><a href="/editor.php">Editor</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
       </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search articles">
+        </div>
+        <button type="submit" class="btn btn-default">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
+      </form>
       <ul class="nav navbar-nav navbar-right">
         <?php if($_SERVER['PHP_SELF']!=='/map.php'){
           echo '<li><a href="/settings.php"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>';
@@ -33,6 +39,7 @@
           $iPad = stripos($_SERVER['HTTP_USER_AGENT'],"iPad");
           if ($iPod == false && $iPhone == false && $iPad == false) { echo '<li><a href="#" onclick="openFullscreen()"><span class="glyphicon glyphicon-fullscreen"></span> Full screen</a></li>'; }
         }?>
-    </ul>
+      </ul>
+    </div>
   </div>
 </nav>

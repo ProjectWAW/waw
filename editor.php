@@ -3,14 +3,11 @@
 <head>
 <?php require 'page_head.php';?>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
-<link rel="stylesheet" href="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.css" />
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
-<script src="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.js"></script>
-<script src="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.js"></script>
 <script src="js/leaflet.ajax.min.js"></script>
 <link rel="stylesheet" href="js/leaflet-geoman.css"/>
 <script src="js/leaflet-geoman.min.js"></script>
-<title>Map - Project: World at War</title>
+<title>Edit - Project: World at War</title>
 <style>
 .navbar {
   position: fixed;
@@ -409,7 +406,7 @@ function repositionImage() {
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1936_01_12/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1935_10_03/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);
@@ -432,20 +429,6 @@ function repositionImage() {
       })
 
     }
-
-
-    L.control.mapCenterCoord({
-      icon: false,
-      position: 'bottomright'
-    }).addTo(mymap);
-
-    L.control.scale({
-      position: 'bottomright'
-    }).addTo(mymap);
-
-    L.control.polylineMeasure({
-      position: 'bottomright'
-    }).addTo(mymap);
 
     mymap.zoomControl.setPosition('bottomright');
 
