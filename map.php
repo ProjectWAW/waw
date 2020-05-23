@@ -43,6 +43,7 @@ if (isset($_GET['d'])) {
 <?php require 'page_head.php';?>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
 <link rel="stylesheet" href="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.css"/>
+<link rel="stylesheet" href="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.css"/>
 <link rel="stylesheet" href="server/L.Icon.FontAwesome.css"/>
 <script src="https://kit.fontawesome.com/02faa02085.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
@@ -103,6 +104,9 @@ if (isset($_GET['d'])) {
   top: 52px;
   background-color: #fafaf5;
 }
+.tabcontent {
+  
+}
 .sidebar-nav {
   position: -webkit-sticky;
   position: sticky;
@@ -127,10 +131,6 @@ if (isset($_GET['d'])) {
   top: 0px;
   z-index: 200;
   box-sizing: border-box;
-}
-.mobile-active {
-  color: dodgerblue;
-  border-bottom: 2px solid dodgerblue;
 }
 .tabcontent {
   padding: 8px;
@@ -164,6 +164,9 @@ hr {
 h4 {
   text-align: center;
   margin-top: 60px;
+}
+.mobile-active {
+  border-bottom: 2px solid seagreen;
 }
 .country-name {
   padding-left: 4px;
@@ -243,10 +246,6 @@ h4 {
     z-index: 1;
     background-color: white;
   }
-  .mobile-active {
-    color: dodgerblue;
-    border-bottom: 2px solid dodgerblue;
-  }
 }
 @media (max-width: 882px) {
   .navbar-header {
@@ -254,7 +253,7 @@ h4 {
   }
   .navbar-left,.navbar-right {
     float: none !important;
-    }
+  }
   .navbar-toggle {
     display: block;
   }
@@ -281,7 +280,7 @@ h4 {
     padding-bottom: 10px;
   }
   .collapse.in{
-    display:block !important;
+    display: block !important;
   }
 }
 </style>
@@ -578,12 +577,7 @@ country_layers_axis.setZIndex(722);*/
 <?php include 'map/'.$date.'.js';?>
 
 for (let country of countries) {
-if (typeof country_layers == 'undefined') {
-  country_layers = L.layerGroup();
-} else {
-  delete g_b;
-  country_layers = L.layerGroup();
-}
+country_layers = L.layerGroup();
 $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
   sites = L.geoJson(data, {
     //"onEachFeature": forEachFeature,
@@ -681,10 +675,8 @@ var customControl = L.Control.extend({
   },
   onAdd: function (mymap) {
     var container = L.DomUtil.create('div');
-    container.innerHTML = '<a>command</a>';
-    container.type="button";
-    container.title="Hide events from the map";
-    container.style.backgroundImage = "url(http://t1.gstatic.com/images?q=tbn:ANd9GcR6FCUMW5bPn8C4PbKak2BJQQsmC-K9-mbYBeFZm1ZM2w2GRy40Ew)";
+    container.innerHTML = '<a style="background-image: url(marker.png); background-size:50%;"></a>';
+    container.title="Hide / show events from the map";
     container.classList.add("leaflet-bar");
     var number = 1;
     container.onclick = function(){
@@ -709,6 +701,8 @@ var customControl = L.Control.extend({
 
 mymap.addControl(new customControl());
 
+window.addEventListener('DOMContentLoaded', readyState);
+
 var southWest = L.latLng(-90, -180), northEast = L.latLng(90, 180);
 var bounds = L.latLngBounds(southWest, northEast);
 
@@ -729,7 +723,7 @@ function onMapClick(e) {
 mymap.on('click', onMapClick);
 
 function changeLayer() {
-  country_layers_neutral_zone.remove();
+  /*country_layers_neutral_zone.remove();
   country_layers_neutral.remove();
   country_layers_allies_occupied.remove();
   country_layers_allies_puppet.remove();
@@ -744,7 +738,8 @@ function changeLayer() {
   country_layers_italy.remove();
   country_layers_axis_occupied.remove();
   country_layers_axis_puppet.remove();
-  country_layers_axis.remove();
+  country_layers_axis.remove();*/
+  country_layers.remove();
   var date = '<?php echo $date ?>';
   $.ajax({ url: 'ajax_map.php',
          data: {date: date},

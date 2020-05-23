@@ -3,8 +3,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
 if (localStorage.getItem("dark-mode") !== "on") {
-  $('head').append('<link rel="stylesheet" type="text/css" href="../../all.css">');
+  $('head').append('<link rel="stylesheet" type="text/css" href="/all.css">');
 } else {
-  $('head').append('<link rel="stylesheet" type="text/css" href="../../dark.css">');
+  $('head').append('<link rel="stylesheet" type="text/css" href="/dark.css">');
 }
 </script>

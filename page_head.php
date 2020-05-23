@@ -1,4 +1,4 @@
 <?php
-include 'meta.php';
-include 'css.php';
+include getcwd().'\meta.php';
+include getcwd().'\css.php';
 ?>

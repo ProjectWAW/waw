@@ -10,9 +10,9 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav mr-auto">
-        <li <?php if($_SERVER['PHP_SELF']=='/index.php'){echo 'class=active';}?>><a href="/index.php">Home</a></li>
-        <li <?php if($_SERVER['PHP_SELF']=='/map.php'){echo 'class=active';}?>><a href="/map.php">Map</a></li>
-        <li <?php if($_SERVER['PHP_SELF']=='/editor.php'){echo 'class=active';}?>><a href="/editor.php">Editor</a></li>
+        <li><a href="/index.php">Home</a></li>
+        <li><a href="/map.php">Map</a></li>
+        <li><a href="/editor.php">Editor</a></li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -26,8 +26,8 @@
         <?php if($_SERVER['PHP_SELF']!=='/map.php'){
           echo '<li><a href="/settings.php"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>';
           if(isset($_SESSION['username']) !== true) { echo '
-            <li><a href="/register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
+            <li id="register"><a href="/register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li id="login"><a href="/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
           }
           if(isset($_SESSION['username']) == true) { echo '
             <li><a href="/server/logout.php"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>';

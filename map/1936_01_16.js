@@ -163,13 +163,12 @@ var countries = [
   ["japan", neutral, "1935_10_03"],
   ["manchukuo", neutral, "1935_10_03"],
   
+  ["hebei_clique", neutral, "1935_10_03"],
   ["pailingmiao_council", neutral, "1935_10_03"],
   ["xinjiang", neutral, "1935_10_03"],
   
   ["guangdong_clique", allies_puppet, "1935_10_03"],
-  ["guizhou_clique", allies_puppet, "1935_10_03"],
   ["hunan_clique", allies_puppet, "1935_10_03"],
-  ["kumul_khanate", allies_puppet, "1935_10_03"],
   ["new_guanxi_clique", allies_puppet, "1935_10_03"],
   ["ningxia_ma_clique", allies_puppet, "1935_10_03"],
   ["northeastern_army", allies_puppet, "1935_10_03"],

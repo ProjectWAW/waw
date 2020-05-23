@@ -8,7 +8,7 @@
 body {
 	font-family: 'Poppins', sans-serif;
 	color: black;
-	background-color: #e4e4e4;
+	background-color: #f8f8f8;
 }
 nav {
   z-index: 999;
@@ -103,11 +103,9 @@ hr {
 include '../../navbar.php';?>
 <div class="split left">
   <br>
-  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong>Hold up!</strong> If you are looking for [country], check <a href="#">this</a>.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
+  <div class="alert alert-info alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Success!</strong> Indicates a successful or positive action.
   </div>
   <h1>[Country]</h1>
 	<br>

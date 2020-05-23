@@ -164,7 +164,8 @@ var countries = [
     ["manchukuo", neutral, "1935_10_03"],
   
     ["pailingmiao_council", neutral, "1935_10_03"],
-    ["xinjiang", neutral, "1935_10_03"],
+    ["xinjiang", allies_puppet, "1935_10_03"],
+  ["hebei_clique", allies_puppet, "1935_10_03"],
   
     ["guangdong_clique", allies_puppet, "1935_10_03"],
     ["guizhou_clique", allies_puppet, "1935_10_03"],
