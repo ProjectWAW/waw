@@ -41,14 +41,14 @@ nav {
   -webkit-box-shadow: 0 8px 8px rgba(0,0,0,0.19);
 }
 .navbar-default {
-  background-color: #4B5320;
-  border-color: #444b1d;
+  background-color: #3b475a;
+  border-color: #242e3d;
 }
 .navbar-default .navbar-brand {
-  color: #e9e9e9;
+  color: #eee;
 }
 .navbar-default .navbar-nav>li>a {
-  color: #e9e9e9;
+  color: #eee;
 }
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
   color: #fff;

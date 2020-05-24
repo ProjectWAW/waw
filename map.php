@@ -73,21 +73,6 @@ if (isset($_GET['d'])) {
   background-color: transparent;
   color: #333;
 }
-#sidebar ul li {
-  float: left;
-  width: 33%;
-  text-align: center;
-}
-.sidebar-links-nav {
-  color: #777;
-  background-color: #f8f8f8;
-  margin: 0;
-  width: 100%;
-  float: left;
-}
-.sidebar-links {
-  border-bottom: 2px solid #e7e7e7;
-}
 #map {
   width: auto;
   height: 100%;
@@ -101,11 +86,30 @@ if (isset($_GET['d'])) {
   overflow-y: auto;
   right: 0;
   bottom: 0;
-  top: 52px;
+  top: 50px;
   background-color: #fafaf5;
 }
-.tabcontent {
-  
+#sidebar ul {
+  height: 50px;
+}
+#sidebar ul li {
+  float: left;
+  width: 33%;
+  text-align: center;
+}
+#sidebar ul li a {
+  height: 50px;
+  line-height: 22px;
+  color: #777;
+}
+.sidebar-links-nav {
+  background-color: #fafaf5;
+  margin: 0;
+  width: 100%;
+  float: left;
+}
+.sidebar-links {
+  border-bottom: 2px solid #e7e7e7;
 }
 .sidebar-nav {
   position: -webkit-sticky;
@@ -145,7 +149,7 @@ if (isset($_GET['d'])) {
   float: left;
   border: 0;
   color: #777;
-  background-color: #f8f8f8;
+  background-color: #fafaf5;
   border-bottom: 2px solid #e7e7e7;
 }
 .mobile-nav-button:focus, .mobile-nav-button:active {
@@ -224,13 +228,19 @@ h4 {
   padding-right: 5px;
 }
 @media screen and (max-width: 767px) {
+  
+}
+@media screen and (max-width: 882px) {
+  h4 {
+    margin-top: 10px;
+  }
   #mobile-nav {
     display: block;
     z-index: 499;
     position: fixed;
     width: 100%;
-    height: 28px;
-    top: 52px;
+    height: 32px;
+    top: 50px;
   }
   #map {
     width: 100%;
@@ -238,7 +248,7 @@ h4 {
     right: 0;
   }
   #sidebar {
-    top: 78px;
+    top: 66px;
     bottom: 0;
     margin: 0;
     position: fixed;
@@ -246,8 +256,6 @@ h4 {
     z-index: 1;
     background-color: white;
   }
-}
-@media (max-width: 882px) {
   .navbar-header {
     float: none;
   }
@@ -483,7 +491,7 @@ require 'navbar.php';
   </div>
 </div>
 <script id="scripts">
-var mymap = L.map('map').setView([49.75288, 12.216797], 5);
+var mymap = L.map('map');
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>',
@@ -491,6 +499,17 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 14,
   zoomControl: true
 }).addTo(mymap);
+
+function onMapClick(e) {
+  popup
+    .setLatLng(e.latlng)
+    .setContent("You clicked the map at " + e.latlng.toString())
+    .openOn(mymap);
+}
+
+var popup = L.popup();
+
+mymap.on('click', onMapClick);
 
 function forEachFeature(feature, layer) {
   var popupContent = "<b>Name</b>: "+feature.properties.Name+"<br><b>Status</b>: "+feature.properties.Status+"<br><b>Government</b>: "+feature.properties.Government+"<br><b>Ruling Party</b>: "+feature.properties.Party+"<br><b>Head of Government</b>: "+feature.properties.HoG+"";
@@ -701,7 +720,7 @@ var customControl = L.Control.extend({
 
 mymap.addControl(new customControl());
 
-window.addEventListener('DOMContentLoaded', readyState);
+window.addEventListener('DOMContentLoaded', ready);
 
 var southWest = L.latLng(-90, -180), northEast = L.latLng(90, 180);
 var bounds = L.latLngBounds(southWest, northEast);
@@ -711,16 +730,6 @@ mymap.setMaxBounds(bounds);
 mymap.on('drag', function() {
   mymap.panInsideBounds(bounds, { animate: false });
 });
-var popup = L.popup();
-
-function onMapClick(e) {
-  popup
-    .setLatLng(e.latlng)
-    .setContent("You clicked the map at " + e.latlng.toString())
-    .openOn(mymap);
-}
-
-mymap.on('click', onMapClick);
 
 function changeLayer() {
   /*country_layers_neutral_zone.remove();

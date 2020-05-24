@@ -1,3 +1,5 @@
+mymap.setView([9.013776, 38.754616], 5);
+
 var countries = [
   ["neutral_zone_iraq", neutral_zone, "1935_10_03"],
   
@@ -159,20 +161,24 @@ var countries = [
   
   ["germany", neutral, "1935_10_03"],
   
-  ["east_hebei", neutral, "1935_10_03"],
-  ["japan", neutral, "1935_10_03"],
-  ["manchukuo", neutral, "1935_10_03"],
+  ["east_chahar", axis_occupied, "1935_10_03"],
+  ["east_hebei", axis_occupied, "1935_10_03"],
+  ["japan", axis, "1935_10_03"],
+  ["manchukuo", axis_puppet, "1935_10_03"],
   
   ["hebei_chahar_council", neutral, "1935_12_08"],
+  ["guangdong_clique", neutral, "1935_10_03"],
   ["hebei_clique", neutral, "1935_10_03"],
+  ["new_guanxi_clique", neutral, "1935_10_03"],
   ["pailingmiao_council", neutral, "1935_10_03"],
   ["xinjiang", neutral, "1935_10_03"],
   
-  ["guangdong_clique", allies_puppet, "1935_10_03"],
+  ["chongqing_clique", allies_puppet, "1935_10_03"],
   ["hunan_clique", allies_puppet, "1935_10_03"],
-  ["new_guanxi_clique", allies_puppet, "1935_10_03"],
+  ["mianyang_clique", allies_puppet, "1935_10_03"],
   ["ningxia_ma_clique", allies_puppet, "1935_10_03"],
   ["northeastern_army", allies_puppet, "1935_10_03"],
+  ["northwest_garrison", allies_puppet, "1935_10_03"],
   ["qinghai_ma_clique", allies_puppet, "1935_10_03"],
   ["shandong_clique", allies_puppet, "1935_10_03"],
   ["shanxi_clique", allies_puppet, "1935_10_03"],

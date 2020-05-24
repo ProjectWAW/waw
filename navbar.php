@@ -25,7 +25,7 @@
       <ul class="nav navbar-nav navbar-right">
         <?php if($_SERVER['PHP_SELF']!=='/map.php'){
           echo '<li><a href="/settings.php"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>';
-          if(isset($_SESSION['username']) !== true) { echo '
+          if(isset($_SESSION['username']) == false) { echo '
             <li id="register"><a href="/register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li id="login"><a href="/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
           }

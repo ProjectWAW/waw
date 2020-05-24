@@ -1,3 +1,5 @@
+mymap.setView([9.013776, 38.754616], 5);
+
 var countries = [
     ["neutral_zone_iraq", neutral_zone, "1935_10_03"],
   
@@ -159,7 +161,8 @@ var countries = [
   
     ["germany", neutral, "1935_10_03"],
   
-    ["east_hebei", neutral, "1935_10_03"],
+    ["east_chahar", neutral, "1935_10_03"],
+  ["east_hebei", neutral, "1935_10_03"],
     ["japan", neutral, "1935_10_03"],
     ["manchukuo", neutral, "1935_10_03"],
   

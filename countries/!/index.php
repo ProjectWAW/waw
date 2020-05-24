@@ -115,11 +115,11 @@ include '../../navbar.php';?>
 <div class="split right">
 	<div class="section" onclick="location.href='#';">
 		<div class="row">
-			<div class="col-lg-6">
+			<div class="col-sm-6">
 				<h2>[country] in World War II</h2>
-				<p class="section-p">Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. integer fringilla congue eros non nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. integer fringilla congue eros non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor.</p>
+				<p class="section-p">Slazem se da je dedic picka u tom cilju sada ovo pisem jer ja brate stvarno ne mogu da vjerujem znaci ovo je farsa protiv mila</p>
 			</div>
-			<div class="col-lg-6">
+			<div class="col-sm-6">
 				<img src="test.jpg">
 			</div>
 		</div>

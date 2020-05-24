@@ -216,6 +216,7 @@ require 'navbar.php';
   <option value="chile">chile</option>
   <option value="china">china</option>
   <option value="chinese_soviet_republic">chinese_soviet_republic</option>
+  <option value="chongqing_clique">chongqing_clique</option>
   <option value="colombia">colombia</option>
   <option value="costarica">costarica</option>
   <option value="cuba">cuba</option>
@@ -225,6 +226,7 @@ require 'navbar.php';
   <option value="denmark">denmark</option>
   <option value="dominican_republic">dominican_republic</option>
   <option value="dutch_east_indies">dutch_east_indies</option>
+  <option value="east_chahar">east_chahar</option>
   <option value="east_hebei">east_hebei</option>
   <option value="ecuador">ecuador</option>
   <option value="egypt">egypt</option>
@@ -256,6 +258,7 @@ require 'navbar.php';
   <option value="guatemala">guatemala</option>
   <option value="guizhou_clique">guizhou_clique</option>
   <option value="haiti">haiti</option>
+  <option value="hebei_clique">hebei_clique</option>
   <option value="honduras">honduras</option>
   <option value="hunan_clique">hunan_clique</option>
   <option value="hungary">hungary</option>
@@ -287,6 +290,7 @@ require 'navbar.php';
   <option value="martinique">martinique</option>
   <option value="mauritius">mauritius</option>
   <option value="mexico">mexico</option>
+  <option value="mianyang_clique">mianyang_clique</option>
   <option value="monaco">monaco</option>
   <option value="mongolia">mongolia</option>
   <option value="morocco">morocco</option>
@@ -301,6 +305,7 @@ require 'navbar.php';
   <option value="north_borneo">north_borneo</option>
   <option value="northeastern_army">northeastern_army</option>
   <option value="northern_rhodesia">northern_rhodesia</option>
+  <option value="northwest_garrison">northwest_garrison</option>
   <option value="norway">norway</option>
   <option value="nyasaland">nyasaland</option>
   <option value="oman">oman</option>
@@ -368,7 +373,7 @@ require 'navbar.php';
 
   <div id='map'></div>
   <script>
-    var mymap = L.map('map').setView([40.85563, 20.982513], 10);
+    var mymap = L.map('map').setView([9.013776, 38.754616], 5);
     
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>',
