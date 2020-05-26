@@ -192,7 +192,7 @@ var countries = [
     
     ["italy", italy, "1935_10_03"],
     ["italian_ethiopia", italy_occupied, "1935_11_06"],
-    ["eritrea", italy_puppet, "1935_10_03"],
-    ["libya", italy_puppet, "1935_10_03"],
+    ["italian_eritrea", italy_puppet, "1935_10_03"],
+    ["italian_libya", italy_puppet, "1935_10_03"],
     ["italian_somalia", italy_puppet, "1935_10_03"]
   ]

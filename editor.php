@@ -231,7 +231,7 @@ require 'navbar.php';
   <option value="ecuador">ecuador</option>
   <option value="egypt">egypt</option>
   <option value="el_salvador">el_salvador</option>
-  <option value="eritrea">eritrea</option>
+  <option value="italian_eritrea">italian_eritrea</option>
   <option value="estonia">estonia</option>
   <option value="falklands">falklands</option>
   <option value="finland">finland</option>
@@ -279,7 +279,7 @@ require 'navbar.php';
   <option value="kuwait">kuwait</option>
   <option value="latvia">latvia</option>
   <option value="liberia">liberia</option>
-  <option value="libya">libya</option>
+  <option value="italian_libya">italian_libya</option>
   <option value="lichtenstein">lichtenstein</option>
   <option value="lithuania">lithuania</option>
   <option value="luxembourg">luxembourg</option>

@@ -95,7 +95,6 @@ hr {
   background-position: center;
   background-image: url('test.jpg');
 }
-
 </style>
 </head>
 <body>
