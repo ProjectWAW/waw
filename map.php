@@ -500,7 +500,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   zoomControl: true
 }).addTo(mymap);
 
-function onMapClick(e) {
+/*function onMapClick(e) {
   popup
     .setLatLng(e.latlng)
     .setContent("You clicked the map at " + e.latlng.toString())
@@ -509,7 +509,7 @@ function onMapClick(e) {
 
 var popup = L.popup();
 
-mymap.on('click', onMapClick);
+mymap.on('click', onMapClick);*/
 
 function forEachFeature(feature, layer) {
   var popupContent = "<b>Name</b>: "+feature.properties.Name+"<br><b>Status</b>: "+feature.properties.Status+"<br><b>Government</b>: "+feature.properties.Government+"<br><b>Ruling Party</b>: "+feature.properties.Party+"<br><b>Head of Government</b>: "+feature.properties.HoG+"";
@@ -599,7 +599,7 @@ for (let country of countries) {
 country_layers = L.layerGroup();
 $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
   sites = L.geoJson(data, {
-    //"onEachFeature": forEachFeature,
+    "onEachFeature": forEachFeature,
     "style": {color: country[1]}
   });
   sites.addTo(country_layers);

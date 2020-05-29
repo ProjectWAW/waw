@@ -161,13 +161,7 @@ var countries = [
 
   ["germany", neutral, "1935_10_03"],
 
-  ["east_chahar", axis_occupied, "1935_10_03"],
-  ["east_hebei", axis_occupied, "1935_10_03"],
-  ["japan", axis, "1935_10_03"],
-  ["manchukuo", axis_puppet, "1935_10_03"],
-
   ["guangdong_clique", neutral, "1935_10_03"],
-  ["hebei_clique", neutral, "1935_10_03"],
   ["new_guanxi_clique", neutral, "1935_10_03"],
   ["pailingmiao_council", neutral, "1935_10_03"],
   ["xinjiang", neutral, "1935_10_03"],
@@ -175,19 +169,23 @@ var countries = [
   ["chongqing_clique", allies_puppet, "1935_10_03"],
   ["hunan_clique", allies_puppet, "1935_10_03"],
   ["mianyang_clique", allies_puppet, "1935_10_03"],
-  ["ningxia_ma_clique", allies_puppet, "1935_10_03"],
-  ["northeastern_army", allies_puppet, "1935_10_03"],
+  ["ningxia_ma_clique", allies_puppet, "1935_10_22"],
+  ["northeastern_army", allies_puppet, "1935_10_23"],
   ["northwest_garrison", allies_puppet, "1935_10_03"],
   ["qinghai_ma_clique", allies_puppet, "1935_10_03"],
   ["shandong_clique", allies_puppet, "1935_10_03"],
-  ["shanxi_clique", allies_puppet, "1935_10_03"],
+  ["shanxi_clique", allies_puppet, "1935_10_23"],
   ["sichuan_clique", allies_puppet, "1935_10_03"],
   ["tunganistan", allies_puppet, "1935_10_03"],
   ["xikang_clique", allies_puppet, "1935_10_03"],
   ["yunnan_clique", allies_puppet, "1935_10_03"],
   ["china", allies, "1935_10_03"],
 
-  ["chinese_soviet_republic", comintern, "1935_10_03"],
+  ["chinese_soviet_republic", comintern, "1935_10_22"],
+
+  ["east_chahar", axis_puppet, "1935_10_03"],
+  ["manchukuo", axis_puppet, "1935_10_03"],
+  ["japan", axis, "1935_10_03"],
 
   ["ethiopia", finland, "1935_10_28"],
   
