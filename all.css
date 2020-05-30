@@ -32,6 +32,7 @@
   100% { transform: rotate(360deg); }
 }
 /********************** GLOBAL **********************/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 body {
   background-color: #fff;
 }
@@ -41,14 +42,16 @@ nav {
   -webkit-box-shadow: 0 8px 8px rgba(0,0,0,0.19);
 }
 .navbar-default {
-  background-color: #3b475a;
-  border-color: #242e3d;
+  background-color: #987f62;
+  border-color: #6b553b;
 }
 .navbar-default .navbar-brand {
-  color: #eee;
+  color: #f5f5f5;
+  font-family: 'Poppins', sans-serif;
 }
 .navbar-default .navbar-nav>li>a {
-  color: #eee;
+  color: #f5f5f5;
+  font-family: 'Poppins', sans-serif;
 }
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
   color: #fff;
