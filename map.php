@@ -102,10 +102,10 @@ if (isset($_GET['d'])) {
 #sidebar ul li a {
   height: 50px;
   line-height: 22px;
-  color: #777;
+  color: #ffffff;
 }
 .sidebar-links-nav {
-  background-color: #fafaf5;
+  background-color: #bba58e;
   margin: 0;
   width: 100%;
   float: left;
@@ -118,6 +118,7 @@ if (isset($_GET['d'])) {
   position: sticky;
   z-index: 200;
   box-sizing: border-box;
+  top: 0px;
 }
 .sidebar-bottom-nav {
   position: fixed;
@@ -128,15 +129,11 @@ if (isset($_GET['d'])) {
   background-color: #f8f8f8;
   border-bottom: 2px solid #e7e7e7;
 }
+.mobile-active {
+  border-bottom: 2px solid #6b553b;
+}
 .sidebar-bottom-links-nav {
   width: 100%;
-}
-.sidebar-nav {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0px;
-  z-index: 200;
-  box-sizing: border-box;
 }
 .tabcontent {
   padding: 8px;
@@ -159,7 +156,7 @@ if (isset($_GET['d'])) {
 }
 hr { 
 	height: 1px;
-  background-color: lightgray;
+  background-color: darkgray;
 	border: none;
   margin-top: 18px;
   margin-bottom: 18px;
@@ -170,9 +167,6 @@ hr {
 h4 {
   text-align: center;
   margin-top: 60px;
-}
-.mobile-active {
-  border-bottom: 2px solid seagreen;
 }
 .country-name {
   padding-left: 4px;
@@ -232,7 +226,7 @@ h4 {
 @media screen and (max-width: 767px) {
   
 }
-@media screen and (max-width: 882px) {
+@media screen and (max-width: 920px) {
   h4 {
     margin-top: 10px;
   }
@@ -244,13 +238,16 @@ h4 {
     height: 32px;
     top: 50px;
   }
+  #toggleSidebar {
+    display: none;
+  }
   #map {
     width: 100%;
     z-index: 498;
     right: 0;
   }
   #sidebar {
-    top: 66px;
+    top: 74px;
     bottom: 0;
     margin: 0;
     position: fixed;
@@ -487,7 +484,6 @@ require 'navbar.php';
             - Comintern Occupied Territory
           </div>
         </div>
-
       <br><br>
     </div>
   </div>
@@ -692,49 +688,6 @@ L.control.polylineMeasure({
 
 var number = 1;
 
-/*var toggle = L.easyButton ( {
-  position: 'bottomleft', // topleft, topright, bottomleft, bottomright
-  icon: '<img src="marker.png" style="background-size:50%;max-width:100%;max-height:100%;margin-bottom:50%;">',
-  title: 'load image'
-});
-
-toggle.addTo(mymap);*/
-/*L.easyButton({
-  id: 'toggle-markers',  // an id for the generated button
-  position: 'bottomleft',      // inherited from L.Control -- the corner it goes in
-  //type: 'replace',          // set to animate when you're comfy with css
-  leafletClasses: true,     // use leaflet classes to style the button?
-  states:[{                 // specify different icons and responses for your button
-    stateName: 'get-center',
-    onClick: function(button, map){
-      alert('Map is centered at: ' + map.getCenter().toString());
-    },
-    title: 'show me the middle',
-    icon: 'fa-crosshairs'
-  }]
-});*/
-
-/*L.easyButton('<img src="marker.png" style="background-size:50%;max-width:100%;max-height:100%;margin-bottom:50%;">', function(btn, map){
-  if (number == 1) {
-    if (typeof marker_group !== 'undefined') {
-      marker_group.remove();
-    }
-    number = 2;
-  } else {
-    if (typeof marker_group !== 'undefined') {
-      marker_group.addTo(mymap);
-    }
-    number = 1;
-  }
-}).addTo(mymap);
-
-/*L.easyButton({
-  id: 'toggle-markers',  // an id for the generated button
-  position: 'bottomleft',      // inherited from L.Control -- the corner it goes in
-  //type: 'replace',          // set to animate when you're comfy with css
-  leafletClasses: true,     // use leaflet classes to style the button?
-});*/
-
 L.easyButton({
   id: 'toggle-markers',
   position: 'bottomleft',
@@ -759,41 +712,6 @@ L.easyButton({
     icon: '<img src="marker.png" style="background-size:50%;max-width:100%;max-height:100%;margin-bottom:50%;">'
   }]
 }).addTo(mymap);
-
-/*var customControl = L.Control.extend({        
-  options: {
-    position: 'bottomleft'
-  },
-  onAdd: function (mymap) {
-    var container = L.DomUtil.create('div');
-    container.innerHTML = '<a style="background-image: url(marker.png); background-size:50%;"></a>';
-    container.title="Hide / show events from the map";
-    container.classList.add("leaflet-bar");
-    var number = 1;
-    container.onclick = function(){
-      if (number == 1) {
-        if (typeof marker_group !== 'undefined') {
-          marker_group.remove();
-        }
-        number = 2;
-      } else {
-        if (typeof marker_group !== 'undefined') {
-          marker_group.addTo(mymap);
-        }
-        number = 1;
-      }
-    }
-    container.onmouseover = function(){
-      container.style.cursor = 'pointer'; 
-    }
-    return container;
-  }
-});
-//var readyState = function(e){
-  mymap.addControl(new customControl());
-/*}
-
-window.addEventListener('DOMContentLoaded', readyState);*/
 
 var southWest = L.latLng(-90, -180), northEast = L.latLng(90, 180);
 var bounds = L.latLngBounds(southWest, northEast);
@@ -824,12 +742,12 @@ function changeLayer() {
   country_layers.remove();
   var date = '<?php echo $date ?>';
   $.ajax({ url: 'ajax_map.php',
-         data: {date: date},
-         type: 'post',
-         success: function(output) {
-              $("#scripts").html(output);
-                  }
-});
+    data: {date: date},
+    type: 'post',
+    success: function(output) {
+      $("#scripts").html(output);
+    }
+  });
 }
 
 var radar = L.icon({

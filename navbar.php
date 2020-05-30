@@ -33,7 +33,7 @@
             <li><a href="/server/logout.php"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>';
           }
         } else {
-          echo '<li><a href="#" onclick="hideSidebar()"><span class="glyphicon glyphicon-align-right"></span> Toggle Sidebar</a></li>';
+          echo '<li id="toggleSidebar"><a href="#" onclick="hideSidebar()"><span class="glyphicon glyphicon-align-right"></span> Toggle Sidebar</a></li>';
           $iPod = stripos($_SERVER['HTTP_USER_AGENT'],"iPod");
           $iPhone = stripos($_SERVER['HTTP_USER_AGENT'],"iPhone");
           $iPad = stripos($_SERVER['HTTP_USER_AGENT'],"iPad");
