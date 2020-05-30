@@ -44,11 +44,13 @@ if (isset($_GET['d'])) {
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
 <link rel="stylesheet" href="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.css"/>
 <link rel="stylesheet" href="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
 <link rel="stylesheet" href="server/L.Icon.FontAwesome.css"/>
 <script src="https://kit.fontawesome.com/02faa02085.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 <script src="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.js"></script>
 <script src="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
 <script src="server/L.Icon.FontAwesome.js"></script>
 <script src="js/leaflet.ajax.min.js"></script>
 <title>Map - Project: World at War</title>
@@ -294,10 +296,10 @@ h4 {
 </style>
 </head>
 <body>
-<noscript>This website requires javascript to run properly.</noscript>
 <?php include 'loader.php';
 require 'navbar.php';
 ?>
+<noscript>This website requires javascript to run properly.</noscript>
 <!--<a href="map.php?d=1935_10_03">s</a>-->
 <div id="mobile-nav">
   <button id="showMap" class="mobile-nav-button mobile-active" onClick="showMap()">Map</button>
@@ -688,7 +690,77 @@ L.control.polylineMeasure({
   position: 'bottomleft'
 }).addTo(mymap);
 
-var customControl = L.Control.extend({        
+var number = 1;
+
+/*var toggle = L.easyButton ( {
+  position: 'bottomleft', // topleft, topright, bottomleft, bottomright
+  icon: '<img src="marker.png" style="background-size:50%;max-width:100%;max-height:100%;margin-bottom:50%;">',
+  title: 'load image'
+});
+
+toggle.addTo(mymap);*/
+/*L.easyButton({
+  id: 'toggle-markers',  // an id for the generated button
+  position: 'bottomleft',      // inherited from L.Control -- the corner it goes in
+  //type: 'replace',          // set to animate when you're comfy with css
+  leafletClasses: true,     // use leaflet classes to style the button?
+  states:[{                 // specify different icons and responses for your button
+    stateName: 'get-center',
+    onClick: function(button, map){
+      alert('Map is centered at: ' + map.getCenter().toString());
+    },
+    title: 'show me the middle',
+    icon: 'fa-crosshairs'
+  }]
+});*/
+
+/*L.easyButton('<img src="marker.png" style="background-size:50%;max-width:100%;max-height:100%;margin-bottom:50%;">', function(btn, map){
+  if (number == 1) {
+    if (typeof marker_group !== 'undefined') {
+      marker_group.remove();
+    }
+    number = 2;
+  } else {
+    if (typeof marker_group !== 'undefined') {
+      marker_group.addTo(mymap);
+    }
+    number = 1;
+  }
+}).addTo(mymap);
+
+/*L.easyButton({
+  id: 'toggle-markers',  // an id for the generated button
+  position: 'bottomleft',      // inherited from L.Control -- the corner it goes in
+  //type: 'replace',          // set to animate when you're comfy with css
+  leafletClasses: true,     // use leaflet classes to style the button?
+});*/
+
+L.easyButton({
+  id: 'toggle-markers',
+  position: 'bottomleft',
+  type: 'replace',
+  leafletClasses: true,
+  states:[{
+    stateName: 'get-center',
+    onClick: function(button, map){
+      if (number == 1) {
+        if (typeof marker_group !== 'undefined') {
+          marker_group.remove();
+        }
+        number = 2;
+      } else {
+        if (typeof marker_group !== 'undefined') {
+          marker_group.addTo(mymap);
+        }
+        number = 1;
+      }
+    },
+    title: 'Hide / show events on the map',
+    icon: '<img src="marker.png" style="background-size:50%;max-width:100%;max-height:100%;margin-bottom:50%;">'
+  }]
+}).addTo(mymap);
+
+/*var customControl = L.Control.extend({        
   options: {
     position: 'bottomleft'
   },
