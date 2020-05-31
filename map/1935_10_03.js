@@ -166,7 +166,7 @@ var countries = [
   ["pailingmiao_council", neutral, "1935_10_03"],
   ["xinjiang", neutral, "1935_10_03"],
 
-  ["chongqing_clique", allies_puppet, "1935_10_03"],
+  /*["chongqing_clique", allies_puppet, "1935_10_03"],
   ["hunan_clique", allies_puppet, "1935_10_03"],
   ["mianyang_clique", allies_puppet, "1935_10_03"],
   ["ningxia_ma_clique", allies_puppet, "1935_10_03"],
@@ -193,5 +193,5 @@ var countries = [
   ["italian_ethiopia", italy_occupied, "1935_10_03"],
   ["italian_eritrea", italy_puppet, "1935_10_03"],
   ["italian_libya", italy_puppet, "1935_10_03"],
-  ["italian_somalia", italy_puppet, "1935_10_03"]
+  ["italian_somalia", italy_puppet, "1935_10_03"]*/
 ]
