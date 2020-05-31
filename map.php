@@ -523,6 +523,10 @@ var allies = '#296d98'
 var allies_puppet = '#3792cb'
 var allies_occupied = '#45b6fe'
 
+var uf = 'yellow'
+var uf_puppet = '#ffff99'
+var uf_occupied = ''
+
 var comintern = '#B30000'
 var comintern_puppet = 'red'
 var comintern_occupied = '#ff7f7f'
@@ -560,6 +564,22 @@ var blackMarkerStroke = '#2e2e2e'
 mymap.createPane('neutral_zone');
 mymap.createPane('neutral');
 mymap.createPane('allies_occupied');
+mymap.createPane('allies_puppet');
+mymap.createPane('allies');
+mymap.createPane('uf_occupied');
+mymap.createPane('uf_puppet');
+mymap.createPane('uf');
+mymap.createPane('comintern_occupied');
+mymap.createPane('comintern_puppet');
+mymap.createPane('comintern');
+mymap.createPane('finland_occupied');
+mymap.createPane('finland');
+mymap.createPane('italy_occupied');
+mymap.createPane('italy_puppet');
+mymap.createPane('italy');
+mymap.createPane('axis_occupied');
+mymap.createPane('axis_puppet');
+mymap.createPane('axis');
 /*neutral_zone = L.layerGroup();
 neutral = L.layerGroup();
 allies_occupied = L.layerGroup();
@@ -585,28 +605,38 @@ mymap.getPane('neutral').style.zIndex = 653;
 mymap.getPane('allies_occupied').style.zIndex = 654;
 mymap.getPane('allies_puppet').style.zIndex = 655;
 mymap.getPane('allies').style.zIndex = 656;
-mymap.getPane('comintern_occupied').style.zIndex = 657;
-mymap.getPane('comintern_puppet').style.zIndex = 658;
-mymap.getPane('comintern').style.zIndex = 659;
-mymap.getPane('finland_occupied').style.zIndex = 660;
-mymap.getPane('finland').style.zIndex = 661;
-mymap.getPane('italy_occupied').style.zIndex = 662;
-mymap.getPane('italy_puppet').style.zIndex = 663;
-mymap.getPane('italy').style.zIndex = 663;
-mymap.getPane('axis_occupied').style.zIndex = 664;
-mymap.getPane('axis_puppet').style.zIndex = 665;
-mymap.getPane('axis').style.zIndex = 666;
+mymap.getPane('uf_occupied').style.zIndex = 657;
+mymap.getPane('uf_puppet').style.zIndex = 658;
+mymap.getPane('uf').style.zIndex = 659;
+mymap.getPane('comintern_occupied').style.zIndex = 660;
+mymap.getPane('comintern_puppet').style.zIndex = 661;
+mymap.getPane('comintern').style.zIndex = 662;
+mymap.getPane('finland_occupied').style.zIndex = 663;
+mymap.getPane('finland').style.zIndex = 664;
+mymap.getPane('italy_occupied').style.zIndex = 665;
+mymap.getPane('italy_puppet').style.zIndex = 666;
+mymap.getPane('italy').style.zIndex = 667;
+mymap.getPane('axis_occupied').style.zIndex = 668;
+mymap.getPane('axis_puppet').style.zIndex = 669;
+mymap.getPane('axis').style.zIndex = 670;
 
 <?php include 'map/'.$date.'.js';?>
 
 for (let country of countries) {
+if (typeof variable !== 'undefined') {
+  delete country_layers;
+  country_layers = L.layerGroup();
+} else {
+  country_layers = L.layerGroup();
+}
 $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
   sites = L.geoJson(data, {
     "onEachFeature": forEachFeature,
     "style": {color: country[1]},
-    "pane": "neutral"
+    "pane": country[3]
   });
-  sites.addTo(mymap);
+  sites.addTo(country_layers);
+  mymap.addLayer(country_layers);
 });
 }
 
@@ -734,23 +764,7 @@ mymap.on('drag', function() {
 });
 
 function changeLayer() {
-  /*neutral_zone.remove();
-  neutral.remove();
-  allies_occupied.remove();
-  allies_puppet.remove();
-  allies.remove();
-  comintern_occupied.remove();
-  comintern_puppet.remove();
-  comintern.remove();
-  finland_occupied.remove();
-  finland.remove();
-  italy_occupied.remove();
-  italy_puppet.remove();
-  italy.remove();
-  axis_occupied.remove();
-  axis_puppet.remove();
-  axis.remove();*/
-  /*pane.remove();
+  country_layers.remove();
   var date = '<?php echo $date ?>';
   $.ajax({ url: 'ajax_map.php',
     data: {date: date},
@@ -758,7 +772,24 @@ function changeLayer() {
     success: function(output) {
       $("#scripts").html(output);
     }
-  });*/
+  });
+  for (let country of countries) {
+    if (typeof variable !== 'undefined') {
+      delete country_layers;
+      country_layers = L.layerGroup();
+    } else {
+      country_layers = L.layerGroup();
+    }
+    $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
+      sites = L.geoJson(data, {
+        "onEachFeature": forEachFeature,
+        "style": {color: country[1]},
+        "pane": country[3]
+      });
+      sites.addTo(country_layers);
+      mymap.addLayer(country_layers);
+    });
+  }
 }
 
 var radar = L.icon({

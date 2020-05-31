@@ -33,6 +33,22 @@ if ((strpos($date, '01_31')) || (strpos($date, '1937_02_28')) || (strpos($date, 
   $date_year = substr($date, 0, 4);
   $date_month2 = substr($date, 4,4);
   $date_day = substr($date, 8, 10);
+  echo 'for (let country of countries) {
+    if (typeof variable !== "undefined") {
+      delete country_layers;
+      country_layers = L.layerGroup();
+    } else {
+      country_layers = L.layerGroup();
+    }
+    $.getJSON("geojson_files/"+country[2]+"/"+country[0]+".geojson", function(data) {
+      sites = L.geoJson(data, {
+        "onEachFeature": forEachFeature,
+        "style": {color: country[1]},
+        "pane": country[3]
+      });
+      sites.addTo(country_layers);
+      mymap.addLayer(country_layers);
+    });
+  }';
 }
-//echo '<script>a1935_10_04();</script>';
 ?>
