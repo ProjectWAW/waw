@@ -1,11 +1,10 @@
-mymap.setView([9.013776, 38.754616], 5);
-
-var countries = [
+countries = [
   ["neutral_zone_iraq", neutral_zone, "1935_10_03", "neutral_zone"],
 
   ["albania", neutral, "1935_10_03", "neutral"],
   ["andorra", neutral, "1935_10_03", "neutral"],
   ["argentina", neutral, "1935_10_03", "neutral"],
+  ["aussa", neutral, "1935_10_03", "neutral"],
   ["austria", neutral, "1935_10_03", "neutral"],
   ["belgian_congo", neutral, "1935_10_03", "neutral"],
   ["belgium", neutral, "1935_10_03", "neutral"],
@@ -167,18 +166,18 @@ var countries = [
   ["xinjiang", neutral, "1935_10_03", "neutral"],
 
   ["chongqing_clique", uf_puppet, "1935_10_03", "uf_puppet"],
-  ["hunan_clique", uf_puppet, "1935_10_03", "uf"],
-  ["mianyang_clique", uf_puppet, "1935_10_03", "uf"],
+  ["hunan_clique", uf_puppet, "1935_10_03", "uf_puppet"],
+  ["mianyang_clique", uf_puppet, "1935_10_03", "uf_puppet"],
   ["ningxia_ma_clique", uf_puppet, "1935_10_07", "neutral"],
   ["northeastern_army", uf_puppet, "1935_10_03", "neutral"],
-  ["ningxia_ma_clique", uf_puppet, "1935_10_04", "uf"],
+  ["ningxia_ma_clique", uf_puppet, "1935_10_04", "uf_puppet"],
   ["qinghai_ma_clique", uf_puppet, "1935_10_03", "neutral"],
-  ["shandong_clique", uf_puppet, "1935_10_03", "neutral"],
+  ["shandong_clique", uf_puppet, "1935_10_03", "uf_puppet"],
   ["shanxi_clique", uf_puppet, "1935_10_03", "neutral"],
-  ["sichuan_clique", uf_puppet, "1935_10_03", "neutral"],
-  ["tunganistan", uf_puppet, "1935_10_03", "neutral"],
-  ["xikang_clique", uf_puppet, "1935_10_03", "neutral"],
-  ["yunnan_clique", uf_puppet, "1935_10_03", "neutral"],
+  ["sichuan_clique", uf_puppet, "1935_10_03", "uf_puppet"],
+  ["tunganistan", uf_puppet, "1935_10_03", "uf_puppet"],
+  ["xikang_clique", uf_puppet, "1935_10_03", "uf_puppet"],
+  ["yunnan_clique", uf_puppet, "1935_10_03", "uf_puppet"],
   ["china", uf, "1935_10_03", "uf"],
 
   ["chinese_soviet_republic", comintern, "1935_10_07", "neutral"],

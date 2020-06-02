@@ -37,7 +37,9 @@
           $iPod = stripos($_SERVER['HTTP_USER_AGENT'],"iPod");
           $iPhone = stripos($_SERVER['HTTP_USER_AGENT'],"iPhone");
           $iPad = stripos($_SERVER['HTTP_USER_AGENT'],"iPad");
-          if ($iPod == false && $iPhone == false && $iPad == false) { echo '<li><a href="#" onclick="openFullscreen()"><span class="glyphicon glyphicon-fullscreen"></span> Full screen</a></li>'; }
+          if ($iPod == false && $iPhone == false && $iPad == false) { 
+            echo '<li><a href="#" onclick="openFullscreen()"><span class="glyphicon glyphicon-fullscreen"></span> Full screen</a></li>';
+          }
         }?>
       </ul>
     </div>

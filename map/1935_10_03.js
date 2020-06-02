@@ -1,11 +1,10 @@
-mymap.setView([9.013776, 38.754616], 5);
-
-var countries = [
+countries = [
   ["neutral_zone_iraq", neutral_zone, "1935_10_03", "neutral_zone"],
 
   ["albania", neutral, "1935_10_03", "neutral"],
   ["andorra", neutral, "1935_10_03", "neutral"],
   ["argentina", neutral, "1935_10_03", "neutral"],
+  ["aussa", neutral, "1935_10_03", "neutral"],
   ["austria", neutral, "1935_10_03", "neutral"],
   ["belgian_congo", neutral, "1935_10_03", "neutral"],
   ["belgium", neutral, "1935_10_03", "neutral"],

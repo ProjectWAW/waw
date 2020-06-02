@@ -41,11 +41,11 @@ if (isset($_GET['d'])) {
 <html lang="en">
 <head>
 <?php require 'page_head.php';?>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
-<link rel="stylesheet" href="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.css"/>
-<link rel="stylesheet" href="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="">
+<link rel="stylesheet" href="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.css">
+<link rel="stylesheet" href="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
-<link rel="stylesheet" href="server/L.Icon.FontAwesome.css"/>
+<link rel="stylesheet" href="server/L.Icon.FontAwesome.css">
 <script src="https://kit.fontawesome.com/02faa02085.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 <script src="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.js"></script>
@@ -55,7 +55,6 @@ if (isset($_GET['d'])) {
 <script src="js/leaflet.ajax.min.js"></script>
 <title>Map - Project: World at War</title>
 <style>
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 .navbar {
   position: fixed;
   margin-bottom: 0;
@@ -319,16 +318,18 @@ require 'navbar.php';
     </ul>
   </div>
   <div id="Info" class="tabcontent">
-    <h4><?php echo $date_info; ?></h4>
+    <h4 id="date_info"><?php echo $date_info; ?></h4>
     <hr>
-    <?php include 'map/'.$date.'.php';?>
+    <div id="date_info_content">
+      <?php include 'map/'.$date.'.php';?>
+    </div>
   </div>
 
   <div id="Date" class="tabcontent" style="display:none">
     <h4>Date Selection</h4>
     <hr>
     <div class="date-selection">
-    <div class="year">1935</div>
+    <!--<div class="year">1935</div>
 
     <div class="year">1936</div>
 
@@ -348,8 +349,8 @@ require 'navbar.php';
 
     <div class="year">1944</div>
 
-    <div class="year">1945</div>
-    <div onClick="changeLayer();">here</div>
+    <div class="year">1945</div>-->
+    <div id="change">here</div>
     </div>
   </div>
   <div id="Keys" class="tabcontent" style="display:none">
@@ -491,6 +492,7 @@ require 'navbar.php';
 <script id="scripts">
 var mymap = L.map('map');
 
+// https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>',
   minZoom: 3,
@@ -498,7 +500,15 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   zoomControl: true
 }).addTo(mymap);
 
-/*function onMapClick(e) {
+date = '<?php echo $date;?>';
+
+if (date.substr(0, 4) == "1935") {
+  mymap.setView([9.013776, 38.754616], 5);
+} else {
+  mymap.setView([9.013776, 38.754616], 5);
+}
+
+function onMapClick(e) {
   popup
     .setLatLng(e.latlng)
     .setContent("You clicked the map at " + e.latlng.toString())
@@ -507,7 +517,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 var popup = L.popup();
 
-mymap.on('click', onMapClick);*/
+mymap.on('click', onMapClick);
 
 function forEachFeature(feature, layer) {
   var popupContent = "<b>Name</b>: "+feature.properties.Name+"<br><b>Status</b>: "+feature.properties.Status+"<br><b>Government</b>: "+feature.properties.Government+"<br><b>Ruling Party</b>: "+feature.properties.Party+"<br><b>Head of Government</b>: "+feature.properties.HoG+"";
@@ -523,9 +533,9 @@ var allies = '#296d98'
 var allies_puppet = '#3792cb'
 var allies_occupied = '#45b6fe'
 
-var uf = 'yellow'
-var uf_puppet = '#ffff99'
-var uf_occupied = ''
+var uf = '#7f7f00'
+var uf_puppet = '#b2b200'
+var uf_occupied = '#e5e500'
 
 var comintern = '#B30000'
 var comintern_puppet = 'red'
@@ -541,10 +551,12 @@ var italy_occupied = '#80c904'
 var neutral = '#ffad46'
 var neutral_zone = 'white'
 
-var date = "<?php echo $date;?>";
 
 var orangeMarkerColor = ''
 var orangeMarkerStroke = ''
+
+var yellowMarkerColor = ''
+var yellowMarkerStroke = ''
 
 var blueMarkerColor = ''
 var blueMarkerStroke = ''
@@ -552,23 +564,42 @@ var blueMarkerStroke = ''
 var redMarkerColor = ''
 var redMarkerStroke = ''
 
-var greenMarkerColor = ''
-var greenMarkerStroke = ''
-
 var purpleMarkerColor = ''
 var purpleMarkerStroke = ''
+
+var greenMarkerColor = ''
+var greenMarkerStroke = ''
 
 var blackMarkerColor = '#474747'
 var blackMarkerStroke = '#2e2e2e'
 
+var ambulance = 'fas fa-ambulance'
+var anchor = 'fas fa-anchor'
+var atom = 'fas fa-atom'
+var bahai = 'fas fa-bahai'
+var biohazard = 'fas fa-biohazard'
+var bullhorn = 'fas fa-bullhorn'
+var chart_line = 'fas fa-chart-line'
+var cross = 'fas fa-cross'
+var crosshairs = 'fas fa-crosshairs'
+var fire_alt = 'fas fa-fire-alt'
+var plane = 'fas fa-plane'
+var plane_slash = 'fas fa-plane-slash'
+var skull_crossbones = 'fas fa-skull-crossbones'
+var truck = 'fas fa-truck'
+var virus = 'fas fa-virus'
+
+var iconColor = '#FFF'
+var markerStrokeWidth = 1
+
 mymap.createPane('neutral_zone');
 mymap.createPane('neutral');
-mymap.createPane('allies_occupied');
-mymap.createPane('allies_puppet');
-mymap.createPane('allies');
 mymap.createPane('uf_occupied');
 mymap.createPane('uf_puppet');
 mymap.createPane('uf');
+mymap.createPane('allies_occupied');
+mymap.createPane('allies_puppet');
+mymap.createPane('allies');
 mymap.createPane('comintern_occupied');
 mymap.createPane('comintern_puppet');
 mymap.createPane('comintern');
@@ -580,34 +611,15 @@ mymap.createPane('italy');
 mymap.createPane('axis_occupied');
 mymap.createPane('axis_puppet');
 mymap.createPane('axis');
-/*neutral_zone = L.layerGroup();
-neutral = L.layerGroup();
-allies_occupied = L.layerGroup();
-allies_puppet = L.layerGroup();
-allies = L.layerGroup();
-comintern_occupied = L.layerGroup();
-comintern_puppet = L.layerGroup();
-comintern = L.layerGroup();
-finland_occupied = L.layerGroup();
-finland = L.layerGroup();
-italy_occupied = L.layerGroup();
-italy_puppet = L.layerGroup();
-italy = L.layerGroup();
-axis_occupied = L.layerGroup();
-axis_puppet = L.layerGroup();
-axis = L.layerGroup();*/
-mymap.getPane('neutral_zone').style.pointerEvents = 'none';
-mymap.getPane('neutral').style.pointerEvents = 'none';
-mymap.getPane('allies_occupied').style.pointerEvents = 'none';
 
 mymap.getPane('neutral_zone').style.zIndex = 652;
 mymap.getPane('neutral').style.zIndex = 653;
-mymap.getPane('allies_occupied').style.zIndex = 654;
-mymap.getPane('allies_puppet').style.zIndex = 655;
-mymap.getPane('allies').style.zIndex = 656;
-mymap.getPane('uf_occupied').style.zIndex = 657;
-mymap.getPane('uf_puppet').style.zIndex = 658;
-mymap.getPane('uf').style.zIndex = 659;
+mymap.getPane('uf_occupied').style.zIndex = 654;
+mymap.getPane('uf_puppet').style.zIndex = 655;
+mymap.getPane('uf').style.zIndex = 656;
+mymap.getPane('allies_occupied').style.zIndex = 657;
+mymap.getPane('allies_puppet').style.zIndex = 658;
+mymap.getPane('allies').style.zIndex = 659;
 mymap.getPane('comintern_occupied').style.zIndex = 660;
 mymap.getPane('comintern_puppet').style.zIndex = 661;
 mymap.getPane('comintern').style.zIndex = 662;
@@ -631,7 +643,7 @@ if (typeof variable !== 'undefined') {
 }
 $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
   sites = L.geoJson(data, {
-    "onEachFeature": forEachFeature,
+    //"onEachFeature": forEachFeature,
     "style": {color: country[1]},
     "pane": country[3]
   });
@@ -639,77 +651,6 @@ $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) 
   mymap.addLayer(country_layers);
 });
 }
-
-/*for (let country of countries) {
-country_layers = L.layerGroup();
-$.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
-  sites = L.geoJson(data, {
-    //"onEachFeature": forEachFeature,
-    "style": {color: country[1]}
-  });
-  sites.addTo(country_layers);
-  mymap.addLayer(country_layers);
-});
-}*/
-
-/*for (let country of countries) {
-
-$.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
-  sites = L.geoJson(data, {
-    "onEachFeature": forEachFeature,
-    "style": {color: country[1]}
-  });
-  if (country[1] == neutral_zone) {
-    sites.addTo(neutral_zone);
-    mymap.addLayer(neutral_zone);
-  } else if (country[1] == neutral) {
-    sites.addTo(neutral);
-    mymap.addLayer(neutral);
-  } else if (country[1] == allies_occupied) {
-    sites.addTo(allies_occupied);
-    mymap.addLayer(allies_occupied);
-  } else if (country[1] == allies_puppet) {
-    sites.addTo(allies_puppet);
-    mymap.addLayer(allies_puppet);
-  } else if (country[1] == allies) {
-    sites.addTo(allies);
-    mymap.addLayer(allies);
-  } else if (country[1] == comintern_occupied) {
-    sites.addTo(comintern_occupied);
-    mymap.addLayer(comintern_occupied);
-  } else if (country[1] == comintern_puppet) {
-    sites.addTo(comintern_puppet);
-    mymap.addLayer(comintern_puppet);
-  } else if (country[1] == comintern) {
-    sites.addTo(comintern);
-    mymap.addLayer(comintern);
-  } else if (country[1] == finland_occupied) {
-    sites.addTo(finland_occupied);
-    mymap.addLayer(finland_occupied);
-  } else if (country[1] == finland) {
-    sites.addTo(finland);
-    mymap.addLayer(finland);
-  } else if (country[1] == italy_occupied) {
-    sites.addTo(italy_occupied);
-    mymap.addLayer(italy_occupied);
-  } else if (country[1] == italy_puppet) {
-    sites.addTo(italy_puppet);
-    mymap.addLayer(italy_puppet);
-  } else if (country[1] == italy) {
-    sites.addTo(italy);
-    mymap.addLayer(italy);
-  } else if (country[1] == axis_occupied) {
-    sites.addTo(axis_occupied);
-    mymap.addLayer(axis_occupied);
-  } else if (country[1] == axis_puppet) {
-    sites.addTo(axis_puppet);
-    mymap.addLayer(axis_puppet);
-  } else if (country[1] == axis) {
-    sites.addTo(axis);
-    mymap.addLayer(axis);
-  }
-});
-}*/
 
 L.control.mapCenterCoord({
   icon: false,
@@ -763,35 +704,6 @@ mymap.on('drag', function() {
   mymap.panInsideBounds(bounds, { animate: false });
 });
 
-function changeLayer() {
-  country_layers.remove();
-  var date = '<?php echo $date ?>';
-  $.ajax({ url: 'ajax_map.php',
-    data: {date: date},
-    type: 'post',
-    success: function(output) {
-      $("#scripts").html(output);
-    }
-  });
-  for (let country of countries) {
-    if (typeof variable !== 'undefined') {
-      delete country_layers;
-      country_layers = L.layerGroup();
-    } else {
-      country_layers = L.layerGroup();
-    }
-    $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
-      sites = L.geoJson(data, {
-        "onEachFeature": forEachFeature,
-        "style": {color: country[1]},
-        "pane": country[3]
-      });
-      sites.addTo(country_layers);
-      mymap.addLayer(country_layers);
-    });
-  }
-}
-
 var radar = L.icon({
   iconUrl: 'radar2.png',
   iconSize: [20, 20],
@@ -802,7 +714,7 @@ var radar = L.icon({
   shadowAnchor: [20, 20]
 });
 
-/*var radars = L.layerGroup([]);*/
+var radars = L.layerGroup([]);
 
 var elem = document.documentElement;
 function hideSidebar() {
@@ -906,6 +818,171 @@ function openHelp(evt, contentName) {
 window.onresize = function() {
   mymap.invalidateSize();
 }
+
+$(function() {
+  $('#change').click(function() {
+    country_layers.remove();
+    //marker_group.remove();
+    date_year = date.substr(0, 4);
+    date_month = date.substr(5, 2);
+    date_day = date.substr(8, 7);
+    if (date.substr(5, 5) == "01_31" || date == "1937_02_28" || date == "1938_02_28" || date == "1939_02_28" || date == "1941_02_28" || date == "1942_02_28" || date == "1943_02_28" || date == "1945_02_28" || date.substr(5, 5) == "02_29" || date.substr(5, 5) == "03_31" || date.substr(5, 5) == "04_30" || date.substr(5, 5) == "05_31" || date.substr(5, 5) == "06_30" || date.substr(5, 5) == "07_31" || date.substr(5, 5) == "08_31" || date.substr(5, 5) == "09_30" || date.substr(5, 5) == "10_31" || date.substr(5, 5) == "11_30") {
+      date_day = '01';
+      if (date_month == "01") {
+        date_month = "02";
+        info_month = "February";
+      } else if (date_month == "02") {
+        date_month = "03";
+        info_month = "March";
+      } else if (date_month == "03") {
+        date_month = "04";
+        info_month = "April";
+      } else if (date_month == "04") {
+        date_month = "05";
+        info_month = "May";
+      } else if (date_month == "05") {
+        date_month = "06";
+        info_month = "June";
+      } else if (date_month == "06") {
+        date_month = "07";
+        info_month = "July";
+      } else if (date_month == "07") {
+        date_month = "08";
+        info_month = "August";
+      } else if (date_month == "08") {
+        date_month = "09";
+        info_month = "September";
+      } else if (date_month == "09") {
+        date_month = "10";
+        info_month = "October";
+      } else if (date_month == "10") {
+        date_month = "11";
+        info_month = "November";
+      } else if (date_month == "11") {
+        date_month = "12";
+        info_month = "December";
+      }
+    } else if (date.substr(5, 5) == "12_31") {
+      date_year++;
+      date_month = "01";
+      info_month = "January";
+      date_day = "01";
+    } else {
+      if (date_day == "01") {
+        date_day = "02";
+      } else if (date_day == "02") {
+        date_day = "03";
+      } else if (date_day == "03") {
+        date_day = "04";
+      } else if (date_day == "04") {
+        date_day = "05";
+      } else if (date_day == "05") {
+        date_day = "06";
+      } else if (date_day == "06") {
+        date_day = "07";
+      } else if (date_day == "07") {
+        date_day = "08";
+      } else if (date_day == "08") {
+        date_day = "09";
+      } else if (date_day == "09") {
+        date_day = "10";
+      } else if (date_day == "10") {
+        date_day = "11";
+      } else if (date_day == "11") {
+        date_day = "12";
+      } else if (date_day == "12") {
+        date_day = "13";
+      } else if (date_day == "13") {
+        date_day = "14";
+      } else if (date_day == "14") {
+        date_day = "15";
+      } else if (date_day == "15") {
+        date_day = "16";
+      } else if (date_day == "16") {
+        date_day = "17";
+      } else if (date_day == "17") {
+        date_day = "18";
+      } else if (date_day == "18") {
+        date_day = "19";
+      } else if (date_day == "19") {
+        date_day = "20";
+      } else if (date_day == "20") {
+        date_day = "21";
+      } else if (date_day == "21") {
+        date_day = "22";
+      } else if (date_day == "22") {
+        date_day = "23";
+      } else if (date_day == "23") {
+        date_day = "24";
+      } else if (date_day == "24") {
+        date_day = "25";
+      } else if (date_day == "25") {
+        date_day = "26";
+      } else if (date_day == "26") {
+        date_day = "27";
+      } else if (date_day == "27") {
+        date_day = "28";
+      } else if (date_day == "28") {
+        date_day = "29";
+      } else if (date_day == "29") {
+        date_day = "30";
+      } else if (date_day == "30") {
+        date_day = "31";
+      }
+      if (date_month == "01") {
+        info_month = "January";
+      } else if (date_month == "02") {
+        info_month = "February";
+      } else if (date_month == "03") {
+        info_month = "March";
+      } else if (date_month == "04") {
+        info_month = "April";
+      } else if (date_month == "05") {
+        info_month = "May";
+      } else if (date_month == "06") {
+        info_month = "June";
+      } else if (date_month == "07") {
+        info_month = "July";
+      } else if (date_month == "08") {
+        info_month = "August";
+      } else if (date_month == "09") {
+        info_month = "September";
+      } else if (date_month == "10") {
+        info_month = "October";
+      } else if (date_month == "11") {
+        info_month = "November";
+      } else if (date_month == "12") {
+        info_month = "December";
+      }
+    }
+
+    date = date_year+"_"+date_month+"_"+date_day;
+
+    document.getElementById("date_info").innerHTML = date_day+" "+info_month+" "+date_year;
+    document.getElementById("date_info_content").innerHTML = "";
+    $('#date_info_content').load('map/'+date+'.php');
+
+    $.getScript('map/'+date+'.js', function() {
+      for (let country of countries) {
+        if (typeof variable !== 'undefined') {
+          delete country_layers;
+          country_layers = L.layerGroup();
+        } else {
+          country_layers = L.layerGroup();
+        }
+        $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
+          sites = L.geoJson(data, {
+            "onEachFeature": forEachFeature,
+            "style": {color: country[1]},
+            "pane": country[3]
+          });
+          sites.addTo(country_layers);
+          mymap.addLayer(country_layers);
+        });
+      }
+    });
+  });
+});
 </script>
 </body>
 </html>

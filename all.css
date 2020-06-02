@@ -35,14 +35,18 @@
 body {
   background-color: #fff;
 }
+/********************** NAVBAR **********************/
 nav {
   box-shadow: 0 8px 8px rgba(0,0,0,0.19);
   -moz-box-shadow: 0 8px 8px rgba(0,0,0,0.19);
   -webkit-box-shadow: 0 8px 8px rgba(0,0,0,0.19);
 }
 .navbar-default {
-  background-color: #987f62;
-  border-color: #7c5e3c;
+  background-color: #7e6951;
+  border-color: #705536;
+}
+.navbar-default .navbar-toggle {
+  background-color: #ddd;
 }
 .navbar-default .navbar-brand {
   color: #f5f5f5;
