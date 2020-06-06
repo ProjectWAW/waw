@@ -194,3 +194,82 @@ countries = [
   ["italian_libya", italy_puppet, "1935_10_03", "italy_puppet"],
   ["italian_somalia", italy_puppet, "1935_10_03", "italy_puppet"]
 ]
+
+marker_group = new L.FeatureGroup();
+
+
+info_1935_10_03_1 = "<?php echo $info_1935_10_03_1;?>";
+marker1935_10_03_1_location = [41.8919300, 12.5113300];
+marker1935_10_03_1 = L.marker(marker1935_10_03_1_location, {
+  id: "marker1935_10_03_1",
+  icon: green_bullhorn,
+  title: info_1935_10_03_1
+});
+info_1935_10_03_2 = "<?php echo $info_1935_10_03_2;?>";
+marker1935_10_03_2_location = [14.495184, 39.393883];
+marker1935_10_03_2 = L.marker(marker1935_10_03_2_location, {
+  id: "marker1935_10_03_2",
+  icon: green_gun_right,
+  title: info_1935_10_03_2
+});
+info_1935_10_03_3 = "<?php echo $info_1935_10_03_3;?>";
+marker1935_10_03_3_location = [5.190791, 45.079651];
+marker1935_10_03_3 = L.marker(marker1935_10_03_3_location, {
+  id: "marker1935_10_03_3",
+  icon: green_gun_left,
+  title: info_1935_10_03_3
+});
+info_1935_10_03_4 = "<?php echo $info_1935_10_03_4;?>";
+marker1935_10_03_4_location = [9.010725, 38.751268];
+marker1935_10_03_4 = L.marker(marker1935_10_03_4_location, {
+  id: "marker1935_10_03_4",
+  icon: purple_bullhorn,
+  title: info_1935_10_03_4
+});
+
+marker_group.addLayer(marker1935_10_03_1);
+marker_group.addLayer(marker1935_10_03_2);
+marker_group.addLayer(marker1935_10_03_3);
+marker_group.addLayer(marker1935_10_03_4);
+
+mymap.addLayer(marker_group);
+
+marker1935_10_03_1.on("click", function () {
+  onClick1();
+  location.href='#1935_10_03_1';
+  infoClicked = document.getElementById("1935_10_03_1");
+  onClick2();
+});
+marker1935_10_03_2.on("click", function () {
+  onClick1();
+  location.href='#1935_10_03_2';
+  infoClicked = document.getElementById("1935_10_03_2");
+  onClick2();
+});
+marker1935_10_03_3.on("click", function () {
+  onClick1();
+  location.href='#1935_10_03_3';
+  infoClicked = document.getElementById("1935_10_03_3");
+  onClick2();
+});
+marker1935_10_03_4.on("click", function () {
+  onClick1();
+  location.href='#1935_10_03_4';
+  infoClicked = document.getElementById("1935_10_03_4");
+  onClick2();
+});
+
+
+
+function zoom1935_10_03_1() {
+  mymap.setView(marker1935_10_03_1_location);
+}
+function zoom1935_10_03_2() {
+  mymap.setView(marker1935_10_03_2_location);
+}
+function zoom1935_10_03_3() {
+  mymap.setView(marker1935_10_03_3_location);
+}
+function zoom1935_10_03_4() {
+  mymap.setView(marker1935_10_03_4_location);
+}

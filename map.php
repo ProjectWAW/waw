@@ -46,6 +46,7 @@ if (isset($_GET['d'])) {
 <link rel="stylesheet" href="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
 <link rel="stylesheet" href="server/L.Icon.FontAwesome.css">
+<link rel="stylesheet" href="style.css"></head>
 <script src="https://kit.fontawesome.com/02faa02085.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 <script src="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.js"></script>
@@ -86,8 +87,8 @@ if (isset($_GET['d'])) {
   position: fixed;
   overflow-y: auto;
   right: 0;
-  bottom: 0;
-  top: 50px;
+  bottom: 50px;
+  top: 100px;
   background-color: #fafaf5;
 }
 #sidebar ul {
@@ -106,30 +107,25 @@ if (isset($_GET['d'])) {
 .sidebar-links-nav {
   background-color: #bba58e;
   margin: 0;
-  width: 100%;
   float: left;
+  width: 399px;
 }
 .sidebar-links {
   border-bottom: 2px solid #e7e7e7;
 }
 .sidebar-nav {
-  position: -webkit-sticky;
-  position: sticky;
+  position: -webkit-fixed;
+  position: fixed;
   z-index: 200;
   box-sizing: border-box;
-  top: 0px;
+  top: 50px;
+  width: 399px;
 }
 .sidebar-bottom-nav {
   position: fixed;
-  padding-top:12px;
   bottom: 0px;
   width: 399px;
   box-sizing: border-box;
-  background-color: #f8f8f8;
-  border-bottom: 2px solid #e7e7e7;
-}
-.mobile-active {
-  border-bottom: 2px solid #6b553b;
 }
 .sidebar-bottom-links-nav {
   width: 100%;
@@ -146,12 +142,15 @@ if (isset($_GET['d'])) {
   width: 50%;
   float: left;
   border: 0;
-  color: #777;
-  background-color: #fafaf5;
+  color: #fff;
+  background-color: #bba58e;
   border-bottom: 2px solid #e7e7e7;
 }
 .mobile-nav-button:focus, .mobile-nav-button:active {
   outline: none;
+}
+.mobile-active {
+  border-bottom: 2px solid #6b553b;
 }
 hr { 
 	height: 1px;
@@ -165,7 +164,6 @@ hr {
 }
 h4 {
   text-align: center;
-  margin-top: 60px;
 }
 .country-name {
   padding-left: 4px;
@@ -222,9 +220,9 @@ h4 {
   padding-left: 5px;
   padding-right: 5px;
 }
-@media screen and (max-width: 767px) {
+/*@media screen and (max-width: 767px) {
   
-}
+}*/
 @media screen and (max-width: 920px) {
   h4 {
     margin-top: 10px;
@@ -246,13 +244,28 @@ h4 {
     right: 0;
   }
   #sidebar {
-    top: 74px;
-    bottom: 0;
+    top: 132px;
     margin: 0;
     position: fixed;
     width: 100%;
     z-index: 1;
     background-color: white;
+  }
+  #sidebar ul li a {
+    line-height: 28px;
+  }
+  .sidebar-nav {
+    top: 74px;
+    width: 100%;
+  }
+  .sidebar-bottom-nav {
+    width: 100%;
+  }
+  .sidebar-links-nav {
+    width: 100%;
+  }
+  .navbar-nav {
+    margin: 0;
   }
   .navbar-header {
     float: none;
@@ -289,6 +302,14 @@ h4 {
     display: block !important;
   }
 }
+.icon-gun-left {
+  font-weight: 900;
+  font-size: 19px;
+}
+.icon-gun-right {
+  font-weight: 900;
+  font-size: 19px;
+}
 </style>
 </head>
 <body>
@@ -312,16 +333,16 @@ require 'navbar.php';
   </div>
   <div class="sidebar-bottom-nav">
     <ul class="nav navbar-nav sidebar-bottom-links-nav">
-      <li><a id="info-button" class="sidebar-links" href="https://discord.gg/qftqDpY" target="_blank">Discord</a></li>
-      <li><a id="date-button" class="sidebar-links" href="#" target="_blank">Patreon</a></li>
-      <li style="width:34%"><a id="keys-button" class="sidebar-links" href="#" target="_blank">Twitter</a></li>
+      <li style="background-color:#7289DA;"><a id="info-button" href="https://discord.gg/qftqDpY" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
+      <li style="background-color:#f96854;"><a id="date-button" href="#" target="_blank"><i class="fab fa-patreon"></i> Patreon</a></li>
+      <li style="width:34%;background-color:#1DA1F2;"style="width:34%"><a id="keys-button" href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
     </ul>
   </div>
   <div id="Info" class="tabcontent">
     <h4 id="date_info"><?php echo $date_info; ?></h4>
     <hr>
     <div id="date_info_content">
-      <?php include 'map/'.$date.'.php';?>
+      <?php include 'map/'.$date.'.php';?><span class="icon-tank"></span>
     </div>
   </div>
 
@@ -488,6 +509,8 @@ require 'navbar.php';
       <br><br>
     </div>
   </div>
+  <!-- ATTRIBUTE -->
+  <!-- https://creazilla.com/ Tank designed by creazilla-->
 </div>
 <script id="scripts">
 var mymap = L.map('map');
@@ -564,17 +587,20 @@ var blueMarkerStroke = ''
 var redMarkerColor = ''
 var redMarkerStroke = ''
 
-var purpleMarkerColor = ''
-var purpleMarkerStroke = ''
+var purpleMarkerColor = '#800080'
+var purpleMarkerStroke = '#5f005f'
 
-var greenMarkerColor = ''
-var greenMarkerStroke = ''
+var greenMarkerColor = '#25790b'
+var greenMarkerStroke = '#1e580d'
 
 var blackMarkerColor = '#474747'
 var blackMarkerStroke = '#2e2e2e'
 
+
 var ambulance = 'fas fa-ambulance'
 var anchor = 'fas fa-anchor'
+var artillery_left = 'icon-artillery-left'
+var artillery_right = 'icon-artillery-right'
 var atom = 'fas fa-atom'
 var bahai = 'fas fa-bahai'
 var biohazard = 'fas fa-biohazard'
@@ -582,15 +608,24 @@ var bullhorn = 'fas fa-bullhorn'
 var chart_line = 'fas fa-chart-line'
 var cross = 'fas fa-cross'
 var crosshairs = 'fas fa-crosshairs'
+var drafting_compass = 'fas fa-drafting-compass'
 var fire_alt = 'fas fa-fire-alt'
+var flag = 'fas fa-flag'
+var gun_left = 'icon-gun-left'
+var gun_right = 'icon-gun-right'
+var helmet = 'icon-helmet'
 var plane = 'fas fa-plane'
 var plane_slash = 'fas fa-plane-slash'
 var skull_crossbones = 'fas fa-skull-crossbones'
+var tank_left = 'icon-tank-left'
+var tank_right = 'icon-tank-right'
 var truck = 'fas fa-truck'
 var virus = 'fas fa-virus'
 
 var iconColor = '#FFF'
 var markerStrokeWidth = 1
+
+<?php include 'markers.js';?>
 
 mymap.createPane('neutral_zone');
 mymap.createPane('neutral');
@@ -612,25 +647,25 @@ mymap.createPane('axis_occupied');
 mymap.createPane('axis_puppet');
 mymap.createPane('axis');
 
-mymap.getPane('neutral_zone').style.zIndex = 652;
-mymap.getPane('neutral').style.zIndex = 653;
-mymap.getPane('uf_occupied').style.zIndex = 654;
-mymap.getPane('uf_puppet').style.zIndex = 655;
-mymap.getPane('uf').style.zIndex = 656;
-mymap.getPane('allies_occupied').style.zIndex = 657;
-mymap.getPane('allies_puppet').style.zIndex = 658;
-mymap.getPane('allies').style.zIndex = 659;
-mymap.getPane('comintern_occupied').style.zIndex = 660;
-mymap.getPane('comintern_puppet').style.zIndex = 661;
-mymap.getPane('comintern').style.zIndex = 662;
-mymap.getPane('finland_occupied').style.zIndex = 663;
-mymap.getPane('finland').style.zIndex = 664;
-mymap.getPane('italy_occupied').style.zIndex = 665;
-mymap.getPane('italy_puppet').style.zIndex = 666;
-mymap.getPane('italy').style.zIndex = 667;
-mymap.getPane('axis_occupied').style.zIndex = 668;
-mymap.getPane('axis_puppet').style.zIndex = 669;
-mymap.getPane('axis').style.zIndex = 670;
+mymap.getPane('neutral_zone').style.zIndex = 252;
+mymap.getPane('neutral').style.zIndex = 253;
+mymap.getPane('uf_occupied').style.zIndex = 254;
+mymap.getPane('uf_puppet').style.zIndex = 255;
+mymap.getPane('uf').style.zIndex = 256;
+mymap.getPane('allies_occupied').style.zIndex = 257;
+mymap.getPane('allies_puppet').style.zIndex = 258;
+mymap.getPane('allies').style.zIndex = 259;
+mymap.getPane('comintern_occupied').style.zIndex = 260;
+mymap.getPane('comintern_puppet').style.zIndex = 261;
+mymap.getPane('comintern').style.zIndex = 262;
+mymap.getPane('finland_occupied').style.zIndex = 263;
+mymap.getPane('finland').style.zIndex = 264;
+mymap.getPane('italy_occupied').style.zIndex = 265;
+mymap.getPane('italy_puppet').style.zIndex = 266;
+mymap.getPane('italy').style.zIndex = 267;
+mymap.getPane('axis_occupied').style.zIndex = 268;
+mymap.getPane('axis_puppet').style.zIndex = 269;
+mymap.getPane('axis').style.zIndex = 270;
 
 <?php include 'map/'.$date.'.js';?>
 
@@ -703,18 +738,6 @@ mymap.setMaxBounds(bounds);
 mymap.on('drag', function() {
   mymap.panInsideBounds(bounds, { animate: false });
 });
-
-var radar = L.icon({
-  iconUrl: 'radar2.png',
-  iconSize: [20, 20],
-  iconAnchor: [20, 20],
-  popupAnchor: [-10, -15],
-  //shadowUrl: 'my-icon-shadow.png',
-  shadowSize: [20, 20],
-  shadowAnchor: [20, 20]
-});
-
-var radars = L.layerGroup([]);
 
 var elem = document.documentElement;
 function hideSidebar() {
@@ -822,7 +845,7 @@ window.onresize = function() {
 $(function() {
   $('#change').click(function() {
     country_layers.remove();
-    //marker_group.remove();
+    marker_group.remove();
     date_year = date.substr(0, 4);
     date_month = date.substr(5, 2);
     date_day = date.substr(8, 7);

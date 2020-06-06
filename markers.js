@@ -37,6 +37,16 @@ black_virus = L.icon.fontAwesome({
   iconXOffset: -2.5,
   iconYOffset: 0
 });
+black_tank_left = L.icon.fontAwesome({
+  iconClasses: tank_left,
+  markerColor: blackMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blackMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
 black_truck = L.icon.fontAwesome({
   iconClasses: truck,
   markerColor: blackMarkerColor,
@@ -49,23 +59,42 @@ black_truck = L.icon.fontAwesome({
 });
 
 
-blue_bullhorn = L.icon.fontAwesome({
+green_bullhorn = L.icon.fontAwesome({
   iconClasses: bullhorn,
-  markerColor: blueMarkerColor,
+  markerColor: greenMarkerColor,
   markerStrokeWidth: markerStrokeWidth,
-  markerStrokeColor: blueMarkerStroke,
+  markerStrokeColor: greenMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
+green_gun_left = L.icon.fontAwesome({
+  iconClasses: gun_left,
+  markerColor: greenMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: greenMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
+green_gun_right = L.icon.fontAwesome({
+  iconClasses: gun_right,
+  markerColor: greenMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: greenMarkerStroke,
   iconColor: iconColor,
   iconSize: [15, 15],
   iconXOffset: -2.5,
   iconYOffset: 0
 });
 
-
-red_bullhorn = L.icon.fontAwesome({
+purple_bullhorn = L.icon.fontAwesome({
   iconClasses: bullhorn,
-  markerColor: redMarkerColor,
+  markerColor: purpleMarkerColor,
   markerStrokeWidth: markerStrokeWidth,
-  markerStrokeColor: redMarkerStroke,
+  markerStrokeColor: purpleMarkerStroke,
   iconColor: iconColor,
   iconSize: [15, 15],
   iconXOffset: -2.5,
