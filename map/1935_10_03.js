@@ -197,7 +197,6 @@ countries = [
 
 marker_group = new L.FeatureGroup();
 
-
 info_1935_10_03_1 = "<?php echo $info_1935_10_03_1;?>";
 marker1935_10_03_1_location = [41.8919300, 12.5113300];
 marker1935_10_03_1 = L.marker(marker1935_10_03_1_location, {

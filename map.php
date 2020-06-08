@@ -77,8 +77,9 @@ if (isset($_GET['d'])) {
 }
 #map {
   width: auto;
-  height: 100%;
   position: absolute;
+  top: 50px;
+  bottom: 0;
   left: 0;
   right: 399px;
 }
@@ -131,8 +132,11 @@ if (isset($_GET['d'])) {
   width: 100%;
 }
 .tabcontent {
-  padding: 8px;
+  padding: 10px;
   width: 100%;
+}
+#Keys {
+  margin-bottom: 20px;
 }
 #mobile-nav {
   display: none;
@@ -170,9 +174,8 @@ h4 {
   font-size: 20px;
 }
 .info-content {
-  padding-left: 5px;
-  padding-right: 5px;
   font-size: 17px;
+  padding-top: 2px;
   font-family: 'Roboto', sans-serif;
 }
 .fas.fa-bullhorn {
@@ -196,8 +199,6 @@ h4 {
   text-align: center;
 }
 .keys-content {
-  padding-left: 5px;
-  padding-right: 5px;
   margin-bottom: 5px;
 }
 .key-header {
@@ -220,9 +221,22 @@ h4 {
   padding-left: 5px;
   padding-right: 5px;
 }
-/*@media screen and (max-width: 767px) {
-  
-}*/
+.icon-gun-left, .icon-gun-right {
+  font-weight: 900;
+  font-size: 19px;
+}
+.icon-artillery-left {
+  font-weight: 900;
+  font-size: 19px;
+}
+.keys-icon {
+  float: left;
+  font-size: 35px;
+  margin-right: 7px;
+}
+.keys-icon-desc {
+  padding-top: 6px;
+}
 @media screen and (max-width: 920px) {
   h4 {
     margin-top: 10px;
@@ -302,14 +316,6 @@ h4 {
     display: block !important;
   }
 }
-.icon-gun-left {
-  font-weight: 900;
-  font-size: 19px;
-}
-.icon-gun-right {
-  font-weight: 900;
-  font-size: 19px;
-}
 </style>
 </head>
 <body>
@@ -317,7 +323,6 @@ h4 {
 require 'navbar.php';
 ?>
 <noscript>This website requires javascript to run properly.</noscript>
-<!--<a href="map.php?d=1935_10_03">s</a>-->
 <div id="mobile-nav">
   <button id="showMap" class="mobile-nav-button mobile-active" onClick="showMap()">Map</button>
   <button id="showSidebar" class="mobile-nav-button" onClick="showSidebar()">Sidebar</button>
@@ -377,141 +382,29 @@ require 'navbar.php';
   <div id="Keys" class="tabcontent" style="display:none">
     <h4>Map Keys</h4>
     <hr>
-    <div class="keys-content">
-      <h5 class="territories">Territories</h5>
-      <br>
-      <div class="key-header">Neutral</div>
-        <div class="key-row">
-          <div class="key-color">
-            <div class="key-color-inner" style="background-color:#ffad46;">
-            </div>
-          </div>
-          <div class="key-description">
-            - Neutral Countries
-          </div>
-        </div>
-      </div>
+    <div class="keys-content" id="keys-content">
+    <?php
+      if ($date_year == "1935" && strpos($date, '12_25') === false && strpos($date, '12_26') === false && strpos($date, '12_27') === false && strpos($date, '12_28') === false && strpos($date, '12_29') === false && strpos($date, '12_30') === false && strpos($date, '12_31') === false) {
+        include 'keys/keys_1.php';
+      } elseif (strpos($date, '1936_01') || strpos($date, '1936_02') || strpos($date, '1936_03')) {
 
-
-     <br><br><br><br><hr class="key-hr" style="margin-top:-20px;">
-      <div class="key-header">Finland</div>
-        <div class="key-row">
-          <div class="key-color">
-            <div class="key-color-inner" style="background-color:purple;">
-            </div>
-          </div>
-          <div class="key-description">
-            - Mainland Finland
-          </div>
-        </div>
-        <div class="key-row">
-          <div class="key-color">
-            <div class="key-color-inner" style="background-color:#ac68cc;">
-            </div>
-          </div>
-          <div class="key-description">
-            - Finnish Occupied Territory
-          </div>
-        </div>
-
-
-      <br><br><br><br><hr class="key-hr" style="margin-top:10px;">
-      <div class="key-header">Axis</div>
-        <div class="key-row">
-          <div class="key-color">
-            <div class="key-color-inner" style="background-color:black;">
-            </div>
-          </div>
-          <div class="key-description">
-            - Axis Members
-          </div>
-        </div>
-        <div class="key-row">
-          <div class="key-color">
-            <div class="key-color-inner" style="background-color:#666666;">
-            </div>
-          </div>
-          <div class="key-description">
-            - Axis Puppets / Colonies
-          </div>
-        </div>
-        <div class="key-row">
-          <div class="key-color">
-            <div class="key-color-inner" style="background-color:#a1a1a1;">
-            </div>
-          </div>
-          <div class="key-description">
-            - Axis Occupied Territory
-          </div>
-        </div>
-        
-
-      <br><br><br><br><hr class="key-hr" style="margin-top:60px;">
-      <div class="key-header">Allies</div>
-        <div class="key-row">
-          <div class="key-color">
-            <div class="key-color-inner" style="background-color:#296d98;">
-            </div>
-          </div>
-          <div class="key-description">
-            - Allied Members
-          </div>
-        </div>
-        <div class="key-row">
-          <div class="key-color">
-            <div class="key-color-inner" style="background-color:#3792cb;">
-            </div>
-          </div>
-          <div class="key-description">
-            - Allied Puppets / Colonies
-          </div>
-        </div>
-        <div class="key-row">
-          <div class="key-color">
-            <div class="key-color-inner" style="background-color:#45b6fe;">
-            </div>
-          </div>
-          <div class="key-description">
-            - Allied Occupied Territory
-          </div>
-        </div>
-        <br><br><br><br><hr class="key-hr" style="margin-top:60px;">
-      
-      
-      <div class="key-header">Comintern</div>
-        <div class="key-row">
-          <div class="key-color">
-            <div class="key-color-inner" style="background-color:#B30000;">
-            </div>
-          </div>
-          <div class="key-description">
-            - Comintern Members
-          </div>
-        </div>
-        <div class="key-row">
-          <div class="key-color">
-            <div class="key-color-inner" style="background-color:red;">
-            </div>
-          </div>
-          <div class="key-description">
-            - Comintern Puppets / Colonies
-          </div>
-        </div>
-        <div class="key-row" style="margin-bottom:105px;">
-          <div class="key-color">
-            <div class="key-color-inner" style="background-color:#ff7f7f;">
-            </div>
-          </div>
-          <div class="key-description">
-            - Comintern Occupied Territory
-          </div>
-        </div>
-      <br><br>
+      }
+    ?>
+    </div>
+    <hr>
+    <h4>Event Icons</h4>
+    <div class="">
+      <i class="fas fa-ambulance keys-icon"></i><div class="keys-icon-desc"> - Ambulance</div><br>
+      <i class="icon-artillery-left keys-icon" style="font-size:45px;"></i><div class="keys-icon-desc"> - Artillery</div><br>
+      <i class="fas fa-atom keys-icon" style="padding-left:4px;"></i><div class="keys-icon-desc"> - A</div><br>
+      <i class="fas fa-biohazard keys-icon"></i><div class="keys-icon-desc"> - Chemical Attack</div><br>
+      <i class="fas fa-bahai keys-icon" style="padding-left:2px;"></i><div class="keys-icon-desc"> - Explosion</div><br>
+      <i class="fas fa-anchor keys-icon"></i><div class="keys-icon-desc"> - Naval Battle</div><br>
     </div>
   </div>
-  <!-- ATTRIBUTE -->
-  <!-- https://creazilla.com/ Tank designed by creazilla-->
 </div>
+  <!-- ATTRIBUTE -->
+  <!-- https://creazilla.com/ Tank icon designed by Creazilla-->
 <script id="scripts">
 var mymap = L.map('map');
 
@@ -984,6 +877,11 @@ $(function() {
     document.getElementById("date_info").innerHTML = date_day+" "+info_month+" "+date_year;
     document.getElementById("date_info_content").innerHTML = "";
     $('#date_info_content').load('map/'+date+'.php');
+
+    document.getElementById("keys-content").innerHTML = "";
+    if (date.substr(0, 4) == "1935") {
+      $('#keys-content').load('keys/keys_1.php');
+    }
 
     $.getScript('map/'+date+'.js', function() {
       for (let country of countries) {

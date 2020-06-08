@@ -194,3 +194,7 @@ countries = [
   ["italian_libya", italy_puppet, "1935_10_03", "italy_puppet"],
   ["italian_somalia", italy_puppet, "1935_10_03", "italy_puppet"]
 ]
+
+marker_group = new L.FeatureGroup();
+
+info_1935_10_04_1 = "<?php echo $info_1935_10_04_1;?>";

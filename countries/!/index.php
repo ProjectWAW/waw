@@ -4,11 +4,8 @@
 <?php include '../../page_head.php';?>
 <title> - Project: World at War</title>
 <style>
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
 	font-family: 'Poppins', sans-serif;
-	color: black;
-	background-color: #f8f8f8;
 }
 nav {
   z-index: 999;
