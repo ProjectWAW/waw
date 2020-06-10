@@ -46,7 +46,7 @@ if (isset($_GET['d'])) {
 <link rel="stylesheet" href="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
 <link rel="stylesheet" href="server/L.Icon.FontAwesome.css">
-<link rel="stylesheet" href="style.css"></head>
+<link rel="stylesheet" href="style.css">
 <script src="https://kit.fontawesome.com/02faa02085.js" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 <script src="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.js"></script>
@@ -114,6 +114,9 @@ if (isset($_GET['d'])) {
 .sidebar-links {
   border-bottom: 2px solid #e7e7e7;
 }
+.sidebar-links:focus {
+  outline: none;
+}
 .sidebar-nav {
   position: -webkit-fixed;
   position: fixed;
@@ -130,6 +133,7 @@ if (isset($_GET['d'])) {
 }
 .sidebar-bottom-links-nav {
   width: 100%;
+  line-height: normal;
 }
 .tabcontent {
   padding: 10px;
@@ -177,9 +181,6 @@ h4 {
   font-size: 17px;
   padding-top: 2px;
   font-family: 'Roboto', sans-serif;
-}
-.fas.fa-bullhorn {
-  font-size: 18px;
 }
 .circle-fa {
   display: inline-block;
@@ -236,6 +237,7 @@ h4 {
 }
 .keys-icon-desc {
   padding-top: 6px;
+  margin-left: 50px;
 }
 @media screen and (max-width: 920px) {
   h4 {
@@ -331,7 +333,7 @@ require 'navbar.php';
 <div id="sidebar">
   <div class="sidebar-nav">
     <ul class="nav navbar-nav sidebar-links-nav">
-      <li><a id="info-button" class="sidebar-links mobile-active" href="#" onclick="openHelp(event, 'Info');showInfo();" id="defaultOpen">Info</a></li>
+      <li><a id="info-button" class="sidebar-links mobile-active" href="#" onclick="openHelp(event, 'Info');showInfo();">Info</a></li>
       <li><a id="date-button" class="sidebar-links" href="#" onclick="openHelp(event, 'Date');showDate();">Date</a></li>
       <li style="width:34%;"><a id="keys-button" class="sidebar-links" href="#" onclick="openHelp(event, 'Keys');showKeys();">Keys</a></li>
     </ul>
@@ -340,7 +342,7 @@ require 'navbar.php';
     <ul class="nav navbar-nav sidebar-bottom-links-nav">
       <li style="background-color:#7289DA;"><a id="info-button" href="https://discord.gg/qftqDpY" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
       <li style="background-color:#f96854;"><a id="date-button" href="#" target="_blank"><i class="fab fa-patreon"></i> Patreon</a></li>
-      <li style="width:34%;background-color:#1DA1F2;"style="width:34%"><a id="keys-button" href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+      <li style="width:34%;background-color:#1DA1F2;"><a id="keys-button" href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
     </ul>
   </div>
   <div id="Info" class="tabcontent">
@@ -350,7 +352,6 @@ require 'navbar.php';
       <?php include 'map/'.$date.'.php';?><span class="icon-tank"></span>
     </div>
   </div>
-
   <div id="Date" class="tabcontent" style="display:none">
     <h4>Date Selection</h4>
     <hr>
@@ -393,23 +394,38 @@ require 'navbar.php';
     </div>
     <hr>
     <h4>Event Icons</h4>
-    <div class="">
-      <i class="fas fa-ambulance keys-icon"></i><div class="keys-icon-desc"> - Ambulance</div><br>
-      <i class="icon-artillery-left keys-icon" style="font-size:45px;"></i><div class="keys-icon-desc"> - Artillery</div><br>
-      <i class="fas fa-atom keys-icon" style="padding-left:4px;"></i><div class="keys-icon-desc"> - A</div><br>
-      <i class="fas fa-biohazard keys-icon"></i><div class="keys-icon-desc"> - Chemical Attack</div><br>
-      <i class="fas fa-bahai keys-icon" style="padding-left:2px;"></i><div class="keys-icon-desc"> - Explosion</div><br>
-      <i class="fas fa-anchor keys-icon"></i><div class="keys-icon-desc"> - Naval Battle</div><br>
-    </div>
+    <i class="fas fa-plane keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Aerial Battle</div><br>
+    <i class="fas fa-bullhorn keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Announcement / Declaration / Proclamation</div><br>
+    <i class="fas fa-ambulance keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Ambulance</div><br>
+    <i class="icon-artillery-left keys-icon" style="font-size:45px;"></i><div class="keys-icon-desc"> - &nbsp; Artillery Attack</div><br>
+    <i class="fas fa-crosshairs keys-icon" style="padding-left:3px;"></i><div class="keys-icon-desc"> - &nbsp; Assasination</div><br>
+    <i class="fas fa-atom keys-icon" style="padding-left:4px;"></i><div class="keys-icon-desc"> - &nbsp; Atomic Research</div><br>
+    <i class="fas fa-drafting-compass keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Battle Plans</div><br>
+    <i class="icon-bomb keys-icon" style="padding-left:2px;"></i><div class="keys-icon-desc"> - &nbsp; Air Raid</div><br>
+    <i class="fas fa-biohazard keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Chemical Attack</div><br>
+    <i class="far fa-flag keys-icon"  style="padding-left:1px;"></i><div class="keys-icon-desc"> - &nbsp; City Captured</div><br>
+    <i class="fas fa-truck keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Convoy</div><br>
+    <i class="fas fa-chart-line keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Economy</div><br>
+    <i class="fas fa-virus keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Epidemic</div><br>
+    <i class="fas fa-skull-crossbones keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Executions / Massacres / Concentration Camps</div><br>
+    <i class="fas fa-bahai keys-icon" style="padding-left:1px;"></i><div class="keys-icon-desc"> - &nbsp; Explosion</div><br>
+    <i class="fas fa-fire-alt keys-icon" style="padding-left:3px;"></i><div class="keys-icon-desc"> - &nbsp; Fire</div><br>
+    <i class="icon-gun-right keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Gun</div><br>
+    <i class="fas fa-anchor keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Naval Battle</div><br>
+    <i class="icon-tank-right keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Tank Battle</div><br>
+    <hr>
+    <h4>Copyright</h4>
+    <a href="https://fontawesome.com/" target="_blank">https://fontawesome.com/</a> Icons designed by FontAwesome<br>
+    <a href="http://cliparts101.com/" target="_blank">http://cliparts101.com/</a> Artillery icon designed by Cliparts101<br>
+    <a href="http://getdrawings.com/" target="_blank">http://getdrawings.com/</a> Bomb icon designed by GetDrawings<br>
+    <a href="https://creazilla.com/" target="_blank">https://creazilla.com/</a> Tank icon designed by Creazilla<br>
+    Gun icon designed by Nestor
   </div>
 </div>
-  <!-- ATTRIBUTE -->
-  <!-- https://creazilla.com/ Tank icon designed by Creazilla-->
 <script id="scripts">
 var mymap = L.map('map');
 
-// https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { // https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>',
   minZoom: 3,
   maxZoom: 14,
@@ -497,9 +513,9 @@ var artillery_right = 'icon-artillery-right'
 var atom = 'fas fa-atom'
 var bahai = 'fas fa-bahai'
 var biohazard = 'fas fa-biohazard'
+var bomb = 'icon-bomb'
 var bullhorn = 'fas fa-bullhorn'
 var chart_line = 'fas fa-chart-line'
-var cross = 'fas fa-cross'
 var crosshairs = 'fas fa-crosshairs'
 var drafting_compass = 'fas fa-drafting-compass'
 var fire_alt = 'fas fa-fire-alt'

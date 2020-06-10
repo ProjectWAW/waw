@@ -27,16 +27,6 @@ black_bullhorn = L.icon.fontAwesome({
   iconXOffset: -2.5,
   iconYOffset: 0
 });
-black_virus = L.icon.fontAwesome({
-  iconClasses: virus,
-  markerColor: blackMarkerColor,
-  markerStrokeWidth: markerStrokeWidth,
-  markerStrokeColor: blackMarkerStroke,
-  iconColor: iconColor,
-  iconSize: [15, 15],
-  iconXOffset: -2.5,
-  iconYOffset: 0
-});
 black_tank_left = L.icon.fontAwesome({
   iconClasses: tank_left,
   markerColor: blackMarkerColor,
@@ -57,7 +47,16 @@ black_truck = L.icon.fontAwesome({
   iconXOffset: -2.5,
   iconYOffset: 0
 });
-
+black_virus = L.icon.fontAwesome({
+  iconClasses: virus,
+  markerColor: blackMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blackMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
 
 green_bullhorn = L.icon.fontAwesome({
   iconClasses: bullhorn,

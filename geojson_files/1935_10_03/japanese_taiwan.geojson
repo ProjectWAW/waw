@@ -3,7 +3,7 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {"Name": "Ethiopian Empire", "Status": "Independent Country", "Government": "Absolute Monarchy", "Party": "/", "HoG": "Haile Selassie"},
+      "properties": {"Name": "", "Status": "", "Government": "", "Party": "", "HoG": ""},
       "geometry": {
         "type": "Polygon",
         "coordinates": [

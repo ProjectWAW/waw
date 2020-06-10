@@ -31,15 +31,15 @@
 </div>
 <hr class="key-hr" style="margin-top:140px;">
 <div class="key-header">Allies</div>
-  <div class="key-row">
+<div class="key-row">
   <div class="key-color"><div class="key-color-inner" style="background-color:#296d98;"></div></div>
   <div class="key-description">- Allied Members</div>
 </div>
-  <div class="key-row">
+<div class="key-row">
   <div class="key-color"><div class="key-color-inner" style="background-color:#3792cb;"></div> </div>
   <div class="key-description">- Allied Puppets / Colonies</div>
 </div>
-  <div class="key-row">
+<div class="key-row">
   <div class="key-color"><div class="key-color-inner" style="background-color:#45b6fe;"></div></div>
   <div class="key-description">- Allied Occupied Territory</div>
 </div>

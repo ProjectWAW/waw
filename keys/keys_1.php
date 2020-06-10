@@ -17,17 +17,13 @@
 </div>
 <div class="key-row" style="margin-bottom:105px;">
   <div class="key-color"><div class="key-color-inner" style="background-color:#80c904;"></div></div>
-  <div class="key-description">- Comintern Occupied Territory</div>
+  <div class="key-description">- Italian Occupied Territory</div>
 </div>
 <hr class="key-hr" style="margin-top:140px;">
 <div class="key-header">Ethiopia</div>
 <div class="key-row">
   <div class="key-color"><div class="key-color-inner" style="background-color:purple;"></div> </div>
   <div class="key-description">- Ethiopia</div>
-</div>
-<div class="key-row">
-  <div class="key-color"><div class="key-color-inner" style="background-color:#ac68cc;"></div></div>
-  <div class="key-description">- Ethiopian Occupied Territory</div>
 </div>
 <hr class="key-hr" style="margin-top:100px;">
 <div class="key-header">Japan</div>
@@ -45,19 +41,15 @@
 </div>
 <hr class="key-hr" style="margin-top:140px;">
 <div class="key-header">China</div>
-  <div class="key-row">
+<div class="key-row">
   <div class="key-color"><div class="key-color-inner" style="background-color:#7f7f00;"></div></div>
   <div class="key-description">- Republic of China (KMT)</div>
 </div>
-  <div class="key-row">
+<div class="key-row">
   <div class="key-color"><div class="key-color-inner" style="background-color:#b2b200;"></div> </div>
   <div class="key-description">- KMT-aligned Warlords</div>
 </div>
-  <div class="key-row">
-  <div class="key-color"><div class="key-color-inner" style="background-color:#e5e500;"></div></div>
-  <div class="key-description">- KMT Occupied Territory</div>
-</div>
-<hr class="key-hr" style="margin-top:140px;">
+<hr class="key-hr" style="margin-top:100px;">
 <div class="key-header">Communist China</div>
 <div class="key-row">
   <div class="key-color"><div class="key-color-inner" style="background-color:#B30000;"></div></div>

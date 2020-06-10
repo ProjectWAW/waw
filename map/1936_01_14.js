@@ -187,6 +187,8 @@ countries = [
   ["east_hebei", axis_puppet, "1935_11_15", "neutral"],
   ["manchukuo", axis_puppet, "1935_10_03", "axis_puppet"],
   ["japan", axis, "1935_10_03", "axis"],
+  ["japanese_taiwan", axis_puppet, "1935_10_03", "axis_puppet"],
+  ["south_seas_mandate", axis_puppet, "1935_10_03", "axis_puppet"],
   
   ["ethiopia", finland, "1936_01_14", "neutral"],
   
