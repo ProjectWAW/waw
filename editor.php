@@ -7,7 +7,7 @@
 <script src="js/leaflet.ajax.min.js"></script>
 <link rel="stylesheet" href="js/leaflet-geoman.css"/>
 <script src="js/leaflet-geoman.min.js"></script>
-<title>Edit - Project: World at War</title>
+<title>Editor - Project: World at War</title>
 <style>
 .navbar {
   position: fixed;
@@ -69,12 +69,10 @@ require 'navbar.php';
     this._reset();
   },
 
-
     onRemove: function(map) {
       map.off('zoomend resetview', this._reset, this);
       L.ImageOverlay.prototype.onRemove.call(this, map);
     },
-
 
   _initImage: function () {
     var img = this._rawImage;
@@ -92,7 +90,7 @@ require 'navbar.php';
     L.DomUtil.addClass(img, 'leaflet-image-layer');
 
     var div = this._image = L.DomUtil.create('div',
-        'leaflet-image-layer ' + (this._zoomAnimated ? 'leaflet-zoom-animated' : ''));
+      'leaflet-image-layer ' + (this._zoomAnimated ? 'leaflet-zoom-animated' : ''));
 
     this._updateZIndex();
     
@@ -109,7 +107,6 @@ require 'navbar.php';
 
     img.alt = this.options.alt;
   },
-
 
   _reset: function () {
     var div = this._image;
@@ -155,9 +152,7 @@ require 'navbar.php';
       (vectorX.x/imgW) + ', ' + (vectorX.y/imgW) + ', ' +
       (vectorY.x/imgH) + ', ' + (vectorY.y/imgH) + ', ' +
       pxTopLeftInDiv.x + ', ' + pxTopLeftInDiv.y + ')';
-
   },
-
 
   reposition: function(topleft, topright, bottomleft) {
     this._topLeft    = L.latLng(topleft);
@@ -165,7 +160,6 @@ require 'navbar.php';
     this._bottomLeft = L.latLng(bottomleft);
     this._reset();
   },
-
 
   setUrl: function (url) {
     this._url = url;
@@ -274,6 +268,8 @@ require 'navbar.php';
   <option value="italy">italy</option>
   <option value="jamaica">jamaica</option>
   <option value="japan">japan</option>
+  <option value="japanese_korea">japanese_korea</option>
+  <option value="japanese_taiwan">japanese_taiwan</option>
   <option value="kenya">kenya</option>
   <option value="kumul_khanate">kumul_khanate</option>
   <option value="kuwait">kuwait</option>
@@ -402,9 +398,7 @@ function repositionImage() {
 		
 		marker1.on('drag dragend', repositionImage);
 		marker2.on('drag dragend', repositionImage);
-		marker3.on('drag dragend', repositionImage);
-
-    country = "france";*/
+		marker3.on('drag dragend', repositionImage);*/
 
     function start(val) {
 

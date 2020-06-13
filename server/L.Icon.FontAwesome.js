@@ -7,8 +7,6 @@ L.Icon.FontAwesome = L.Icon.extend({
     popupAnchor: [0, -50]
   },
 
-  /*------------------------------- LEAFLET -------------------------------*/
-
   createIcon: function() {
     var div = document.createElement("div");
     var options = this.options;
@@ -19,8 +17,6 @@ L.Icon.FontAwesome = L.Icon.extend({
 
     return div;
   },
-
-  /*------------------------------- PUBLIC -------------------------------*/
 
   setStyle: function(style) {
     Object.assign(this.options, style);
@@ -41,15 +37,11 @@ L.Icon.FontAwesome = L.Icon.extend({
     if (style.hasOwnProperty("iconColor")) span.style.color = style.iconColor;
   },
 
-  /*------------------------------- PRIVATE -------------------------------*/
-
   _createIcon: function() {
     var options = this.options;
 
-    // container div
     this.iconDiv = L.DomUtil.create("div", "leaflet-fa-markers");
 
-    // feature icon
     this.iconSpan = L.DomUtil.create(
       "span",
       options.iconClasses + " feature-icon"
@@ -57,18 +49,15 @@ L.Icon.FontAwesome = L.Icon.extend({
     this.iconSpan.style.color = options.iconColor;
     this.iconSpan.style.textAlign = "center";
 
-    // XY position adjustments
     if (options.iconYOffset && options.iconYOffset != 0)
       this.iconSpan.style.marginTop = options.iconYOffset + "px";
     if (options.iconXOffset && options.iconXOffset != 0)
       this.iconSpan.style.marginLeft = options.iconXOffset + "px";
 
-    // marker styles
     const fillOpacity = options.markerFillOpacity || 1;
     const strokeColor = options.markerStrokeColor || options.markerColor;
     const strokeWidth = options.markerStrokeWidth || 1;
 
-    // marker icon L.DomUtil doesn't seem to like svg, just append out html directly
     this.markerSvg = document.createElement("div");
     this.markerSvg.className = "marker-icon-svg";
     this.markerSvg.innerHTML =

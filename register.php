@@ -7,7 +7,6 @@ require 'server/server_register.php';
 <?php require 'page_head.php';?>
 <link rel="stylesheet" type="text/css" href="/forms.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <title>Register - Project: World at War</title>
 <style>
 .error {

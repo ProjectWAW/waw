@@ -37,6 +37,16 @@ black_tank_left = L.icon.fontAwesome({
   iconXOffset: -2.5,
   iconYOffset: 0
 });
+black_tank_right = L.icon.fontAwesome({
+  iconClasses: tank_right,
+  markerColor: blackMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blackMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
 black_truck = L.icon.fontAwesome({
   iconClasses: truck,
   markerColor: blackMarkerColor,

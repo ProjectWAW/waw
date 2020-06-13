@@ -185,7 +185,9 @@ countries = [
   ["east_chahar", axis_puppet, "1935_10_03", "axis_puppet"],
   ["manchukuo", axis_puppet, "1935_10_03", "axis_puppet"],
   ["japan", axis, "1935_10_03", "axis"],
+  ["japanese_korea", axis_puppet, "1935_10_03", "axis_puppet"],
   ["japanese_taiwan", axis_puppet, "1935_10_03", "axis_puppet"],
+  ["kwantung_leased_territory", axis_puppet, "1935_10_03", "axis_puppet"],
   ["south_seas_mandate", axis_puppet, "1935_10_03", "axis_puppet"],
 
   ["ethiopia", finland, "1935_10_05", "neutral"],

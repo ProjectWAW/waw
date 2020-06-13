@@ -387,8 +387,10 @@ require 'navbar.php';
     <?php
       if ($date_year == "1935" && strpos($date, '12_25') === false && strpos($date, '12_26') === false && strpos($date, '12_27') === false && strpos($date, '12_28') === false && strpos($date, '12_29') === false && strpos($date, '12_30') === false && strpos($date, '12_31') === false) {
         include 'keys/keys_1.php';
-      } elseif (strpos($date, '1936_01') || strpos($date, '1936_02') || strpos($date, '1936_03')) {
-
+      } elseif (strpos($date, '1936_01') || strpos($date, '1936_02') || strpos($date, '1936_03') || strpos($date, '1936_04') || strpos($date, '1936_05') || strpos($date, '1936_06') || strpos($date, '1936_07_0') || strpos($date, '1936_07_17') === false || strpos($date, '1936_07_18') === false || strpos($date, '1936_07_19') === false) {
+        include 'keys/keys_2.php';
+      } elseif (strpos($date, '1936_07_17') || strpos($date, '1936_07_18') || strpos($date, '1936_07_19') || strpos($date, '1936_07_2') || strpos($date, '1936_07_3') || strpos($date, '1936_08')) {
+        include 'keys/keys_3.php';
       }
     ?>
     </div>
@@ -405,9 +407,9 @@ require 'navbar.php';
     <i class="fas fa-biohazard keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Chemical Attack</div><br>
     <i class="far fa-flag keys-icon"  style="padding-left:1px;"></i><div class="keys-icon-desc"> - &nbsp; City Captured</div><br>
     <i class="fas fa-truck keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Convoy</div><br>
-    <i class="fas fa-chart-line keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Economy</div><br>
+    <i class="fas fa-chart-line keys-icon"  style="padding-left:3px;"></i><div class="keys-icon-desc"> - &nbsp; Economy</div><br>
     <i class="fas fa-virus keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Epidemic</div><br>
-    <i class="fas fa-skull-crossbones keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Executions / Massacres / Concentration Camps</div><br>
+    <i class="fas fa-skull-crossbones keys-icon" style="padding-left:3px;"></i><div class="keys-icon-desc"> - &nbsp; Executions / Massacres / Concentration Camps</div><br>
     <i class="fas fa-bahai keys-icon" style="padding-left:1px;"></i><div class="keys-icon-desc"> - &nbsp; Explosion</div><br>
     <i class="fas fa-fire-alt keys-icon" style="padding-left:3px;"></i><div class="keys-icon-desc"> - &nbsp; Fire</div><br>
     <i class="icon-gun-right keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Gun</div><br>
@@ -458,8 +460,8 @@ function forEachFeature(feature, layer) {
 
 /***** COLORS *****/
 var axis = 'black'
-var axis_puppet = '#666666'
-var axis_occupied = '#a1a1a1'
+var axis_puppet = '#4d4d4d'
+var axis_occupied = '#8f8f8f'
 
 var allies = '#296d98'
 var allies_puppet = '#3792cb'
