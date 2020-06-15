@@ -25,7 +25,7 @@
   <div class="key-color"><div class="key-color-inner" style="background-color:purple;"></div> </div>
   <div class="key-description">- Ethiopia</div>
 </div>
-<hr class="key-hr" style="margin-top:100px;">
+<hr class="key-hr" style="margin-top:60px;">
 <div class="key-header">Japan</div>
 <div class="key-row">
   <div class="key-color"><div class="key-color-inner" style="background-color:black;"></div></div>

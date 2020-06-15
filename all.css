@@ -57,6 +57,10 @@ nav {
   color: #f5f5f5;
   font-family: 'Poppins', sans-serif;
 }
+.navbar-default .navbar-nav>li>a:focus {
+  color: #fff;
+  outline: none;
+}
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
   color: #fff;
 }

@@ -47,7 +47,7 @@ if (isset($_GET['d'])) {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
 <link rel="stylesheet" href="server/L.Icon.FontAwesome.css">
 <link rel="stylesheet" href="style.css">
-<script src="https://kit.fontawesome.com/02faa02085.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/02faa02085.js"></script>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 <script src="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.js"></script>
 <script src="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.js"></script>
@@ -57,26 +57,13 @@ if (isset($_GET['d'])) {
 <title>Map - Project: World at War</title>
 <style>
 .navbar {
-  position: fixed;
-  margin-bottom: 0;
-  z-index: 500;
-  width: 100%;
-  box-shadow: 0 0 0;
   -webkit-box-shadow: 0 0 0;
+  box-shadow: 0 0 0;
 }
-.nav>li>a {
-  color: #777;
-}
-.nav>li>a:hover {
+.nav>li>a:hover, .nav>li>a:focus {
   background-color: transparent;
-  color: #333;
-}
-.nav>li>a:focus {
-  background-color: transparent;
-  color: #333;
 }
 #map {
-  width: auto;
   position: absolute;
   top: 50px;
   bottom: 0;
@@ -113,8 +100,9 @@ if (isset($_GET['d'])) {
 }
 .sidebar-links {
   border-bottom: 2px solid #e7e7e7;
+  background-color: #bba58e;
 }
-.sidebar-links:focus {
+.sidebar-links:focus, .sidebar-links:active, .sidebar-links:hover {
   outline: none;
 }
 .sidebar-nav {
@@ -137,7 +125,6 @@ if (isset($_GET['d'])) {
 }
 .tabcontent {
   padding: 10px;
-  width: 100%;
 }
 #Keys {
   margin-bottom: 20px;
@@ -687,8 +674,6 @@ function showSidebar() {
 }
 
 function showInfo() {
-  var infoButton = document.getElementById("info-button");
-  infoButton.classList.add("mobile-active");
   var dateButton = document.getElementById("date-button");
   dateButton.classList.remove("mobile-active");
   var keysButton = document.getElementById("keys-button");
@@ -697,8 +682,6 @@ function showInfo() {
 function showDate() {
   var infoButton = document.getElementById("info-button");
   infoButton.classList.remove("mobile-active");
-  var dateButton = document.getElementById("date-button");
-  dateButton.classList.add("mobile-active");
   var keysButton = document.getElementById("keys-button");
   keysButton.classList.remove("mobile-active");
 }
@@ -707,8 +690,6 @@ function showKeys() {
   infoButton.classList.remove("mobile-active");
   var dateButton = document.getElementById("date-button");
   dateButton.classList.remove("mobile-active");
-  var keysButton = document.getElementById("keys-button");
-  keysButton.classList.add("mobile-active");
 }
 
 function openFullscreen() {
@@ -743,10 +724,10 @@ function openHelp(evt, contentName) {
   }
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    tablinks[i].className = tablinks[i].className.replace(" mobile-active", "");
   }
   document.getElementById(contentName).style.display = "block";
-  evt.currentTarget.className += " active";
+  evt.currentTarget.className += " mobile-active";
 }
 
 window.onresize = function() {
