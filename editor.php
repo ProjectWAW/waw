@@ -12,7 +12,6 @@
 .navbar {
   position: fixed;
   margin-bottom: 0;
-  z-index: 500;
   width: 100%;
   box-shadow: 0 0 0;
   -webkit-box-shadow: 0 0 0;
@@ -21,9 +20,6 @@
   width: 100%;
   height: 100%;
   position: absolute;
-}
-select {
-  z-index: 9999;
 }
 </style>
 </head>
@@ -410,7 +406,7 @@ function repositionImage() {
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1936_02_26/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1936_03_07/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);

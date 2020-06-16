@@ -11,7 +11,7 @@ countries = [
   ["belgium", neutral, "1935_10_03", "neutral", null],
   ["bhutan", neutral, "1935_10_03", "neutral", null],
   ["bolivia", neutral, "1935_10_03", "neutral", null],
-  ["brazil", neutral, "1935_10_03", "neutral", null],
+  ["brazil", neutral, "1935_11_24", "neutral", null],
   ["bulgaria", neutral, "1935_10_03", "neutral", null],
   ["chile", neutral, "1935_10_03", "neutral", null],
   ["colombia", neutral, "1935_10_03", "neutral", null],
