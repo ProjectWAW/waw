@@ -44,8 +44,8 @@ if (strpos($username, '-_') !== false || (strpos($username, '_-') !== false)) {
 if (strlen($username) <= 2) {
   array_push($errors, "Your username must have at least 3 characters.");
 }
-if (strlen($username) >= 22) {
-  array_push($errors, "Your username must have below 22 characters.");
+if (strlen($username) >= 33) {
+  array_push($errors, "Your username must have below 33 characters.");
 }
 if (strlen($password_1) <= 6) {
   array_push($errors, "Your password must have at least 7 characters.");

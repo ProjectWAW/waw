@@ -178,9 +178,11 @@ require 'navbar.php';
 <br><br><br>
 <select id="countries_dropdown" onchange="start(this.value)">
   <option value="a">a</option>
-  <option value="andorra">andorra</option>
+  <option value="afghanistan">afghanistan</option>
   <option value="albania">albania</option>
+  <option value="andorra">andorra</option>
   <option value="argentina">argentina</option>
+  <option value="aussa">aussa</option>
   <option value="australia">australia</option>
   <option value="austria">austria</option>
   <option value="bahamas">bahamas</option>
@@ -204,6 +206,7 @@ require 'navbar.php';
   <option value="brunei">brunei</option>
   <option value="bolivia">bolivia</option>
   <option value="brazil">brazil</option>
+  <option value="brazil_communist_uprising">brazil_communist_uprising</option>
   <option value="bulgaria">bulgaria</option>
   <option value="canada">canada</option>
   <option value="ceylon">ceylon</option>
@@ -321,6 +324,7 @@ require 'navbar.php';
   <option value="portuguese_west_africa">portuguese_west_africa</option>
   <option value="qatar">qatar</option>
   <option value="qinghai_ma_clique">qinghai_ma_clique</option>
+  <option value="righteous_army">righteous_army</option>
   <option value="romania">romania</option>
   <option value="saint_helena">saint_helena</option>
   <option value="san_marino">san_marino</option>
@@ -341,6 +345,7 @@ require 'navbar.php';
   <option value="swaziland">swaziland</option>
   <option value="sweden">sweden</option>
   <option value="switzerland">switzerland</option>
+  <option value="tangiers">tangiers</option>
   <option value="tannu_tuva">tannu_tuva</option>
   <option value="tibet">tibet</option>
   <option value="transjordania">transjordania</option>
@@ -405,7 +410,7 @@ function repositionImage() {
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1935_10_03/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1936_02_26/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);

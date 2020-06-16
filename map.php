@@ -49,6 +49,7 @@ if (isset($_GET['d'])) {
 <link rel="stylesheet" href="style.css">
 <script src="https://kit.fontawesome.com/02faa02085.js"></script>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+<script src="https://teastman.github.io/Leaflet.pattern/leaflet.pattern.js"></script>
 <script src="http://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.js"></script>
 <script src="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
@@ -523,6 +524,12 @@ var virus = 'fas fa-virus'
 var iconColor = '#FFF'
 var markerStrokeWidth = 1
 
+var stripes_axis = new L.StripePattern({weight: 5, color: 'black', spaceWeight: 5, angle: 45});
+var stripes_comintern = new L.StripePattern({weight: 5, color: '#B30000', spaceWeight: 5, angle: 45});
+
+stripes_axis.addTo(mymap);
+stripes_comintern.addTo(mymap);
+
 <?php include 'markers.js';?>
 
 mymap.createPane('neutral_zone');
@@ -576,8 +583,8 @@ if (typeof variable !== 'undefined') {
 }
 $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
   sites = L.geoJson(data, {
-    //"onEachFeature": forEachFeature,
-    "style": {color: country[1]},
+    "onEachFeature": forEachFeature,
+    "style": {color: country[1], fillPattern: country[4]},
     "pane": country[3]
   });
   sites.addTo(country_layers);
