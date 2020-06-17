@@ -344,6 +344,7 @@ require 'navbar.php';
     <h4>Date Selection</h4>
     <hr>
     <div class="date-selection">
+      <h4>placeholder</h4>
     <!--<div class="year">1935</div>
 
     <div class="year">1936</div>
@@ -365,7 +366,9 @@ require 'navbar.php';
     <div class="year">1944</div>
 
     <div class="year">1945</div>-->
-    <div id="change">here</div>
+      <div id="change-backward">here</div>
+      <div id="change-forward">here</div>
+      <h4>Jump to date</h4>
     </div>
   </div>
   <div id="Keys" class="tabcontent" style="display:none">
@@ -742,13 +745,15 @@ window.onresize = function() {
 }
 
 $(function() {
-  $('#change').click(function() {
+  $('#change-forward').click(function() {
     country_layers.remove();
-    marker_group.remove();
+    //marker_group.remove();
     date_year = date.substr(0, 4);
     date_month = date.substr(5, 2);
     date_day = date.substr(8, 7);
-    if (date.substr(5, 5) == "01_31" || date == "1937_02_28" || date == "1938_02_28" || date == "1939_02_28" || date == "1941_02_28" || date == "1942_02_28" || date == "1943_02_28" || date == "1945_02_28" || date.substr(5, 5) == "02_29" || date.substr(5, 5) == "03_31" || date.substr(5, 5) == "04_30" || date.substr(5, 5) == "05_31" || date.substr(5, 5) == "06_30" || date.substr(5, 5) == "07_31" || date.substr(5, 5) == "08_31" || date.substr(5, 5) == "09_30" || date.substr(5, 5) == "10_31" || date.substr(5, 5) == "11_30") {
+    if (date == "1945_09_02") {
+
+    } else if (date.substr(5, 5) == "01_31" || date == "1937_02_28" || date == "1938_02_28" || date == "1939_02_28" || date == "1941_02_28" || date == "1942_02_28" || date == "1943_02_28" || date == "1945_02_28" || date.substr(5, 5) == "02_29" || date.substr(5, 5) == "03_31" || date.substr(5, 5) == "04_30" || date.substr(5, 5) == "05_31" || date.substr(5, 5) == "06_30" || date.substr(5, 5) == "07_31" || date.substr(5, 5) == "08_31" || date.substr(5, 5) == "09_30" || date.substr(5, 5) == "10_31" || date.substr(5, 5) == "11_30") {
       date_day = '01';
       if (date_month == "01") {
         date_month = "02";
@@ -850,6 +855,179 @@ $(function() {
         date_day = "30";
       } else if (date_day == "30") {
         date_day = "31";
+      }
+      if (date_month == "01") {
+        info_month = "January";
+      } else if (date_month == "02") {
+        info_month = "February";
+      } else if (date_month == "03") {
+        info_month = "March";
+      } else if (date_month == "04") {
+        info_month = "April";
+      } else if (date_month == "05") {
+        info_month = "May";
+      } else if (date_month == "06") {
+        info_month = "June";
+      } else if (date_month == "07") {
+        info_month = "July";
+      } else if (date_month == "08") {
+        info_month = "August";
+      } else if (date_month == "09") {
+        info_month = "September";
+      } else if (date_month == "10") {
+        info_month = "October";
+      } else if (date_month == "11") {
+        info_month = "November";
+      } else if (date_month == "12") {
+        info_month = "December";
+      }
+    }
+
+    date = date_year+"_"+date_month+"_"+date_day;
+
+    document.getElementById("date_info").innerHTML = date_day+" "+info_month+" "+date_year;
+    document.getElementById("date_info_content").innerHTML = "";
+    $('#date_info_content').load('map/'+date+'.php');
+
+    document.getElementById("keys-content").innerHTML = "";
+    if (date.substr(0, 4) == "1935") {
+      $('#keys-content').load('keys/keys_1.php');
+    }
+
+    $.getScript('map/'+date+'.js', function() {
+      for (let country of countries) {
+        if (typeof variable !== 'undefined') {
+          delete country_layers;
+          country_layers = L.layerGroup();
+        } else {
+          country_layers = L.layerGroup();
+        }
+        $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
+          sites = L.geoJson(data, {
+            "onEachFeature": forEachFeature,
+            "style": {color: country[1]},
+            "pane": country[3]
+          });
+          sites.addTo(country_layers);
+          mymap.addLayer(country_layers);
+        });
+      }
+    });
+  });
+});
+$(function() {
+  $('#change-backward').click(function() {
+    country_layers.remove();
+    //marker_group.remove();
+    date_year = date.substr(0, 4);
+    date_month = date.substr(5, 2);
+    date_day = date.substr(8, 7);
+    if (date == "1945_09_02") {
+      
+    } else if (date_day == "01") {
+      if (date_month == "02") {
+        date_month = "01";
+        date_day = "31";
+      } else if (date_month == "03") {
+        date_month = "02";
+        if (date_year == "1936" || date_year == "1940" || date_year == "1944") {
+          date_day = "29";
+        } else {
+          date_day = "28";
+        }
+      } else if (date_month == "04") {
+        date_month = "03";
+        date_day = "31";
+      } else if (date_month == "05") {
+        date_month = "04";
+        date_day = "30";
+      } else if (date_month == "06") {
+        date_month = "05";
+        date_day = "31";
+      } else if (date_month == "07") {
+        date_month = "06";
+        date_day = "30";
+      } else if (date_month == "08") {
+        date_month = "07";
+        date_day = "31";
+      } else if (date_month == "09") {
+        date_month = "08";
+        date_day = "31";
+      } else if (date_month == "10") {
+        date_month = "09";
+        date_day = "30";
+      } else if (date_month == "11") {
+        date_month = "10";
+        date_day = "31";
+      } else if (date_month == "12") {
+        date_month = "11";
+        date_day = "30";
+      } else if (date_month == "01") {
+        date_year--;
+        date_month = "12";
+        date_day = "31";
+      }
+    } else {
+      if (date_day == "31") {
+        date_day = "30";
+      } else if (date_day == "30") {
+        date_day = "29";
+      } else if (date_day == "29") {
+        date_day = "28";
+      } else if (date_day == "28") {
+        date_day = "27";
+      } else if (date_day == "27") {
+        date_day = "26";
+      } else if (date_day == "26") {
+        date_day = "25";
+      } else if (date_day == "25") {
+        date_day = "24";
+      } else if (date_day == "24") {
+        date_day = "23";
+      } else if (date_day == "23") {
+        date_day = "22";
+      } else if (date_day == "22") {
+        date_day = "21";
+      } else if (date_day == "21") {
+        date_day = "20";
+      } else if (date_day == "20") {
+        date_day = "19";
+      } else if (date_day == "19") {
+        date_day = "18";
+      } else if (date_day == "18") {
+        date_day = "17";
+      } else if (date_day == "17") {
+        date_day = "16";
+      } else if (date_day == "16") {
+        date_day = "15";
+      } else if (date_day == "15") {
+        date_day = "14";
+      } else if (date_day == "14") {
+        date_day = "13";
+      } else if (date_day == "13") {
+        date_day = "12";
+      } else if (date_day == "12") {
+        date_day = "11";
+      } else if (date_day == "11") {
+        date_day = "10";
+      } else if (date_day == "10") {
+        date_day = "09";
+      } else if (date_day == "09") {
+        date_day = "08";
+      } else if (date_day == "08") {
+        date_day = "07";
+      } else if (date_day == "07") {
+        date_day = "06";
+      } else if (date_day == "06") {
+        date_day = "05";
+      } else if (date_day == "05") {
+        date_day = "04";
+      } else if (date_day == "04") {
+        date_day = "03";
+      } else if (date_day == "03") {
+        date_day = "02";
+      } else if (date_day == "02") {
+        date_day = "01";
       }
       if (date_month == "01") {
         info_month = "January";

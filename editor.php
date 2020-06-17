@@ -111,20 +111,16 @@ require 'navbar.php';
       return;
     }
 
-    // Project control points to container-pixel coordinates
     var pxTopLeft    = this._map.latLngToLayerPoint(this._topLeft);
     var pxTopRight   = this._map.latLngToLayerPoint(this._topRight);
     var pxBottomLeft = this._map.latLngToLayerPoint(this._bottomLeft);
 
-    // Infer coordinate of bottom right
     var pxBottomRight = pxTopRight.subtract(pxTopLeft).add(pxBottomLeft);
 
-    // pxBounds is mostly for positioning the <div> container
     var pxBounds = L.bounds([pxTopLeft, pxTopRight, pxBottomLeft, pxBottomRight]);
     var size = pxBounds.getSize();
     var pxTopLeftInDiv = pxTopLeft.subtract(pxBounds.min);
 
-    // LatLngBounds are needed for (zoom) animations
     this._bounds = L.latLngBounds( this._map.layerPointToLatLng(pxBounds.min),
                                   this._map.layerPointToLatLng(pxBounds.max) );
 
@@ -406,7 +402,7 @@ function repositionImage() {
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1936_03_07/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1935_10_03/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);
