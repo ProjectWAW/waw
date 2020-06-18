@@ -17,7 +17,7 @@
 </div>
 <div class="key-row" style="margin-bottom:105px;">
   <div class="key-color"><div class="key-color-inner" style="background-color:#80c904;"></div></div>
-  <div class="key-description">- Italian Occupied Territory</div>
+  <div class="key-description">- Italian occupied territory</div>
 </div>
 <hr class="key-hr" style="margin-top:140px;">
 <div class="key-header">Ethiopia</div>

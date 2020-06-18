@@ -361,8 +361,7 @@ require 'navbar.php';
   <option value="yunnan_clique">yunnan_clique</option>
   <option value="zanzibar">zanzibar</option>
   </select>
-  <br>
-  <br>
+  <br><br>
 
   <div id='map'></div>
   <script>
@@ -402,7 +401,7 @@ function repositionImage() {
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1935_10_03/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1936_04_30/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);
@@ -421,9 +420,7 @@ function repositionImage() {
         };
         console.log("before sending data");
         xhr.send(data);
-
       })
-
     }
 
     mymap.zoomControl.setPosition('bottomright');
