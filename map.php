@@ -418,8 +418,9 @@ require 'navbar.php';
 <script id="scripts">
 var mymap = L.map('map');
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { // https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>',
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', { // https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	subdomains: 'abcd',
   minZoom: 3,
   maxZoom: 14,
   zoomControl: true
@@ -529,9 +530,11 @@ var markerStrokeWidth = 1
 
 var stripes_axis = new L.StripePattern({weight: 5, color: 'black', spaceWeight: 5, angle: 45});
 var stripes_comintern = new L.StripePattern({weight: 5, color: '#B30000', spaceWeight: 5, angle: 45});
+var stripes_finland = new L.StripePattern({weight: 5, color: 'purple', spaceWeight: 5, angle: 45});
 
 stripes_axis.addTo(mymap);
 stripes_comintern.addTo(mymap);
+stripes_finland.addTo(mymap);
 
 <?php include 'markers.js';?>
 
@@ -856,31 +859,31 @@ $(function() {
       } else if (date_day == "30") {
         date_day = "31";
       }
-      if (date_month == "01") {
-        info_month = "January";
-      } else if (date_month == "02") {
-        info_month = "February";
-      } else if (date_month == "03") {
-        info_month = "March";
-      } else if (date_month == "04") {
-        info_month = "April";
-      } else if (date_month == "05") {
-        info_month = "May";
-      } else if (date_month == "06") {
-        info_month = "June";
-      } else if (date_month == "07") {
-        info_month = "July";
-      } else if (date_month == "08") {
-        info_month = "August";
-      } else if (date_month == "09") {
-        info_month = "September";
-      } else if (date_month == "10") {
-        info_month = "October";
-      } else if (date_month == "11") {
-        info_month = "November";
-      } else if (date_month == "12") {
-        info_month = "December";
-      }
+    }
+    if (date_month == "01") {
+      info_month = "January";
+    } else if (date_month == "02") {
+      info_month = "February";
+    } else if (date_month == "03") {
+      info_month = "March";
+    } else if (date_month == "04") {
+      info_month = "April";
+    } else if (date_month == "05") {
+      info_month = "May";
+    } else if (date_month == "06") {
+      info_month = "June";
+    } else if (date_month == "07") {
+      info_month = "July";
+    } else if (date_month == "08") {
+      info_month = "August";
+    } else if (date_month == "09") {
+      info_month = "September";
+    } else if (date_month == "10") {
+      info_month = "October";
+    } else if (date_month == "11") {
+      info_month = "November";
+    } else if (date_month == "12") {
+      info_month = "December";
     }
 
     date = date_year+"_"+date_month+"_"+date_day;
@@ -1029,31 +1032,31 @@ $(function() {
       } else if (date_day == "02") {
         date_day = "01";
       }
-      if (date_month == "01") {
-        info_month = "January";
-      } else if (date_month == "02") {
-        info_month = "February";
-      } else if (date_month == "03") {
-        info_month = "March";
-      } else if (date_month == "04") {
-        info_month = "April";
-      } else if (date_month == "05") {
-        info_month = "May";
-      } else if (date_month == "06") {
-        info_month = "June";
-      } else if (date_month == "07") {
-        info_month = "July";
-      } else if (date_month == "08") {
-        info_month = "August";
-      } else if (date_month == "09") {
-        info_month = "September";
-      } else if (date_month == "10") {
-        info_month = "October";
-      } else if (date_month == "11") {
-        info_month = "November";
-      } else if (date_month == "12") {
-        info_month = "December";
-      }
+    }
+    if (date_month == "01") {
+      info_month = "January";
+    } else if (date_month == "02") {
+      info_month = "February";
+    } else if (date_month == "03") {
+      info_month = "March";
+    } else if (date_month == "04") {
+      info_month = "April";
+    } else if (date_month == "05") {
+      info_month = "May";
+    } else if (date_month == "06") {
+      info_month = "June";
+    } else if (date_month == "07") {
+      info_month = "July";
+    } else if (date_month == "08") {
+      info_month = "August";
+    } else if (date_month == "09") {
+      info_month = "September";
+    } else if (date_month == "10") {
+      info_month = "October";
+    } else if (date_month == "11") {
+      info_month = "November";
+    } else if (date_month == "12") {
+      info_month = "December";
     }
 
     date = date_year+"_"+date_month+"_"+date_day;

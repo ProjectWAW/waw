@@ -169,19 +169,19 @@ countries = [
   ["chongqing_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["hunan_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["mianyang_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
-  ["ningxia_ma_clique", uf_puppet, "1935_10_04", "neutral", null],
-  ["northeastern_army", uf_puppet, "1935_10_03", "neutral", null],
   ["ningxia_ma_clique", uf_puppet, "1935_10_04", "uf_puppet", null],
-  ["qinghai_ma_clique", uf_puppet, "1935_10_03", "neutral", null],
+  ["northeastern_army", uf_puppet, "1935_10_03", "uf_puppet", null],
+  ["ningxia_ma_clique", uf_puppet, "1935_10_04", "uf_puppet", null],
+  ["qinghai_ma_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["shandong_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
-  ["shanxi_clique", uf_puppet, "1935_10_03", "neutral", null],
+  ["shanxi_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["sichuan_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["tunganistan", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["xikang_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["yunnan_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["china", uf, "1935_10_03", "uf", null],
 
-  ["chinese_soviet_republic", comintern, "1935_10_04", "neutral", null],
+  ["chinese_soviet_republic", comintern, "1935_10_04", "comintern", null],
 
   ["east_chahar", axis_puppet, "1935_10_03", "axis_puppet", null],
   ["manchukuo", axis_puppet, "1935_10_03", "axis_puppet", null],
@@ -191,10 +191,10 @@ countries = [
   ["kwantung_leased_territory", axis_puppet, "1935_10_03", "axis_puppet", null],
   ["south_seas_mandate", axis_puppet, "1935_10_03", "axis_puppet", null],
 
-  ["ethiopia", finland, "1935_10_04", "neutral", null],
+  ["ethiopia", finland, "1935_10_04", "finland", null],
   
   ["italy", italy, "1935_10_03", "italy", null],
-  ["italian_ethiopia", italy_occupied, "1935_10_04", "neutral", null],
+  ["italian_ethiopia", italy_occupied, "1935_10_04", "italy_occupied", null],
   ["italian_eritrea", italy_puppet, "1935_10_03", "italy_puppet", null],
   ["italian_libya", italy_puppet, "1935_10_03", "italy_puppet", null],
   ["italian_somalia", italy_puppet, "1935_10_03", "italy_puppet", null]
