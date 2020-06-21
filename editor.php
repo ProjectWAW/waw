@@ -258,6 +258,7 @@ require 'navbar.php';
   <option value="iran">iran</option>
   <option value="iraq">iraq</option>
   <option value="ireland">ireland</option>
+  <option value="italian_east_africa">italian_east_africa</option>
   <option value="italian_ethiopia">italian_ethiopia</option>
   <option value="italian_somalia">italian_somalia</option>
   <option value="italy">italy</option>
@@ -289,7 +290,7 @@ require 'navbar.php';
   <option value="netherlands">netherlands</option>
   <option value="neutral_zone_iraq">neutral_zone_iraq</option>
   <option value="new_guanxi_clique">new_guanxi_clique</option>
-  <option value="new_zealand">new_zealand<option>
+  <option value="new_zealand">new_zealand</option>
   <option value="nicaragua">nicaragua</option>
   <option value="nigeria">nigeria</option>
   <option value="ningxia_ma_clique">ningxia_ma_clique</option>
@@ -401,7 +402,7 @@ function repositionImage() {
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1936_04_29/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1936_06_27/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);

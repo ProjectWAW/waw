@@ -46,7 +46,7 @@
 <hr class="key-hr" style="margin-top:140px;">
 <div class="key-header">Comintern</div>
 <div class="key-row">
-  <div class="key-color"><div class="key-color-inner" style="background-color:#B30000;"></div></div>
+  <div class="key-color"><div class="key-color-inner" style="background-color:#b30000;"></div></div>
   <div class="key-description">- Comintern Members</div>
 </div>
 <div class="key-row">

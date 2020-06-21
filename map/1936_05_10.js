@@ -118,7 +118,7 @@ countries = [
   ["northern_rhodesia", neutral, "1935_10_03", "neutral", null],
   ["nyasaland", neutral, "1935_10_03", "neutral", null],
   ["oman", neutral, "1935_10_03", "neutral", null],
-  ["palestine", neutral, "1935_10_03", "neutral", null],
+  ["palestine", neutral, "1935_10_03", "neutral", stripes_neutral],
   ["qatar", neutral, "1935_10_03", "neutral", null],
   ["saint_helena", neutral, "1935_10_03", "neutral", null],
   ["sarawak", neutral, "1935_10_03", "neutral", null],
@@ -192,11 +192,11 @@ countries = [
   ["kwantung_leased_territory", axis_puppet, "1935_10_03", "axis_puppet", null],
   ["south_seas_mandate", axis_puppet, "1935_10_03", "axis_puppet", null],
   
-  ["ethiopia", finland, "1936_05_10", "finland", stripes_finland],
+  ["ethiopia", finland, "1936_05_10", "finland", null],
   
   ["italy", italy, "1935_10_03", "italy", null],
   ["italian_ethiopia", italy_puppet, "1936_05_10", "italy_puppet", null],
-  ["italian_eritrea", italy_puppet, "1935_10_03", "italy_puppet", null],
+  ["italian_eritrea", italy_puppet, "1935_11_23", "italy_puppet", null],
   ["italian_libya", italy_puppet, "1935_10_03", "italy_puppet", null],
-  ["italian_somalia", italy_puppet, "1935_10_03", "italy_puppet", null]
+  ["italian_somalia", italy_puppet, "1936_05_10", "italy_puppet", null]
 ]

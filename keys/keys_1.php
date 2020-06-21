@@ -52,7 +52,7 @@
 <hr class="key-hr" style="margin-top:100px;">
 <div class="key-header">Communist China</div>
 <div class="key-row">
-  <div class="key-color"><div class="key-color-inner" style="background-color:#B30000;"></div></div>
+  <div class="key-color"><div class="key-color-inner" style="background-color:#b30000;"></div></div>
   <div class="key-description">- Communist China (CCP)</div>
 </div>
 
