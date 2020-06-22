@@ -419,7 +419,7 @@ require 'navbar.php';
 var mymap = L.map('map');
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', { // https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  attribution: '&copy; Map data © <a href="">Project World at War</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
   minZoom: 3,
   maxZoom: 14,
@@ -643,7 +643,7 @@ L.easyButton({
   }]
 }).addTo(mymap);
 
-var southWest = L.latLng(-90, -180), northEast = L.latLng(90, 180);
+var southWest = L.latLng(-90, -168), northEast = L.latLng(90, 192);
 var bounds = L.latLngBounds(southWest, northEast);
 
 mymap.setMaxBounds(bounds);
@@ -927,7 +927,7 @@ $(function() {
     date_year = date.substr(0, 4);
     date_month = date.substr(5, 2);
     date_day = date.substr(8, 7);
-    if (date == "1945_09_02") {
+    if (date == "1935_10_03") {
       
     } else if (date_day == "01") {
       if (date_month == "02") {
