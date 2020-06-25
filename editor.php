@@ -286,6 +286,7 @@ require 'navbar.php';
   <option value="monaco">monaco</option>
   <option value="mongolia">mongolia</option>
   <option value="morocco">morocco</option>
+  <option value="nationalist_spain">nationalist_spain</option>
   <option value="nepal">nepal</option>
   <option value="netherlands">netherlands</option>
   <option value="neutral_zone_iraq">neutral_zone_iraq</option>
@@ -317,6 +318,7 @@ require 'navbar.php';
   <option value="portuguese_west_africa">portuguese_west_africa</option>
   <option value="qatar">qatar</option>
   <option value="qinghai_ma_clique">qinghai_ma_clique</option>
+  <option value="republican_spain">republican_spain</option>
   <option value="righteous_army">righteous_army</option>
   <option value="romania">romania</option>
   <option value="saint_helena">saint_helena</option>
@@ -339,7 +341,8 @@ require 'navbar.php';
   <option value="sweden">sweden</option>
   <option value="switzerland">switzerland</option>
   <option value="tangiers">tangiers</option>
-  <option value="tannu_tuva">tannu_tuva</option>
+  <option value="tannu_tuva">tannu_tuva</option>\
+  <option value="tetua_airfield">tetua_airfield</option>
   <option value="tibet">tibet</option>
   <option value="transjordania">transjordania</option>
   <option value="trinidad_and_tobago">trinidad_and_tobago</option>
@@ -402,7 +405,7 @@ function repositionImage() {
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1935_10_03/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1936_07_18/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);

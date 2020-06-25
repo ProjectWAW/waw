@@ -263,8 +263,6 @@ marker1935_10_03_4.on("click", function () {
   onClick2();
 });
 
-
-
 function zoom1935_10_03_1() {
   mymap.setView(marker1935_10_03_1_location);
 }

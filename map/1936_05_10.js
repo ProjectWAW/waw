@@ -64,7 +64,7 @@ countries = [
   ["sao_tome_and_principe", neutral, "1935_10_03", "neutral", null],
   ["saudi_arabia", neutral, "1935_10_03", "neutral", null],
   ["siam", neutral, "1935_10_03", "neutral", null],
-  ["spain", neutral, "1935_10_03", "neutral", null],
+  ["spain", neutral, "1936_05_10", "neutral", null],
   ["spanish_africa", neutral, "1935_10_03", "neutral", null],
   ["spanish_morocco", neutral, "1935_10_03", "neutral", null],
   ["spanish_sahara", neutral, "1935_10_03", "neutral", null],

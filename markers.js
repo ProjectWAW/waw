@@ -17,8 +17,38 @@ function onClick2() {
   }, 5000);
 }
 
+black_artillery_left = L.icon.fontAwesome({
+  iconClasses: artillery_left,
+  markerColor: blackMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blackMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
 black_bullhorn = L.icon.fontAwesome({
   iconClasses: bullhorn,
+  markerColor: blackMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blackMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
+black_gun_left = L.icon.fontAwesome({
+  iconClasses: gun_left,
+  markerColor: blackMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blackMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
+black_gun_right = L.icon.fontAwesome({
+  iconClasses: gun_right,
   markerColor: blackMarkerColor,
   markerStrokeWidth: markerStrokeWidth,
   markerStrokeColor: blackMarkerStroke,
@@ -62,6 +92,27 @@ black_virus = L.icon.fontAwesome({
   markerColor: blackMarkerColor,
   markerStrokeWidth: markerStrokeWidth,
   markerStrokeColor: blackMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
+
+red_bullhorn = L.icon.fontAwesome({
+  iconClasses: bullhorn,
+  markerColor: redMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: redMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
+red_gun_right = L.icon.fontAwesome({
+  iconClasses: gun_right,
+  markerColor: redMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: redMarkerStroke,
   iconColor: iconColor,
   iconSize: [15, 15],
   iconXOffset: -2.5,
