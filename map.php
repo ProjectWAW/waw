@@ -217,6 +217,10 @@ h4 {
 .fas, .far {
   font-size: 19px;
 }
+.fa-satellite {
+  margin-left: -20%;
+  margin-top: 23%;
+}
 .keys-icon {
   float: left;
   font-size: 35px;
@@ -670,8 +674,8 @@ L.easyButton({
         number_map = 1;
       }
     },
-    title: 'Hide / show events on the map',
-    icon: '<img src="marker.png" style="background-size:50%;max-width:100%;max-height:100%;margin-bottom:50%;">'
+    title: 'Toggle between the political map and the satellite map',
+    icon: '<i class="fas fa-satellite"></i>'
   }]
 }).addTo(mymap);
 
