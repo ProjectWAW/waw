@@ -210,12 +210,11 @@ h4 {
   padding-left: 5px;
   padding-right: 5px;
 }
-.icon-gun-left, .icon-gun-right {
+.icon-gun-left, .icon-gun-right, .icon-artillery-left, .icon-artillery-right {
   font-weight: 900;
   font-size: 19px;
 }
-.icon-artillery-left {
-  font-weight: 900;
+.fas, .far {
   font-size: 19px;
 }
 .keys-icon {
@@ -418,20 +417,29 @@ require 'navbar.php';
 <script id="scripts">
 var mymap = L.map('map');
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', { // https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
-  attribution: '&copy; Map data © <a href="">Project World at War</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+var normal = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', { // https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png // https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
+  attribution: ' Map data &copy; <a href="">PWAW</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
   minZoom: 3,
   maxZoom: 14,
   zoomControl: true
-}).addTo(mymap);
+});
+
+var sattelite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { // https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x} // https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}
+  attribution: ' Map data &copy; <a href="">PWAW</a> &copy; Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+  minZoom: 3,
+  maxZoom: 14,
+  zoomControl: true
+});
+
+normal.addTo(mymap);
 
 date = '<?php echo $date;?>';
 
-if (date.substr(0, 4) == "1935") {
+if (date.substr(0, 4) == "1935" || date.substr(0, 7) == "1936_01" || date.substr(0, 7) == "1936_02" || date.substr(0, 7) == "1936_03" || date.substr(0, 7) == "1936_04" || date.substr(0, 7) == "1936_05" || date.substr(0, 7) == "1936_06" || date.substr(0, 9) == "1936_07_0" || date.substr(0, 10) == "1936_07_11" || date.substr(0, 10) == "1936_07_12" || date.substr(0, 10) == "1936_07_13" || date.substr(0, 10) == "1936_07_14") {
   mymap.setView([9.013776, 38.754616], 5);
-} else {
-  mymap.setView([9.013776, 38.754616], 5);
+} else if (date.substr(0, 10) == "1936_07_15" || date.substr(0, 10) == "1936_07_16" || date.substr(0, 10) == "1936_07_17" || date.substr(0, 10) == "1936_07_18" || date.substr(0, 10) == "1936_07_19" || date.substr(0, 9) == "1936_07_2"  || date.substr(0, 9) == "1936_07_3" || date.substr(0, 7) == "1936_08") {
+  mymap.setView([40.418201, -3.704109], 6);
 }
 
 function onMapClick(e) {
@@ -487,8 +495,8 @@ var yellowMarkerStroke = ''
 var blueMarkerColor = ''
 var blueMarkerStroke = ''
 
-var redMarkerColor = ''
-var redMarkerStroke = ''
+var redMarkerColor = '#a50000'
+var redMarkerStroke = '#800000'
 
 var purpleMarkerColor = '#800080'
 var purpleMarkerStroke = '#5f005f'
@@ -496,8 +504,8 @@ var purpleMarkerStroke = '#5f005f'
 var greenMarkerColor = '#25790b'
 var greenMarkerStroke = '#1e580d'
 
-var blackMarkerColor = '#474747'
-var blackMarkerStroke = '#2e2e2e'
+var blackMarkerColor = '#3f3f3f'
+var blackMarkerStroke = '#262626'
 
 
 var ambulance = 'fas fa-ambulance'
@@ -617,6 +625,7 @@ L.control.polylineMeasure({
 }).addTo(mymap);
 
 var number = 1;
+var number_map = 1;
 
 L.easyButton({
   id: 'toggle-markers',
@@ -636,6 +645,29 @@ L.easyButton({
           marker_group.addTo(mymap);
         }
         number = 1;
+      }
+    },
+    title: 'Hide / show events on the map',
+    icon: '<img src="marker.png" style="background-size:50%;max-width:100%;max-height:100%;margin-bottom:50%;">'
+  }]
+}).addTo(mymap);
+
+L.easyButton({
+  id: 'change-map',
+  position: 'bottomleft',
+  type: 'replace',
+  leafletClasses: true,
+  states:[{
+    stateName: 'get-center',
+    onClick: function(button, map){
+      if (number_map == 1) {
+        map.removeLayer(normal);
+        map.addLayer(sattelite);
+        number_map = 2;
+      } else {
+        map.removeLayer(sattelite);
+        map.addLayer(normal);
+        number_map = 1;
       }
     },
     title: 'Hide / show events on the map',
