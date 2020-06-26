@@ -230,6 +230,11 @@ h4 {
   padding-top: 6px;
   margin-left: 50px;
 }
+.date-change {
+  float: left;
+  width: 50px;
+  text-align: center;
+}
 @media screen and (max-width: 920px) {
   h4 {
     margin-top: 10px;
@@ -348,7 +353,16 @@ require 'navbar.php';
     <hr>
     <div class="date-selection">
       <h4>placeholder</h4>
-    <!--<div class="year">1935</div>
+      <div style="border: 2px solid black;
+    width: 221px;
+    position: absolute;
+    margin-left: 80px;">
+        <div class="date-change" id="change-backward"><i style="font-size:40px;" class="fas fa-chevron-left"></i></div>
+        <h4 style="float:left;width:117px;font-weight:bold;margin-top:11px;" id="date_info_2"><?php echo $date_info; ?></h4>
+        <div class="date-change" id="change-forward"><i style="font-size:40px;" class="fas fa-chevron-right"></i></div>
+      </div>
+      <h4 style="margin-top:75px">Jump to date</h4>
+      <!--<div class="year">1935</div>
 
     <div class="year">1936</div>
 
@@ -369,9 +383,6 @@ require 'navbar.php';
     <div class="year">1944</div>
 
     <div class="year">1945</div>-->
-      <div id="change-backward">here</div>
-      <div id="change-forward">here</div>
-      <h4>Jump to date</h4>
     </div>
   </div>
   <div id="Keys" class="tabcontent" style="display:none">
@@ -595,21 +606,16 @@ mymap.getPane('axis').style.zIndex = 270;
 <?php include 'map/'.$date.'.js';?>
 
 for (let country of countries) {
-if (typeof variable !== 'undefined') {
-  delete country_layers;
   country_layers = L.layerGroup();
-} else {
-  country_layers = L.layerGroup();
-}
-$.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
-  sites = L.geoJson(data, {
-    //"onEachFeature": forEachFeature,
-    "style": {color: country[1], fillPattern: country[4]},
-    "pane": country[3]
+  $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
+    sites = L.geoJson(data, {
+      //"onEachFeature": forEachFeature,
+      "style": {color: country[1], fillPattern: country[4]},
+      "pane": country[3]
+    });
+    sites.addTo(country_layers);
+    mymap.addLayer(country_layers);
   });
-  sites.addTo(country_layers);
-  mymap.addLayer(country_layers);
-});
 }
 
 L.control.mapCenterCoord({
@@ -927,6 +933,7 @@ $(function() {
     date = date_year+"_"+date_month+"_"+date_day;
 
     document.getElementById("date_info").innerHTML = date_day+" "+info_month+" "+date_year;
+    document.getElementById("date_info_2").innerHTML = date_day+" "+info_month+" "+date_year;
     document.getElementById("date_info_content").innerHTML = "";
     $('#date_info_content').load('map/'+date+'.php');
 
@@ -937,16 +944,11 @@ $(function() {
 
     $.getScript('map/'+date+'.js', function() {
       for (let country of countries) {
-        if (typeof variable !== 'undefined') {
-          delete country_layers;
-          country_layers = L.layerGroup();
-        } else {
-          country_layers = L.layerGroup();
-        }
+        country_layers = L.layerGroup();
         $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
           sites = L.geoJson(data, {
             "onEachFeature": forEachFeature,
-            "style": {color: country[1]},
+            "style": {color: country[1], fillPattern: country[4]},
             "pane": country[3]
           });
           sites.addTo(country_layers);
@@ -1100,6 +1102,7 @@ $(function() {
     date = date_year+"_"+date_month+"_"+date_day;
 
     document.getElementById("date_info").innerHTML = date_day+" "+info_month+" "+date_year;
+    document.getElementById("date_info_2").innerHTML = date_day+" "+info_month+" "+date_year;
     document.getElementById("date_info_content").innerHTML = "";
     $('#date_info_content').load('map/'+date+'.php');
 
@@ -1110,16 +1113,11 @@ $(function() {
 
     $.getScript('map/'+date+'.js', function() {
       for (let country of countries) {
-        if (typeof variable !== 'undefined') {
-          delete country_layers;
-          country_layers = L.layerGroup();
-        } else {
-          country_layers = L.layerGroup();
-        }
+        country_layers = L.layerGroup();
         $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
           sites = L.geoJson(data, {
             "onEachFeature": forEachFeature,
-            "style": {color: country[1]},
+            "style": {color: country[1], fillPattern: country[4]},
             "pane": country[3]
           });
           sites.addTo(country_layers);
