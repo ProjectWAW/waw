@@ -198,3 +198,5 @@ countries = [
   ["italian_east_africa", italy_puppet, "1936_06_27", "italy_puppet", null],
   ["italian_libya", italy_puppet, "1935_10_03", "italy_puppet", null]
 ]
+
+marker_group = new L.FeatureGroup();

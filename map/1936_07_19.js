@@ -201,3 +201,28 @@ countries = [
   ["spanish_morocco", axis_puppet, "1936_07_18", "axis_puppet", null],
   ["spanish_sahara", axis_puppet, "1935_10_03", "axis_puppet", null]
 ]
+
+marker_group = new L.FeatureGroup();
+
+info_1936_07_19_1 = "<?php echo $info_1936_07_19_1;?>";
+marker1936_07_19_1_location = [35.570843, -5.380812];
+marker1936_07_19_1 = L.marker(marker1936_07_19_1_location, {
+  id: "marker1936_07_19_1",
+  icon: black_gun_left,
+  title: info_1936_07_19_1
+});
+
+marker_group.addLayer(marker1936_07_19_1);
+
+mymap.addLayer(marker_group);
+
+marker1936_07_19_1.on("click", function () {
+  onClick1();
+  location.href='#1936_07_19_1';
+  infoClicked = document.getElementById("1936_07_19_1");
+  onClick2();
+});
+
+function zoom1936_07_19_1() {
+  mymap.setView(marker1936_07_19_1_location);
+}

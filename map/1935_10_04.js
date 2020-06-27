@@ -202,4 +202,6 @@ countries = [
 
 marker_group = new L.FeatureGroup();
 
+marker_group = new L.FeatureGroup();
+
 info_1935_10_04_1 = "<?php echo $info_1935_10_04_1;?>";

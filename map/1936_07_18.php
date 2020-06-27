@@ -5,9 +5,18 @@ $info_1936_07_18_3 = "Sevilla falls to the rebels as General Quiepo de Llano arr
 $info_1936_07_18_4 = "The Assault Guard in Jaen were disarmed and their weapons were given to the UGT-CNT.";
 $info_1936_07_18_5 = "In Almeria, the mayor refused to arm the CNT or UGT but the nationalists did not rise against him.";
 $info_1936_07_18_6 = "Rebel Colonel Varela was freed from prison by the local garrison and took command of the rising there. By the end of the day the police and local CNT-UGT forces were defeated by the Nationalists.";
+$info_1936_07_18_7 = "Franco flies to Ceuta from the Canary islands to take over command of the Army of Africa.";
 ?>
 
 
+
+<div id="1936_07_18_7">
+  <i class="icon-gun-right circle-fa" onClick="zoom1936_07_18_7()"></i> <b class="country-name">Spain</b>
+  <div class="info-content">
+    <?php echo $info_1936_07_18_7;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  </div>
+</div>
+<hr>
 <div id="1936_07_18_1">
   <i class="icon-artillery-left circle-fa" onClick="zoom1936_07_18_1()"></i> <b class="country-name">Spain</b>
   <div class="info-content">

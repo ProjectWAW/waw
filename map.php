@@ -402,20 +402,20 @@ require 'navbar.php';
     <hr>
     <h4>Event Icons</h4>
     <i class="fas fa-plane keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Aerial Battle</div><br>
-    <i class="fas fa-bullhorn keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Announcement / Declaration / Proclamation</div><br>
+    <i class="icon-bomb keys-icon" style="padding-left:2px;"></i><div class="keys-icon-desc"> - &nbsp; Air Raid</div><br>
     <i class="fas fa-ambulance keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Ambulance</div><br>
+    <i class="fas fa-bullhorn keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Announcement / Declaration / Proclamation</div><br>
     <i class="icon-artillery-left keys-icon" style="font-size:45px;"></i><div class="keys-icon-desc"> - &nbsp; Artillery Attack</div><br>
     <i class="fas fa-crosshairs keys-icon" style="padding-left:3px;"></i><div class="keys-icon-desc"> - &nbsp; Assasination</div><br>
     <i class="fas fa-atom keys-icon" style="padding-left:4px;"></i><div class="keys-icon-desc"> - &nbsp; Atomic Research</div><br>
     <i class="fas fa-drafting-compass keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Battle Plans</div><br>
-    <i class="icon-bomb keys-icon" style="padding-left:2px;"></i><div class="keys-icon-desc"> - &nbsp; Air Raid</div><br>
     <i class="fas fa-biohazard keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Chemical Attack</div><br>
     <i class="far fa-flag keys-icon"  style="padding-left:1px;"></i><div class="keys-icon-desc"> - &nbsp; City Captured</div><br>
     <i class="fas fa-truck keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Convoy</div><br>
     <i class="fas fa-chart-line keys-icon"  style="padding-left:3px;"></i><div class="keys-icon-desc"> - &nbsp; Economy</div><br>
-    <i class="fas fa-virus keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Epidemic</div><br>
-    <i class="fas fa-skull-crossbones keys-icon" style="padding-left:3px;"></i><div class="keys-icon-desc"> - &nbsp; Executions / Massacres / Concentration Camps</div><br>
-    <i class="fas fa-bahai keys-icon" style="padding-left:1px;"></i><div class="keys-icon-desc"> - &nbsp; Explosion</div><br>
+    <i class="fas fa-virus keys-icon" style="padding-left:3px;"></i><div class="keys-icon-desc"> - &nbsp; Epidemic</div><br>
+    <i class="fas fa-skull-crossbones keys-icon" style="padding-left:3px;font-size:40px;"></i><div class="keys-icon-desc"> - &nbsp; Executions / Massacres / Concentration Camps</div><br>
+    <i class="fas fa-bahai keys-icon" style="padding-left:3px;"></i><div class="keys-icon-desc"> - &nbsp; Explosion</div><br>
     <i class="fas fa-fire-alt keys-icon" style="padding-left:3px;"></i><div class="keys-icon-desc"> - &nbsp; Fire</div><br>
     <i class="icon-gun-right keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Gun</div><br>
     <i class="fas fa-anchor keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Naval Battle</div><br>
@@ -794,7 +794,7 @@ window.onresize = function() {
 $(function() {
   $('#change-forward').click(function() {
     country_layers.remove();
-    //marker_group.remove();
+    marker_group.remove();
     date_year = date.substr(0, 4);
     date_month = date.substr(5, 2);
     date_day = date.substr(8, 7);
@@ -961,7 +961,7 @@ $(function() {
 $(function() {
   $('#change-backward').click(function() {
     country_layers.remove();
-    //marker_group.remove();
+    marker_group.remove();
     date_year = date.substr(0, 4);
     date_month = date.substr(5, 2);
     date_day = date.substr(8, 7);

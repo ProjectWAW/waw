@@ -246,13 +246,21 @@ marker1936_07_18_6 = L.marker(marker1936_07_18_6_location, {
   icon: black_gun_right,
   title: info_1936_07_18_6
 });
+info_1936_07_18_7 = "<?php echo $info_1936_07_18_7;?>";
+marker1936_07_18_7_location = [35.888772, -5.302963];
+marker1936_07_18_7 = L.marker(marker1936_07_18_7_location, {
+  id: "marker1936_07_18_7",
+  icon: black_gun_right,
+  title: info_1936_07_18_7
+});
 
-marker_group.addLayer(marker1936_07_18_1);
 marker_group.addLayer(marker1936_07_18_2);
 marker_group.addLayer(marker1936_07_18_3);
 marker_group.addLayer(marker1936_07_18_4);
 marker_group.addLayer(marker1936_07_18_5);
 marker_group.addLayer(marker1936_07_18_6);
+marker_group.addLayer(marker1936_07_18_7);
+marker_group.addLayer(marker1936_07_18_1);
 
 mymap.addLayer(marker_group);
 
@@ -292,6 +300,12 @@ marker1936_07_18_6.on("click", function () {
   infoClicked = document.getElementById("1936_07_18_6");
   onClick2();
 });
+marker1936_07_18_7.on("click", function () {
+  onClick1();
+  location.href='#1936_07_18_7';
+  infoClicked = document.getElementById("1936_07_18_7");
+  onClick2();
+});
 
 function zoom1936_07_18_1() {
   mymap.setView(marker1936_07_18_1_location);
@@ -310,4 +324,7 @@ function zoom1936_07_18_5() {
 }
 function zoom1936_07_18_6() {
   mymap.setView(marker1936_07_18_6_location);
+}
+function zoom1936_07_18_7() {
+  mymap.setView(marker1936_07_18_7_location);
 }

@@ -238,7 +238,6 @@ marker1936_07_17_2.on("click", function () {
   onClick2();
 });
 
-
 function zoom1936_07_17_1() {
   mymap.setView(marker1936_07_17_1_location);
 }
