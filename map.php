@@ -354,11 +354,11 @@ require 'navbar.php';
     <div class="date-selection">
       <h4>placeholder</h4>
       <div style="border: 2px solid black;
-    width: 221px;
+    width: 281px;
     position: absolute;
-    margin-left: 80px;">
+    margin-left: 50px;">
         <div class="date-change" id="change-backward"><i style="font-size:40px;" class="fas fa-chevron-left"></i></div>
-        <h4 style="float:left;width:117px;font-weight:bold;margin-top:11px;" id="date_info_2"><?php echo $date_info; ?></h4>
+        <h4 style="float:left;width:177px;font-weight:bold;margin-top:11px;" id="date_info_2"><?php echo $date_info; ?></h4>
         <div class="date-change" id="change-forward"><i style="font-size:40px;" class="fas fa-chevron-right"></i></div>
       </div>
       <h4 style="margin-top:75px">Jump to date</h4>
