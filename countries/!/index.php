@@ -4,9 +4,6 @@
 <?php include $_SERVER['DOCUMENT_ROOT'].'/page_head.php';?>
 <title> - Project: World at War</title>
 <style>
-body {
-	font-family: sans-serif;
-}
 h2 {
 	text-align: left;
 }

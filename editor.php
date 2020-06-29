@@ -378,15 +378,15 @@ require 'navbar.php';
       zoomControl: true
     }).addTo(mymap);
 
-/* var topleft    = L.latLng(61.339797, 27.982864),
-	topright   = L.latLng(61.277823, 31.232071),
-  bottomleft = L.latLng(59.808577, 27.989044);
+ /*var topleft = L.latLng(37.291535, 115.378418),
+	topright   = L.latLng(38.539573, 123.068848),
+  bottomleft = L.latLng(34.633208, 115.290527);
   
   var marker1 = L.marker(topleft, {draggable: true} ).addTo(mymap),
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://upload.wikimedia.org/wikipedia/commons/8/89/Map_of_Manchukuo_Outline.svg", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("shandong.png", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
@@ -405,7 +405,7 @@ function repositionImage() {
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1936_07_18/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1935_10_03/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);
