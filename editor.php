@@ -267,8 +267,8 @@ require 'navbar.php';
   <option value="japanese_korea">japanese_korea</option>
   <option value="japanese_taiwan">japanese_taiwan</option>
   <option value="kenya">kenya</option>
-  <option value="kumul_khanate">kumul_khanate</option>
   <option value="kuwait">kuwait</option>
+  <option value="kwantung_leased_territory">kwantung_leased_territory</option>
   <option value="latvia">latvia</option>
   <option value="liberia">liberia</option>
   <option value="italian_libya">italian_libya</option>
@@ -386,7 +386,7 @@ require 'navbar.php';
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("shandong.png", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://media.discordapp.net/attachments/702481072465641544/727450102691659837/image0.png", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
