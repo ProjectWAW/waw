@@ -460,7 +460,7 @@ if (date.substr(0, 4) == "1935" || date.substr(0, 7) == "1936_01" || date.substr
 function onMapClick(e) {
   popup
     .setLatLng(e.latlng)
-    .setContent("You clicked the map at " + e.latlng.toString())
+    .setContent(e.latlng.toString())
     .openOn(mymap);
 }
 

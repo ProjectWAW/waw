@@ -44,15 +44,24 @@ hr {
   white-space: nowrap;
   text-align: center;
 }
+.center {
+	text-align: center;
+}
+.start {
+	margin-top: 15px;
+}
+/*.h2-theaters:hover {
+	text-decoration: underline;
+}*/
 </style>
 </head>
 <body>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/loader.php'; include $_SERVER['DOCUMENT_ROOT'].'/navbar.php';?>
-<h1>European Theatres</h1>
-<div class="section" onclick="location.href='#';">
+<h1 class="start center">European Theatres</h1>
+<div class="section" onclick="location.href='europe/western_europe.php';">
 	<div class="row">
 		<div class="col-md-8">
-			<h2>Western Europe</h2>
+			<h2 class="h2-theaters">Western Europe</h2>
 			<p class="section-p">Slazem se da je dedic picka u tom cilju sada ovo pisem jer ja brate stvarno ne mogu da vjerujem znaci ovo je farsa protiv mila</p>
 		</div>
 		<div class="col-md-4 img-ver">
