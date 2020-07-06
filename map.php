@@ -501,8 +501,8 @@ var neutral = '#ffad46'
 var neutral_zone = 'white'
 
 
-var orangeMarkerColor = ''
-var orangeMarkerStroke = ''
+var orangeMarkerColor = '#ff981a'
+var orangeMarkerStroke = '#e67e00'
 
 var yellowMarkerColor = ''
 var yellowMarkerStroke = ''

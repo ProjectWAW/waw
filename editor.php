@@ -267,6 +267,7 @@ require 'navbar.php';
   <option value="japanese_korea">japanese_korea</option>
   <option value="japanese_taiwan">japanese_taiwan</option>
   <option value="kenya">kenya</option>
+  <option value="kingdom_of_sikkim">kingdom_of_sikkim</option>
   <option value="kuwait">kuwait</option>
   <option value="kwantung_leased_territory">kwantung_leased_territory</option>
   <option value="latvia">latvia</option>
