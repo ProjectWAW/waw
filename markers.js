@@ -17,6 +17,26 @@ function onClick2() {
   }, 5000);
 }
 
+black_ambulance = L.icon.fontAwesome({
+  iconClasses: ambulance,
+  markerColor: blackMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blackMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
+black_anchor = L.icon.fontAwesome({
+  iconClasses: anchor,
+  markerColor: blackMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blackMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
 black_artillery_left = L.icon.fontAwesome({
   iconClasses: artillery_left,
   markerColor: blackMarkerColor,
@@ -163,6 +183,16 @@ purple_bullhorn = L.icon.fontAwesome({
 
 orange_bullhorn = L.icon.fontAwesome({
   iconClasses: bullhorn,
+  markerColor: orangeMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: orangeMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
+orange_drafting_compass = L.icon.fontAwesome({
+  iconClasses: drafting_compass,
   markerColor: orangeMarkerColor,
   markerStrokeWidth: markerStrokeWidth,
   markerStrokeColor: orangeMarkerStroke,
