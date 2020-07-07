@@ -455,6 +455,8 @@ if (date.substr(0, 4) == "1935" || date.substr(0, 7) == "1936_01" || date.substr
   mymap.setView([9.013776, 38.754616], 5);
 } else if (date.substr(0, 10) == "1936_07_15" || date.substr(0, 10) == "1936_07_16" || date.substr(0, 10) == "1936_07_17" || date.substr(0, 10) == "1936_07_18" || date.substr(0, 10) == "1936_07_19" || date.substr(0, 9) == "1936_07_2"  || date.substr(0, 9) == "1936_07_3" || date.substr(0, 7) == "1936_08") {
   mymap.setView([40.418201, -3.704109], 6);
+} else {
+  mymap.setView([40.418201, -3.704109], 6);
 }
 
 function onMapClick(e) {
