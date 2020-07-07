@@ -47,6 +47,36 @@ black_artillery_left = L.icon.fontAwesome({
   iconXOffset: -2.5,
   iconYOffset: 0
 });
+black_artillery_right = L.icon.fontAwesome({
+  iconClasses: artillery_right,
+  markerColor: blackMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blackMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
+black_atom = L.icon.fontAwesome({
+  iconClasses: atom,
+  markerColor: blackMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blackMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
+black_bahai = L.icon.fontAwesome({
+  iconClasses: bahai,
+  markerColor: blackMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blackMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
 black_bullhorn = L.icon.fontAwesome({
   iconClasses: bullhorn,
   markerColor: blackMarkerColor,
