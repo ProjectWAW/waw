@@ -148,7 +148,7 @@ if (isset($_GET['d'])) {
 .mobile-active {
   border-bottom: 2px solid #6b553b;
 }
-hr { 
+hr {
 	height: 1px;
   background-color: darkgray;
 	border: none;
@@ -509,8 +509,8 @@ var orangeMarkerStroke = '#e67e00'
 var yellowMarkerColor = ''
 var yellowMarkerStroke = ''
 
-var blueMarkerColor = ''
-var blueMarkerStroke = ''
+var blueMarkerColor = '#1500FF'
+var blueMarkerStroke = '#150055'
 
 var redMarkerColor = '#a50000'
 var redMarkerStroke = '#800000'
@@ -968,7 +968,7 @@ $(function() {
     date_month = date.substr(5, 2);
     date_day = date.substr(8, 7);
     if (date == "1935_10_03") {
-      
+
     } else if (date_day == "01") {
       if (date_month == "02") {
         date_month = "01";

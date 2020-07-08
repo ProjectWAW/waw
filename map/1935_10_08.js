@@ -192,7 +192,7 @@ countries = [
   ["south_seas_mandate", axis_puppet, "1935_10_03", "axis_puppet", null],
 
   ["ethiopia", finland, "1935_10_08", "neutral", null],
-  
+
   ["italy", italy, "1935_10_03", "italy", null],
   ["italian_ethiopia", italy_occupied, "1935_10_08", "neutral", null],
   ["italian_eritrea", italy_puppet, "1935_10_03", "italy_puppet", null],
@@ -201,3 +201,43 @@ countries = [
 ]
 
 marker_group = new L.FeatureGroup();
+
+info_1935_10_08_1 = "<?php echo $info_1935_10_08_1;?>";
+marker1935_10_08_1_location = [50.822538, -0.137164];
+marker1935_10_08_1 = L.marker(marker1935_10_08_1_location, {
+  id: "marker1935_10_08_1",
+  icon: orange_bullhorn,
+  title: info_1935_10_08_1
+});
+info_1935_10_08_2 = "<?php echo $info_1935_10_08_1;?>";
+marker1935_10_08_2_location = [52.518715, 13.376125];
+marker1935_10_08_2 = L.marker(marker1935_10_08_2_location, {
+  id: "marker1935_10_08_2",
+  icon: orange_bullhorn,
+  title: info_1935_10_08_2
+});
+
+marker_group.addLayer(marker1935_10_08_1);
+marker_group.addLayer(marker1935_10_08_2);
+
+mymap.addLayer(marker_group);
+
+marker1935_10_08_1.on("click", function () {
+  onClick1();
+  location.href='#1935_10_08_1';
+  infoClicked = document.getElementById("1935_10_08_1");
+  onClick2();
+});
+marker1935_10_08_2.on("click", function () {
+  onClick1();
+  location.href='#1935_10_08_2';
+  infoClicked = document.getElementById("1935_10_08_2");
+  onClick2();
+});
+
+function zoom1935_10_08_1() {
+  mymap.setView(marker1935_10_08_1_location);
+}
+function zoom1935_10_08_2() {
+  mymap.setView(marker1935_10_08_2_location);
+}
