@@ -192,7 +192,7 @@ countries = [
   ["south_seas_mandate", axis_puppet, "1935_10_03", "axis_puppet", null],
 
   ["ethiopia", finland, "1935_10_14", "neutral", null],
-  
+
   ["italy", italy, "1935_10_03", "italy", null],
   ["italian_ethiopia", italy_occupied, "1935_10_14", "neutral", null],
   ["italian_eritrea", italy_puppet, "1935_10_03", "italy_puppet", null],
@@ -201,3 +201,26 @@ countries = [
 ]
 
 marker_group = new L.FeatureGroup();
+
+info_1935_10_14_1 = "<?php echo $info_1935_10_14_1;?>";
+marker1935_10_14_1_location = [15.331705, 38.930128];
+marker1935_10_14_1 = L.marker(marker1935_10_14_1_location, {
+  id: "marker1935_10_14_1",
+  icon: green_bullhorn,
+  title: info_1935_10_14_1
+});
+
+marker_group.addLayer(marker1935_10_14_1);
+
+mymap.addLayer(marker_group);
+
+marker1935_10_14_1.on("click", function () {
+  onClick1();
+  location.href='#1935_10_14_1';
+  infoClicked = document.getElementById("1935_10_14_1");
+  onClick2();
+});
+
+function zoom1935_10_14_1() {
+  mymap.setView(marker1935_10_14_1_location);
+}

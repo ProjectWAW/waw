@@ -1,5 +1,5 @@
 <?php
-$info_1935_12_09_1 = "British Foreign Minister Samuel Hoare and French Prime Minister Pierre Laval conclude an agreement in Paris after Britain agrees to tolerate Italy's annexation of large parts of Abessinia.";
+$info_1935_12_09_1 = "The British and French Foreign Ministers conclude an agreement in Paris to tolerate Italy's annexation of large parts of Abessinia. Soon after, the pact got leaked to the press.";
 ?>
 
 <div id="1935_12_09_1">

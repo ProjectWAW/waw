@@ -261,6 +261,16 @@ purple_bullhorn = L.icon.fontAwesome({
   iconXOffset: -2.5,
   iconYOffset: 0
 });
+purple_flag = L.icon.fontAwesome({
+  iconClasses: flag,
+  markerColor: purpleMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: purpleMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
 
 orange_bullhorn = L.icon.fontAwesome({
   iconClasses: bullhorn,
