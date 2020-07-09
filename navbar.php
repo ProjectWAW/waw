@@ -6,11 +6,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/index.php">WebSiteName</a>
+      <a class="navbar-brand" href="/index.php">Project: World at War</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav mr-auto">
-        <li><a href="/index.php">(Dev build) Map</a></li>
         <li><a href="/editor.php">(Dev build) Editor</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
