@@ -1,5 +1,5 @@
 <?php
-$info_1935_10_12_1 = "Reichssendeleiter Hadamovsky forbids the broadcast of 'nigger jazz' music in the radio. This is equivalent to the ban of all foreign music in Germany.";
+$info_1935_10_12_1 = "Reichssendeleiter Hadamovsky forbids the broadcast of 'Negerjazz' music in the radio. This is equivalent to the ban of all foreign music in Germany.";
 ?>
 
 <div id="1935_10_12_1">
