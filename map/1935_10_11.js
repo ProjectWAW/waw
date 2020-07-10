@@ -210,16 +210,7 @@ marker1935_10_11_1 = L.marker(marker1935_10_11_1_location, {
   title: info_1935_10_11_1
 });
 
-info_1935_10_11_2 = "<?php echo $info_1935_10_11_2;?>";
-marker1935_10_11_2_location = [14.180091, 39.561821];
-marker1935_10_11_2 = L.marker(marker1935_10_11_2_location, {
-  id: "marker1935_10_11_2",
-  icon: purple_flag,
-  title: info_1935_10_11_2
-});
-
 marker_group.addLayer(marker1935_10_11_1);
-marker_group.addLayer(marker1935_10_11_2);
 
 mymap.addLayer(marker_group);
 
@@ -229,16 +220,7 @@ marker1935_10_11_1.on("click", function () {
   infoClicked = document.getElementById("1935_10_11_1");
   onClick2();
 });
-marker1935_10_11_2.on("click", function () {
-  onClick1();
-  location.href='#1935_10_11_2';
-  infoClicked = document.getElementById("1935_10_11_2");
-  onClick2();
-});
 
 function zoom1935_10_11_1() {
   mymap.setView(marker1935_10_11_1_location);
-}
-function zoom1935_10_11_2() {
-  mymap.setView(marker1935_10_11_2_location);
 }

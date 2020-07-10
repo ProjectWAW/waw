@@ -210,7 +210,24 @@ marker1935_10_15_1 = L.marker(marker1935_10_15_1_location, {
   title: info_1935_10_15_1
 });
 
+info_1935_10_15_2 = "<?php echo $info_1935_10_15_2;?>";
+marker1935_10_15_2_location = [30.046495, 31.235475];
+marker1935_10_15_2 = L.marker(marker1935_10_15_2_location, {
+  id: "marker1935_10_15_2",
+  icon: orange_ambulance,
+  title: info_1935_10_15_2
+})
+info_1935_10_15_3 = "<?php echo $info_1935_10_15_2;?>";
+marker1935_10_15_3_location = [9.030392, 38.764603];
+marker1935_10_15_3 = L.marker(marker1935_10_15_3_location, {
+  id: "marker1935_10_15_3",
+  icon: orange_ambulance,
+  title: info_1935_10_15_2
+});
+
 marker_group.addLayer(marker1935_10_15_1);
+marker_group.addLayer(marker1935_10_15_2);
+marker_group.addLayer(marker1935_10_15_3);
 
 mymap.addLayer(marker_group);
 
@@ -221,6 +238,25 @@ marker1935_10_15_1.on("click", function () {
   onClick2();
 });
 
+marker1935_10_15_2.on("click", function () {
+  onClick1();
+  location.href='#1935_10_15_2';
+  infoClicked = document.getElementById("1935_10_15_2");
+  onClick2();
+})
+marker1935_10_15_3.on("click", function () {
+  onClick1();
+  location.href='#1935_10_15_3';
+  infoClicked = document.getElementById("1935_10_15_3");
+  onClick2();
+});
+
 function zoom1935_10_15_1() {
   mymap.setView(marker1935_10_15_1_location);
+}
+function zoom1935_10_15_2() {
+  mymap.setView(marker1935_10_15_2_location);
+}
+function zoom1935_10_15_3() {
+  mymap.setView(marker1935_10_15_3_location);
 }

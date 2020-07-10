@@ -1,5 +1,5 @@
 <?php
-$info_1935_11_30_1 = "The Ethiopian leader Haile Selassie moved his field headquarters to Dessie.";
+$info_1935_11_30_1 = "Haile Selassie arrives at his new field headquarters to Dessie.";
 ?>
 
 <div id="1935_11_30_1">

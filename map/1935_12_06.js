@@ -210,8 +210,16 @@ marker1935_12_06_1 = L.marker(marker1935_12_06_1_location, {
   icon: orange_bullhorn,
   title: info_1935_12_06_1
 });
+info_1935_12_06_2 = "<?php echo $info_1935_12_06_1;?>";
+marker1935_12_06_2_location = [11.144440, 39.639187];
+marker1935_12_06_2 = L.marker(marker1935_12_06_2_location, {
+  id: "marker1935_12_06_1",
+  icon: green_bomb,
+  title: info_1935_12_06_2
+});
 
 marker_group.addLayer(marker1935_12_06_1);
+marker_group.addLayer(marker1935_12_06_2);
 
 mymap.addLayer(marker_group);
 
@@ -222,6 +230,16 @@ marker1935_12_06_1.on("click", function () {
   onClick2();
 });
 
+marker1935_12_06_2.on("click", function () {
+  onClick1();
+  location.href='#1935_12_06_2';
+  infoClicked = document.getElementById("1935_12_06_2");
+  onClick2();
+});
+
 function zoom1935_12_06_1() {
   mymap.setView(marker1935_12_06_1_location);
+}
+function zoom1935_12_06_2() {
+  mymap.setView(marker1935_12_06_2_location);
 }

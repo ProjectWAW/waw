@@ -239,6 +239,27 @@ green_flag = L.icon.fontAwesome({
   iconXOffset: 0,
   iconYOffset: 0
 });
+green_truck = L.icon.fontAwesome({
+  iconClasses: truck,
+  markerColor: greenMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: greenMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
+green_bomb = L.icon.fontAwesome({
+  iconClasses: bomb,
+  markerColor: greenMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: greenMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -1.5,
+  iconYOffset: 0
+});
+
 
 purple_gun_right = L.icon.fontAwesome({
   iconClasses: gun_right,
@@ -268,7 +289,7 @@ purple_flag = L.icon.fontAwesome({
   markerStrokeColor: purpleMarkerStroke,
   iconColor: iconColor,
   iconSize: [15, 15],
-  iconXOffset: -2.5,
+  iconXOffset: -1.5,
   iconYOffset: 0
 });
 purple_truck = L.icon.fontAwesome({
@@ -310,6 +331,16 @@ orange_flag = L.icon.fontAwesome({
   iconColor: iconColor,
   iconSize: [15, 15],
   iconXOffset: 0,
+  iconYOffset: 0
+});
+orange_ambulance = L.icon.fontAwesome({
+  iconClasses: ambulance,
+  markerColor: orangeMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: orangeMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
   iconYOffset: 0
 });
 
