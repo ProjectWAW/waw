@@ -11,6 +11,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav mr-auto">
         <li><a href="/editor.php">(Dev build) Editor</a></li>
+        <li><a href="/editor2.php">(Dev build) Editor 2</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <?php if($_SERVER['PHP_SELF']=='/index.php') {
