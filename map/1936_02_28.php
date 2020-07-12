@@ -1,5 +1,5 @@
 <?php
-$info_1936_02_28_1 = "Italian forces capture Abiy Addi.";
+$info_1936_02_28_1 = "Italian forces capture Abiy Addi again.";
 ?>
 
 <div id="1936_02_28_1">

@@ -1,6 +1,6 @@
 countries = [
   ["neutral_zone_iraq", neutral_zone, "1935_10_03", "neutral_zone", null],
-  
+
   ["afghanistan", neutral, "1935_10_03", "neutral", null],
   ["albania", neutral, "1935_10_03", "neutral", null],
   ["andorra", neutral, "1935_10_03", "neutral", null],
@@ -78,7 +78,7 @@ countries = [
   ["venezuela", neutral, "1935_10_03", "neutral", null],
   ["yemen", neutral, "1935_10_03", "neutral", null],
   ["yugoslavia", neutral, "1935_10_03", "neutral", null],
-  
+
   ["australia", neutral, "1935_10_03", "neutral", null],
   ["bahamas", neutral, "1935_10_03", "neutral", null],
   ["bahrain", neutral, "1935_10_03", "neutral", null],
@@ -134,7 +134,7 @@ countries = [
   ["uganda", neutral, "1935_10_03", "neutral", null],
   ["uk", neutral, "1935_10_03", "neutral", null],
   ["zanzibar", neutral, "1935_10_03", "neutral", null],
-  
+
   ["france", neutral, "1935_10_03", "neutral", null],
   ["french_cameroon", neutral, "1935_10_03", "neutral", null],
   ["french_equatorial_africa", neutral, "1935_10_03", "neutral", null],
@@ -153,16 +153,16 @@ countries = [
   ["morocco", neutral, "1935_10_03", "neutral", null],
   ["tangiers", neutral, "1935_10_03", "neutral", null],
   ["tunis", neutral, "1935_10_03", "neutral", null],
-  
+
   ["mongolia", neutral, "1935_10_03", "neutral", null],
   ["tannu_tuva", neutral, "1935_10_03", "neutral", null],
   ["ussr", neutral, "1935_10_03", "neutral", null],
-  
+
   ["germany", neutral, "1935_10_03", "neutral", null],
-  
+
   ["pailingmiao_council", neutral, "1935_10_03", "neutral", null],
   ["xinjiang", neutral, "1935_10_03", "neutral", null],
-  
+
   ["chongqing_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["guangdong_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["hebei_chahar_council", uf_puppet, "1935_12_18", "uf_puppet", null],
@@ -191,9 +191,9 @@ countries = [
   ["japanese_taiwan", axis_puppet, "1935_10_03", "axis_puppet", null],
   ["kwantung_leased_territory", axis_puppet, "1935_10_03", "axis_puppet", null],
   ["south_seas_mandate", axis_puppet, "1935_10_03", "axis_puppet", null],
-  
+
   ["ethiopia", finland, "1936_04_27", "finland", null],
-  
+
   ["italy", italy, "1935_10_03", "italy", null],
   ["italian_aussa", italy_occupied, "1936_03_28", "italy_occupied", null],
   ["italian_ethiopia", italy_occupied, "1936_04_27", "italy_occupied", null],
@@ -203,3 +203,43 @@ countries = [
 ]
 
 marker_group = new L.FeatureGroup();
+
+info_1935_12_27_1 = "<?php echo $info_1935_12_27_1;?>";
+marker1935_12_27_1_location = [7.999394, 43.854078];
+marker1935_12_27_1 = L.marker(marker1935_12_27_1_location, {
+  id: "marker1935_12_27_1",
+  icon: green_biohazard,
+  title: info_1935_12_27_1
+})
+info_1935_12_27_2 = "<?php echo $info_1935_12_27_1;?>";
+marker1935_12_27_2_location = [7.867778, 43.668611];
+marker1935_12_27_2 = L.marker(marker1935_12_27_2_location, {
+  id: "marker1935_12_27_1",
+  icon: green_biohazard,
+  title: info_1935_12_27_1
+});
+
+marker_group.addLayer(marker1935_12_27_1);
+marker_group.addLayer(marker1935_12_27_2);
+
+mymap.addLayer(marker_group);
+
+marker1935_12_27_1.on("click", function () {
+  onClick1();
+  location.href='#1935_12_27_1';
+  infoClicked = document.getElementById("1935_12_27_1");
+  onClick2();
+})
+marker1935_12_27_2.on("click", function () {
+  onClick1();
+  location.href='#1935_12_27_2';
+  infoClicked = document.getElementById("1935_12_27_2");
+  onClick2();
+});
+
+function zoom1935_12_27_1() {
+  mymap.setView(marker1935_12_27_1_location);
+}
+function zoom1935_12_27_2() {
+  mymap.setView(marker1935_12_27_2_location);
+}

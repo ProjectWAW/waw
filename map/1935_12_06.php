@@ -1,6 +1,6 @@
 <?php
 $info_1935_12_06_1 = "The French government gets from the parliament the option to dissolve and disarm right-wing extremist paramilitary groups.";
-$info_1935_12_06_2 = "Bombing of Dessie, where the field headquarter of Saile Helassi is currently located. The hospital gets hit.";
+$info_1935_12_06_2 = "Bombing of Dessie, where the field headquarter of Saile Helassi is currently located. The tent camp from the Red Cross gets hit.";
 ?>
 
 <div id="1935_12_06_1">

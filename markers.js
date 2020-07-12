@@ -259,6 +259,16 @@ green_bomb = L.icon.fontAwesome({
   iconXOffset: -1.5,
   iconYOffset: 0
 });
+green_biohazard = L.icon.fontAwesome({
+  iconClasses: biohazard,
+  markerColor: greenMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: greenMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -1.5,
+  iconYOffset: 0
+});
 
 
 purple_gun_right = L.icon.fontAwesome({
