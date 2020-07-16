@@ -24,9 +24,7 @@
 </style>
 </head>
 <body>
-<?php include 'loader.php';
-require 'navbar.php';
-?>
+<?php require 'navbar.php'; ?>
 <script>
   L.ImageOverlay.Rotated = L.ImageOverlay.extend({
 

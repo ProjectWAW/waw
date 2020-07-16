@@ -24,9 +24,7 @@
 </style>
 </head>
 <body>
-<?php include 'loader.php';
-require 'navbar.php';
-?>
+<?php require 'navbar.php'; ?>
 <script>
   L.ImageOverlay.Rotated = L.ImageOverlay.extend({
 
@@ -379,7 +377,7 @@ require 'navbar.php';
       zoomControl: true
     }).addTo(mymap);
 
- /*var topleft = L.latLng(37.291535, 115.378418),
+ var topleft = L.latLng(37.291535, 115.378418),
 	topright   = L.latLng(38.539573, 123.068848),
   bottomleft = L.latLng(34.633208, 115.290527);
   
@@ -387,7 +385,7 @@ require 'navbar.php';
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/621362697593683993/727962399482576956/unknown.png", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/473270861990854658/733063587974742076/unknown.png", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
@@ -399,7 +397,7 @@ function repositionImage() {
 		
 		marker1.on('drag dragend', repositionImage);
 		marker2.on('drag dragend', repositionImage);
-		marker3.on('drag dragend', repositionImage);*/
+		marker3.on('drag dragend', repositionImage);
 
     function start(val) {
 

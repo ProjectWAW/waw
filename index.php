@@ -47,6 +47,15 @@ if (isset($_GET['d'])) {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
 <link rel="stylesheet" href="server/L.Icon.FontAwesome.css">
 <link rel="stylesheet" href="style.css">
+<script>
+function checkNightMode() {
+  if (localStorage.getItem("dark-mode") !== "on") {
+    $('head').append('<link rel="stylesheet" type="text/css" href="all.css">');
+  } else {
+    $('head').append('<link rel="stylesheet" type="text/css" href="dark.css">');
+  }
+}
+</script>
 <script src="https://kit.fontawesome.com/02faa02085.js"></script>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 <script src="https://teastman.github.io/Leaflet.pattern/leaflet.pattern.js"></script>
@@ -68,7 +77,7 @@ if (isset($_GET['d'])) {
   transition: 1s 0.4s;
 }
 #progress-container {
-  height: 7px;
+  height: 13px;
   border: 1px solid #fff;
   top: 50%;
   left: 5%;
@@ -76,13 +85,13 @@ if (isset($_GET['d'])) {
   position: absolute;
 }
 #progress{
-  height: 5px;
+  height: 11px;
   background: #fff;
   width: 0;
   transition: 1s;
 }
 #progstat{
-  font-size: 1.3em;
+  font-size: 1.7em;
   position: absolute;
   top: 50%;
   margin-top: -40px;
@@ -389,7 +398,7 @@ h4 {
   }());
 </script>
 <div id="overlay">
-  <div id="progstat"></div>
+  <div id="progstat">Loading: 0%</div>
   <div id="progress-container"><div id="progress"></div></div>
 </div>
 <div id="mobile-nav">
@@ -755,6 +764,26 @@ L.easyButton({
     },
     title: 'Toggle between the political map and the satellite map',
     icon: '<i class="fas fa-satellite"></i>'
+  }]
+}).addTo(mymap);
+
+L.easyButton({
+  id: 'change-map',
+  position: 'bottomleft',
+  type: 'replace',
+  leafletClasses: true,
+  states:[{
+    stateName: 'get-center',
+    onClick: function() {
+      if (localStorage.getItem("dark-mode") !== "on") {
+        localStorage.setItem("dark-mode", "on");
+      } else {
+        localStorage.setItem("dark-mode", "off");
+      }
+      checkNightMode();
+    },
+    title: 'Toggle between the light mode and the dark mode',
+    icon: '<i class="fas fa-moon"></i>'
   }]
 }).addTo(mymap);
 
