@@ -6,7 +6,7 @@ $info_1937_02_19_1 = "The Viceroy of Italian East Africa, Marshal Rodolfo Grazia
 <div id="1937_02_19_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1937_02_19_1()"></i> <b class="country-name">Italy</b>
   <div class="info-content">
-    <?php echo $info_1937_02_19_1;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <?php echo $info_1937_02_19_1;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>

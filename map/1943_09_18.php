@@ -5,7 +5,7 @@ $info_1943_09_18_1 = "Heavy fighting ensues around the easily defendable positio
 <div id="1943_09_18_1">
   <i class="icon-gun-right circle-fa" onClick="zoom1943_09_18_1()"></i> <b class="country-name">Ethiopia</b>
   <div class="info-content">
-    <?php echo $info_1943_09_18_1;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <?php echo $info_1943_09_18_1;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>

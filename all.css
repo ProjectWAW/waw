@@ -40,11 +40,6 @@ nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
     border-radius: 0;
   }
 }
-@media (max-width: 940px) {
-  #register {
-    display: none;
-  }
-}
 @media (max-width: 848px) {
   .navbar-header {
     float: none;

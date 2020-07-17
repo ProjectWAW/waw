@@ -10,35 +10,35 @@ $info_1935_10_03_5 = "In Moscow starts a conference by immigrated KPD (german co
 <div id="1935_10_03_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_10_03_1()"></i> <b class="country-name">Italy</b>
   <div class="info-content">
-    <?php echo $info_1935_10_03_1;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <?php echo $info_1935_10_03_1;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1935_10_03_2">
   <i class="icon-gun-right circle-fa" onClick="zoom1935_10_03_2()"></i> <b class="country-name">Italy</b>
   <div class="info-content">
-    <?php echo $info_1935_10_03_2;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <?php echo $info_1935_10_03_2;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1935_10_03_3">
   <i class="icon-gun-right circle-fa" onClick="zoom1935_10_03_3()"></i> <b class="country-name">Italy</b>
   <div class="info-content">
-    <?php echo $info_1935_10_03_3;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <?php echo $info_1935_10_03_3;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1935_10_03_4">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_10_03_4()"></i> <b class="country-name">Ethiopia</b>
   <div class="info-content">
-    <?php echo $info_1935_10_03_4;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <?php echo $info_1935_10_03_4;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1935_10_03_5">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_10_03_5()"></i> <b class="country-name">Soviet Union</b>
   <div class="info-content">
-    <?php echo $info_1935_10_03_5;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <?php echo $info_1935_10_03_5;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>

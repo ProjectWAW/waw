@@ -6,14 +6,14 @@ $info_1943_10_09_3 = "The British RAF bombs the villages of Corbetta Raya and Hi
 <div id="1943_10_09_1">
   <i class="icon-gun-right circle-fa" onClick="zoom1943_10_09_1()"></i> <b class="country-name">Ethiopia</b>
   <div class="info-content">
-    <?php echo $info_1943_10_09_1;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <?php echo $info_1943_10_09_1;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1943_10_09_3">
   <i class="icon-bomb circle-fa" onClick="zoom1943_10_09_3()"></i> <b class="country-name">Ethiopia</b>
   <div class="info-content">
-    <?php echo $info_1943_10_09_3;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <?php echo $info_1943_10_09_3;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>

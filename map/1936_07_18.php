@@ -13,49 +13,49 @@ $info_1936_07_18_7 = "Franco flies to Ceuta from the Canary islands to take over
 <div id="1936_07_18_7">
   <i class="icon-gun-right circle-fa" onClick="zoom1936_07_18_7()"></i> <b class="country-name">Spain</b>
   <div class="info-content">
-    <?php echo $info_1936_07_18_7;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <?php echo $info_1936_07_18_7;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_18_1">
   <i class="icon-artillery-left circle-fa" onClick="zoom1936_07_18_1()"></i> <b class="country-name">Spain</b>
   <div class="info-content">
-    <?php echo $info_1936_07_18_1;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <?php echo $info_1936_07_18_1;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_18_3">
   <i class="icon-gun-right circle-fa" onClick="zoom1936_07_18_3()"></i> <b class="country-name">Spain</b>
   <div class="info-content">
-    <?php echo $info_1936_07_18_3;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <?php echo $info_1936_07_18_3;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_18_6">
   <i class="icon-gun-right circle-fa" onClick="zoom1936_07_18_6()"></i> <b class="country-name">Spain</b>
   <div class="info-content">
-    <?php echo $info_1936_07_18_6;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <?php echo $info_1936_07_18_6;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_18_2">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1936_07_18_2()"></i> <b class="country-name">Spain</b>
   <div class="info-content">
-    <?php echo $info_1936_07_18_2;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <?php echo $info_1936_07_18_2;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_18_4">
   <i class="icon-gun-right circle-fa" onClick="zoom1936_07_18_4()"></i> <b class="country-name">Spain</b>
   <div class="info-content">
-    <?php echo $info_1936_07_18_4;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <?php echo $info_1936_07_18_4;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_18_5">
   <i class="icon-gun-right circle-fa" onClick="zoom1936_07_18_5()"></i> <b class="country-name">Spain</b>
   <div class="info-content">
-    <?php echo $info_1936_07_18_5;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <?php echo $info_1936_07_18_5;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>

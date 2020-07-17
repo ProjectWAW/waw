@@ -5,7 +5,7 @@ $info_1935_12_04_1 = "As Ethiopian forces leave Gojjam to reach the frontline, t
 <div id="1935_12_04_1">
   <i class="icon-bomb circle-fa" onClick="zoom1935_12_04_1()"></i> <b class="country-name">Ethiopia</b>
   <div class="info-content">
-    <?php echo $info_1935_12_04_1;?> <a href="#">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <?php echo $info_1935_12_04_1;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>

@@ -91,10 +91,10 @@ function checkNightMode() {
   transition: 1s;
 }
 #progstat{
-  font-size: 1.7em;
+  font-size: 2em;
   position: absolute;
   top: 50%;
-  margin-top: -40px;
+  margin-top: -45px;
   width: 100%;
   text-align: center;
   color: #fff;
@@ -263,6 +263,10 @@ h4 {
   margin-left: -20%;
   margin-top: 23%;
 }
+.fa-moon {
+  margin-left: -15%;
+  margin-top: 15%;
+}
 .keys-icon {
   float: left;
   font-size: 35px;
@@ -276,6 +280,9 @@ h4 {
   float: left;
   width: 50px;
   text-align: center;
+}
+.read-more-info {
+  display: none;
 }
 @media screen and (max-width: 920px) {
   h4 {
@@ -768,7 +775,7 @@ L.easyButton({
 }).addTo(mymap);
 
 L.easyButton({
-  id: 'change-map',
+  id: 'change-night',
   position: 'bottomleft',
   type: 'replace',
   leafletClasses: true,
