@@ -369,7 +369,7 @@ h4 {
 <?php require 'navbar.php';?>
 <noscript>This website requires javascript to run properly.</noscript>
 <script>
-  /*;*/(function(){
+  (function(){
     function id(v) {
       return document.getElementById(v);
     }
