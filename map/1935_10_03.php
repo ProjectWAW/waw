@@ -3,7 +3,7 @@ $info_1935_10_03_1 = "Italy starts an invasion of Ethiopia without a formal decl
 $info_1935_10_03_2 = "At exactly 5 AM, General Emilio de Bono starts his advance into north Ethiopia by crossing the river Mareb with his 100 000 men.";
 $info_1935_10_03_3 = "Soon after Emilio de Bono entered north Ethiopia, General Rodolfo Graziani starts his advance into south Ethiopia from Italian Somaliland with his two divisions.";
 $info_1935_10_03_4 = "In response to Italians invading them without a declaration of war, Ethiopia declares war on Italy.";
-$info_1935_10_03_5 = "In Moscow starts a conference by immigrated KPD (german communist party) members on which the foundation of a political popular front against fascism gets decided.";
+$info_1935_10_03_5 = "In Moscow starts a conference by the immigrated KPD (German Communist Party) members on which the foundation of a political popular front against fascism gets decided.";
 ?>
 
 

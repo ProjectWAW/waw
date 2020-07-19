@@ -377,7 +377,7 @@
       zoomControl: true
     }).addTo(mymap);
 
- var topleft = L.latLng(37.291535, 115.378418),
+ /*var topleft = L.latLng(37.291535, 115.378418),
 	topright   = L.latLng(38.539573, 123.068848),
   bottomleft = L.latLng(34.633208, 115.290527);
   
@@ -397,7 +397,7 @@ function repositionImage() {
 		
 		marker1.on('drag dragend', repositionImage);
 		marker2.on('drag dragend', repositionImage);
-		marker3.on('drag dragend', repositionImage);
+		marker3.on('drag dragend', repositionImage);*/
 
     function start(val) {
 

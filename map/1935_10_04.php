@@ -1,6 +1,6 @@
 <?php
 $info_1935_10_04_1 = "Italian forces capture Adigat, Inticho and Daro Tacle.";
-$info_1935_10_04_4 = "The Italian Airforce start to bomb Gorrahei.";
+$info_1935_10_04_4 = "The Italian Airforce starts to bomb Gorrahei.";
 ?>
 
 <div id="1935_10_04_1">

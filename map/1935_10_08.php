@@ -1,6 +1,6 @@
 <?php
 $info_1935_10_08_1 = "Clement Richard Attlee becomes new chairman of the Labour Party at a party congress in Brighton.";
-$info_1935_10_08_2 = "After pressure from the NSDAP, the 'deutsche Burschenschaft' gets dissolved and its members joined the 'Nationalsozialistischer Deutscher Studentenbund (NSDStB)'.";
+$info_1935_10_08_2 = "After pressure from the NSDAP, the 'deutsche Burschenschaft' gets dissolved and its members joined the 'Nationalsozialistischer Deutscher Studentenbund' (NSDStB).";
 ?>
 
 <div id="1935_10_08_1">
