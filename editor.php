@@ -377,7 +377,7 @@
       zoomControl: true
     }).addTo(mymap);
 
- /*var topleft = L.latLng(37.291535, 115.378418),
+ var topleft = L.latLng(37.291535, 115.378418),
 	topright   = L.latLng(38.539573, 123.068848),
   bottomleft = L.latLng(34.633208, 115.290527);
   
@@ -385,7 +385,7 @@
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://upload.wikimedia.org/wikipedia/commons/c/c3/KouangTcheouWang.JPG", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/710543717118902364/733274741573419038/unknown.png", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
@@ -397,7 +397,7 @@ function repositionImage() {
 		
 		marker1.on('drag dragend', repositionImage);
 		marker2.on('drag dragend', repositionImage);
-		marker3.on('drag dragend', repositionImage);*/
+		marker3.on('drag dragend', repositionImage);
 
     function start(val) {
 
