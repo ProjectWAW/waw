@@ -160,7 +160,7 @@ countries = [
 
   ["germany", neutral, "1935_10_03", "neutral", null],
 
-  ["pailingmiao_council", neutral, "1935_10_03", "neutral", null],
+  ["pailingmiao_council", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["xinjiang", neutral, "1935_10_03", "neutral", null],
 
   ["chongqing_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
