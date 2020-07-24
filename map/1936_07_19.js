@@ -158,6 +158,7 @@ countries = [
   ["pailingmiao_council", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["xinjiang", neutral, "1935_10_03", "neutral", null],
   
+  ["chengdu_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["chongqing_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["guangdong_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["hebei_chahar_council", uf_puppet, "1935_12_18", "uf_puppet", null],
@@ -171,7 +172,6 @@ countries = [
   ["qinghai_ma_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["shandong_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["shanxi_clique", uf_puppet, "1935_10_23", "uf_puppet", null],
-  ["sichuan_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["tunganistan", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["xikang_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["yunnan_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
