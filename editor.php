@@ -393,12 +393,12 @@ var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/473
 }).addTo(mymap);
 
 function repositionImage() {
-			overlay.reposition(marker1.getLatLng(), marker2.getLatLng(), marker3.getLatLng());
-		};
+	overlay.reposition(marker1.getLatLng(), marker2.getLatLng(), marker3.getLatLng());
+};
 		
-		marker1.on('drag dragend', repositionImage);
-		marker2.on('drag dragend', repositionImage);
-		marker3.on('drag dragend', repositionImage);
+	marker1.on('drag dragend', repositionImage);
+	marker2.on('drag dragend', repositionImage);
+	marker3.on('drag dragend', repositionImage);
 
     function start(val) {
 
