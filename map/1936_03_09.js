@@ -169,6 +169,7 @@ countries = [
   ["hebei_chahar_council", uf_puppet, "1935_12_18", "uf_puppet", null],
   ["hunan_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["mianyang_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
+  ["nanchong_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["new_guanxi_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["ningxia_ma_clique", uf_puppet, "1935_10_22", "uf_puppet", null],
   ["northeastern_army", uf_puppet, "1935_10_23", "uf_puppet", null],

@@ -285,6 +285,7 @@
   <option value="monaco">monaco</option>
   <option value="mongolia">mongolia</option>
   <option value="morocco">morocco</option>
+  <option value="nanchong_clique">nanchong_clique</option>
   <option value="nationalist_spain">nationalist_spain</option>
   <option value="nepal">nepal</option>
   <option value="netherlands">netherlands</option>
@@ -377,15 +378,15 @@
       zoomControl: true
     }).addTo(mymap);
 
- var topleft = L.latLng(37.291535, 115.378418),
-	topright   = L.latLng(38.539573, 123.068848),
-  bottomleft = L.latLng(34.633208, 115.290527);
+ var topleft = L.latLng(34.379713, 97.261963),
+	topright   = L.latLng(34.334364, 114.675293),
+  bottomleft = L.latLng(26.007424, 97.196045);
   
   var marker1 = L.marker(topleft, {draggable: true} ).addTo(mymap),
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/China_in_1936.svg/1280px-China_in_1936.svg.png", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/473270861990854658/733210939427389460/unknown.png", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
