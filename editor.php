@@ -386,7 +386,7 @@
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/473270861990854658/733210939427389460/unknown.png", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/621362697593683993/736255024103030834/unknown.png", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
