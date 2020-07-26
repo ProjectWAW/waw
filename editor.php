@@ -328,6 +328,7 @@
   <option value="saudi_arabia">saudi_arabia</option>
   <option value="seychelles">seychelles</option>
   <option value="shandong_clique">shandong_clique</option>
+  <option value="shaanxi_clique">shaanxi_clique</option>
   <option value="shanxi_clique">shanxi_clique</option>
   <option value="siam">siam</option>
   <option value="sichuan_clique">sichuan_clique</option>
@@ -341,7 +342,7 @@
   <option value="sweden">sweden</option>
   <option value="switzerland">switzerland</option>
   <option value="tangiers">tangiers</option>
-  <option value="tannu_tuva">tannu_tuva</option>\
+  <option value="tannu_tuva">tannu_tuva</option>
   <option value="tetua_airfield">tetua_airfield</option>
   <option value="tibet">tibet</option>
   <option value="transjordania">transjordania</option>
@@ -371,14 +372,14 @@
   <script>
     var mymap = L.map('map').setView([9.013776, 38.754616], 5);
     
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>',
       minZoom: 3,
       maxZoom: 14,
       zoomControl: true
     }).addTo(mymap);
 
- var topleft = L.latLng(34.379713, 97.261963),
+ /*var topleft = L.latLng(34.379713, 97.261963),
 	topright   = L.latLng(34.334364, 114.675293),
   bottomleft = L.latLng(26.007424, 97.196045);
   
@@ -398,7 +399,7 @@ function repositionImage() {
 		
 	marker1.on('drag dragend', repositionImage);
 	marker2.on('drag dragend', repositionImage);
-	marker3.on('drag dragend', repositionImage);
+	marker3.on('drag dragend', repositionImage);*/
 
     function start(val) {
 

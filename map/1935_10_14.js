@@ -161,7 +161,6 @@ countries = [
 
   ["germany", neutral, "1935_10_03", "neutral", null],
 
-  ["pailingmiao_council", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["xinjiang", neutral, "1935_10_03", "neutral", null],
 
   ["chengdu_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
@@ -174,8 +173,10 @@ countries = [
   ["ningxia_ma_clique", uf_puppet, "1935_10_14", "neutral", null],
   ["northeastern_army", uf_puppet, "1935_10_14", "neutral", null],
   ["ningxia_ma_clique", uf_puppet, "1935_10_04", "uf_puppet", null],
+  ["pailingmiao_council", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["qinghai_ma_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["shandong_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
+  ["shaanxi_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["shanxi_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["tunganistan", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["xikang_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
