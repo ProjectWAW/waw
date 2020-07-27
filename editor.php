@@ -372,7 +372,7 @@
   <script>
     var mymap = L.map('map').setView([9.013776, 38.754616], 5);
     
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>',
       minZoom: 3,
       maxZoom: 14,
