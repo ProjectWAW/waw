@@ -172,7 +172,6 @@ countries = [
   ["new_guanxi_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["ningxia_ma_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["northeastern_army", uf_puppet, "1935_10_03", "uf_puppet", null],
-  ["northwest_garrison", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["pailingmiao_council", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["qinghai_ma_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["shandong_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
@@ -204,7 +203,7 @@ countries = [
 
 marker_group = new L.FeatureGroup();
 
-info_1935_10_03_1 = "<?php echo $info_1935_10_03_1;?>";
+info_1935_10_03_1 = getCookie("info_1935_10_03_1");
 marker1935_10_03_1_location = [41.8919300, 12.5113300];
 marker1935_10_03_1 = L.marker(marker1935_10_03_1_location, {
   id: "marker1935_10_03_1",

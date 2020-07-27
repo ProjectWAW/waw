@@ -1,0 +1,1 @@
+document.cookie = "info_1935_10_03_1 = Italy starts an invasion of Ethiopia without a formal declaration of war, shortly after the league exonerated both parties in the Walwal incident.";

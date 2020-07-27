@@ -15,12 +15,11 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <?php if($_SERVER['PHP_SELF']=='/index.php') {
-          //echo '<li><a href="/settings.php"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>';
           echo '<li id="toggleSidebar"><a href="#" onclick="hideSidebar()"><span class="glyphicon glyphicon-align-right"></span>&nbsp;&nbsp;Toggle Sidebar</a></li>';
           $iPod = stripos($_SERVER['HTTP_USER_AGENT'],"iPod");
           $iPhone = stripos($_SERVER['HTTP_USER_AGENT'],"iPhone");
           $iPad = stripos($_SERVER['HTTP_USER_AGENT'],"iPad");
-          if ($iPod == false && $iPhone == false && $iPad == false) { 
+          if ($iPod == false && $iPhone == false && $iPad == false) {
             echo '<li><a href="#" onclick="openFullscreen()"><span class="glyphicon glyphicon-fullscreen"></span>&nbsp;&nbsp;Full screen</a></li>';
           }
         }?>

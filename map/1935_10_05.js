@@ -172,7 +172,6 @@ countries = [
   ["new_guanxi_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["ningxia_ma_clique", uf_puppet, "1935_10_05", "uf_puppet", null],
   ["northeastern_army", uf_puppet, "1935_10_03", "uf_puppet", null],
-  ["ningxia_ma_clique", uf_puppet, "1935_10_04", "uf_puppet", null],
   ["pailingmiao_council", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["qinghai_ma_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["shandong_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
