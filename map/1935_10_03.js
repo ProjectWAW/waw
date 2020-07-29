@@ -210,28 +210,28 @@ marker1935_10_03_1 = L.marker(marker1935_10_03_1_location, {
   icon: green_bullhorn,
   title: info_1935_10_03_1
 });
-info_1935_10_03_2 = "<?php echo $info_1935_10_03_2;?>";
+info_1935_10_03_2 = getCookie("info_1935_10_03_2");
 marker1935_10_03_2_location = [14.495184, 39.393883];
 marker1935_10_03_2 = L.marker(marker1935_10_03_2_location, {
   id: "marker1935_10_03_2",
   icon: green_gun_right,
   title: info_1935_10_03_2
 });
-info_1935_10_03_3 = "<?php echo $info_1935_10_03_3;?>";
+info_1935_10_03_3 = getCookie("info_1935_10_03_3");
 marker1935_10_03_3_location = [5.190791, 45.079651];
 marker1935_10_03_3 = L.marker(marker1935_10_03_3_location, {
   id: "marker1935_10_03_3",
   icon: green_gun_right,
   title: info_1935_10_03_3
 });
-info_1935_10_03_4 = "<?php echo $info_1935_10_03_4;?>";
+info_1935_10_03_4 = getCookie("info_1935_10_03_4");
 marker1935_10_03_4_location = [9.010725, 38.751268];
 marker1935_10_03_4 = L.marker(marker1935_10_03_4_location, {
   id: "marker1935_10_03_4",
   icon: purple_bullhorn,
   title: info_1935_10_03_4
 });
-info_1935_10_03_5 = "<?php echo $info_1935_10_03_5;?>";
+info_1935_10_03_5 = getCookie("info_1935_10_03_5");
 marker1935_10_03_5_location = [55.754145, 37.620263];
 marker1935_10_03_5 = L.marker(marker1935_10_03_5_location, {
   id: "marker1935_10_03_5",

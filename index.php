@@ -61,6 +61,8 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
 </script>
+<?php //echo '<script src="map/'.$date.'_def.js"></script>';?>
+<script src="map/<?php echo $date;?>_def.js"></script>
 <script src="https://kit.fontawesome.com/02faa02085.js"></script>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 <script src="https://teastman.github.io/Leaflet.pattern/leaflet.pattern.js"></script>
@@ -214,7 +216,7 @@ h4 {
 }
 .info-content {
   font-size: 17px;
-  padding-top: 2px;
+  padding-top: 3px;
   font-family: 'Roboto', sans-serif;
 }
 .circle-fa {
@@ -417,7 +419,6 @@ h4 {
   <button id="showMap" class="mobile-nav-button mobile-active" onClick="showMap()">Map</button>
   <button id="showSidebar" class="mobile-nav-button" onClick="showSidebar()">Sidebar</button>
 </div>
-<?php echo '<script src="map/'.$date.'_def.js"></script>';?>
 <div id='map'></div>
 <div id="sidebar">
   <div class="sidebar-nav">
