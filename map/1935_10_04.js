@@ -203,21 +203,21 @@ countries = [
 
 marker_group = new L.FeatureGroup();
 
-info_1935_10_04_1 = "<?php echo $info_1935_10_04_1;?>";
+info_1935_10_04_1 = getCookie("info_1935_10_04_1");
 marker1935_10_04_1_location = [14.278039, 39.464150];
 marker1935_10_04_1 = L.marker(marker1935_10_04_1_location, {
   id: "marker1935_10_04_1",
   icon: green_flag,
   title: info_1935_10_04_1
 })
-info_1935_10_04_2 = "<?php echo $info_1935_10_04_1;?>";
+info_1935_10_04_2 = getCookie("info_1935_10_04_1");
 marker1935_10_04_2_location = [14.278445, 39.150488];
 marker1935_10_04_2 = L.marker(marker1935_10_04_2_location, {
   id: "marker1935_10_04_2",
   icon: green_flag,
   title: info_1935_10_04_1
 })
-info_1935_10_04_3 = "<?php echo $info_1935_10_04_1;?>";
+info_1935_10_04_3 = getCookie("info_1935_10_04_1");
 marker1935_10_04_3_location = [14.296439, 38.827381];
 marker1935_10_04_3 = L.marker(marker1935_10_04_3_location, {
   id: "marker1935_10_04_3",
@@ -225,7 +225,7 @@ marker1935_10_04_3 = L.marker(marker1935_10_04_3_location, {
   title: info_1935_10_04_1
 });
 
-info_1935_10_04_4 = "<?php echo $info_1935_10_04_4;?>";
+info_1935_10_04_4 = getCookie("info_1935_10_04_4");
 marker1935_10_04_4_location = [6.736537, 44.280024];
 marker1935_10_04_4 = L.marker(marker1935_10_04_4_location, {
   id: "marker1935_10_04_4",
