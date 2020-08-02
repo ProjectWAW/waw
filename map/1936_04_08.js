@@ -205,42 +205,42 @@ countries = [
 
 marker_group = new L.FeatureGroup();
 
-info_1936_02_08_1 = "<?php echo $info_1936_02_08_1;?>";
+info_1936_02_08_1 = getCookie("info_1936_02_08_1");
 marker1936_02_08_1_location = [7.999394, 43.854078];
 marker1936_02_08_1 = L.marker(marker1936_02_08_1_location, {
   id: "marker1936_02_08_1",
   icon: green_biohazard,
   title: info_1936_02_08_1
 })
-info_1936_02_08_2 = "<?php echo $info_1936_02_08_1;?>";
+info_1936_02_08_2 = getCookie("info_1936_02_08_1");
 marker1936_02_08_2_location = [7.867778, 43.668611];
 marker1936_02_08_2 = L.marker(marker1936_02_08_2_location, {
   id: "marker1936_02_08_1",
   icon: green_biohazard,
   title: info_1936_02_08_1
 })
-info_1936_02_08_3 = "<?php echo $info_1936_02_08_1;?>";
+info_1936_02_08_3 = getCookie("info_1936_02_08_1");
 marker1936_02_08_3_location = [8.223912, 43.558196];
 marker1936_02_08_3 = L.marker(marker1936_02_08_3_location, {
   id: "marker1936_02_08_1",
   icon: green_biohazard,
   title: info_1936_02_08_1
 })
-info_1936_02_08_4 = "<?php echo $info_1936_02_08_1;?>";
+info_1936_02_08_4 = getCookie("info_1936_02_08_1");
 marker1936_02_08_4_location = [7.984780, 43.021622];
 marker1936_02_08_4 = L.marker(marker1936_02_08_4_location, {
   id: "marker1936_02_08_1",
   icon: green_biohazard,
   title: info_1936_02_08_1
 })
-info_1936_02_08_5 = "<?php echo $info_1936_02_08_1;?>";
+info_1936_02_08_5 = getCookie("info_1936_02_08_1");
 marker1936_02_08_5_location = [7.681323, 42.835441];
 marker1936_02_08_5 = L.marker(marker1936_02_08_5_location, {
   id: "marker1936_02_08_1",
   icon: green_biohazard,
   title: info_1936_02_08_1
 })
-info_1936_02_08_6 = "<?php echo $info_1936_02_08_1;?>";
+info_1936_02_08_6 = getCookie("info_1936_02_08_1");
 marker1936_02_08_6_location = [7.605291, 43.774629];
 marker1936_02_08_6 = L.marker(marker1936_02_08_6_location, {
   id: "marker1936_02_08_1",

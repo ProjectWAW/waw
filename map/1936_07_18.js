@@ -205,49 +205,49 @@ countries = [
 
 marker_group = new L.FeatureGroup();
 
-info_1936_07_18_1 = "<?php echo $info_1936_07_18_1;?>";
+info_1936_07_18_1 = getCookie("info_1936_07_18_1");
 marker1936_07_18_1_location = [35.58976, -5.327682];
 marker1936_07_18_1 = L.marker(marker1936_07_18_1_location, {
   id: "marker1936_07_18_1",
   icon: black_artillery_left,
   title: info_1936_07_18_1
 });
-info_1936_07_18_2 = "<?php echo $info_1936_07_18_2;?>";
+info_1936_07_18_2 = getCookie("info_1936_07_18_2");
 marker1936_07_18_2_location = [41.388401, 2.178555];
 marker1936_07_18_2 = L.marker(marker1936_07_18_2_location, {
   id: "marker1936_07_18_2",
   icon: red_bullhorn,
   title: info_1936_07_18_2
 });
-info_1936_07_18_3 = "<?php echo $info_1936_07_18_3;?>";
+info_1936_07_18_3 = getCookie("info_1936_07_18_3");
 marker1936_07_18_3_location = [37.391095, -5.993128];
 marker1936_07_18_3 = L.marker(marker1936_07_18_3_location, {
   id: "marker1936_07_18_3",
   icon: black_gun_right,
   title: info_1936_07_18_3
 });
-info_1936_07_18_4 = "<?php echo $info_1936_07_18_4;?>";
+info_1936_07_18_4 = getCookie("info_1936_07_18_4");
 marker1936_07_18_4_location = [37.772072, -3.788652];
 marker1936_07_18_4 = L.marker(marker1936_07_18_4_location, {
   id: "marker1936_07_18_4",
   icon: red_gun_right,
   title: info_1936_07_18_4
 });
-info_1936_07_18_5 = "<?php echo $info_1936_07_18_5;?>";
+info_1936_07_18_5 = getCookie("info_1936_07_18_5");
 marker1936_07_18_5_location = [36.840477, -2.459908];
 marker1936_07_18_5 = L.marker(marker1936_07_18_5_location, {
   id: "marker1936_07_18_5",
   icon: red_gun_right,
   title: info_1936_07_18_5
 });
-info_1936_07_18_6 = "<?php echo $info_1936_07_18_6;?>";
+info_1936_07_18_6 = getCookie("info_1936_07_18_6");
 marker1936_07_18_6_location = [36.526605, -6.288471];
 marker1936_07_18_6 = L.marker(marker1936_07_18_6_location, {
   id: "marker1936_07_18_6",
   icon: black_gun_right,
   title: info_1936_07_18_6
 });
-info_1936_07_18_7 = "<?php echo $info_1936_07_18_7;?>";
+info_1936_07_18_7 = getCookie("info_1936_07_18_7");
 marker1936_07_18_7_location = [35.888772, -5.302963];
 marker1936_07_18_7 = L.marker(marker1936_07_18_7_location, {
   id: "marker1936_07_18_7",

@@ -206,14 +206,14 @@ countries = [
 
 marker_group = new L.FeatureGroup();
 
-info_1936_07_17_1 = "<?php echo $info_1936_07_17_1;?>";
+info_1936_07_17_1 = getCookie("info_1936_07_17_1");
 marker1936_07_17_1_location = [35.570843, -5.380812];
 marker1936_07_17_1 = L.marker(marker1936_07_17_1_location, {
   id: "marker1936_07_17_1",
   icon: black_gun_left,
   title: info_1936_07_17_1
 });
-info_1936_07_17_2 = "<?php echo $info_1936_07_17_2;?>";
+info_1936_07_17_2 = getCookie("info_1936_07_17_2");
 marker1936_07_17_2_location = [28.472917, -16.262512];
 marker1936_07_17_2 = L.marker(marker1936_07_17_2_location, {
   id: "marker1936_07_17_2",

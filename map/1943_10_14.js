@@ -2,7 +2,7 @@ countries = []
 
 marker_group = new L.FeatureGroup();
 
-info_1943_10_14_1 = "<?php echo $info_1943_10_14_1;?>";
+info_1943_10_14_1 = getCookie("info_1943_10_14_1");
 marker1943_10_14_1_location = [13.497511, 39.471300];
 marker1943_10_14_2_location = [13.479173, 39.543222];
 marker1943_10_14_1 = L.marker(marker1943_10_14_1_location, {
@@ -15,7 +15,7 @@ marker1943_10_14_2 = L.marker(marker1943_10_14_2_location, {
   icon: blue_flag,
   title: info_1943_10_14_1
 });
-info_1943_10_14_3 = "<?php echo $info_1943_10_14_1;?>";
+info_1943_10_14_3 = getCookie("info_1943_10_14_1");
 marker1943_10_14_3_location = [13.506419, 39.475274];
 marker1943_10_14_3 = L.marker(marker1943_10_14_3_location, {
   id: "marker1943_10_14_3",

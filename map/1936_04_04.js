@@ -205,7 +205,7 @@ countries = [
 
 marker_group = new L.FeatureGroup();
 
-info_1936_03_04_1 = "<?php echo $info_1936_03_04_1;?>";
+info_1936_03_04_1 = getCookie("info_1936_03_04_1");
 marker1936_03_04_1_location = [12.591250, 39.524545];
 marker1936_03_04_1 = L.marker(marker1936_03_04_1_location, {
   id: "marker1936_03_04_1",

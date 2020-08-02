@@ -204,21 +204,21 @@ countries = [
 
 marker_group = new L.FeatureGroup();
 
-info_1935_12_08_1 = "<?php echo $info_1935_12_08_1;?>";
+info_1935_12_08_1 = getCookie("info_1935_12_08_1");
 marker1935_12_08_1_location = [38.890035, -77.009008];
 marker1935_12_08_1 = L.marker(marker1935_12_08_1_location, {
   id: "marker1935_12_08_1",
   icon: orange_bullhorn,
   title: info_1935_12_08_1
 });
-info_1935_12_08_2 = "<?php echo $info_1935_12_08_2;?>";
+info_1935_12_08_2 = getCookie("info_1935_12_08_2");
 marker1935_12_08_2_location = [51.499621, -0.124795];
 marker1935_12_08_2 = L.marker(marker1935_12_08_2_location, {
   id: "marker1935_12_08_2",
   icon: orange_bullhorn,
   title: info_1935_12_08_2
 })
-info_1935_12_08_3 = "<?php echo $info_1935_12_08_3;?>";
+info_1935_12_08_3 = getCookie("info_1935_12_08_3");
 marker1935_12_08_3_location = [48.861978, 2.318621];
 marker1935_12_08_3 = L.marker(marker1935_12_08_3_location, {
   id: "marker1935_12_08_3",
