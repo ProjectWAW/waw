@@ -368,7 +368,7 @@
 
   <div id='map'></div>
   <script>
-    var mymap = L.map('map').setView([9.013776, 38.754616], 5);
+    var mymap = L.map('map').setView([40.418201, -3.704109], 6);
     
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>',
@@ -404,7 +404,7 @@ function repositionImage() {
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1936_07_18/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1936_07_22/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);
