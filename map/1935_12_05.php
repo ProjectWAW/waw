@@ -1,7 +1,7 @@
-<?php
-$info_1935_12_05_1 = "Otto Strasser is sentenced in Prague to five months in prison for illegal broadcasting.";
-$info_1935_12_05_2 = "Italian forces capture Abiy Addi.";
-?>
+<script>
+document.cookie = "info_1935_12_05_1 = Otto Strasser is sentenced in Prague to five months in prison for illegal broadcasting.";
+document.cookie = "info_1935_12_05_2 = Italian forces capture Abiy Addi.";
+</script>
 
 <div id="1935_12_05_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_12_05_1()"></i> <b class="country-name">Czechoslovakia</b>

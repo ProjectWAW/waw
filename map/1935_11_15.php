@@ -1,6 +1,6 @@
-<?php
-$info_1935_11_15_1 = "The Anthroposophical Society gets declared hostile to the state and is banned.";
-?>
+<script>
+document.cookie = "info_1935_11_15_1 = The Anthroposophical Society gets declared hostile to the state and is banned.";
+</script>
 
 <div id="1935_11_15_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_11_15_1()"></i> <b class="country-name">Germany</b>

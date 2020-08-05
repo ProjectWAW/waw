@@ -1,6 +1,6 @@
-<?php
-$info_1936_05_05_1 = "Italian forces capture Jijiga.";
-?>
+<script>
+document.cookie = "info_1936_05_05_1 = Italian forces capture Jijiga.";
+</script>
 
 
 <div id="1936_05_05_1">

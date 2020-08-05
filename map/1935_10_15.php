@@ -1,7 +1,7 @@
-<?php
-$info_1935_10_15_1 = "Italian forces capture Aksum. Ethiopian forces left the city earlier however, per order from Haile Selassie. De Bono entered the city on a white horse.";
-$info_1935_10_15_2 = "The Egyptian Red Crescent, as the first national society, dispatches a field hospital to Ethiopia.";
-?>
+<script>
+document.cookie = "info_1935_10_15_1 = Italian forces capture Aksum. Ethiopian forces left the city earlier however, per order from Haile Selassie. De Bono entered the city on a white horse.";
+document.cookie = "info_1935_10_15_2 = The Egyptian Red Crescent, as the first national society, dispatches a field hospital to Ethiopia.";
+</script>
 
 <div id="1935_10_15_1">
   <i class="fas fa-flag circle-fa" onClick="zoom1935_10_15_1()"></i> <b class="country-name">Italy</b>

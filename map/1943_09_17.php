@@ -1,6 +1,6 @@
-<?php
-$info_1943_09_17_1 = "Ethiopian government forces under Ras Abebe arrive in Korem to block rebel forces advancing southwards.";
-?>
+<script>
+document.cookie = "info_1943_09_17_1 = Ethiopian government forces under Ras Abebe arrive in Korem to block rebel forces advancing southwards.";
+</script>
 
 <div id="1943_09_17_1">
   <i class="fas fa-truck circle-fa" onClick="zoom1943_09_17_1()"></i> <b class="country-name">Ethiopia</b>

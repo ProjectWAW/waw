@@ -1,6 +1,6 @@
-<?php
-$info_1943_09_23_1 = "Ethiopian rebels capture Adigrat as part of the Woyane rebellion.";
-?>
+<script>
+document.cookie = "info_1943_09_23_1 = Ethiopian rebels capture Adigrat as part of the Woyane rebellion.";
+</script>
 
 <div id="1943_09_23_1">
   <i class="fas fa-flag circle-fa" onClick="zoom1943_09_23_1()"></i> <b class="country-name">United Kingdom</b>

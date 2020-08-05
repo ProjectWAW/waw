@@ -1,6 +1,6 @@
-<?php
-$info_1936_03_21_1 = "Haile Selassie sent a radio message to his wife in Adis Ababa in which he explains his decision to attack Italian defences. Italians intercept the message and prepare their defences.";
-?>
+<script>
+document.cookie = "info_1936_03_21_1 = Haile Selassie sent a radio message to his wife in Adis Ababa in which he explains his decision to attack Italian defences. Italians intercept the message and prepare their defences.";
+</script>
 
 <div id="1936_03_21_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1936_03_21_1()"></i> <b class="country-name">Ethiopia</b>

@@ -1,7 +1,7 @@
-<?php
-$info_1935_12_21_1 = "The german publicist Kurt Tucholsky commits suicide in his Swedish exile. Since 1933 he was expatriated by Germany.";
-$info_1935_12_21_2 = "By law, the Grand Fascist Council in Italy is elevated to the highest legislative body in the state. This effectively eliminated the newly elected parliament.";
-?>
+<script>
+document.cookie = "info_1935_12_21_1 = The german publicist Kurt Tucholsky commits suicide in his Swedish exile. Since 1933 he was expatriated by Germany.";
+document.cookie = "info_1935_12_21_2 = By law, the Grand Fascist Council in Italy is elevated to the highest legislative body in the state. This effectively eliminated the newly elected parliament.";
+</script>
 
 <div id="1935_12_21_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_12_21_1()"></i> <b class="country-name">Sweden</b>

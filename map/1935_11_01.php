@@ -1,6 +1,6 @@
-<?php
-$info_1935_11_01_1 = "The first recruits start there mandatory one year military service after the reintroduction of conscription in Germany.";
-?>
+<script>
+document.cookie = "info_1935_11_01_1 = The first recruits start there mandatory one year military service after the reintroduction of conscription in Germany.";
+</script>
 
 <div id="1935_11_01_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_11_01_1()"></i> <b class="country-name">Germany</b>

@@ -1,6 +1,6 @@
-<?php
-$info_1941_03_29_1 = "The 1st battalion of the Nigeria Regiment capture Harar.";
-?>
+<script>
+document.cookie = "info_1941_03_29_1 = The 1st battalion of the Nigeria Regiment capture Harar.";
+</script>
 
 
 <div id="1941_03_29_1">

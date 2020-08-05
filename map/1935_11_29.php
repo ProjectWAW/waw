@@ -1,6 +1,6 @@
-<?php
-$info_1935_11_29_1 = "The newly built Deutschlandhalle with space for 20,000 people is inaugurated in Berlin.";
-?>
+<script>
+document.cookie = "info_1935_11_29_1 = The newly built Deutschlandhalle with space for 20,000 people is inaugurated in Berlin.";
+</script>
 
 <div id="1935_11_29_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_11_29_1()"></i> <b class="country-name">Germany</b>

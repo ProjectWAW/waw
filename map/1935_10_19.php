@@ -1,6 +1,6 @@
-<?php
-$info_1935_10_19_1 = "Opening of the 'Reichsinstitut for the history of the new Germany' in Berlin by Rudolf Heß. It was mostly used to promote an antisemitic policy by delivering pseudo-scientific facts about jews.";
-?>
+<script>
+document.cookie = "info_1935_10_19_1 = Opening of the 'Reichsinstitut for the history of the new Germany' in Berlin by Rudolf Heß. It was mostly used to promote an antisemitic policy by delivering pseudo-scientific facts about jews.";
+</script>
 
 <div id="1935_10_19_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_10_19_1()"></i> <b class="country-name">Germany</b>

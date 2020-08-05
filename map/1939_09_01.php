@@ -1,6 +1,6 @@
-<?php
-$info_1939_09_01_1 = "Germany attacks Poland at 4:44 AM local time after Poland refused to cede the Danzig corridor to Germany, without formal declaration of war.";
-?>
+<script>
+document.cookie = "info_1939_09_01_1 = Germany attacks Poland at 4:44 AM local time after Poland refused to cede the Danzig corridor to Germany, without formal declaration of war.";
+</script>
 
 
 <div id="1939_09_01_1">

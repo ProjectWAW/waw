@@ -1,6 +1,6 @@
-<?php
-$info_1936_03_28_1 = "Italian forces capture Sekota.";
-?>
+<script>
+document.cookie = "info_1936_03_28_1 = Italian forces capture Sekota.";
+</script>
 
 <div id="1936_03_28_1">
   <i class="fas fa-flag circle-fa" onClick="zoom1936_03_28_1()"></i> <b class="country-name">Ethiopia</b>

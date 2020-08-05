@@ -1,6 +1,6 @@
-<?php
-$info_1936_02_28_1 = "Italian forces capture Abiy Addi again.";
-?>
+<script>
+document.cookie = "info_1936_02_28_1 = Italian forces capture Abiy Addi again.";
+</script>
 
 <div id="1936_02_28_1">
   <i class="fas fa-flag circle-fa" onClick="zoom1936_02_28_1()"></i> <b class="country-name">Ethiopia</b>

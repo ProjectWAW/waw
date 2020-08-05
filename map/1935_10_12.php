@@ -1,6 +1,6 @@
-<?php
-$info_1935_10_12_1 = "Reichssendeleiter Hadamovsky forbids the broadcast of 'Negerjazz' music in the radio. This is equivalent to the ban of all foreign music in Germany.";
-?>
+<script>
+document.cookie = "info_1935_10_12_1 = Reichssendeleiter Hadamovsky forbids the broadcast of 'Negerjazz' music in the radio. This is equivalent to the ban of all foreign music in Germany.";
+</script>
 
 <div id="1935_10_12_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_10_12_1()"></i> <b class="country-name">Germany</b>

@@ -1,6 +1,6 @@
-<?php
-$info_1935_11_30_1 = "Haile Selassie arrives at his new field headquarters to Dessie.";
-?>
+<script>
+document.cookie = "info_1935_11_30_1 = Haile Selassie arrives at his new field headquarters to Dessie.";
+</script>
 
 <div id="1935_11_30_1">
   <i class="fas fa-truck circle-fa" onClick="zoom1935_11_30_1()"></i> <b class="country-name">Ethiopia</b>

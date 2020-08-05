@@ -1,6 +1,6 @@
-<?php
-$info_1935_12_24_1 = "The Italian Air Force poison gas bomb Areri.";
-?>
+<script>
+document.cookie = "info_1935_12_24_1 = The Italian Air Force poison gas bomb Areri.";
+</script>
 
 <div id="1935_12_24_1">
   <i class="fas fa-flag circle-fa" onClick="zoom1935_12_24_1()"></i> <b class="country-name">Ethiopia</b>

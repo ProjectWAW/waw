@@ -1,6 +1,6 @@
-<?php
-$info_1936_03_19_1 = "Kassa Haile Darge, Ras Getachew Abate and Ras Seyum Mangasha armies made their way to Korem to join Haile Selassies forces.";
-?>
+<script>
+document.cookie = "info_1936_03_19_1 = Kassa Haile Darge, Ras Getachew Abate and Ras Seyum Mangasha armies made their way to Korem to join Haile Selassies forces.";
+</script>
 
 <div id="1936_03_19_1">
   <i class="fas fa-truck circle-fa" onClick="zoom1936_03_19_1()"></i> <b class="country-name">Ethiopia</b>

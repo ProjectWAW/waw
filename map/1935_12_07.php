@@ -1,6 +1,6 @@
-<?php
-$info_1935_12_07_1 = "The 100th anniversary of the railway in Germany is celebrated in Nuremberg.";
-?>
+<script>
+document.cookie = "info_1935_12_07_1 = The 100th anniversary of the railway in Germany is celebrated in Nuremberg.";
+</script>
 
 <div id="1935_12_07_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_12_07_1()"></i> <b class="country-name">Germany</b>

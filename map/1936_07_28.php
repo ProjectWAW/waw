@@ -1,6 +1,6 @@
-<?php
-$info_1936_07_28_1 = "Ethiopian rebels attack the Italian garrison in Adis Ababa. With help from the Italian Air Force, the attack got repelled.";
-?>
+<script>
+document.cookie = "info_1936_07_28_1 = Ethiopian rebels attack the Italian garrison in Adis Ababa. With help from the Italian Air Force, the attack got repelled.";
+</script>
 
 <div id="1936_07_28_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1936_07_28_1()"></i> <b class="country-name">Ethiopia</b>

@@ -1,7 +1,7 @@
-<?php
-$info_1935_11_28_1 = "Haile Selassie leaves Addis Ababa for his newly build field headquarters in Dessie.";
-$info_1935_11_28_2 = "Marshall Piedro replaces de Bono as the commander of the invasion into Ethiopia. Mussolini disliked his slow advance method.";
-?>
+<script>
+document.cookie = "info_1935_11_28_1 = Haile Selassie leaves Addis Ababa for his newly build field headquarters in Dessie.";
+document.cookie = "info_1935_11_28_2 = Marshall Piedro replaces de Bono as the commander of the invasion into Ethiopia. Mussolini disliked his slow advance method.";
+</script>
 
 <div id="1935_11_28_1">
   <i class="fas fa-truck circle-fa" onClick="zoom1935_11_28_1()"></i> <b class="country-name">Ethiopia</b>

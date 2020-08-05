@@ -1,6 +1,6 @@
-<?php
-$info_1935_11_08_1 = "Italian forces capture Mekele.";
-?>
+<script>
+document.cookie = "info_1935_11_08_1 = Italian forces capture Mekele.";
+</script>
 
 <div id="1935_11_08_1">
   <i class="fas fa-flag circle-fa" onClick="zoom1935_11_08_1()"></i> <b class="country-name">Italy</b>

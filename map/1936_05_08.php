@@ -1,6 +1,6 @@
-<?php
-$info_1936_05_08_1 = "Italian forces capture Harar.";
-?>
+<script>
+document.cookie = "info_1936_05_08_1 = Italian forces capture Harar.";
+</script>
 
 
 <div id="1936_05_08_1">

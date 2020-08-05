@@ -1,7 +1,7 @@
-<?php
-$info_1936_01_21_1 = "Italian forces bomb Mekelle with gas.";
-$info_1936_01_21_2 = "General Graziani withdrew his forces approximately 60 miles to Negele Boran to allow food and munitions to catch up.";
-?>
+<script>
+document.cookie = "info_1936_01_21_1 = Italian forces bomb Mekelle with gas.";
+document.cookie = "info_1936_01_21_2 = General Graziani withdrew his forces approximately 60 miles to Negele Boran to allow food and munitions to catch up.";
+</script>
 
 <div id="1936_01_21_1">
   <i class="fas fa-biohazard circle-fa" onClick="zoom1936_01_21_1()"></i> <b class="country-name">Ethiopia</b>

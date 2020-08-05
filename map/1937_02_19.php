@@ -1,6 +1,6 @@
-<?php
-$info_1937_02_19_1 = "The Viceroy of Italian East Africa, Marshal Rodolfo Graziani, became victim of an attempted assassination in Addis Ababa. During the next two days, Italian forces will massacre some ten thousand Ethiopians in retaliation.";
-?>
+<script>
+document.cookie = "info_1937_02_19_1 = The Viceroy of Italian East Africa, Marshal Rodolfo Graziani, became victim of an attempted assassination in Addis Ababa. During the next two days, Italian forces will massacre some ten thousand Ethiopians in retaliation.";
+</script>
 
 
 <div id="1937_02_19_1">
