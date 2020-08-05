@@ -8,36 +8,36 @@ document.cookie = "info_1935_10_03_5 = In Moscow starts a conference by the immi
 
 <div id="1935_10_03_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_10_03_1()"></i> <b class="country-name">Italy</b>
-  <div class="info-content" id="info_1935_10_03_1">
-    <script>document.getElementById('info_1935_10_03_1').innerHTML += getCookie("info_1935_10_03_1");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  <div class="info-content">
+    <script>document.write(getCookie("info_1935_10_03_1"));</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1935_10_03_2">
   <i class="icon-gun-right circle-fa" onClick="zoom1935_10_03_2()"></i> <b class="country-name">Italy</b>
-  <div class="info-content" id="info_1935_10_03_2">
-  <script>document.getElementById('info_1935_10_03_2').innerHTML += getCookie("info_1935_10_03_2");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  <div class="info-content">
+  <script>document.write(getCookie("info_1935_10_03_2"));</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1935_10_03_3">
   <i class="icon-gun-right circle-fa" onClick="zoom1935_10_03_3()"></i> <b class="country-name">Italy</b>
-  <div class="info-content" id="info_1935_10_03_3">
-  <script>document.getElementById('info_1935_10_03_3').innerHTML += getCookie("info_1935_10_03_3");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  <div class="info-content">
+  <script>document.write(getCookie("info_1935_10_03_3"));</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1935_10_03_4">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_10_03_4()"></i> <b class="country-name">Ethiopia</b>
-  <div class="info-content" id="info_1935_10_03_4">
-  <script>document.getElementById('info_1935_10_03_4').innerHTML += getCookie("info_1935_10_03_4");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  <div class="info-content">
+  <script>document.write(getCookie("info_1935_10_03_4"));</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1935_10_03_5">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_10_03_5()"></i> <b class="country-name">Soviet Union</b>
-  <div class="info-content" id="info_1935_10_03_5">
-  <script>document.getElementById('info_1935_10_03_5').innerHTML += getCookie("info_1935_10_03_5");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  <div class="info-content">
+  <script>document.write(getCookie("info_1935_10_03_5"));</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
