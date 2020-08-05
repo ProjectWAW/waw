@@ -1,12 +1,12 @@
-<?php
-$info_1935_10_10_1 = "Haile Selassie Gugsa and 1200 of his men surrender to the Italians. He is the son-in-law of Emperor Haile and it is likely that he got bribed by the Italians.";
-$info_1935_10_10_2 = "For the first time in this war, Italians bomb Ethiopian positions in Gorrahei with poison gas.";
-?>
+<script>
+document.cookie = "info_1935_10_10_1 = Haile Selassie Gugsa and 1200 of his men surrender to the Italians. He is the son-in-law of Emperor Haile and it is likely that he got bribed by the Italians.";
+document.cookie = "info_1935_10_10_2 = For the first time in this war, Italians bomb Ethiopian positions in Gorrahei with poison gas.";
+</script>
 
 <div id="1935_10_10_1">
   <i class="fas fa-flag circle-fa" onClick="zoom1935_10_10_1()"></i> <b class="country-name">Ethiopia</b>
   <div class="info-content">
-    <?php echo $info_1935_10_10_1;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <script>document.write(getCookie("info_1935_10_10_1"));</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
@@ -14,7 +14,7 @@ $info_1935_10_10_2 = "For the first time in this war, Italians bomb Ethiopian po
 <div id="1935_10_10_2">
   <i class="fas fa-biohazard circle-fa" onClick="zoom1935_10_10_2()"></i> <b class="country-name">Ethiopia</b>
   <div class="info-content">
-    <?php echo $info_1935_10_10_2;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <script>document.write(getCookie("info_1935_10_10_2"));</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>

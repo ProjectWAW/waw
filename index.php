@@ -61,8 +61,6 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
 </script>
-<?php //echo '<script src="map/'.$date.'_def.js"></script>';?>
-<script src="map/<?php echo $date;?>_def.js"></script>
 <script src="https://kit.fontawesome.com/02faa02085.js"></script>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 <script src="https://teastman.github.io/Leaflet.pattern/leaflet.pattern.js"></script>
@@ -376,40 +374,40 @@ h4 {
 <?php require 'navbar.php';?>
 <noscript>This website requires javascript to run properly.</noscript>
 <script>
-  (function(){
-    function id(v) {
-      return document.getElementById(v);
+(function(){
+  function id(v) {
+    return document.getElementById(v);
+  }
+  function loadbar() {
+    var ovrl = id("overlay"),
+    prog = id("progress"),
+    stat = id("progstat"),
+    img = document.images,
+    c = 0,
+    tot = img.length;
+    if (tot == 0) return doneLoading();
+    function imgLoaded() {
+      c += 1;
+      var perc = ((100/tot*c) << 0) +"%";
+      prog.style.width = perc;
+      stat.innerHTML = "Loading: "+ perc;
+      if(c===tot) return doneLoading();
     }
-    function loadbar() {
-      var ovrl = id("overlay"),
-      prog = id("progress"),
-      stat = id("progstat"),
-      img = document.images,
-      c = 0,
-      tot = img.length;
-      if (tot == 0) return doneLoading();
-      function imgLoaded() {
-        c += 1;
-        var perc = ((100/tot*c) << 0) +"%";
-        prog.style.width = perc;
-        stat.innerHTML = "Loading: "+ perc;
-        if(c===tot) return doneLoading();
-      }
-      function doneLoading() {
-        ovrl.style.opacity = 0;
-        setTimeout(function(){ 
-          ovrl.style.display = "none";
-        }, 1200);
-      }
-      for(var i=0; i<tot; i++) {
-        var tImg = new Image();
-        tImg.onload = imgLoaded;
-        tImg.onerror = imgLoaded;
-        tImg.src = img[i].src;
-      }    
+    function doneLoading() {
+      ovrl.style.opacity = 0;
+      setTimeout(function(){ 
+        ovrl.style.display = "none";
+      }, 1200);
     }
-    document.addEventListener('DOMContentLoaded', loadbar, false);
-  }());
+    for(var i=0; i<tot; i++) {
+      var tImg = new Image();
+      tImg.onload = imgLoaded;
+      tImg.onerror = imgLoaded;
+      tImg.src = img[i].src;
+    }    
+  }
+  document.addEventListener('DOMContentLoaded', loadbar, false);
+}());
 </script>
 <div id="overlay">
   <div id="progstat">Loading: 0%</div>

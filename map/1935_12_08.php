@@ -6,7 +6,7 @@ $info_1935_12_08_2 = "The French and British foreign ministers meet to discuss h
 <div id="1935_12_08_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_12_08_1()"></i> <b class="country-name">USA</b>
   <div class="info-content">
-    <?php echo $info_1935_12_08_1;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <script>document.write(getCookie("info_1935_12_08_1"));</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
@@ -14,7 +14,7 @@ $info_1935_12_08_2 = "The French and British foreign ministers meet to discuss h
 <div id="1935_12_08_2">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_12_08_2()"></i> <b class="country-name">UK & France</b>
   <div class="info-content">
-    <?php echo $info_1935_12_08_2;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <script>document.write(getCookie("info_1935_12_08_2"));</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>

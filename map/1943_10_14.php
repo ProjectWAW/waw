@@ -6,14 +6,14 @@ $info_1943_10_14_3 = "The British RAF bombs the provincial capital of Mekelle, w
 <div id="1943_10_14_1">
   <i class="fas fa-flag circle-fa" onClick="zoom1943_10_14_1()"></i> <b class="country-name">Ethiopia</b>
   <div class="info-content">
-    <?php echo $info_1943_10_14_1;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <script>document.write(getCookie("info_1943_10_14_1"));</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1943_10_14_3">
   <i class="icon-bomb circle-fa" onClick="zoom1943_10_14_3()"></i> <b class="country-name">Ethiopia</b>
   <div class="info-content">
-    <?php echo $info_1943_10_14_3;?> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <script>document.write(getCookie("info_1943_10_14_3"));</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
