@@ -4,8 +4,8 @@ document.cookie = "info_1935_11_03_1 = A referendum on restoring the monarchy in
 
 <div id="1935_11_03_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_11_03_1()"></i> <b class="country-name">Greece</b>
-  <div class="info-content">
-    <script>document.write(getCookie("info_1935_11_03_1"));</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  <div class="info-content" id="">
+    <script>document.getElementById("").innerHTML = getCookie("info_1935_11_03_1");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>

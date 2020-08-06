@@ -4,8 +4,8 @@ document.cookie = "info_1943_09_18_1 = Heavy fighting ensues around the easily d
 
 <div id="1943_09_18_1">
   <i class="icon-gun-right circle-fa" onClick="zoom1943_09_18_1()"></i> <b class="country-name">Ethiopia</b>
-  <div class="info-content">
-    <script>document.write(getCookie("info_1943_09_18_1"));</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  <div class="info-content" id="">
+    <script>document.getElementById("").innerHTML = getCookie("info_1943_09_18_1");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>

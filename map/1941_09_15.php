@@ -4,8 +4,8 @@ document.cookie = "info_1941_09_15_1 = Rosa Dainelli, an Italian guerilla fighte
 
 <div id="1941_09_15_1">
   <i class="fas fa-bahai circle-fa" onClick="zoom1941_09_15_1()"></i> <b class="country-name">United Kingdom</b>
-  <div class="info-content">
-    <script>document.write(getCookie("info_1941_09_15_1"));</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  <div class="info-content" id="">
+    <script>document.getElementById("").innerHTML = getCookie("info_1941_09_15_1");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>

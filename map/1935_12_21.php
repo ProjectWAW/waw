@@ -5,15 +5,15 @@ document.cookie = "info_1935_12_21_2 = By law, the Grand Fascist Council in Ital
 
 <div id="1935_12_21_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_12_21_1()"></i> <b class="country-name">Sweden</b>
-  <div class="info-content">
-    <script>document.write(getCookie("info_1935_12_21_1"));</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  <div class="info-content" id="">
+    <script>document.getElementById("").innerHTML = getCookie("info_1935_12_21_1");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1935_12_21_2">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_12_21_2()"></i> <b class="country-name">Italy</b>
-  <div class="info-content">
-    <script>document.write(getCookie("info_1935_12_21_2"));</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  <div class="info-content" id="">
+    <script>document.getElementById("").innerHTML = getCookie("info_1935_12_21_2");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
