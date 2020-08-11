@@ -6,14 +6,14 @@ document.cookie = "info_1943_10_09_3 = The British RAF bombs the villages of Cor
 <div id="1943_10_09_1">
   <i class="icon-gun-right circle-fa" onClick="zoom1943_10_09_1()"></i> <b class="country-name">Ethiopia</b>
   <div class="info-content" id="info_1943_10_09_1">
-    <script>document.getElementById("info_1943_10_09_1").innerHTML = getCookie("info_1943_10_09_1");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <script>document.getElementById("info_1943_10_09_1").innerHTML = getCookie("info_1943_10_09_1");</script> <a href="#" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1943_10_09_3">
   <i class="icon-bomb circle-fa" onClick="zoom1943_10_09_3()"></i> <b class="country-name">Ethiopia</b>
   <div class="info-content" id="info_1943_10_09_3">
-    <script>document.getElementById("info_1943_10_09_3").innerHTML = getCookie("info_1943_10_09_3");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+    <script>document.getElementById("info_1943_10_09_3").innerHTML = getCookie("info_1943_10_09_3");</script> <a href="#" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>

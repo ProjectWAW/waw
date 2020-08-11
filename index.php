@@ -286,9 +286,6 @@ h4 {
   width: 50px;
   text-align: center;
 }
-.read-more-info {
-  display: none;
-}
 @media screen and (max-width: 920px) {
   h4 {
     margin-top: 10px;

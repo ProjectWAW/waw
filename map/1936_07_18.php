@@ -11,49 +11,49 @@ document.cookie = "info_1936_07_18_7 = Franco flies to Ceuta from the Canary isl
 <div id="1936_07_18_7">
   <i class="icon-gun-right circle-fa" onClick="zoom1936_07_18_7()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_18_7">
-  <script>document.getElementById("info_1936_07_18_7").innerHTML = getCookie("info_1936_07_18_7");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_18_7").innerHTML = getCookie("info_1936_07_18_7");</script> <a href="#" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_18_1">
   <i class="icon-artillery-left circle-fa" onClick="zoom1936_07_18_1()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_18_1">
-  <script>document.getElementById("info_1936_07_18_1").innerHTML = getCookie("info_1936_07_18_1");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_18_1").innerHTML = getCookie("info_1936_07_18_1");</script> <a href="#" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_18_3">
   <i class="icon-gun-right circle-fa" onClick="zoom1936_07_18_3()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_18_3">
-  <script>document.getElementById("info_1936_07_18_3").innerHTML = getCookie("info_1936_07_18_3");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_18_3").innerHTML = getCookie("info_1936_07_18_3");</script> <a href="#" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_18_6">
   <i class="icon-gun-right circle-fa" onClick="zoom1936_07_18_6()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_18_6">
-  <script>document.getElementById("info_1936_07_18_6").innerHTML = getCookie("info_1936_07_18_6");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_18_6").innerHTML = getCookie("info_1936_07_18_6");</script> <a href="#" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_18_2">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1936_07_18_2()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_17_2">
-  <script>document.getElementById("info_1936_07_17_2").innerHTML = getCookie("info_1936_07_17_2");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_17_2").innerHTML = getCookie("info_1936_07_17_2");</script> <a href="#" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_18_4">
   <i class="icon-gun-right circle-fa" onClick="zoom1936_07_18_4()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_18_4">
-  <script>document.getElementById("info_1936_07_18_4").innerHTML = getCookie("info_1936_07_18_4");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_18_4").innerHTML = getCookie("info_1936_07_18_4");</script> <a href="#" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_18_5">
   <i class="icon-gun-right circle-fa" onClick="zoom1936_07_18_5()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_18_5">
-  <script>document.getElementById("info_1936_07_18_5").innerHTML = getCookie("info_1936_07_18_5");</script> <a href="#" class="read-more-info">Read more <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_18_5").innerHTML = getCookie("info_1936_07_18_5");</script> <a href="#" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
