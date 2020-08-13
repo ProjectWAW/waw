@@ -204,3 +204,25 @@ countries = [
 ]
 
 marker_group = new L.FeatureGroup();
+info_1936_01_01_1 = getCookie("info_1936_01_01_1");
+marker1936_01_01_1_location = [41.8919300, 12.5113300];
+marker1936_01_01_1 = L.marker(marker1935_1936_01_01_1_location, {
+  id: "marker1936_01_01_1",
+  icon: orange_bullhorn,
+  title: info_1936_01_01_1
+});
+
+marker_group.addLayer(marker1936_01_01_1);
+
+mymap.addLayer(marker_group);
+
+marker1936_01_01_1.on("click", function () {
+  onClick1();
+  location.href='#1936_01_01_1';
+  infoClicked = document.getElementById("1936_01_01_1");
+  onClick2();
+});
+
+function zoom1936_01_01_1() {
+  mymap.setView(marker1936_01_01_1_location);
+}
