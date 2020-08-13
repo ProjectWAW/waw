@@ -21,7 +21,7 @@ document.cookie = "info_1935_10_10_3 = Greek President Alexandros Zaimis was dep
 <hr>
 
 <div id="1935_10_10_3">
-  <i class="fas fa-bullhorn circle" onClick="zoom1935_10_10_3()"></i> <b class="country-name">Ethiopia</b>
+  <i class="fas fa-bullhorn circle" onClick="zoom1935_10_10_3()"></i> <b class="country-name">Greece</b>
   <div class="info-content" id="info_1935_10_10_3">
     <script>document.getElementById("info_1935_10_10_3").innerHTML = getCookie("info_1935_10_10_3");</script> <a href="#" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
