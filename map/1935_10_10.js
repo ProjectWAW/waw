@@ -218,7 +218,7 @@ marker1935_10_10_2 = L.marker(marker1935_10_10_2_location, {
   title: info_1935_10_10_2
 });
 info_1935_10_10_3 = getCookie("info_1935_10_10_3");
-marker1935_10_10_3_location = [6.736537, 44.280024];
+marker1935_10_10_3_location = [37.987504, 23.719482];
 marker1935_10_10_3 = L.marker(marker1935_10_10_3_location, {
   id: "marker1935_10_10_3",
   icon: orange_bullhorn,
