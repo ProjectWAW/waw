@@ -238,12 +238,20 @@ marker1935_10_03_5 = L.marker(marker1935_10_03_5_location, {
   icon: orange_bullhorn,
   title: info_1935_10_03_5
 });
+info_1935_10_03_6 = getCookie("info_1935_10_03_6");
+marker1935_10_03_6_location = [52.517057, 13.390961];
+marker1935_10_03_6 = L.marker(marker1935_10_03_6_location, {
+  id: "marker1935_10_03_6",
+  icon: orange_bullhorn,
+  title: info_1935_10_03_6
+});
 
 marker_group.addLayer(marker1935_10_03_1);
 marker_group.addLayer(marker1935_10_03_2);
 marker_group.addLayer(marker1935_10_03_3);
 marker_group.addLayer(marker1935_10_03_4);
 marker_group.addLayer(marker1935_10_03_5);
+marker_group.addLayer(marker1935_10_03_6);
 
 mymap.addLayer(marker_group);
 
@@ -277,6 +285,12 @@ marker1935_10_03_5.on("click", function () {
   infoClicked = document.getElementById("1935_10_03_5");
   onClick2();
 });
+marker1935_10_03_6.on("click", function () {
+  onClick1();
+  location.href='#1935_10_03_6';
+  infoClicked = document.getElementById("1935_10_03_6");
+  onClick2();
+});
 
 function zoom1935_10_03_1() {
   mymap.setView(marker1935_10_03_1_location);
@@ -292,4 +306,7 @@ function zoom1935_10_03_4() {
 }
 function zoom1935_10_03_5() {
   mymap.setView(marker1935_10_03_5_location);
+}
+function zoom1935_10_03_6() {
+  mymap.setView(marker1935_10_03_6_location);
 }

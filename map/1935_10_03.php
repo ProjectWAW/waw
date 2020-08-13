@@ -4,6 +4,7 @@ document.cookie = "info_1935_10_03_2 = At exactly 5 AM, General Emilio de Bono s
 document.cookie = "info_1935_10_03_3 = Soon after Emilio de Bono entered north Ethiopia, General Rodolfo Graziani starts his advance into south Ethiopia from Italian Somaliland with his two divisions.";
 document.cookie = "info_1935_10_03_4 = In response to Italians invading them without a declaration of war, Ethiopia declares war on Italy.";
 document.cookie = "info_1935_10_03_5 = In Moscow starts a conference by the immigrated KPD (German Communist Party) members on which the foundation of a political popular front against fascism gets decided.";
+document.cookie = "info_1935_10_03_6 = Nazi Germany declared neutrality in the Ethiopian conflict.";
 </script>
 
 <div id="1935_10_03_1">
@@ -38,6 +39,13 @@ document.cookie = "info_1935_10_03_5 = In Moscow starts a conference by the immi
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_10_03_5()"></i> <b class="country-name">Soviet Union</b>
   <div class="info-content" id="info_1935_10_03_5">
   <script>document.getElementById("info_1935_10_03_5").innerHTML = getCookie("info_1935_10_03_5");</script> <a href="#" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
+  </div>
+</div>
+<hr>
+<div id="1935_10_03_6">
+  <i class="fas fa-bullhorn circle-fa" onClick="zoom1935_10_03_6()"></i> <b class="country-name">Germany</b>
+  <div class="info-content" id="info_1935_10_03_6">
+  <script>document.getElementById("info_1935_10_03_6").innerHTML = getCookie("info_1935_10_03_6");</script> <a href="#" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
