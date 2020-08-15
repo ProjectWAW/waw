@@ -1,1 +1,0 @@
-//var clientHeight = document.getElementById('myDiv').clientHeight;

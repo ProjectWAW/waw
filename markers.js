@@ -364,6 +364,16 @@ orange_gun_right = L.icon.fontAwesome({
   iconYOffset: 0
 });
 
+blue_ambulance = L.icon.fontAwesome({
+  iconClasses: ambulance,
+  markerColor: blueMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blueMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: 0,
+  iconYOffset: 0
+});
 blue_flag = L.icon.fontAwesome({
   iconClasses: flag,
   markerColor: blueMarkerColor,
