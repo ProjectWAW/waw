@@ -6,7 +6,7 @@ document.cookie = "info_1936_07_17_2 = Franco declares a 'state of war' for all 
 <div id="1936_07_17_1">
   <i class="icon-gun-left circle-fa" onClick="zoom1936_07_17_1()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_17_1">
-  <script>document.getElementById("info_1936_07_17_1").innerHTML = getCookie("info_1936_07_17_1");</script> <a href="#" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_17_1").innerHTML = getCookie("info_1936_07_17_1");</script> <a href="sources/spanish_civil_war.php?i=1936_07_17_1" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>

@@ -228,7 +228,7 @@ h4 {
 }
 .info-clicked {
   border-left: 2px solid dodgerblue;
-  padding-left: 6px;
+  padding-left: 9px;
 }
 .territories {
   font-size: 18px;
@@ -708,6 +708,15 @@ for (let country of countries) {
     mymap.addLayer(country_layers);
   });
 }
+
+<?php
+if (isset($_GET['m'])) {
+  $marker = $_GET['m'];
+  echo 'infoClicked = document.getElementById("'.$marker.'");
+  onClick2();
+  zoom'.$marker.'();';
+}
+?>
 
 L.control.mapCenterCoord({
   icon: false,
