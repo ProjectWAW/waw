@@ -712,8 +712,9 @@ for (let country of countries) {
 <?php
 if (isset($_GET['m'])) {
   $marker = $_GET['m'];
-  echo 'infoClicked = document.getElementById("'.$marker.'");
-  onClick2();
+  echo 'onClick1();
+  infoClicked = document.getElementById("'.$marker.'");
+  infoClicked.classList.add("info-clicked");
   zoom'.$marker.'();';
 }
 ?>

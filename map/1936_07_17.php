@@ -6,7 +6,7 @@ document.cookie = "info_1936_07_17_2 = The Spanish Legion rebels in the Spanish 
 <div id="1936_07_17_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1936_07_17_1()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_17_1">
-  <script>document.getElementById("info_1936_07_17_1").innerHTML = getCookie("info_1936_07_17_1");</script> <a href="sources/spanish_civil_war.php?i=1936_07_17_1" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_17_1").innerHTML = getCookie("info_1936_07_17_1");</script> <a href="sources/spanish_civil_war.php#1936_07_17_1?i=1936_07_17_1" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>

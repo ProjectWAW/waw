@@ -22,7 +22,7 @@ require $_SERVER['DOCUMENT_ROOT'].'/navbar.php';
 if (isset($_GET['i'])) {
   $marker = $_GET['i'];
   echo '<script>infoClicked = document.getElementById("'.$marker.'");
-  onClick2();</script>';
+  infoClicked.classList.add("info-clicked");</script>';
 }
 ?>
 </body>
