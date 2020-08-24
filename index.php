@@ -286,6 +286,15 @@ h4 {
   width: 50px;
   text-align: center;
 }
+/* MARKER MODIFICATIONS */
+span.fa-info {
+  padding-left: 6px;
+}
+/* WALL MODIFICATION */
+.fa-info.circle-fa {
+  padding-left: 17.5px;
+  padding-right: 17.5px;
+}
 @media screen and (max-width: 920px) {
   h4 {
     margin-top: 10px;
@@ -509,6 +518,7 @@ h4 {
     <i class="icon-gun-right keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Gun</div><br>
     <i class="fas fa-anchor keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Naval Battle</div><br>
     <i class="icon-tank-right keys-icon"></i><div class="keys-icon-desc"> - &nbsp; Tank Battle</div><br>
+    <i class="fas fa-info keys-icon" style="padding-left:12px;"></i><div class="keys-icon-desc"> - &nbsp; Other</div><br>
     <hr>
     <h4>Copyright</h4>
     <a href="https://fontawesome.com/" target="_blank">https://fontawesome.com/</a> Icons designed by FontAwesome<br>
@@ -631,6 +641,7 @@ var flag = 'fas fa-flag'
 var gun_left = 'icon-gun-left'
 var gun_right = 'icon-gun-right'
 var helmet = 'icon-helmet'
+var info = 'fas fa-info'
 var plane = 'fas fa-plane'
 var plane_slash = 'fas fa-plane-slash'
 var skull_crossbones = 'fas fa-skull-crossbones'
@@ -1069,7 +1080,7 @@ $(function() {
         country_layers = L.layerGroup();
         $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
           sites = L.geoJson(data, {
-            "onEachFeature": forEachFeature,
+            //"onEachFeature": forEachFeature,
             "style": {color: country[1], fillPattern: country[4]},
             "pane": country[3]
           });
@@ -1238,7 +1249,7 @@ $(function() {
         country_layers = L.layerGroup();
         $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
           sites = L.geoJson(data, {
-            "onEachFeature": forEachFeature,
+            //"onEachFeature": forEachFeature,
             "style": {color: country[1], fillPattern: country[4]},
             "pane": country[3]
           });

@@ -210,7 +210,7 @@ info_1936_07_17_1 = getCookie("info_1936_07_17_1");
 marker1936_07_17_1_location = [28.472917, -16.262512];
 marker1936_07_17_1 = L.marker(marker1936_07_17_1_location, {
   id: "marker1936_07_17_1",
-  icon: black_bullhorn,
+  icon: black_info,
   title: info_1936_07_17_1
 });
 info_1936_07_17_2 = getCookie("info_1936_07_17_2");
@@ -220,9 +220,49 @@ marker1936_07_17_2 = L.marker(marker1936_07_17_2_location, {
   icon: black_gun_left,
   title: info_1936_07_17_2
 });
+info_1936_07_17_3 = getCookie("info_1936_07_17_3");
+marker1936_07_17_3_location = [35.29201, -2.938671];
+marker1936_07_17_3 = L.marker(marker1936_07_17_3_location, {
+  id: "marker1936_07_17_3",
+  icon: black_bullhorn,
+  title: info_1936_07_17_3
+});
+info_1936_07_17_4 = getCookie("info_1936_07_17_4");
+marker1936_07_17_4_location = [35.890024, -5.300732];
+marker1936_07_17_4 = L.marker(marker1936_07_17_4_location, {
+  id: "marker1936_07_17_4",
+  icon: black_flag,
+  title: info_1936_07_17_4
+});
+info_1936_07_17_5 = getCookie("info_1936_07_17_5");
+marker1936_07_17_5_location = [37.391095, -5.993128];
+marker1936_07_17_5 = L.marker(marker1936_07_17_5_location, {
+  id: "marker1936_07_17_5",
+  icon: red_info,
+  title: info_1936_07_17_5
+});
+info_1936_07_17_6 = getCookie("info_1936_07_17_6");
+marker1936_07_17_6_location = [37.309014, -6.012955];
+marker1936_07_17_6 = L.marker(marker1936_07_17_6_location, {
+  id: "marker1936_07_17_6",
+  icon: red_bullhorn,
+  title: info_1936_07_17_6
+});
+info_1936_07_17_7 = getCookie("info_1936_07_17_7");
+marker1936_07_17_7_location = [36.526605, -6.288471];
+marker1936_07_17_7 = L.marker(marker1936_07_17_7_location, {
+  id: "marker1936_07_17_7",
+  icon: red_bullhorn,
+  title: info_1936_07_17_7
+});
 
 marker_group.addLayer(marker1936_07_17_1);
+marker_group.addLayer(marker1936_07_17_4);
 marker_group.addLayer(marker1936_07_17_2);
+marker_group.addLayer(marker1936_07_17_5);
+marker_group.addLayer(marker1936_07_17_6);
+marker_group.addLayer(marker1936_07_17_7);
+marker_group.addLayer(marker1936_07_17_3);
 
 mymap.addLayer(marker_group);
 
@@ -238,10 +278,55 @@ marker1936_07_17_2.on("click", function () {
   infoClicked = document.getElementById("1936_07_17_2");
   onClick2();
 });
+marker1936_07_17_3.on("click", function () {
+  onClick1();
+  location.href='#1936_07_17_3';
+  infoClicked = document.getElementById("1936_07_17_3");
+  onClick2();
+});
+marker1936_07_17_4.on("click", function () {
+  onClick1();
+  location.href='#1936_07_17_4';
+  infoClicked = document.getElementById("1936_07_17_4");
+  onClick2();
+});
+marker1936_07_17_5.on("click", function () {
+  onClick1();
+  location.href='#1936_07_17_5';
+  infoClicked = document.getElementById("1936_07_17_5");
+  onClick2();
+});
+marker1936_07_17_6.on("click", function () {
+  onClick1();
+  location.href='#1936_07_17_6';
+  infoClicked = document.getElementById("1936_07_17_6");
+  onClick2();
+});
+marker1936_07_17_7.on("click", function () {
+  onClick1();
+  location.href='#1936_07_17_7';
+  infoClicked = document.getElementById("1936_07_17_7");
+  onClick2();
+});
 
 function zoom1936_07_17_1() {
   mymap.setView(marker1936_07_17_1_location);
 }
 function zoom1936_07_17_2() {
   mymap.setView(marker1936_07_17_2_location);
+}
+function zoom1936_07_17_3() {
+  mymap.setView(marker1936_07_17_3_location);
+}
+function zoom1936_07_17_4() {
+  mymap.setView(marker1936_07_17_4_location);
+}
+function zoom1936_07_17_5() {
+  mymap.setView(marker1936_07_17_5_location);
+}
+function zoom1936_07_17_6() {
+  mymap.setView(marker1936_07_17_6_location);
+}
+function zoom1936_07_17_7() {
+  mymap.setView(marker1936_07_17_7_location);
 }

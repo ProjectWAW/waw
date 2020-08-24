@@ -107,6 +107,16 @@ black_gun_right = L.icon.fontAwesome({
   iconXOffset: -2.5,
   iconYOffset: 0
 });
+black_info = L.icon.fontAwesome({
+  iconClasses: info,
+  markerColor: blackMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blackMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
 black_tank_left = L.icon.fontAwesome({
   iconClasses: tank_left,
   markerColor: blackMarkerColor,
@@ -180,6 +190,16 @@ red_bullhorn = L.icon.fontAwesome({
 });
 red_gun_right = L.icon.fontAwesome({
   iconClasses: gun_right,
+  markerColor: redMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: redMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
+red_info = L.icon.fontAwesome({
+  iconClasses: info,
   markerColor: redMarkerColor,
   markerStrokeWidth: markerStrokeWidth,
   markerStrokeColor: redMarkerStroke,
