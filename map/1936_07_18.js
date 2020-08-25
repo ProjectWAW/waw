@@ -293,7 +293,7 @@ info_1936_07_18_13 = getCookie("info_1936_07_18_13");
 marker1936_07_18_13_location = [36.478724, -6.302032];
 marker1936_07_18_13 = L.marker(marker1936_07_18_13_location, {
   id: "marker1936_07_18_13",
-  icon: red_anchor,
+  icon: black_anchor,
   title: info_1936_07_18_13
 });
 info_1936_07_18_14 = getCookie("info_1936_07_18_14");
@@ -331,19 +331,11 @@ marker1936_07_18_18 = L.marker(marker1936_07_18_18_location, {
   icon: red_bullhorn,
   title: info_1936_07_18_18
 });
-info_1936_07_18_19 = getCookie("info_1936_07_18_19");
-marker1936_07_18_19_location = [40.415326, -3.698444];
-marker1936_07_18_19 = L.marker(marker1936_07_18_19_location, {
-  id: "marker1936_07_18_19",
-  icon: red_bullhorn,
-  title: info_1936_07_18_19
-});
 
 marker_group.addLayer(marker1936_07_18_16);
 marker_group.addLayer(marker1936_07_18_2);
 marker_group.addLayer(marker1936_07_18_17);
 marker_group.addLayer(marker1936_07_18_18);
-marker_group.addLayer(marker1936_07_18_19);
 marker_group.addLayer(marker1936_07_18_3);
 marker_group.addLayer(marker1936_07_18_14);
 marker_group.addLayer(marker1936_07_18_4);
@@ -469,13 +461,6 @@ marker1936_07_18_18.on("click", function () {
   infoClicked = document.getElementById("1936_07_18_18");
   onClick2();
 });
-marker1936_07_18_19.on("click", function () {
-  onClick1();
-  location.href='#1936_07_18_19';
-  infoClicked = document.getElementById("1936_07_18_19");
-  onClick2();
-});
-
 function zoom1936_07_18_1() {
   mymap.setView(marker1936_07_18_1_location);
 }
@@ -529,7 +514,4 @@ function zoom1936_07_18_17() {
 }
 function zoom1936_07_18_18() {
   mymap.setView(marker1936_07_18_18_location);
-}
-function zoom1936_07_18_19() {
-  mymap.setView(marker1936_07_18_19_location);
 }

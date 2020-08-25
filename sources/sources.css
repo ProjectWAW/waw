@@ -9,10 +9,13 @@ h3 {
 }
 h4 {
   margin-bottom: 15px;
-  margin-left: 88px;
+  margin-left: 86px;
 }
 a {
-  margin-left: -88px;
+  margin-left: -86px;
+}
+li a {
+  margin-left: 0px;
 }
 .info-clicked {
   border-left: 3px solid dodgerblue;

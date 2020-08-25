@@ -12,56 +12,56 @@ document.cookie = "info_1936_07_17_8 = General López-Pinto arrives at Cordoba t
 <div id="1936_07_17_1">
   <i class="fas fa-info circle-fa" onClick="zoom1936_07_17_1()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_17_1">
-  <script>document.getElementById("info_1936_07_17_1").innerHTML = getCookie("info_1936_07_17_1");</script> <a href="sources/spanish_civil_war.php#1936_07_17_1?i=1936_07_17_1" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_17_1").innerHTML = getCookie("info_1936_07_17_1");</script> <a href="sources/spanish_civil_war.php?i=1936_07_17_1" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_17_2">
   <i class="icon-gun-left circle-fa" onClick="zoom1936_07_17_2()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_17_2">
-  <script>document.getElementById("info_1936_07_17_2").innerHTML = getCookie("info_1936_07_17_2");</script> <a href="sources/spanish_civil_war.php#1936_07_17_2?i=1936_07_17_2" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_17_2").innerHTML = getCookie("info_1936_07_17_2");</script> <a href="sources/spanish_civil_war.php?i=1936_07_17_2" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_17_3">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1936_07_17_3()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_17_3">
-  <script>document.getElementById("info_1936_07_17_3").innerHTML = getCookie("info_1936_07_17_3");</script> <a href="sources/spanish_civil_war.php#1936_07_17_3?i=1936_07_17_3" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_17_3").innerHTML = getCookie("info_1936_07_17_3");</script> <a href="sources/spanish_civil_war.php?i=1936_07_17_3" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_17_4">
   <i class="fas fa-flag circle-fa" onClick="zoom1936_07_17_4()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_17_4">
-  <script>document.getElementById("info_1936_07_17_4").innerHTML = getCookie("info_1936_07_17_4");</script> <a href="sources/spanish_civil_war.php#1936_07_17_4?i=1936_07_17_4" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_17_4").innerHTML = getCookie("info_1936_07_17_4");</script> <a href="sources/spanish_civil_war.php?i=1936_07_17_4" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_17_5">
   <i class="fas fa-info circle-fa" onClick="zoom1936_07_17_5()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_17_5">
-  <script>document.getElementById("info_1936_07_17_5").innerHTML = getCookie("info_1936_07_17_5");</script> <a href="sources/spanish_civil_war.php#1936_07_17_5?i=1936_07_17_5" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_17_5").innerHTML = getCookie("info_1936_07_17_5");</script> <a href="sources/spanish_civil_war.php?i=1936_07_17_5" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_17_6">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1936_07_17_6()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_17_6">
-  <script>document.getElementById("info_1936_07_17_6").innerHTML = getCookie("info_1936_07_17_6");</script> <a href="sources/spanish_civil_war.php#1936_07_17_6?i=1936_07_17_6" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_17_6").innerHTML = getCookie("info_1936_07_17_6");</script> <a href="sources/spanish_civil_war.php?i=1936_07_17_6" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_17_7">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1936_07_17_7()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_17_7">
-  <script>document.getElementById("info_1936_07_17_7").innerHTML = getCookie("info_1936_07_17_7");</script> <a href="sources/spanish_civil_war.php#1936_07_17_7?i=1936_07_17_7" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_17_7").innerHTML = getCookie("info_1936_07_17_7");</script> <a href="sources/spanish_civil_war.php?i=1936_07_17_7" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
 <div id="1936_07_17_8">
   <i class="fas fa-info circle-fa" onClick="zoom1936_07_17_8()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_17_8">
-  <script>document.getElementById("info_1936_07_17_8").innerHTML = getCookie("info_1936_07_17_7");</script> <a href="sources/spanish_civil_war.php#1936_07_17_8?i=1936_07_17_8" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_17_8").innerHTML = getCookie("info_1936_07_17_7");</script> <a href="sources/spanish_civil_war.php?i=1936_07_17_8" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
