@@ -257,7 +257,7 @@ h4 {
   padding-left: 5px;
   padding-right: 5px;
 }
-.icon-gun-left, .icon-gun-right, .icon-artillery-left, .icon-artillery-right {
+.icon-gun-left, .icon-gun-right, .icon-artillery-left, .icon-artillery-right, .icon-bomb, .icon-tank-left, .icon-tank-right {
   font-weight: 900;
   font-size: 19px;
 }

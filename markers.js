@@ -178,6 +178,26 @@ black_plane = L.icon.fontAwesome({
   iconYOffset: 0
 });
 
+red_anchor = L.icon.fontAwesome({
+  iconClasses: anchor,
+  markerColor: redMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: redMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
+red_bomb = L.icon.fontAwesome({
+  iconClasses: bomb,
+  markerColor: redMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: redMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
 red_bullhorn = L.icon.fontAwesome({
   iconClasses: bullhorn,
   markerColor: redMarkerColor,

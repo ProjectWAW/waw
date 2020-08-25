@@ -6,6 +6,7 @@ document.cookie = "info_1936_07_17_4 = Lieutenant Colonel Yagüe takes control o
 document.cookie = "info_1936_07_17_5 = Around 4:00 pm, a coded telegram from the Algeciras military command was received in Seville, warning that the Melilla garrison had risen. General Villa-Abrille is informed but, having failed to verify the news, he goes home without taking any action.";
 document.cookie = "info_1936_07_17_6 = The government orders the concentration of bombers at the Tablada aerodrome to attack the African barracks at dawn.";
 document.cookie = "info_1936_07_17_7 = The government orders the arrest of General Varela in Cádiz, who is admitted to the Santa Catalina prison.";
+document.cookie = "info_1936_07_17_8 = General López-Pinto arrives at Cordoba to conduct an inspection sent by his superior General Jose Fernandez de Villa-Abrille. He says he does not find 'anything strange in the garrison', whose boss is nevertheless involved in the coup conspiracy. López-Pinto is too.";
 </script>
 
 <div id="1936_07_17_1">
@@ -54,6 +55,13 @@ document.cookie = "info_1936_07_17_7 = The government orders the arrest of Gener
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1936_07_17_7()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_17_7">
   <script>document.getElementById("info_1936_07_17_7").innerHTML = getCookie("info_1936_07_17_7");</script> <a href="sources/spanish_civil_war.php#1936_07_17_7?i=1936_07_17_7" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
+  </div>
+</div>
+<hr>
+<div id="1936_07_17_8">
+  <i class="fas fa-info circle-fa" onClick="zoom1936_07_17_8()"></i> <b class="country-name">Spain</b>
+  <div class="info-content" id="info_1936_07_17_8">
+  <script>document.getElementById("info_1936_07_17_8").innerHTML = getCookie("info_1936_07_17_7");</script> <a href="sources/spanish_civil_war.php#1936_07_17_8?i=1936_07_17_8" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>

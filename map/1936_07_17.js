@@ -199,7 +199,6 @@ countries = [
   ["tetua_airfield", comintern_puppet, "1936_07_17", "comintern_puppet", stripes_comintern],
 
   ["ifni", axis_puppet, "1935_10_03", "axis_puppet", null],
-  ["nationalist_spain", axis, "1936_07_17", "axis", null],
   ["spanish_morocco", axis_puppet, "1936_07_17", "axis_puppet", null],
   ["spanish_sahara", axis_puppet, "1935_10_03", "axis_puppet", null]
 ]
@@ -255,6 +254,13 @@ marker1936_07_17_7 = L.marker(marker1936_07_17_7_location, {
   icon: red_bullhorn,
   title: info_1936_07_17_7
 });
+info_1936_07_17_8 = getCookie("info_1936_07_17_8");
+marker1936_07_17_8_location = [37.886641, -4.777164];
+marker1936_07_17_8 = L.marker(marker1936_07_17_8_location, {
+  id: "marker1936_07_17_8",
+  icon: red_info,
+  title: info_1936_07_17_8
+});
 
 marker_group.addLayer(marker1936_07_17_1);
 marker_group.addLayer(marker1936_07_17_4);
@@ -262,6 +268,7 @@ marker_group.addLayer(marker1936_07_17_2);
 marker_group.addLayer(marker1936_07_17_5);
 marker_group.addLayer(marker1936_07_17_6);
 marker_group.addLayer(marker1936_07_17_7);
+marker_group.addLayer(marker1936_07_17_8);
 marker_group.addLayer(marker1936_07_17_3);
 
 mymap.addLayer(marker_group);
@@ -308,6 +315,12 @@ marker1936_07_17_7.on("click", function () {
   infoClicked = document.getElementById("1936_07_17_7");
   onClick2();
 });
+marker1936_07_17_8.on("click", function () {
+  onClick1();
+  location.href='#1936_07_17_8';
+  infoClicked = document.getElementById("1936_07_17_8");
+  onClick2();
+});
 
 function zoom1936_07_17_1() {
   mymap.setView(marker1936_07_17_1_location);
@@ -329,4 +342,7 @@ function zoom1936_07_17_6() {
 }
 function zoom1936_07_17_7() {
   mymap.setView(marker1936_07_17_7_location);
+}
+function zoom1936_07_17_8() {
+  mymap.setView(marker1936_07_17_8_location);
 }
