@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/page_head.php';?>
