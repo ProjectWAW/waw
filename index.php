@@ -264,13 +264,19 @@ h4 {
 .fas, .far {
   font-size: 19px;
 }
-.fa-satellite {
-  margin-left: -20%;
-  margin-top: 23%;
+.marker-img {
+  position: absolute;
+  max-height: 100%;
+  max-width: 100%;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-.fa-moon {
-  margin-left: -15%;
-  margin-top: 15%;
+.fa-moon, .fa-satellite {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .keys-icon {
   float: left;
@@ -529,6 +535,14 @@ span.fa-info {
   </div>
 </div>
 <script id="scripts">
+$.ajaxSetup({beforeSend: function(xhr){
+  if (xhr.overrideMimeType)
+  {
+    xhr.overrideMimeType("application/json");
+  }
+}
+});
+
 var mymap = L.map('map');
 
 var normal = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', { // https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png // https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
@@ -770,7 +784,7 @@ L.easyButton({
       }
     },
     title: 'Hide / show events on the map',
-    icon: '<img src="marker.png" style="background-size:50%;max-width:100%;max-height:100%;margin-bottom:50%;">'
+    icon: '<img class="marker-img" src="marker.png">'
   }]
 }).addTo(mymap);
 
