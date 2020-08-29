@@ -6,8 +6,9 @@
 <title>Spanish Civil War Sources - Project: World at War</title>
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/loader.php';
+<?php 
 require $_SERVER['DOCUMENT_ROOT'].'/navbar.php';
+include $_SERVER['DOCUMENT_ROOT'].'/loader.php';
 require 'variables.php';
 ?>
 <div class="container">
