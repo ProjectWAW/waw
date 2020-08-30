@@ -45,7 +45,7 @@ document.cookie = "info_1939_08_25_10 = Hitler orders to halt the planned invasi
   </div>
 </div>
 </div><div id="1939_08_25_10">
-  <i class="fas fa-anchor circle-fa" onClick="zoom1939_08_25_10()"></i> <b class="country-name">Germany</b>
+  <i class="fas fa-bullhorn circle-fa" onClick="zoom1939_08_25_10()"></i> <b class="country-name">Germany</b>
   <div class="info-content" id="info_1939_08_25_10">
     <script>document.getElementById("info_1939_08_25_10").innerHTML = getCookie("info_1939_08_25_10");</script> <a href="sources/invasion_of_poland.php?i=1939_08_25_5" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
