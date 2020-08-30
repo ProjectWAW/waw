@@ -454,3 +454,23 @@ blue_truck = L.icon.fontAwesome({
   iconXOffset: -2.5,
   iconYOffset: 0
 });
+blue_bullhorn = L.icon.fontAwesome({
+  iconClasses: bullhorn,
+  markerColor: blueMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blueMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
+blue_bahai = L.icon.fontAwesome({
+  iconClasses: bahai,
+  markerColor: blueMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blueMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -1,
+  iconYOffset: 0
+});
