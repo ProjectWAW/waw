@@ -1081,7 +1081,6 @@ $(function() {
     document.getElementById("date_info").innerHTML = date_day+" "+info_month+" "+date_year;
     document.getElementById("date_info_2").innerHTML = date_day+" "+info_month+" "+date_year;
     document.getElementById("date_info_content").innerHTML = "";
-    $.getScript('map/'+date+'_def.js')
     $('#date_info_content').load('map/'+date+'.php');
 
     document.getElementById("keys-content").innerHTML = "";
@@ -1101,6 +1100,11 @@ $(function() {
           sites.addTo(country_layers);
           mymap.addLayer(country_layers);
         });
+      }
+      if (number == 2) {
+        marker_group.remove();
+      } else {
+        marker_group.addTo(mymap);
       }
     });
   });
@@ -1270,6 +1274,11 @@ $(function() {
           sites.addTo(country_layers);
           mymap.addLayer(country_layers);
         });
+      }
+      if (number == 2) {
+        marker_group.remove();
+      } else {
+        marker_group.addTo(mymap);
       }
     });
   });

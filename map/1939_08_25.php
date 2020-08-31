@@ -1,9 +1,9 @@
 <script>
-document.cookie = "info_1939_08_25_1 = German commando troops under Hans-Albrecht Herzner attack the Jablunkov Pass as they didnt got the information to delay the operation. They failed to archieve there objectives and returned to the border soon after. German officials apologized later that day.";
+document.cookie = "info_1939_08_25_1 = German commando troops under Hans-Albrecht Herzner attack the Jablunkov Pass as they didnt get the information to delay the operation. They failed to achieve their objectives and they returned to the border soon after. German officials apologized later that day.";
 document.cookie = "info_1939_08_25_2 = The German line ship 'Schleswig-Holstein' arrives in Danzig at around 4pm as part of a friendship visit.";
-document.cookie = "info_1939_08_25_3 = The UK and Poland agree to sign a military alliance pact in Lodon.";
-document.cookie = "info_1939_08_25_5 = Mussolini writte a letter to Hitler in which he explains his decision to dont take part in the upcoming war.";
-document.cookie = "info_1939_08_25_7 = The IRA conducts an bomb attack in Coventry. 5 people die and 35 gets wounded.";
+document.cookie = "info_1939_08_25_3 = The UK and Poland agree to sign a military alliance in Lodon.";
+document.cookie = "info_1939_08_25_5 = Mussolini writes a letter to Hitler in which he explains his decision to not take part in the upcoming war.";
+document.cookie = "info_1939_08_25_7 = The IRA conducts an bomb attack in Coventry. 5 people die and 35 are wounded.";
 document.cookie = "info_1939_08_25_8 = All ships under German flag get the order to leave official trade routes.";
 document.cookie = "info_1939_08_25_10 = Hitler orders to halt the planned invasion of Poland.";
 </script>
