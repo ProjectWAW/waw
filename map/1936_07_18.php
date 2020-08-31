@@ -22,7 +22,7 @@ document.cookie = "info_1936_07_18_18 = At 8:00 AM the Government reports on the
 <div id="1936_07_18_10">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1936_07_18_10()"></i> <b class="country-name">Spain</b>
   <div class="info-content" id="info_1936_07_18_10">
-  <script>document.getElementById("info_1936_07_18_10").innerHTML = getCookie("info_1936_07_18_10");</script> <b>sasa</b><a href="sources/spanish_civil_war.php?i=1936_07_18_10" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
+  <script>document.getElementById("info_1936_07_18_10").innerHTML = getCookie("info_1936_07_18_10");</script> <a href="sources/spanish_civil_war.php?i=1936_07_18_10" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>
 </div>
 <hr>
