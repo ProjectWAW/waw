@@ -6,7 +6,7 @@ document.cookie = "info_1937_02_19_1 = The Viceroy of Italian East Africa, Marsh
 <div id="1937_02_19_1">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1937_02_19_1()"></i> <b class="country-name">Italy</b>
   <div class="info-content" id="info_1937_02_19_1">
-    <script>document.getElementById("info_1937_02_19_1").innerHTML = getCookie("info_1937_02_19_1");</script> <a href="#" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
+    <script>document.getElementById("info_1937_02_19_1").innerHTML = getCookie("info_1937_02_19_1") + ' <a href="#" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>';</script>
   </div>
 </div>
 <hr>
