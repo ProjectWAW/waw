@@ -1101,11 +1101,11 @@ $(function() {
           mymap.addLayer(country_layers);
         });
       }
-      if (number == 2) {
+      /*if (number == 2) {
         marker_group.remove();
       } else {
         marker_group.addTo(mymap);
-      }
+      }*/
     });
   });
 });
@@ -1275,11 +1275,11 @@ $(function() {
           mymap.addLayer(country_layers);
         });
       }
-      if (number == 2) {
+      /*if (number == 2) {
         marker_group.remove();
       } else {
         marker_group.addTo(mymap);
-      }
+      }*/
     });
   });
 });
