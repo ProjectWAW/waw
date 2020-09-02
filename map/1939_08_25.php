@@ -15,40 +15,46 @@ document.cookie = "info_1939_08_25_10 = Hitler orders to halt the planned invasi
     <script>document.getElementById("info_1939_08_25_1").innerHTML = getCookie("info_1939_08_25_1") + ' <a href="sources/invasion_of_poland.php?i=1939_08_25_1" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>';</script>
   </div>
 </div>
+<hr>
 <div id="1939_08_25_2">
   <i class="fas fa-anchor circle-fa" onClick="zoom1939_08_25_2()"></i> <b class="country-name">Germany</b>
   <div class="info-content" id="info_1939_08_25_2">
     <script>document.getElementById("info_1939_08_25_2").innerHTML = getCookie("info_1939_08_25_2") + ' <a href="sources/invasion_of_poland.php?i=1939_08_25_2" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>';</script>
   </div>
 </div>
+<hr>
 <div id="1939_08_25_3">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1939_08_25_3()"></i> <b class="country-name">UK</b>
   <div class="info-content" id="info_1939_08_25_3">
     <script>document.getElementById("info_1939_08_25_3").innerHTML = getCookie("info_1939_08_25_3") + ' <a href="sources/invasion_of_poland.php?i=1939_08_25_3" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>';</script>
   </div>
 </div>
+<hr>
 <div id="1939_08_25_5">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1939_08_25_5()"></i> <b class="country-name">Italy</b>
   <div class="info-content" id="info_1939_08_25_5">
     <script>document.getElementById("info_1939_08_25_5").innerHTML = getCookie("info_1939_08_25_5") + ' <a href="sources/invasion_of_poland.php?i=1939_08_25_5" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>';</script>
   </div>
-</div><div id="1939_08_25_7">
+</div>
+<hr>
+<div id="1939_08_25_7">
   <i class="fas fa-bahai circle-fa" onClick="zoom1939_08_25_7()"></i> <b class="country-name">UK</b>
   <div class="info-content" id="info_1939_08_25_7">
     <script>document.getElementById("info_1939_08_25_7").innerHTML = getCookie("info_1939_08_25_7") + ' <a href="sources/invasion_of_poland.php?i=1939_08_25_5" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>';</script>
   </div>
 </div>
-</div><div id="1939_08_25_8">
+<hr>
+<div id="1939_08_25_8">
   <i class="fas fa-anchor circle-fa" onClick="zoom1939_08_25_8()"></i> <b class="country-name">Germany</b>
   <div class="info-content" id="info_1939_08_25_8">
     <script>document.getElementById("info_1939_08_25_8").innerHTML = getCookie("info_1939_08_25_8") + ' <a href="sources/invasion_of_poland.php?i=1939_08_25_5" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>';</script>
   </div>
 </div>
-</div><div id="1939_08_25_10">
+<hr>
+<div id="1939_08_25_10">
   <i class="fas fa-bullhorn circle-fa" onClick="zoom1939_08_25_10()"></i> <b class="country-name">Germany</b>
   <div class="info-content" id="info_1939_08_25_10">
     <script>document.getElementById("info_1939_08_25_10").innerHTML = getCookie("info_1939_08_25_10") + ' <a href="sources/invasion_of_poland.php?i=1939_08_25_5" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>';</script>
   </div>
 </div>
-
 <hr>
