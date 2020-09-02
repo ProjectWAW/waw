@@ -24,6 +24,26 @@ require 'variables.php';
 <h4><a id="1939_08_25_8" href="/index.php?d=1939_08_25&m=1939_08_25_8">Marker 6</a> - <?php echo $chroniknet_1939_08_25;?></h4>
 <h4><a id="1939_08_25_10" href="/index.php?d=1939_08_25&m=1939_08_25_10">Marker 7</a> - <?php echo $chroniknet_1939_08_25;?></h4>
 
+<h3>26 August 1939</h3>
+<h4><a id="1939_08_26_1" href="/index.php?d=1939_08_26&m=1939_08_26_1">Marker 1</a> - <?php echo $chroniknet_1939_08_26;?></h4>
+<h4><a id="1939_08_26_2" href="/index.php?d=1939_08_26&m=1939_08_26_2">Marker 2</a> - <?php echo $chroniknet_1939_08_26;?></h4>
+<h4><a id="1939_08_26_3" href="/index.php?d=1939_08_26&m=1939_08_26_3">Marker 3</a> - <?php echo $chroniknet_1939_08_26;?></h4>
+<h4><a id="1939_08_26_4" href="/index.php?d=1939_08_26&m=1939_08_26_4">Marker 3</a> - <?php echo $chroniknet_1939_08_26;?></h4>
+
+<h3>27 August 1939</h3>
+<h4><a id="1939_08_27_1" href="/index.php?d=1939_08_27&m=1939_08_27_1">Marker 1</a> - <?php echo $chroniknet_1939_08_27;?></h4>
+<h4><a id="1939_08_27_2" href="/index.php?d=1939_08_27&m=1939_08_27_2">Marker 2</a> - <?php echo $chroniknet_1939_08_27;?></h4>
+<h4><a id="1939_08_27_3" href="/index.php?d=1939_08_27&m=1939_08_27_3">Marker 3</a> - <?php echo $chroniknet_1939_08_27;?></h4>
+
+<h3>28 August 1939</h3>
+<h4><a id="1939_08_28_1" href="/index.php?d=1939_08_28&m=1939_08_28_1">Marker 1</a> - <?php echo $chroniknet_1939_08_28;?></h4>
+
+<h3>30 August 1939</h3>
+<h4><a id="1939_08_28_1" href="/index.php?d=1939_08_30&m=1939_08_30_1">Marker 1</a> - <?php echo $chroniknet_1939_08_30;?></h4>
+<h4><a id="1939_08_28_2" href="/index.php?d=1939_08_30&m=1939_08_30_2">Marker 2</a> - <?php echo $chroniknet_1939_08_30;?></h4>
+<h4><a id="1939_08_28_3" href="/index.php?d=1939_08_30&m=1939_08_30_3">Marker 3</a> - <?php echo $chroniknet_1939_08_30;?></h4>
+<h4><a id="1939_08_28_4" href="/index.php?d=1939_08_30&m=1939_08_30_4">Marker 4</a> - <?php echo $chroniknet_1939_08_30;?></h4>
+
 </div>
 <?php
 if (isset($_GET['i'])) {

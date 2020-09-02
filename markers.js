@@ -177,6 +177,26 @@ black_plane = L.icon.fontAwesome({
   iconXOffset: 0,
   iconYOffset: 0
 });
+black_chart_line = L.icon.fontAwesome({
+  iconClasses: chart_line,
+  markerColor: blackMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blackMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: 0,
+  iconYOffset: 0
+});
+black_drafting_compass = L.icon.fontAwesome({
+  iconClasses: drafting_compass,
+  markerColor: blackMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blackMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: 0,
+  iconYOffset: 0
+});
 
 red_anchor = L.icon.fontAwesome({
   iconClasses: anchor,
@@ -466,6 +486,16 @@ blue_bullhorn = L.icon.fontAwesome({
 });
 blue_bahai = L.icon.fontAwesome({
   iconClasses: bahai,
+  markerColor: blueMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blueMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -1,
+  iconYOffset: 0
+});
+blue_drafting_compass = L.icon.fontAwesome({
+  iconClasses: drafting_compass,
   markerColor: blueMarkerColor,
   markerStrokeWidth: markerStrokeWidth,
   markerStrokeColor: blueMarkerStroke,
