@@ -61,15 +61,10 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
 function clearListCookies() { 
-                var allCookies = document.cookie.split(';'); 
-                
-                // The "expire" attribute of every cookie is  
-                // Set to "Thu, 01 Jan 1970 00:00:00 GMT" 
-                for (var i = 0; i < allCookies.length; i++) 
-                    document.cookie = allCookies[i] + "=;expires=" 
-                    + new Date(0).toUTCString();
-  
-            } 
+  var allCookies = document.cookie.split(';');
+  for (var i = 0; i < allCookies.length; i++)
+  document.cookie = allCookies[i] + "=;expires=" + new Date(0).toUTCString();
+} 
 clearListCookies();
 </script>
 <script src="https://kit.fontawesome.com/02faa02085.js"></script>
