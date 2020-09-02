@@ -60,6 +60,26 @@ function getCookie(name) {
   const parts = value.split(`; ${name}=`);
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
+function clearListCookies()
+{   
+    var cookies = document.cookie.split(";");
+    for (var i = 0; i < cookies.length; i++)
+    {   
+        var spcook =  cookies[i].split("=");
+        deleteCookie(spcook[0]);
+    }
+    function deleteCookie(cookiename)
+    {
+        var d = new Date();
+        d.setDate(d.getDate() - 1);
+        var expires = ";expires="+d;
+        var name=cookiename;
+        //alert(name);
+        var value="";
+        document.cookie = name + "=" + value + expires + "; path=/acc/html";                    
+    }
+}
+clearListCookies();
 </script>
 <script src="https://kit.fontawesome.com/02faa02085.js"></script>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
@@ -939,7 +959,10 @@ window.onresize = function() {
 
 $(function() {
   $('#change-forward').click(function() {
-    country_layers.remove();
+    clearListCookies();
+    if (typeof country_layers !== 'undefined') {
+      country_layers.remove();
+    }
     marker_group.remove();
     date_year = date.substr(0, 4);
     date_month = date.substr(5, 2);
@@ -1111,7 +1134,10 @@ $(function() {
 });
 $(function() {
   $('#change-backward').click(function() {
-    country_layers.remove();
+    clearListCookies();
+    if (typeof country_layers !== 'undefined') {
+      country_layers.remove();
+    }
     marker_group.remove();
     date_year = date.substr(0, 4);
     date_month = date.substr(5, 2);
