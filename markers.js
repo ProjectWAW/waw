@@ -197,6 +197,16 @@ black_drafting_compass = L.icon.fontAwesome({
   iconXOffset: 0,
   iconYOffset: 0
 });
+black_bomb = L.icon.fontAwesome({
+  iconClasses: bomb,
+  markerColor: blackMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blackMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: 0,
+  iconYOffset: 0
+});
 
 red_anchor = L.icon.fontAwesome({
   iconClasses: anchor,

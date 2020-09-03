@@ -39,10 +39,21 @@ require 'variables.php';
 <h4><a id="1939_08_28_1" href="/index.php?d=1939_08_28&m=1939_08_28_1">Marker 1</a> - <?php echo $chroniknet_1939_08_28;?></h4>
 
 <h3>30 August 1939</h3>
-<h4><a id="1939_08_28_1" href="/index.php?d=1939_08_30&m=1939_08_30_1">Marker 1</a> - <?php echo $chroniknet_1939_08_30;?></h4>
-<h4><a id="1939_08_28_2" href="/index.php?d=1939_08_30&m=1939_08_30_2">Marker 2</a> - <?php echo $chroniknet_1939_08_30;?></h4>
-<h4><a id="1939_08_28_3" href="/index.php?d=1939_08_30&m=1939_08_30_3">Marker 3</a> - <?php echo $chroniknet_1939_08_30;?></h4>
-<h4><a id="1939_08_28_4" href="/index.php?d=1939_08_30&m=1939_08_30_4">Marker 4</a> - <?php echo $chroniknet_1939_08_30;?></h4>
+<h4><a id="1939_08_30_1" href="/index.php?d=1939_08_30&m=1939_08_30_1">Marker 1</a> - <?php echo $chroniknet_1939_08_30;?></h4>
+<h4><a id="1939_08_30_2" href="/index.php?d=1939_08_30&m=1939_08_30_2">Marker 2</a> - <?php echo $chroniknet_1939_08_30;?></h4>
+<h4><a id="1939_08_30_3" href="/index.php?d=1939_08_30&m=1939_08_30_3">Marker 3</a> - <?php echo $chroniknet_1939_08_30;?></h4>
+<h4><a id="1939_08_30_4" href="/index.php?d=1939_08_30&m=1939_08_30_4">Marker 4</a> - <?php echo $chroniknet_1939_08_30;?></h4>
+
+<h3>01 September 1939</h3>
+<h4><a id="1939_09_01_1" href="/index.php?d=1939_09_01&m=1939_09_01_1">Marker 1</a> - <?php echo $wikipedia_westerplatte;?></h4>
+<h4><a id="1939_09_01_2" href="/index.php?d=1939_09_01&m=1939_09_01_2">Marker 1</a> - <?php echo $wikipedia_westerplatte;?></h4>
+<h4><a id="1939_09_01_3" href="/index.php?d=1939_09_01&m=1939_09_01_3">Marker 3</a> - <?php echo $wikipedia_postamt_danzig;?></h4>
+
+<h3>02 September 1939</h3>
+<h4><a id="1939_09_02_1" href="/index.php?d=1939_09_02&m=1939_09_02_1">Marker 1</a> - <?php echo $wikipedia_westerplatte;?></h4>
+
+<h3>07 September 1939</h3>
+<h4><a id="1939_09_07_1" href="/index.php?d=1939_09_07&m=1939_09_07_1">Marker 1</a> - <?php echo $wikipedia_westerplatte;?></h4>
 
 </div>
 <?php
