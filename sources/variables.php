@@ -18,4 +18,6 @@ $chroniknet_1939_08_30 = "“WAS WAR AM 30. AUGUST 1939” Chroniknet, Josef Hö
 $qwe_poland_uk_alliance = "“Anglo-Polish military alliance” qwe, Wikimedia Foundation, 30 August 2020, https://chroniknet.de/extra/was-war-am/?ereignisdatum=25.8.1939";
 $wikipedia_postamt_danzig = "“Gefecht um das polnische Postamt in Danzig” Wikipedia, Wikimedia Foundation, 03 September 2020, https://de.wikipedia.org/wiki/Gefecht_um_das_polnische_Postamt_in_Danzig";
 $wikipedia_westerplatte = "“Kampf um die Westerplatte” Wikipedia, Wikimedia Foundation, 03 September 2020, https://de.wikipedia.org/wiki/Kampf_um_die_Westerplatte";
+$wikipedia_wielun_bombed = "“Luftangriff auf Wieluń” Wikipedia, Wikimedia Foundation, 03 September 2020, https://de.wikipedia.org/wiki/Luftangriff_auf_Wielu%C5%84";
+$wikipedia_dzialoszyn = "“Działoszyn” Wikipedia, Wikimedia Foundation, 03 September 2020, https://de.wikipedia.org/wiki/Dzia%C5%82oszyn";
 ?>

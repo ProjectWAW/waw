@@ -46,11 +46,16 @@ require 'variables.php';
 
 <h3>01 September 1939</h3>
 <h4><a id="1939_09_01_1" href="/index.php?d=1939_09_01&m=1939_09_01_1">Marker 1</a> - <?php echo $wikipedia_westerplatte;?></h4>
-<h4><a id="1939_09_01_2" href="/index.php?d=1939_09_01&m=1939_09_01_2">Marker 1</a> - <?php echo $wikipedia_westerplatte;?></h4>
+<h4><a id="1939_09_01_2" href="/index.php?d=1939_09_01&m=1939_09_01_2">Marker 2</a> - <?php echo $wikipedia_westerplatte;?></h4>
 <h4><a id="1939_09_01_3" href="/index.php?d=1939_09_01&m=1939_09_01_3">Marker 3</a> - <?php echo $wikipedia_postamt_danzig;?></h4>
+<h4><a id="1939_09_01_4" href="/index.php?d=1939_09_01&m=1939_09_01_4">Marker 4</a> - <?php echo $wikipedia_wielun_bombed;?></h4>
+<h4><a id="1939_09_01_5" href="/index.php?d=1939_09_01&m=1939_09_01_5">Marker 5</a> - <?php echo $wikipedia_dzialoszyn;?></h4>
 
 <h3>02 September 1939</h3>
 <h4><a id="1939_09_02_1" href="/index.php?d=1939_09_02&m=1939_09_02_1">Marker 1</a> - <?php echo $wikipedia_westerplatte;?></h4>
+
+<h3>03 September 1939</h3>
+<h4><a id="1939_09_03_1" href="/index.php?d=1939_09_01&m=1939_09_03_1">Marker 1</a> - <?php echo $wikipedia_dzialoszyn;?></h4>
 
 <h3>07 September 1939</h3>
 <h4><a id="1939_09_07_1" href="/index.php?d=1939_09_07&m=1939_09_07_1">Marker 1</a> - <?php echo $wikipedia_westerplatte;?></h4>

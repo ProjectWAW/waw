@@ -30,11 +30,19 @@ marker1939_09_01_4 = L.marker(marker1939_09_01_4_location, {
   icon: black_bomb,
   title: info_1939_09_01_4
 });
+info_1939_09_01_5 = getCookie("info_1939_09_01_5");
+marker1939_09_01_5_location = [51.116907, 18.868843];
+marker1939_09_01_5 = L.marker(marker1939_09_01_5_location, {
+  id: "marker1939_09_01_5",
+  icon: black_bomb,
+  title: info_1939_09_01_5
+});
 
 marker_group.addLayer(marker1939_09_01_1);
 marker_group.addLayer(marker1939_09_01_2);
 marker_group.addLayer(marker1939_09_01_3);
 marker_group.addLayer(marker1939_09_01_4);
+marker_group.addLayer(marker1939_09_01_5);
 
 mymap.addLayer(marker_group);
 
@@ -62,6 +70,12 @@ marker1939_09_01_4.on("click", function () {
   infoClicked = document.getElementById("1939_09_01_4");
   onClick2();
 });
+marker1939_09_01_5.on("click", function () {
+  onClick1();
+  location.href='#1939_09_01_5';
+  infoClicked = document.getElementById("1939_09_01_5");
+  onClick2();
+});
 
 
 function zoom1939_09_01_1() {
@@ -75,4 +89,7 @@ function zoom1939_09_01_3() {
 }
 function zoom1939_09_01_4() {
   mymap.setView(marker1939_09_01_4_location);
+}
+function zoom1939_09_01_5() {
+  mymap.setView(marker1939_09_01_5_location);
 }

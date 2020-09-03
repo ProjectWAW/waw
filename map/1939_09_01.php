@@ -3,6 +3,7 @@ document.cookie = "info_1939_09_01_1 = The German line ship 'Schleswig-Holstein'
 document.cookie = "info_1939_09_01_2 = At 4:47am local time, German marine infantry begins to storm the Westerplatte after heavy bombardment. The attack gets repelled by the Polish garrison which kills around 50 German soldiers and its commander.";
 document.cookie = "info_1939_09_01_3 = Simultaneously with the attack on the Westerplatte, soldiers from the SS-Heimwehr Danzig cut all communication lines from the Polish Post Office and start to storm it. At 7pm, the defenders decide to capitulate.";
 document.cookie = "info_1939_09_01_4 = Wieluń gets bombed at 4:37am, which makes it the first attack in this war. The city was of no importance and was merely bombed to test the German Luftwaffe.";
+document.cookie = "info_1939_09_01_5 = The Polish city of Działoszyn gets bombed by the German Luftwaffe.";
 </script>
 
 
@@ -31,6 +32,13 @@ document.cookie = "info_1939_09_01_4 = Wieluń gets bombed at 4:37am, which make
   <i class="icon-bomb circle-fa" onClick="zoom1939_09_01_4()"></i> <b class="country-name">Germany</b>
   <div class="info-content" id="info_1939_09_01_4">
     <script>document.getElementById("info_1939_09_01_4").innerHTML = getCookie("info_1939_09_01_4") + ' <a href="sources/invasion_of_poland.php?i=1939_09_01_4" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>';</script>
+  </div>
+</div>
+<hr>
+<div id="1939_09_01_5">
+  <i class="icon-bomb circle-fa" onClick="zoom1939_09_01_5()"></i> <b class="country-name">Germany</b>
+  <div class="info-content" id="info_1939_09_01_5">
+    <script>document.getElementById("info_1939_09_01_5").innerHTML = getCookie("info_1939_09_01_5") + ' <a href="sources/invasion_of_poland.php?i=1939_09_01_5" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>';</script>
   </div>
 </div>
 <hr>
