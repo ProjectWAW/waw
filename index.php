@@ -27,6 +27,38 @@ if (isset($_GET['d'])) {
     $date_month = "December";
   }
   $date_year = substr($date, 0, 4);
+  $date_month2 = substr($date, 4,4);
+  $date_day = substr($date, 8, 10);
+  $date_info = "".$date_day." ".$date_month." ".$date_year."";
+} else if (isset($_COOKIE['date'])) {
+  $date = $_COOKIE["date"];
+  if (strpos($date, '_01_') !== false) {
+    $date_month = "January";
+  } elseif (strpos($date, '_02_') !== false) {
+    $date_month = "February";
+  } elseif (strpos($date, '_03_') !== false) {
+    $date_month = "March";
+  } elseif (strpos($date, '_04_') !== false) {
+    $date_month = "April";
+  } elseif (strpos($date, '_05_') !== false) {
+    $date_month = "May";
+  } elseif (strpos($date, '_06_') !== false) {
+    $date_month = "June";
+  } elseif (strpos($date, '_07_') !== false) {
+    $date_month = "July";
+  } elseif (strpos($date, '_08_') !== false) {
+    $date_month = "August";
+  } elseif (strpos($date, '_09_') !== false) {
+    $date_month = "September";
+  } elseif (strpos($date, '_10_') !== false) {
+    $date_month = "October";
+  } elseif (strpos($date, '_11_') !== false) {
+    $date_month = "November";
+  } else {
+    $date_month = "December";
+  }
+  $date_year = substr($date, 0, 4);
+  $date_month2 = substr($date, 4,4);
   $date_day = substr($date, 8, 10);
   $date_info = "".$date_day." ".$date_month." ".$date_year."";
 } else {
@@ -389,7 +421,10 @@ span.fa-info {
 </style>
 </head>
 <body>
-<?php require 'navbar.php';?>
+<?php 
+  require 'navbar.php';
+  echo '<script>document.cookie = "date = '.$date.'";</script>';
+?>
 <noscript>This website requires javascript to run properly.</noscript>
 <script>
 (function(){
@@ -1087,6 +1122,8 @@ $(function() {
 
     date = date_year+"_"+date_month+"_"+date_day;
 
+    document.cookie = "date = "+date+"";
+
     document.getElementById("date_info").innerHTML = date_day+" "+info_month+" "+date_year;
     document.getElementById("date_info_2").innerHTML = date_day+" "+info_month+" "+date_year;
     document.getElementById("date_info_content").innerHTML = "";
@@ -1263,6 +1300,8 @@ $(function() {
     }
 
     date = date_year+"_"+date_month+"_"+date_day;
+
+    document.cookie = "date = "+date+"";
 
     document.getElementById("date_info").innerHTML = date_day+" "+info_month+" "+date_year;
     document.getElementById("date_info_2").innerHTML = date_day+" "+info_month+" "+date_year;
