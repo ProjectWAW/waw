@@ -576,7 +576,6 @@ var stripes_neutral = new L.StripePattern({weight: 5, color: '#ffad46', spaceWei
     <h4 id="date_info"><?php echo $date_info; ?></h4>
     <hr>
     <div id="date_info_content">
-
       <script>
       <?php include 'map/'.$date.'.js';?>
 
@@ -585,7 +584,7 @@ var stripes_neutral = new L.StripePattern({weight: 5, color: '#ffad46', spaceWei
         document.cookie = ""+marker[1]+" = "+marker[5]+""
         document.cookie = ""+marker[2]+" = "+marker[4]+""
 
-        let aBlock = document.getElementById('date_info_content').appendChild( document.createElement('div') );
+        let aBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
         aBlock.id = marker[0];
 
         $.ajax({
@@ -593,11 +592,10 @@ var stripes_neutral = new L.StripePattern({weight: 5, color: '#ffad46', spaceWei
           type: "POST",
           data: ({id: marker[0], location: marker[4], class: marker[6], conflict: marker[7], country: marker[8]}),
           success: function(data){
-            $('test').html(data);
+            $(aBlock).html(data);
           }
-        });  
+        });
       }
-
       </script>
     </div>
   </div>
