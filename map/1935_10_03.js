@@ -203,7 +203,14 @@ countries = [
 
 marker_group = new L.FeatureGroup();
 
-info_1935_10_03_1 = getCookie("info_1935_10_03_1");
+markers = [
+  ["1935_10_03_1", "info_1935_10_03_1", "marker1935_10_03_1", green_bullhorn, [41.8919300, 12.5113300], "Italy starts an invasion of Ethiopia without a formal declaration of war, shortly after the league exonerated both parties in the Walwal incident.", "fas fa-bullhorn circle-fa", "italo_ethiopian_war", "Italy"]
+]
+markers = [
+  ["1935_10_04_1", "info_1935_10_04_1", "marker1935_10_04_1", green_gun_right, [14.495184, 39.393883], "At exactly 5 AM, General Emilio de Bono starts his advance into north Ethiopia by crossing the river Mareb with his 100 000 men.", "icon-gun-right circle-fa", "italo_ethiopian_war", "Italy"]
+]
+
+/*info_1935_10_03_1 = getCookie("info_1935_10_03_1");
 marker1935_10_03_1_location = [41.8919300, 12.5113300];
 marker1935_10_03_1 = L.marker(marker1935_10_03_1_location, {
   id: "marker1935_10_03_1",
@@ -310,3 +317,4 @@ function zoom1935_10_03_5() {
 function zoom1935_10_03_6() {
   mymap.setView(marker1935_10_03_6_location);
 }
+*/

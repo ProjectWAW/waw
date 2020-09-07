@@ -461,6 +461,92 @@ span.fa-info {
   }
   document.addEventListener('DOMContentLoaded', loadbar, false);
 }());
+
+/***** COLORS *****/
+var axis = 'black'
+var axis_puppet = '#4d4d4d'
+var axis_occupied = '#8f8f8f'
+
+var allies = '#296d98'
+var allies_puppet = '#3792cb'
+var allies_occupied = '#45b6fe'
+
+var uf = '#7f7f00'
+var uf_puppet = '#b2b200'
+var uf_occupied = '#e5e500'
+
+var comintern = '#b30000'
+var comintern_puppet = 'red'
+var comintern_occupied = '#ff7f7f'
+
+var finland = 'purple'
+var finland_occupied = '#ac68cc'
+
+var italy = 'green'
+var italy_puppet = '#66a103'
+var italy_occupied = '#80c904'
+
+var neutral = '#ffad46'
+var neutral_zone = 'white'
+
+
+var orangeMarkerColor = '#ff981a'
+var orangeMarkerStroke = '#e67e00'
+
+var yellowMarkerColor = ''
+var yellowMarkerStroke = ''
+
+var blueMarkerColor = '#1500FF'
+var blueMarkerStroke = '#150055'
+
+var redMarkerColor = '#a50000'
+var redMarkerStroke = '#800000'
+
+var purpleMarkerColor = '#800080'
+var purpleMarkerStroke = '#5f005f'
+
+var greenMarkerColor = '#25790b'
+var greenMarkerStroke = '#1e580d'
+
+var blackMarkerColor = '#3f3f3f'
+var blackMarkerStroke = '#262626'
+
+
+var ambulance = 'fas fa-ambulance'
+var anchor = 'fas fa-anchor'
+var artillery_left = 'icon-artillery-left'
+var artillery_right = 'icon-artillery-right'
+var atom = 'fas fa-atom'
+var bahai = 'fas fa-bahai'
+var biohazard = 'fas fa-biohazard'
+var bomb = 'icon-bomb'
+var bullhorn = 'fas fa-bullhorn'
+var chart_line = 'fas fa-chart-line'
+var crosshairs = 'fas fa-crosshairs'
+var drafting_compass = 'fas fa-drafting-compass'
+var fire_alt = 'fas fa-fire-alt'
+var flag = 'fas fa-flag'
+var gun_left = 'icon-gun-left'
+var gun_right = 'icon-gun-right'
+var helmet = 'icon-helmet'
+var info = 'fas fa-info'
+var plane = 'fas fa-plane'
+var plane_slash = 'fas fa-plane-slash'
+var skull_crossbones = 'fas fa-skull-crossbones'
+var tank_left = 'icon-tank-left'
+var tank_right = 'icon-tank-right'
+var truck = 'fas fa-truck'
+var virus = 'fas fa-virus'
+
+var iconColor = '#FFF'
+var markerStrokeWidth = 1
+
+var stripes_axis = new L.StripePattern({weight: 5, color: 'black', spaceWeight: 5, angle: 45});
+var stripes_comintern = new L.StripePattern({weight: 5, color: '#b30000', spaceWeight: 5, angle: 45});
+var stripes_finland = new L.StripePattern({weight: 5, color: 'purple', spaceWeight: 5, angle: 45});
+var stripes_neutral = new L.StripePattern({weight: 5, color: '#ffad46', spaceWeight: 5, angle: 45});
+
+<?php include 'markers.js';?>
 </script>
 <div id="overlay">
   <div id="progstat">Loading: 0%</div>
@@ -490,7 +576,29 @@ span.fa-info {
     <h4 id="date_info"><?php echo $date_info; ?></h4>
     <hr>
     <div id="date_info_content">
-      <?php include 'map/'.$date.'.php';?><span class="icon-tank"></span>
+
+      <script>
+      <?php include 'map/'.$date.'.js';?>
+
+      for (let marker of markers) {
+
+        document.cookie = ""+marker[1]+" = "+marker[5]+""
+        document.cookie = ""+marker[2]+" = "+marker[4]+""
+
+        let aBlock = document.getElementById('date_info_content').appendChild( document.createElement('div') );
+        aBlock.id = marker[0];
+
+        $.ajax({
+          url: 'ajax.php',
+          type: "POST",
+          data: ({id: marker[0], location: marker[4], class: marker[6], conflict: marker[7], country: marker[8]}),
+          success: function(data){
+            $('test').html(data);
+          }
+        });  
+      }
+
+      </script>
     </div>
   </div>
   <div id="Date" class="tabcontent" style="display:none">
@@ -629,96 +737,10 @@ function forEachFeature(feature, layer) {
   layer.bindPopup(popupContent);
 }
 
-/***** COLORS *****/
-var axis = 'black'
-var axis_puppet = '#4d4d4d'
-var axis_occupied = '#8f8f8f'
-
-var allies = '#296d98'
-var allies_puppet = '#3792cb'
-var allies_occupied = '#45b6fe'
-
-var uf = '#7f7f00'
-var uf_puppet = '#b2b200'
-var uf_occupied = '#e5e500'
-
-var comintern = '#b30000'
-var comintern_puppet = 'red'
-var comintern_occupied = '#ff7f7f'
-
-var finland = 'purple'
-var finland_occupied = '#ac68cc'
-
-var italy = 'green'
-var italy_puppet = '#66a103'
-var italy_occupied = '#80c904'
-
-var neutral = '#ffad46'
-var neutral_zone = 'white'
-
-
-var orangeMarkerColor = '#ff981a'
-var orangeMarkerStroke = '#e67e00'
-
-var yellowMarkerColor = ''
-var yellowMarkerStroke = ''
-
-var blueMarkerColor = '#1500FF'
-var blueMarkerStroke = '#150055'
-
-var redMarkerColor = '#a50000'
-var redMarkerStroke = '#800000'
-
-var purpleMarkerColor = '#800080'
-var purpleMarkerStroke = '#5f005f'
-
-var greenMarkerColor = '#25790b'
-var greenMarkerStroke = '#1e580d'
-
-var blackMarkerColor = '#3f3f3f'
-var blackMarkerStroke = '#262626'
-
-
-var ambulance = 'fas fa-ambulance'
-var anchor = 'fas fa-anchor'
-var artillery_left = 'icon-artillery-left'
-var artillery_right = 'icon-artillery-right'
-var atom = 'fas fa-atom'
-var bahai = 'fas fa-bahai'
-var biohazard = 'fas fa-biohazard'
-var bomb = 'icon-bomb'
-var bullhorn = 'fas fa-bullhorn'
-var chart_line = 'fas fa-chart-line'
-var crosshairs = 'fas fa-crosshairs'
-var drafting_compass = 'fas fa-drafting-compass'
-var fire_alt = 'fas fa-fire-alt'
-var flag = 'fas fa-flag'
-var gun_left = 'icon-gun-left'
-var gun_right = 'icon-gun-right'
-var helmet = 'icon-helmet'
-var info = 'fas fa-info'
-var plane = 'fas fa-plane'
-var plane_slash = 'fas fa-plane-slash'
-var skull_crossbones = 'fas fa-skull-crossbones'
-var tank_left = 'icon-tank-left'
-var tank_right = 'icon-tank-right'
-var truck = 'fas fa-truck'
-var virus = 'fas fa-virus'
-
-var iconColor = '#FFF'
-var markerStrokeWidth = 1
-
-var stripes_axis = new L.StripePattern({weight: 5, color: 'black', spaceWeight: 5, angle: 45});
-var stripes_comintern = new L.StripePattern({weight: 5, color: '#b30000', spaceWeight: 5, angle: 45});
-var stripes_finland = new L.StripePattern({weight: 5, color: 'purple', spaceWeight: 5, angle: 45});
-var stripes_neutral = new L.StripePattern({weight: 5, color: '#ffad46', spaceWeight: 5, angle: 45});
-
 stripes_axis.addTo(mymap);
 stripes_comintern.addTo(mymap);
 stripes_finland.addTo(mymap);
 stripes_neutral.addTo(mymap);
-
-<?php include 'markers.js';?>
 
 mymap.createPane('neutral_zone');
 mymap.createPane('neutral');
@@ -772,6 +794,28 @@ for (let country of countries) {
     });
     sites.addTo(country_layers);
     mymap.addLayer(country_layers);
+  });
+}
+
+for (let marker of markers) {
+
+  document.cookie = ""+marker[1]+" = "+marker[5]+"";
+  document.cookie = ""+marker[2]+" = "+marker[4]+"";
+
+  marker[1] = L.marker(marker[4], {
+    id: marker[2],
+    icon: marker[3],
+    title: marker[5]
+  });
+
+  marker_group.addLayer(marker[1]);
+  mymap.addLayer(marker_group);
+
+  marker[1].on("click", function () {
+    onClick1();
+    location.href='#'+marker[0]+'';
+    infoClicked = document.getElementById(""+marker[0]+"");
+    onClick2();
   });
 }
 
