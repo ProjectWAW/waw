@@ -203,6 +203,8 @@ countries = [
   ["italian_somalia", italy_puppet, "1935_10_03", "italy_puppet", null]
 ]
 
+markers = []
+
 marker_group = new L.FeatureGroup();
 info_1936_01_01_1 = getCookie("info_1936_01_01_1");
 marker1936_01_01_1_location = [52.511206, 13.381348];

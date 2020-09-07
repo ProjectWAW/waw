@@ -203,6 +203,8 @@ countries = [
   ["spanish_sahara", axis_puppet, "1935_10_03", "axis_puppet", null]
 ]
 
+markers = []
+
 marker_group = new L.FeatureGroup();
 
 info_1936_07_17_1 = getCookie("info_1936_07_17_1");

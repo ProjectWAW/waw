@@ -202,6 +202,8 @@ countries = [
   ["italian_somalia", italy_puppet, "1936_05_10", "italy_puppet", null]
 ]
 
+markers = []
+
 marker_group = new L.FeatureGroup();
 
 info_1936_05_29_1 = getCookie("info_1936_05_29_1");

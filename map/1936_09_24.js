@@ -204,4 +204,6 @@ countries = [
   ["spanish_sahara", axis_puppet, "1935_10_03", "axis_puppet", null]
 ]
 
+markers = []
+
 marker_group = new L.FeatureGroup();

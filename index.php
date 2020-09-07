@@ -581,16 +581,18 @@ var stripes_neutral = new L.StripePattern({weight: 5, color: '#ffad46', spaceWei
 
       for (let marker of markers) {
 
-        document.cookie = ""+marker[1]+" = "+marker[5]+""
-        document.cookie = ""+marker[2]+" = "+marker[4]+""
-
         let aBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
         aBlock.id = marker[0];
 
         $.ajax({
           url: 'ajax.php',
           type: "POST",
-          data: ({id: marker[0], location: marker[4], class: marker[6], conflict: marker[7], country: marker[8]}),
+          dataType:'json',
+          data: ({id: marker[0], location: marker[4], text: marker[5], class: marker[6], conflict: marker[7], country: marker[8]}),
+          error: function(xhr, status, error) {
+            var err = JSON.parse(xhr.responseText);
+            alert(err.Message);
+          },
           success: function(data){
             $(aBlock).html(data);
           }
@@ -780,8 +782,6 @@ mymap.getPane('axis_occupied').style.zIndex = 268;
 mymap.getPane('axis_puppet').style.zIndex = 269;
 mymap.getPane('axis').style.zIndex = 270;
 
-<?php include 'map/'.$date.'.js';?>
-
 for (let country of countries) {
   country_layers = L.layerGroup();
   $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
@@ -796,10 +796,6 @@ for (let country of countries) {
 }
 
 for (let marker of markers) {
-
-  document.cookie = ""+marker[1]+" = "+marker[5]+"";
-  document.cookie = ""+marker[2]+" = "+marker[4]+"";
-
   marker[1] = L.marker(marker[4], {
     id: marker[2],
     icon: marker[3],
@@ -1022,6 +1018,8 @@ window.onresize = function() {
 
 $(function() {
   $('#change-forward').click(function() {
+    delete countries;
+    delete markers;
     clearListCookies();
     if (typeof country_layers !== 'undefined') {
       country_layers.remove();
@@ -1169,7 +1167,6 @@ $(function() {
     document.getElementById("date_info").innerHTML = date_day+" "+info_month+" "+date_year;
     document.getElementById("date_info_2").innerHTML = date_day+" "+info_month+" "+date_year;
     document.getElementById("date_info_content").innerHTML = "";
-    $('#date_info_content').load('map/'+date+'.php');
 
     document.getElementById("keys-content").innerHTML = "";
     if (date.substr(0, 4) == "1935") {
@@ -1189,6 +1186,41 @@ $(function() {
           mymap.addLayer(country_layers);
         });
       }
+      for (let marker of markers) {
+
+        let cBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
+        cBlock.id = marker[0];
+
+        $.ajax({
+          url: 'ajax.php',
+          type: "POST",
+          dataType:'json',
+          data: ({id: marker[0], location: marker[4], text: marker[5], class: marker[6], conflict: marker[7], country: marker[8]}),
+          error: function(xhr, status, error) {
+            var err = JSON.parse(xhr.responseText);
+            alert(err.Message);
+          },
+          success: function(data){
+            $(cBlock).html(data);
+          }
+        });
+
+        marker[1] = L.marker(marker[4], {
+          id: marker[2],
+          icon: marker[3],
+          title: marker[5]
+        });
+
+        marker_group.addLayer(marker[1]);
+        mymap.addLayer(marker_group);
+
+        marker[1].on("click", function () {
+          onClick1();
+          location.href='#'+marker[0]+'';
+          infoClicked = document.getElementById(""+marker[0]+"");
+          onClick2();
+        });
+      }
       if (number == 2) {
         marker_group.remove();
       } else {
@@ -1199,6 +1231,8 @@ $(function() {
 });
 $(function() {
   $('#change-backward').click(function() {
+    delete countries;
+    delete markers;
     clearListCookies();
     if (typeof country_layers !== 'undefined') {
       country_layers.remove();
@@ -1348,7 +1382,6 @@ $(function() {
     document.getElementById("date_info").innerHTML = date_day+" "+info_month+" "+date_year;
     document.getElementById("date_info_2").innerHTML = date_day+" "+info_month+" "+date_year;
     document.getElementById("date_info_content").innerHTML = "";
-    $('#date_info_content').load('map/'+date+'.php');
 
     document.getElementById("keys-content").innerHTML = "";
     if (date.substr(0, 4) == "1935") {
@@ -1366,6 +1399,41 @@ $(function() {
           });
           sites.addTo(country_layers);
           mymap.addLayer(country_layers);
+        });
+      }
+      for (let marker of markers) {
+
+        let bBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
+        bBlock.id = marker[0];
+
+        $.ajax({
+          url: 'ajax.php',
+          type: "POST",
+          dataType:'json',
+          data: ({id: marker[0], location: marker[4], text: marker[5], class: marker[6], conflict: marker[7], country: marker[8]}),
+          error: function(xhr, status, error) {
+            var err = JSON.parse(xhr.responseText);
+            alert(err.Message);
+          },
+          success: function(data){
+            $(bBlock).html(data);
+          }
+        });
+
+        marker[1] = L.marker(marker[4], {
+          id: marker[2],
+          icon: marker[3],
+          title: marker[5]
+        });
+
+        marker_group.addLayer(marker[1]);
+        mymap.addLayer(marker_group);
+
+        marker[1].on("click", function () {
+          onClick1();
+          location.href='#'+marker[0]+'';
+          infoClicked = document.getElementById(""+marker[0]+"");
+          onClick2();
         });
       }
       if (number == 2) {

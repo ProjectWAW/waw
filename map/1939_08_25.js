@@ -1,5 +1,7 @@
 countries = []
 
+markers = []
+
 marker_group = new L.FeatureGroup();
 
 info_1939_08_25_1 = getCookie("info_1939_08_25_1");
