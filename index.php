@@ -588,7 +588,7 @@ var stripes_neutral = new L.StripePattern({weight: 5, color: '#ffad46', spaceWei
           url: 'ajax.php',
           type: "POST",
           dataType:'json',
-          data: ({id: marker[0], location: marker[4], text: marker[5], class: marker[6], conflict: marker[7], country: marker[8]}),
+          data: ({id: marker[0], location: marker[3], text: marker[4], class: marker[5], conflict: marker[6], country: marker[7]}),
           error: function(xhr, status, error) {
             var err = JSON.parse(xhr.responseText);
             alert(err.Message);
@@ -796,10 +796,10 @@ for (let country of countries) {
 }
 
 for (let marker of markers) {
-  marker[1] = L.marker(marker[4], {
-    id: marker[2],
-    icon: marker[3],
-    title: marker[5]
+  marker[1] = L.marker(marker[3], {
+    id: 'marker'+marker[0],
+    icon: marker[2],
+    title: marker[4]
   });
 
   marker_group.addLayer(marker[1]);
@@ -1195,7 +1195,7 @@ $(function() {
           url: 'ajax.php',
           type: "POST",
           dataType:'json',
-          data: ({id: marker[0], location: marker[4], text: marker[5], class: marker[6], conflict: marker[7], country: marker[8]}),
+          data: ({id: marker[0], location: marker[3], text: marker[4], class: marker[5], conflict: marker[6], country: marker[7]}),
           error: function(xhr, status, error) {
             var err = JSON.parse(xhr.responseText);
             alert(err.Message);
@@ -1205,10 +1205,10 @@ $(function() {
           }
         });
 
-        marker[1] = L.marker(marker[4], {
-          id: marker[2],
-          icon: marker[3],
-          title: marker[5]
+        marker[1] = L.marker(marker[3], {
+          id: 'marker'+marker[0],
+          icon: marker[2],
+          title: marker[4]
         });
 
         marker_group.addLayer(marker[1]);
@@ -1410,7 +1410,7 @@ $(function() {
           url: 'ajax.php',
           type: "POST",
           dataType:'json',
-          data: ({id: marker[0], location: marker[4], text: marker[5], class: marker[6], conflict: marker[7], country: marker[8]}),
+          data: ({id: marker[0], location: marker[3], text: marker[4], class: marker[5], conflict: marker[6], country: marker[7]}),
           error: function(xhr, status, error) {
             var err = JSON.parse(xhr.responseText);
             alert(err.Message);
@@ -1420,10 +1420,10 @@ $(function() {
           }
         });
 
-        marker[1] = L.marker(marker[4], {
-          id: marker[2],
-          icon: marker[3],
-          title: marker[5]
+        marker[1] = L.marker(marker[3], {
+          id: 'marker'+marker[0],
+          icon: marker[2],
+          title: marker[4]
         });
 
         marker_group.addLayer(marker[1]);
