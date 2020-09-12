@@ -36,3 +36,10 @@ Login with your Github account, and clone the repository to C:\wamp64\www\waw
 After that, restart WAMP by clicking on the "W" icon on the right side of your taskbar.
 
 ## Branching and merging strategy
+We are using GitHub Flow's branching strategy, and here is their set of rules that must be always followed:
+* Code in master must be deployable at all times.
+* When you want to start working on a new task, create a new branch off of master and give it a descriptive name.
+* Commit to that branch locally and regularly send your work to the same-named branch on the server.
+* Open a pull request when you feel your changes are ready to be merged (or even if you aren’t so sure, but would like some feedback).
+* After the new feature is revised and approved, you can merge it into master.
+* Once your changes are merged and pushed to the master, you can and should deploy immediately.
