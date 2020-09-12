@@ -3,7 +3,6 @@
 * [Technologies](#technologies)
 * [Localhost](#localhost)
 * [Process for getting the website running locally](#process-for-getting-the-website-running-locally)
-* [Branching and merging strategy](#branching-and-merging-strategy)
 
 ## General Info
 This project is a website with two parts: the wiki and the map.
@@ -34,5 +33,3 @@ After you're done with that, download Github desktop: https://desktop.github.com
 Login with your Github account, and clone the repository to C:\wamp64\www\waw
 
 After that, restart WAMP by clicking on the "W" icon on the right side of your taskbar.
-
-## Branching and merging strategy
