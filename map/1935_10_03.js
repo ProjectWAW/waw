@@ -202,10 +202,10 @@ countries = [
 ]
 
 markers = [
-  ["1935_10_03_1", "info_1935_10_03_1", green_bullhorn, [41.8919300, 12.5113300], "Italy starts an invasion of Ethiopia without a formal declaration of war, shortly after the league exonerated both parties in the Walwal incident.", "fas fa-bullhorn circle-fa", "italo_ethiopian_war", "Italy"],
-  ["1935_10_03_2", "info_1935_10_03_2", green_gun_right, [14.495184, 39.393883], "At exactly 5 AM, General Emilio de Bono starts his advance into north Ethiopia by crossing the river Mareb with his 100 000 men.", "icon-gun-right circle-fa", "italo_ethiopian_war", "Italy"],
-  ["1935_10_03_3", "info_1935_10_03_3", green_gun_right, [5.190791, 45.079651], "Soon after Emilio de Bono entered north Ethiopia, General Rodolfo Graziani starts his advance into south Ethiopia from Italian Somaliland with his two divisions.", "icon-gun-right circle-fa", "italo_ethiopian_war", "Italy"],
-  ["1935_10_03_4", "info_1935_10_03_4", purple_bullhorn, [5.190791, 45.079651], "In response to Italians invading them without a declaration of war, Ethiopia declares war on Italy.", "fas fa-bullhorn circle-fa", "italo_ethiopian_war", "Ethiopia"],
-  ["1935_10_03_5", "info_1935_10_03_5", orange_bullhorn, [55.754145, 37.620263], "In Moscow starts a conference by the immigrated KPD (German Communist Party) members on which the foundation of a political popular front against fascism gets decided.", "fas fa-bullhorn circle-fa", "1935_world", "Soviet Union"],
-  ["1935_10_03_6", "info_1935_10_03_6", orange_bullhorn, [52.517057, 13.390961], "Nazi Germany declared neutrality in the Ethiopian conflict.", "fas fa-bullhorn circle-fa", "1935_world", "Germany"]
+  ["1935_10_03_1", "info_1935_10_03_1", green_bullhorn, [41.8919300, 12.5113300], "Italy starts an invasion of Ethiopia without a formal declaration of war, shortly after the league exonerated both parties in the Walwal incident.", "fas fa-bullhorn", "italo_ethiopian_war", "Italy"],
+  ["1935_10_03_2", "info_1935_10_03_2", green_gun_right, [14.495184, 39.393883], "At exactly 5 AM, General Emilio de Bono starts his advance into north Ethiopia by crossing the river Mareb with his 100 000 men.", "icon-gun-right", "italo_ethiopian_war", "Italy"],
+  ["1935_10_03_3", "info_1935_10_03_3", green_gun_right, [5.190791, 45.079651], "Soon after Emilio de Bono entered north Ethiopia, General Rodolfo Graziani starts his advance into south Ethiopia from Italian Somaliland with his two divisions.", "icon-gun-right", "italo_ethiopian_war", "Italy"],
+  ["1935_10_03_4", "info_1935_10_03_4", purple_bullhorn, [5.190791, 45.079651], "In response to Italians invading them without a declaration of war, Ethiopia declares war on Italy.", "fas fa-bullhorn", "italo_ethiopian_war", "Ethiopia"],
+  ["1935_10_03_5", "info_1935_10_03_5", orange_bullhorn, [55.754145, 37.620263], "In Moscow starts a conference by the immigrated KPD (German Communist Party) members on which the foundation of a political popular front against fascism gets decided.", "fas fa-bullhorn", "1935_world", "Soviet Union"],
+  ["1935_10_03_6", "info_1935_10_03_6", orange_bullhorn, [52.517057, 13.390961], "Nazi Germany declared neutrality in the Ethiopian conflict.", "fas fa-bullhorn", "1935_world", "Germany"]
 ]

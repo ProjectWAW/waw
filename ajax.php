@@ -34,7 +34,7 @@ var tank_right = 'icon-tank-right'
 var truck = 'fas fa-truck'
 var virus = 'fas fa-virus' */
 
-  $g = '<i class="'.$class.'" onClick="mymap.setView(['.$location.']);"></i> <b class="country-name">'.$country.'</b>
+  $g = '<i class="'.$class.' circle-fa" onClick="mymap.setView(['.$location.']);"></i> <b class="country-name">'.$country.'</b>
   <div class="info-content" id="info_'.$id.'">
     '.$text.' <a href="sources/'.$conflict.'.php?i='.$id.'" class="read-more-info">Source <span class="glyphicon glyphicon-new-window"></span></a>
   </div>';
