@@ -583,6 +583,10 @@ var stripes_neutral = new L.StripePattern({weight: 5, color: '#ffad46', spaceWei
 
         let aBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
         aBlock.id = marker[0];
+        
+        var dic = document.getElementById(marker[0]);
+        var newhr = document.createElement('hr'); // create new textarea
+        dic.parentNode.insertBefore(newhr, dic.nextSibling);
 
         $.ajax({
           url: 'ajax.php',
@@ -794,6 +798,8 @@ for (let country of countries) {
     mymap.addLayer(country_layers);
   });
 }
+
+marker_group = new L.FeatureGroup();
 
 for (let marker of markers) {
   marker[1] = L.marker(marker[3], {
@@ -1186,6 +1192,9 @@ $(function() {
           mymap.addLayer(country_layers);
         });
       }
+
+      marker_group = new L.FeatureGroup();
+
       for (let marker of markers) {
 
         let cBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
@@ -1401,6 +1410,9 @@ $(function() {
           mymap.addLayer(country_layers);
         });
       }
+
+      marker_group = new L.FeatureGroup();
+
       for (let marker of markers) {
 
         let bBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
