@@ -201,9 +201,9 @@ countries = [
   ["italian_somalia", italy_puppet, "1935_10_03", "italy_puppet", null]
 ]
 
-markers = []
-
-marker_group = new L.FeatureGroup();
+markers = [
+  ["1935_10_04_1", "info_1935_10_04_1", green_flag, [14.278039, 39.464150], "Italian forces capture Adigat, Inticho and Daro Tacle.", "fas fa-flag", "italo_ethiopian_war", "Italy"],
+]
 
 info_1935_10_04_1 = getCookie("info_1935_10_04_1");
 marker1935_10_04_1_location = [14.278039, 39.464150];

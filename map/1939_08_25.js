@@ -2,8 +2,6 @@ countries = []
 
 markers = []
 
-marker_group = new L.FeatureGroup();
-
 info_1939_08_25_1 = getCookie("info_1939_08_25_1");
 marker1939_08_25_1_location = [49.512071, 18.751848];
 marker1939_08_25_1 = L.marker(marker1939_08_25_1_location, {
