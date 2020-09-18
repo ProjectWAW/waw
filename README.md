@@ -20,7 +20,7 @@ Project is created with:
 * JavaScript 9
 * Bootstrap 3.4
 * jQuery 3.4
-* Leaflet 1.6
+* Leaflet 1.7.1
 
 ## Localhost
 For hosting a localhost, we used:
