@@ -201,15 +201,10 @@ countries = [
   ["italian_somalia", italy_puppet, "1935_10_03", "italy_puppet", null]
 ]
 
-markers = []
+markers = [
+  ["1935_10_05_1", "info_1935_10_05_1", green_flag, [14.282099, 39.464800], "Italian forces capture Adigrat.", "fas fa-flag circle-fa", "italo_ethiopian_war", "Italy"],
+]
 
-info_1935_10_05_1 = getCookie("info_1935_10_05_1");
-marker1935_10_05_1_location = [14.282099, 39.464800];
-marker1935_10_05_1 = L.marker(marker1935_10_05_1_location, {
-  id: "marker1935_10_05_1",
-  icon: green_flag,
-  title: info_1935_10_05_1
-});
 info_1935_10_05_2 = getCookie("info_1935_10_05_2");
 marker1935_10_05_2_location = [38.886757, -77.074585];
 marker1935_10_05_2 = L.marker(marker1935_10_05_2_location, {
@@ -217,17 +212,10 @@ marker1935_10_05_2 = L.marker(marker1935_10_05_2_location, {
   icon: orange_bullhorn,
   title: info_1935_10_05_2
 });
-marker_group.addLayer(marker1935_10_05_1);
 marker_group.addLayer(marker1935_10_05_2);
 
 mymap.addLayer(marker_group);
 
-marker1935_10_05_1.on("click", function () {
-  onClick1();
-  location.href='#1935_10_05_1';
-  infoClicked = document.getElementById("1935_10_05_1");
-  onClick2();
-});
 marker1935_10_05_2.on("click", function () {
   onClick1();
   location.href='#1935_10_05_2';
@@ -235,9 +223,6 @@ marker1935_10_05_2.on("click", function () {
   onClick2();
 });
 
-function zoom1935_10_05_1() {
-  mymap.setView(marker1935_10_05_1_location);
-}
 function zoom1935_10_05_2() {
   mymap.setView(marker1935_10_05_2_location);
 }
