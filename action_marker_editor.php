@@ -13,11 +13,5 @@ function debug_to_console($data) {
 }
 
 debug_to_console($var);
-
-  /*
-
-  ["1935_10_03_1", "info_1935_10_03_1", green_bullhorn, [41.8919300, 12.5113300], "Italy starts an invasion of Ethiopia without a formal declaration of war, shortly after the league exonerated both parties in the Walwal incident.", "fas fa-bullhorn", "italo_ethiopian_war", "Italy"],
-
-  */
 }
 ?>
