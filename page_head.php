@@ -2,6 +2,6 @@
 /*if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }*/
-include $_SERVER['DOCUMENT_ROOT'].'/meta.php';
-include $_SERVER['DOCUMENT_ROOT'].'/css.php';
+include __DIR__.'/meta.php';
+include __DIR__.'/css.php';
 ?>
