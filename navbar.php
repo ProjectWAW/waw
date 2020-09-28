@@ -15,7 +15,7 @@
         <li><a href="/marker_editor.php">(Dev build) Marker Editor</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <?php if(__FILE__ === 'index.php') {
+        <?php if($_SERVER['PHP_SELF']=='/index.php') {
           echo '<li id="toggleSidebar"><a href="#" onclick="hideSidebar()"><span class="glyphicon glyphicon-align-right"></span>&nbsp;&nbsp;Toggle Sidebar</a></li>';
           $iPod = stripos($_SERVER['HTTP_USER_AGENT'],"iPod");
           $iPhone = stripos($_SERVER['HTTP_USER_AGENT'],"iPhone");

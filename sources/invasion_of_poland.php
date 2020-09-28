@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<?php include 'page_head.php';?>
+<?php include '../page_head.php';?>
 <link rel="stylesheet" type="text/css" href="sources.css">
 <title>Geman Invasion Of Poland Sources - Project: World at War</title>
 </head>
 <body>
 <?php
-require 'navbar.php';
-include 'loader.php';
+require '../navbar.php';
+include '../loader.php';
 require 'variables.php';
 ?>
 <div class="container">
