@@ -696,15 +696,13 @@ var normal = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_
   attribution: ' Map data &copy; <a href="">PWAW</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
   minZoom: 3,
-  maxZoom: 13,
-  zoomControl: true
+  maxZoom: 13
 });
 
 var sattelite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { // https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x} // https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}
   attribution: ' Map data &copy; <a href="">PWAW</a> &copy; Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
   minZoom: 3,
-  maxZoom: 13,
-  zoomControl: true
+  maxZoom: 13
 });
 
 normal.addTo(mymap);
@@ -713,7 +711,7 @@ date = '<?php echo $date;?>';
 
 if (date.substr(0, 4) == "1935" || date.substr(0, 7) == "1936_01" || date.substr(0, 7) == "1936_02" || date.substr(0, 7) == "1936_03" || date.substr(0, 7) == "1936_04" || date.substr(0, 7) == "1936_05" || date.substr(0, 7) == "1936_06" || date.substr(0, 9) == "1936_07_0" || date.substr(0, 10) == "1936_07_11" || date.substr(0, 10) == "1936_07_12" || date.substr(0, 10) == "1936_07_13" || date.substr(0, 10) == "1936_07_14") {
   mymap.setView([9.013776, 38.754616], 5);
-} else if (date.substr(0, 10) == "1936_07_15" || date.substr(0, 10) == "1936_07_16" || date.substr(0, 10) == "1936_07_17" || date.substr(0, 10) == "1936_07_18" || date.substr(0, 10) == "1936_07_19" || date.substr(0, 9) == "1936_07_2"  || date.substr(0, 9) == "1936_07_3" || date.substr(0, 7) == "1936_08") {
+} else if (date.substr(0, 10) == "1936_07_15" || date.substr(0, 10) == "1936_07_16" || date.substr(0, 10) == "1936_07_17" || date.substr(0, 10) == "1936_07_18" || date.substr(0, 10) == "1936_07_19" || date.substr(0, 9) == "1936_07_2"  || date.substr(0, 9) == "1936_07_3" || date.substr(0, 7) == "1936_08" || date.substr(0, 7) == "1936_09" || date.substr(0, 7) == "1936_10" || date.substr(0, 7) == "1936_11" || date.substr(0, 7) == "1936_12") {
   mymap.setView([40.418201, -3.704109], 6);
 } else {
   mymap.setView([40.418201, -3.704109], 6);
