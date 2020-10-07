@@ -90,6 +90,7 @@
          * @param string $cssClass
          * @param string $conflictID
          * @param string $countryID
+         * @param string $sourceID
          */
         public function AddEvent(
           string $date,
@@ -98,7 +99,8 @@
           string $text,
           string $cssClass,
           string $conflictID,
-          string $countryID
+          string $countryID,
+          string $sourceID
         ): void {
             try
             {
@@ -110,8 +112,8 @@
                 }
 
                 $statement = $conn->prepare("INSERT INTO map_events (
-                        id, date, marker, location, text, css_class, conflict, country
-                        ) VALUES (:id, :date, :marker, :location, :text, :css_class, :conflict, :country)");
+                        id, date, marker, location, text, css_class, conflict, country, source
+                        ) VALUES (:id, :date, :marker, :location, :text, :css_class, :conflict, :country, :sourceID)");
 
                 $id = uniqid('', true);
 
@@ -167,8 +169,18 @@
          * Adds a new Nation to the countries table
          *
          * @param string $name
+         * @param string $status
+         * @param string $government
+         * @param string $party
+         * @param string $headOfGovernment
          */
-        public function AddNation(string $name): void
+        public function AddNation(
+          string $name,
+          string $status,
+          string $government,
+          string $party,
+          string $headOfGovernment
+        ): void
         {
             try
             {
@@ -179,12 +191,23 @@
                     throw new RuntimeException("Database connection cannot be null");
                 }
 
-                $statement = $conn->prepare("INSERT INTO countries (id, name) VALUES (:id, :name)");
+                $statement = $conn->prepare("INSERT INTO countries (
+                       id,
+                       name,
+                       status,
+                       government,
+                       party,
+                       head_of_government
+                       ) VALUES (:id, :name, :status, :government, :party, :headOfGovernment)");
 
                 $id = uniqid('', true);
 
                 $statement->bindParam(':id', $id);
                 $statement->bindParam('name', $name);
+                $statement->bindParam('status', $status);
+                $statement->bindParam('government', $government);
+                $statement->bindParam('party', $party);
+                $statement->bindParam('headOfGovernment', $headOfGovernment);
                 $statement->execute();
             }
             catch (Exception $e)

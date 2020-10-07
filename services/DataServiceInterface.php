@@ -10,10 +10,17 @@
           string $text,
           string $cssClass,
           string $conflictID,
-          string $countryID
+          string $countryID,
+          string $sourceID
         ): void;
         public function AddMarker(string $name): void;
-        public function AddNation(string $name): void;
+        public function AddNation(
+          string $name,
+          string $status,
+          string $government,
+          string $party,
+          string $headOfGovernment
+        ): void;
         public function GetAllConflicts(): array;
         public function GetConflict(string $id): array;
         public function GetAllEvents(): array;
