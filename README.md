@@ -16,7 +16,7 @@ The map part is an interactive map similar to google maps with countries and the
 Project is created with:
 * HTML 5
 * CSS 4
-* PHP 7.3.12
+* PHP 7.4
 * JavaScript 9
 * Bootstrap 3.4
 * jQuery 3.4
