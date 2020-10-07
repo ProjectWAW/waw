@@ -5,6 +5,10 @@ USE waw;
 CREATE TABLE countries(
     id varchar(255) NOT NULL,
     name varchar(255) NOT NULL,
+    status varchar(255) NOT NULL,
+    government varchar(150) NOT NULL,
+    party varchar(150) NOT NULL,
+    head_of_government varchar(100) NOT NULL,
     PRIMARY KEY (id)
 );
 
