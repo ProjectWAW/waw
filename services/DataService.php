@@ -1,7 +1,9 @@
 <?php
 
     include('DataServiceInterface.php');
+    include('../models/Conflict.php');
 
+    // TODO: Convert to a smaller services
     class DataService implements DataServiceInterface
     {
         private string $host;
@@ -36,6 +38,7 @@
             {
                 $conn = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->dbUsername, $this->dbPass);
                 $conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+                $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                 return $conn;
@@ -291,7 +294,23 @@
          */
         public function GetAllConflicts(): array
         {
-            // TODO: Implement GetAllConflicts() method.
+            try
+            {
+                $conn = $this->TryConnect();
+
+                if (!$conn)
+                {
+                    throw new RuntimeException("Database connection cannot be null");
+                }
+
+                return $conn->query("SELECT * FROM conflicts")
+                  ->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_UNIQUE, 'Conflict');
+            }
+            catch (Exception $e)
+            {
+                // log error
+                echo "DB connection failed: " . $e->getMessage();
+            }
         }
 
         /**
