@@ -50,6 +50,17 @@
         }
 
         /**
+         * Adds a new Author to the authors table
+         *
+         * @param string $name
+         */
+        public function AddAuthor(string $name): void
+        {
+            // TODO: Implement AddAuthor() method.
+        }
+
+
+        /**
          * Adds a new Conflict to the conflicts table
          *
          * @param string $name
@@ -215,5 +226,227 @@
                 // log error
                 echo "DB connection failed: " . $e->getMessage();
             }
+        }
+
+        /**
+         * Add a new Publisher to the publishers table
+         *
+         * @param string $name
+         */
+        public function AddPublisher(string $name): void
+        {
+            // TODO: Implement AddPublisher() method.
+        }
+
+        /**
+         * Add a new Source to the sources table
+         *
+         * @param string $type
+         * @param string $author
+         * @param string $title
+         * @param string $publisher
+         * @param string $date
+         */
+        public function AddSource(string $type, string $author, string $title, string $publisher, string $date): void
+        {
+            // TODO: Implement AddSource() method.
+        }
+
+        /**
+         * Adds a new SourceType to the source_types table
+         *
+         * @param string $type
+         */
+        public function AddSourceType(string $type): void
+        {
+            // TODO: Implement AddSourceType() method.
+        }
+
+        /**
+         * Gets all Authors in the authors table
+         *
+         * @return array
+         */
+        public function GetAllAuthors(): array
+        {
+            // TODO: Implement GetAllAuthors() method.
+        }
+
+        /**
+         * Gets an Author by ID from the authors table
+         *
+         * @param string $id
+         *
+         * @return array
+         */
+        public function GetAuthor(string $id): array
+        {
+            // TODO: Implement GetAuthor() method.
+        }
+
+        /**
+         * Gets all Conflicts from the conflicts table
+         *
+         * @return array
+         */
+        public function GetAllConflicts(): array
+        {
+            // TODO: Implement GetAllConflicts() method.
+        }
+
+        /**
+         * Gets a Conflict by ID from the conflicts table
+         *
+         * @param string $id
+         *
+         * @return array
+         */
+        public function GetConflict(string $id): array
+        {
+            // TODO: Implement GetConflict() method.
+        }
+
+        /**
+         * Gets all Events from the map_events table
+         *
+         * @return array
+         */
+        public function GetAllEvents(): array
+        {
+            // TODO: Implement GetAllEvents() method.
+        }
+
+        /**
+         * Gets an Event by ID from the map_events table
+         *
+         * @param string $id
+         *
+         * @return array
+         */
+        public function GetEvent(string $id): array
+        {
+            // TODO: Implement GetEvent() method.
+        }
+
+        /**
+         * Gets an array of Events by Date from the map_events table
+         *
+         * @param string $date
+         *
+         * @return array
+         */
+        public function GetEventsByDate(string $date): array
+        {
+            // TODO: Implement GetEventsByDate() method.
+        }
+
+
+        /**
+         * Gets all Markers from the markers table
+         *
+         * @return array
+         */
+        public function GetAllMarkers(): array
+        {
+            // TODO: Implement GetAllMarkers() method.
+        }
+
+        /**
+         * Gets a Marker by ID from the markers table
+         *
+         * @param string $id
+         *
+         * @return array
+         */
+        public function GetMarker(string $id): array
+        {
+            // TODO: Implement GetMarker() method.
+        }
+
+        /**
+         * Gets all Nations in the countries table
+         *
+         * @return array
+         */
+        public function GetAllNations(): array
+        {
+            // TODO: Implement GetAllNations() method.
+        }
+
+        /**
+         * Gets a Nation by ID from the countries table
+         *
+         * @param string $id
+         *
+         * @return array
+         */
+        public function GetNation(string $id): array
+        {
+            // TODO: Implement GetNation() method.
+        }
+
+        /**
+         * Gets all Publishers from the publishers table
+         *
+         * @return array
+         */
+        public function GetAllPublishers(): array
+        {
+            // TODO: Implement GetAllPublishers() method.
+        }
+
+        /**
+         * Gets a Publisher by ID from the publishers table
+         *
+         * @param string $id
+         *
+         * @return array
+         */
+        public function GetPublisher(string $id): array
+        {
+            // TODO: Implement GetPublisher() method.
+        }
+
+        /**
+         * Gets all Sources from the sources table
+         *
+         * @return array
+         */
+        public function GetAllSources(): array
+        {
+            // TODO: Implement GetAllSources() method.
+        }
+
+        /**
+         * Gets a Source by ID from the sources table
+         *
+         * @param string $id
+         *
+         * @return array
+         */
+        public function GetSource(string $id): array
+        {
+            // TODO: Implement GetSource() method.
+        }
+
+        /**
+         * Gets all SourceTypes from the source_types table
+         *
+         * @return array
+         */
+        public function GetAllSourceTypes(): array
+        {
+            // TODO: Implement GetAllSourceTypes() method.
+        }
+
+        /**
+         * Gets a SourceType by ID from the source_types table
+         * @param string $id
+         *
+         * @return array
+         */
+        public function GetSourceType(string $id): array
+        {
+            // TODO: Implement GetSourceType() method.
         }
     }
