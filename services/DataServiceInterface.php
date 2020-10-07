@@ -14,4 +14,12 @@
         ): void;
         public function AddMarker(string $name): void;
         public function AddNation(string $name): void;
+        public function GetAllConflicts(): array;
+        public function GetConflict(string $id): array;
+        public function GetAllEvents(): array;
+        public function GetEvent(string $id): array;
+        public function GetAllMarkers(): array;
+        public function GetMarker(string $id): array;
+        public function GetAllNations(): array;
+        public function GetNation(string $id): array;
     }
