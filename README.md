@@ -27,7 +27,7 @@ For hosting a localhost, we used:
 * WAMP 3.2.0
 
 ## Process for getting the website running locally
-Download WAMP via this link: https://www.wampserver.com/en/ and make sure to select "PHP 7.3.12" during the installation phase.
+Download WAMP via this link: https://www.wampserver.com/en/ and make sure to select "PHP 7.4" during the installation phase.
 WAMP makes it possible for you to emulate the website on your machine.
 
 After you're done with that, download Github desktop: https://desktop.github.com
