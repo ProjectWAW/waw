@@ -222,20 +222,6 @@
         }
 
         /**
-         * Add a new Source to the sources table
-         *
-         * @param string $type
-         * @param string $author
-         * @param string $title
-         * @param string $publisher
-         * @param string $date
-         */
-        public function AddSource(string $type, string $author, string $title, string $publisher, string $date): void
-        {
-            // TODO: Implement AddSource() method.
-        }
-
-        /**
          * Gets all Conflicts from the conflicts table
          *
          * @return array
@@ -349,27 +335,5 @@
         public function GetCountry(string $id): array
         {
             // TODO: Implement GetNation() method.
-        }
-
-        /**
-         * Gets all Sources from the sources table
-         *
-         * @return array
-         */
-        public function GetAllSources(): array
-        {
-            // TODO: Implement GetAllSources() method.
-        }
-
-        /**
-         * Gets a Source by ID from the sources table
-         *
-         * @param string $id
-         *
-         * @return array
-         */
-        public function GetSource(string $id): array
-        {
-            // TODO: Implement GetSource() method.
         }
     }
