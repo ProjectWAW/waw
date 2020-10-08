@@ -53,37 +53,6 @@
         }
 
         /**
-         * Adds a new Author to the authors table
-         *
-         * @param string $name
-         */
-        public function AddAuthor(string $name): void
-        {
-            try
-            {
-                $conn = $this->TryConnect();
-
-                if (!$conn)
-                {
-                    throw new RuntimeException("Database connection cannot be null");
-                }
-
-                $statement = $conn->prepare("INSERT INTO authors (id, name) VALUES (:id, :name)");
-
-                $id = uniqid('', true);
-
-                $statement->bindParam(':id', $id);
-                $statement->bindParam('name', $name);
-                $statement->execute();
-            }
-            catch (Exception $e)
-            {
-                // log error
-                echo "Adding Author failed: " . $e->getMessage();
-            }
-        }
-
-        /**
          * Adds a new Conflict to the conflicts table
          *
          * @param string $name
@@ -274,28 +243,6 @@
         public function AddSource(string $type, string $author, string $title, string $publisher, string $date): void
         {
             // TODO: Implement AddSource() method.
-        }
-
-        /**
-         * Gets all Authors in the authors table
-         *
-         * @return array
-         */
-        public function GetAllAuthors(): array
-        {
-            // TODO: Implement GetAllAuthors() method.
-        }
-
-        /**
-         * Gets an Author by ID from the authors table
-         *
-         * @param string $id
-         *
-         * @return array
-         */
-        public function GetAuthor(string $id): array
-        {
-            // TODO: Implement GetAuthor() method.
         }
 
         /**
