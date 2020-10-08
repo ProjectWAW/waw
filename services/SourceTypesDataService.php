@@ -82,7 +82,7 @@
                 $statement = $conn->prepare("SELECT * FROM source_types WHERE id = :id");
                 $statement->bindParam(':id', $id);
                 $statement->execute();
-                return $statement->fetch(PDO::FETCH_CLASS|PDO::FETCH_UNIQUE, 'SourceType');
+                return $statement->fetchObject('SourceType');
             }
             catch (Exception $e)
             {
