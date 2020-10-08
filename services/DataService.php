@@ -59,9 +59,29 @@
          */
         public function AddAuthor(string $name): void
         {
-            // TODO: Implement AddAuthor() method.
-        }
+            try
+            {
+                $conn = $this->TryConnect();
 
+                if (!$conn)
+                {
+                    throw new RuntimeException("Database connection cannot be null");
+                }
+
+                $statement = $conn->prepare("INSERT INTO authors (id, name) VALUES (:id, :name)");
+
+                $id = uniqid('', true);
+
+                $statement->bindParam(':id', $id);
+                $statement->bindParam('name', $name);
+                $statement->execute();
+            }
+            catch (Exception $e)
+            {
+                // log error
+                echo "Adding Author failed: " . $e->getMessage();
+            }
+        }
 
         /**
          * Adds a new Conflict to the conflicts table
@@ -90,7 +110,7 @@
             catch (Exception $e)
             {
                 // log error
-                echo "DB connection failed: " . $e->getMessage();
+                echo "Adding Conflict failed: " . $e->getMessage();
             }
         }
 
@@ -127,7 +147,7 @@
 
                 $statement = $conn->prepare("INSERT INTO map_events (
                         id, date, marker, location, text, css_class, conflict, country, source
-                        ) VALUES (:id, :date, :marker, :location, :text, :css_class, :conflict, :country, :sourceID)");
+                        ) VALUES (:id, :date, :marker, :location, :text, :css_class, :conflict, :country, :source)");
 
                 $id = uniqid('', true);
 
@@ -139,12 +159,13 @@
                 $statement->bindParam('css_class', $cssClass);
                 $statement->bindParam('conflict', $conflictID);
                 $statement->bindParam('country', $countryID);
+                $statement->bindParam('source', $sourceID);
                 $statement->execute();
             }
             catch (Exception $e)
             {
                 // log error
-                echo "DB connection failed: " . $e->getMessage();
+                echo "Adding Event failed: " . $e->getMessage();
             }
         }
 
@@ -175,12 +196,12 @@
             catch (Exception $e)
             {
                 // log error
-                echo "DB connection failed: " . $e->getMessage();
+                echo "Adding Marker failed: " . $e->getMessage();
             }
         }
 
         /**
-         * Adds a new Nation to the countries table
+         * Adds a new Country to the countries table
          *
          * @param string $name
          * @param string $status
@@ -188,7 +209,7 @@
          * @param string $party
          * @param string $headOfGovernment
          */
-        public function AddNation(
+        public function AddCountry(
           string $name,
           string $status,
           string $government,
@@ -227,7 +248,7 @@
             catch (Exception $e)
             {
                 // log error
-                echo "DB connection failed: " . $e->getMessage();
+                echo "Adding Country failed: " . $e->getMessage();
             }
         }
 
@@ -383,23 +404,23 @@
         }
 
         /**
-         * Gets all Nations in the countries table
+         * Gets all Countries in the countries table
          *
          * @return array
          */
-        public function GetAllNations(): array
+        public function GetAllCountries(): array
         {
             // TODO: Implement GetAllNations() method.
         }
 
         /**
-         * Gets a Nation by ID from the countries table
+         * Gets a Country by ID from the countries table
          *
          * @param string $id
          *
          * @return array
          */
-        public function GetNation(string $id): array
+        public function GetCountry(string $id): array
         {
             // TODO: Implement GetNation() method.
         }
