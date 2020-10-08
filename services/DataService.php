@@ -108,37 +108,6 @@
         }
 
         /**
-         * Adds a new Marker to the markers table
-         *
-         * @param string $name
-         */
-        public function AddMarker(string $name): void
-        {
-            try
-            {
-                $conn = $this->TryConnect();
-
-                if (!$conn)
-                {
-                    throw new RuntimeException("Database connection cannot be null");
-                }
-
-                $statement = $conn->prepare("INSERT INTO markers (id, name) VALUES (:id, :name)");
-
-                $id = uniqid('', true);
-
-                $statement->bindParam(':id', $id);
-                $statement->bindParam('name', $name);
-                $statement->execute();
-            }
-            catch (Exception $e)
-            {
-                // log error
-                echo "Adding Marker failed: " . $e->getMessage();
-            }
-        }
-
-        /**
          * Gets all Events from the map_events table
          *
          * @return array
@@ -170,27 +139,5 @@
         public function GetEventsByDate(string $date): array
         {
             // TODO: Implement GetEventsByDate() method.
-        }
-
-        /**
-         * Gets all Markers from the markers table
-         *
-         * @return array
-         */
-        public function GetAllMarkers(): array
-        {
-            // TODO: Implement GetAllMarkers() method.
-        }
-
-        /**
-         * Gets a Marker by ID from the markers table
-         *
-         * @param string $id
-         *
-         * @return array
-         */
-        public function GetMarker(string $id): array
-        {
-            // TODO: Implement GetMarker() method.
         }
     }

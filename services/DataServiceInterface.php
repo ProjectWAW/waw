@@ -17,7 +17,7 @@
           string $countryID,
           string $sourceID
         ): void;
-        public function AddMarker(string $name): void;
+//        public function AddMarker(string $name): void;
 //        public function AddCountry(
 //          string $name,
 //          string $status,
@@ -35,8 +35,8 @@
         public function GetAllEvents(): array;
         public function GetEvent(string $id): array;
         public function GetEventsByDate(string $date): array;
-        public function GetAllMarkers(): array;
-        public function GetMarker(string $id): array;
+//        public function GetAllMarkers(): array;
+//        public function GetMarker(string $id): array;
 //        public function GetAllCountries(): array;
 //        public function GetCountry(string $id): array;
 //        public function GetAllPublishers(): array;
