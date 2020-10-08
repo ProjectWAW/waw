@@ -6,7 +6,7 @@
         public function GetAll();
 
 //        public function AddAuthor(string $name): void;
-        public function AddConflict(string $name): void;
+//        public function AddConflict(string $name): void;
         public function AddEvent(
           string $date,
           string $markerID,
@@ -30,8 +30,8 @@
 //        public function AddSourceType(string $type): void;
 //        public function GetAllAuthors(): array;
 //        public function GetAuthor(string $id): array;
-        public function GetAllConflicts(): array;
-        public function GetConflict(string $id): array;
+//        public function GetAllConflicts(): array;
+//        public function GetConflict(string $id): array;
         public function GetAllEvents(): array;
         public function GetEvent(string $id): array;
         public function GetEventsByDate(string $date): array;
