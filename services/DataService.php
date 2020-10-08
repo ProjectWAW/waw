@@ -2,7 +2,6 @@
 
     include('DataServiceInterface.php');
 
-    // TODO: Convert to a smaller services
     abstract class DataService implements DataServiceInterface
     {
         private string $host;
