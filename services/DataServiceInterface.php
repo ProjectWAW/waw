@@ -25,7 +25,7 @@
           string $party,
           string $headOfGovernment
         ): void;
-        public function AddPublisher(string $name): void;
+//        public function AddPublisher(string $name): void;
         public function AddSource(string $type, string $author, string $title, string $publisher, string $date): void;
 //        public function AddSourceType(string $type): void;
 //        public function GetAllAuthors(): array;
@@ -39,8 +39,8 @@
         public function GetMarker(string $id): array;
         public function GetAllNations(): array;
         public function GetNation(string $id): array;
-        public function GetAllPublishers(): array;
-        public function GetPublisher(string $id): array;
+//        public function GetAllPublishers(): array;
+//        public function GetPublisher(string $id): array;
         public function GetAllSources(): array;
         public function GetSource(string $id): array;
 //        public function GetAllSourceTypes(): array;

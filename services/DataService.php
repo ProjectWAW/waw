@@ -222,16 +222,6 @@
         }
 
         /**
-         * Add a new Publisher to the publishers table
-         *
-         * @param string $name
-         */
-        public function AddPublisher(string $name): void
-        {
-            // TODO: Implement AddPublisher() method.
-        }
-
-        /**
          * Add a new Source to the sources table
          *
          * @param string $type
@@ -317,7 +307,6 @@
             // TODO: Implement GetEventsByDate() method.
         }
 
-
         /**
          * Gets all Markers from the markers table
          *
@@ -360,28 +349,6 @@
         public function GetCountry(string $id): array
         {
             // TODO: Implement GetNation() method.
-        }
-
-        /**
-         * Gets all Publishers from the publishers table
-         *
-         * @return array
-         */
-        public function GetAllPublishers(): array
-        {
-            // TODO: Implement GetAllPublishers() method.
-        }
-
-        /**
-         * Gets a Publisher by ID from the publishers table
-         *
-         * @param string $id
-         *
-         * @return array
-         */
-        public function GetPublisher(string $id): array
-        {
-            // TODO: Implement GetPublisher() method.
         }
 
         /**
