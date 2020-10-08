@@ -2,6 +2,9 @@
 
     interface DataServiceInterface
     {
+        public function Get(string $id): object;
+        public function GetAll();
+
         public function AddAuthor(string $name): void;
         public function AddConflict(string $name): void;
         public function AddEvent(
@@ -24,7 +27,7 @@
         ): void;
         public function AddPublisher(string $name): void;
         public function AddSource(string $type, string $author, string $title, string $publisher, string $date): void;
-        public function AddSourceType(string $type): void;
+//        public function AddSourceType(string $type): void;
         public function GetAllAuthors(): array;
         public function GetAuthor(string $id): array;
         public function GetAllConflicts(): array;
@@ -40,6 +43,6 @@
         public function GetPublisher(string $id): array;
         public function GetAllSources(): array;
         public function GetSource(string $id): array;
-        public function GetAllSourceTypes(): array;
-        public function GetSourceType(string $id): array;
+//        public function GetAllSourceTypes(): array;
+//        public function GetSourceType(string $id): array;
     }

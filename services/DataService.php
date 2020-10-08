@@ -4,7 +4,7 @@
     include('../models/Conflict.php');
 
     // TODO: Convert to a smaller services
-    class DataService implements DataServiceInterface
+    abstract class DataService implements DataServiceInterface
     {
         private string $host;
         private string $dbname;
@@ -32,7 +32,7 @@
          *
          * @return \PDO|null
          */
-        private function TryConnect(): ?PDO
+        public function TryConnect(): ?PDO
         {
             try
             {
@@ -277,16 +277,6 @@
         }
 
         /**
-         * Adds a new SourceType to the source_types table
-         *
-         * @param string $type
-         */
-        public function AddSourceType(string $type): void
-        {
-            // TODO: Implement AddSourceType() method.
-        }
-
-        /**
          * Gets all Authors in the authors table
          *
          * @return array
@@ -467,26 +457,5 @@
         public function GetSource(string $id): array
         {
             // TODO: Implement GetSource() method.
-        }
-
-        /**
-         * Gets all SourceTypes from the source_types table
-         *
-         * @return array
-         */
-        public function GetAllSourceTypes(): array
-        {
-            // TODO: Implement GetAllSourceTypes() method.
-        }
-
-        /**
-         * Gets a SourceType by ID from the source_types table
-         * @param string $id
-         *
-         * @return array
-         */
-        public function GetSourceType(string $id): array
-        {
-            // TODO: Implement GetSourceType() method.
         }
     }
