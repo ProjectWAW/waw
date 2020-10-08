@@ -18,13 +18,13 @@
           string $sourceID
         ): void;
         public function AddMarker(string $name): void;
-        public function AddNation(
-          string $name,
-          string $status,
-          string $government,
-          string $party,
-          string $headOfGovernment
-        ): void;
+//        public function AddCountry(
+//          string $name,
+//          string $status,
+//          string $government,
+//          string $party,
+//          string $headOfGovernment
+//        ): void;
 //        public function AddPublisher(string $name): void;
 //        public function AddSource(string $type, string $author, string $title, string $publisher, string $date): void;
 //        public function AddSourceType(string $type): void;
@@ -37,8 +37,8 @@
         public function GetEventsByDate(string $date): array;
         public function GetAllMarkers(): array;
         public function GetMarker(string $id): array;
-        public function GetAllNations(): array;
-        public function GetNation(string $id): array;
+//        public function GetAllCountries(): array;
+//        public function GetCountry(string $id): array;
 //        public function GetAllPublishers(): array;
 //        public function GetPublisher(string $id): array;
 //        public function GetAllSources(): array;

@@ -170,58 +170,6 @@
         }
 
         /**
-         * Adds a new Country to the countries table
-         *
-         * @param string $name
-         * @param string $status
-         * @param string $government
-         * @param string $party
-         * @param string $headOfGovernment
-         */
-        public function AddCountry(
-          string $name,
-          string $status,
-          string $government,
-          string $party,
-          string $headOfGovernment
-        ): void
-        {
-            try
-            {
-                $conn = $this->TryConnect();
-
-                if (!$conn)
-                {
-                    throw new RuntimeException("Database connection cannot be null");
-                }
-
-                $statement = $conn->prepare("INSERT INTO countries (
-                       id,
-                       name,
-                       status,
-                       government,
-                       party,
-                       head_of_government
-                       ) VALUES (:id, :name, :status, :government, :party, :headOfGovernment)");
-
-                $id = uniqid('', true);
-
-                $statement->bindParam(':id', $id);
-                $statement->bindParam('name', $name);
-                $statement->bindParam('status', $status);
-                $statement->bindParam('government', $government);
-                $statement->bindParam('party', $party);
-                $statement->bindParam('headOfGovernment', $headOfGovernment);
-                $statement->execute();
-            }
-            catch (Exception $e)
-            {
-                // log error
-                echo "Adding Country failed: " . $e->getMessage();
-            }
-        }
-
-        /**
          * Gets all Conflicts from the conflicts table
          *
          * @return array
@@ -313,27 +261,5 @@
         public function GetMarker(string $id): array
         {
             // TODO: Implement GetMarker() method.
-        }
-
-        /**
-         * Gets all Countries in the countries table
-         *
-         * @return array
-         */
-        public function GetAllCountries(): array
-        {
-            // TODO: Implement GetAllNations() method.
-        }
-
-        /**
-         * Gets a Country by ID from the countries table
-         *
-         * @param string $id
-         *
-         * @return array
-         */
-        public function GetCountry(string $id): array
-        {
-            // TODO: Implement GetNation() method.
         }
     }
