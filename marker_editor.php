@@ -94,9 +94,9 @@ select {
     <input type="text" id="source_publisher" name="source_publisher" placeholder="Phoenix"><br><hr>
 
     <label for="source_title">Source date published:</label><br>
-    <input type="text" id="source_date_published" name="source_date_published" placeholder="(Book/Journal - write the year and add 01-01) 2007-01-01 / (Website - write the full date) 2007-07-12"><br><hr>
+    <input type="text" id="source_date_published" name="source_date_published" placeholder="(Book/Journal - write the year and add 01-01) 2007-01-01 / (Website - write the full date) 2007-07-12">
 
-    <br><hr><input type="submit" id="submit" name="submit" class="submit" value="Submit">
+    <br><hr><input type="submit" id="submit" name="submit" class="submit" value="Submit"><br><br><br>
   </form>
 </div>
 </body>
