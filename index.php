@@ -354,7 +354,7 @@ span.fa-info {
     right: 0;
   }
   #sidebar {
-    top: 132px;
+    top: 131px;
     margin: 0;
     position: fixed;
     width: 100%;
@@ -408,7 +408,7 @@ span.fa-info {
     padding-top: 10px;
     padding-bottom: 10px;
   }
-  .collapse.in{
+  .collapse.in {
     display: block !important;
   }
 }
