@@ -100,7 +100,7 @@ function getCookie(name) {
 <script src="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
 <script src="server/L.Icon.FontAwesome.js"></script>
-<script src="js/leaflet.ajax.min.js"></script>
+<script src="leaflet/leaflet.ajax.min.js"></script>
 <title>Project: World at War</title>
 <style>
 #overlay{
