@@ -4,9 +4,9 @@
 <script>
 function checkNightMode() {
   if (localStorage.getItem("dark-mode") !== "on") {
-    $('head').append('<link rel="stylesheet" type="text/css" href="all.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="css/all.css">');
   } else {
-    $('head').append('<link rel="stylesheet" type="text/css" href="dark.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="css/dark.css">');
   }
 }
 </script>
