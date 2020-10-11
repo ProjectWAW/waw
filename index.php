@@ -27,7 +27,7 @@ if (isset($_GET['d'])) {
     $date_month = "December";
   }
   $date_year = substr($date, 0, 4);
-  $date_month2 = substr($date, 4,4);
+  $date_month2 = substr($date, 4, 4);
   $date_day = substr($date, 8, 10);
   $date_info = "".$date_day." ".$date_month." ".$date_year."";
 } else if (isset($_COOKIE['date'])) {
@@ -58,14 +58,14 @@ if (isset($_GET['d'])) {
     $date_month = "December";
   }
   $date_year = substr($date, 0, 4);
-  $date_month2 = substr($date, 4,4);
+  $date_month2 = substr($date, 4, 4);
   $date_day = substr($date, 8, 10);
   $date_info = "".$date_day." ".$date_month." ".$date_year."";
 } else {
   $date = "1935_10_03";
   $date_info = "03 October 1935";
   $date_year = substr($date, 0, 4);
-  $date_month2 = substr($date, 4,4);
+  $date_month2 = substr($date, 4, 4);
   $date_day = substr($date, 8, 10);
 }
 ?>
@@ -77,20 +77,15 @@ if (isset($_GET['d'])) {
 <link rel="stylesheet" href="https://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.css">
 <link rel="stylesheet" href="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
-<link rel="stylesheet" href="server/L.Icon.FontAwesome.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="leaflet/L.Icon.FontAwesome.css">
+<link rel="stylesheet" href="css/custom-icons.css">
 <script>
 function checkNightMode() {
   if (localStorage.getItem("dark-mode") !== "on") {
-    $('head').append('<link rel="stylesheet" type="text/css" href="all.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="css/all.css">');
   } else {
-    $('head').append('<link rel="stylesheet" type="text/css" href="dark.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="css/dark.css">');
   }
-}
-function getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
 }
 </script>
 <script src="https://kit.fontawesome.com/02faa02085.js"></script>
@@ -99,11 +94,11 @@ function getCookie(name) {
 <script src="https://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.js"></script>
 <script src="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
-<script src="server/L.Icon.FontAwesome.js"></script>
-<script src="js/leaflet.ajax.min.js"></script>
+<script src="leaflet/L.Icon.FontAwesome.js"></script>
+<script src="leaflet/leaflet.ajax.min.js"></script>
 <title>Project: World at War</title>
 <style>
-#overlay{
+#overlay {
   position: fixed;
   z-index: 99999;
   top: 0;
