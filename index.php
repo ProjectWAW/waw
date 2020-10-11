@@ -78,7 +78,7 @@ if (isset($_GET['d'])) {
 <link rel="stylesheet" href="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
 <link rel="stylesheet" href="leaflet/L.Icon.FontAwesome.css">
-<link rel="stylesheet" href="css/custom-icons.css">
+<link rel="stylesheet" href="custom-icons.css">
 <script>
 function checkNightMode() {
   if (localStorage.getItem("dark-mode") !== "on") {
