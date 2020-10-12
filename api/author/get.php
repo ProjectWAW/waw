@@ -1,7 +1,7 @@
 <?php
 
     require_once __DIR__ . "/../../config.php";
-    require_once SITE_ROOT."/services/AuthorsService.php";
+    require_once SITE_ROOT . "/services/AuthorsService.php";
 
     // Headers
     header('Access-Control-Allow-Origin: *');
