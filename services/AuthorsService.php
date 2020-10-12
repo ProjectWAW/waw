@@ -1,7 +1,8 @@
 <?php
 
-    include "DataService.php";
-    include "../models/Author.php";
+    require_once __DIR__ . "/../config.php";
+    require_once SITE_ROOT . "/services/DataService.php";
+    require_once SITE_ROOT . "/models/Author.php";
 
     class AuthorsService extends DataService
     {
