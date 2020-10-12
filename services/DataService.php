@@ -1,6 +1,7 @@
 <?php
 
-    include('DataServiceInterface.php');
+    require_once __DIR__ . "/../config.php";
+    require_once __DIR__ . '/DataServiceInterface.php';
 
     abstract class DataService implements DataServiceInterface
     {
@@ -11,18 +12,13 @@
 
         /**
          * DataService constructor.
-         *
-         * @param string $host
-         * @param string $dbname
-         * @param string $dbUsername
-         * @param string $dbPass
          */
-        public function __construct(string $host, string $dbname, string $dbUsername, string $dbPass)
+        public function __construct()
         {
-            $this->host = $host;
-            $this->dbname = $dbname;
-            $this->dbUsername = $dbUsername;
-            $this->dbPass = $dbPass;
+            $this->host = DB["host"];
+            $this->dbname = DB["db"];
+            $this->dbUsername = DB["user"];
+            $this->dbPass = DB["password"];
         }
 
         /**

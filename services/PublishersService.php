@@ -1,7 +1,8 @@
 <?php
 
-    include "DataService.php";
-    include "../models/Publisher.php";
+    require_once __DIR__ . "/../config.php";
+    require_once SITE_ROOT . "/services/DataService.php";
+    require_once SITE_ROOT . "/models/Publisher.php";
 
     class PublishersService extends DataService
     {
@@ -69,7 +70,7 @@
          *
          * @return Publisher
          */
-        public function Get(string $id): Publisher
+        public function Get(string $id): ?Publisher
         {
             try
             {
@@ -83,7 +84,15 @@
                 $statement = $conn->prepare("SELECT * FROM publishers WHERE id = :id");
                 $statement->bindParam(':id', $id);
                 $statement->execute();
-                return $statement->fetchObject('Publisher');
+
+                $result = $statement->fetchObject('Publisher');
+
+                if (is_bool($result))
+                {
+                    return null;
+                }
+
+                return $result;
             }
             catch (Exception $e)
             {
