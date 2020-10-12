@@ -1,9 +1,10 @@
 <?php
 
-    include "DataService.php";
-    include "../models/SourceType.php";
+    require_once __DIR__ . "/../config.php";
+    require_once SITE_ROOT . "/services/DataService.php";
+    require_once SITE_ROOT . "/models/SourceType.php";
 
-    class SourceTypesDataService extends DataService
+    class SourceTypesService extends DataService
     {
         /**
          * Adds a new SourceType to the source_types table
