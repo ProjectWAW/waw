@@ -753,6 +753,7 @@ mymap.createPane('axis_occupied');
 mymap.createPane('axis_puppet');
 mymap.createPane('axis');
 
+mymap.on('load', function() {
 mymap.getPane('neutral_zone').style.zIndex = 252;
 mymap.getPane('neutral').style.zIndex = 253;
 mymap.getPane('uf_occupied').style.zIndex = 254;
@@ -772,6 +773,7 @@ mymap.getPane('italy').style.zIndex = 267;
 mymap.getPane('axis_occupied').style.zIndex = 268;
 mymap.getPane('axis_puppet').style.zIndex = 269;
 mymap.getPane('axis').style.zIndex = 270;
+});
 
 for (let country of countries) {
   country_layers = L.layerGroup();
