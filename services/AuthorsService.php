@@ -3,15 +3,21 @@
     require_once __DIR__ . "/../config.php";
     require_once SITE_ROOT . "/services/DataService.php";
     require_once SITE_ROOT . "/models/Author.php";
+    require_once SITE_ROOT . "/vendor/autoload.php";
+
+    use Ramsey\Uuid\Uuid;
 
     class AuthorsService extends DataService
     {
+
         /**
          * Adds a new Author to the authors table
          *
          * @param string $name
+         *
+         * @return Author
          */
-        public function Add(string $name): void
+        public function Add(string $name): Author
         {
             try
             {
@@ -24,11 +30,17 @@
 
                 $statement = $conn->prepare("INSERT INTO authors (id, name) VALUES (:id, :name)");
 
-                $id = uniqid('', true);
+                $id = Uuid::uuid4();
 
-                $statement->bindParam(':id', $id);
-                $statement->bindParam('name', $name);
+                $newAuthor = new Author();
+                $newAuthor->id = $id;
+                $newAuthor->name = $name;
+
+                $statement->bindParam(':id', $newAuthor->id);
+                $statement->bindParam('name', $newAuthor->name);
                 $statement->execute();
+
+                return $newAuthor;
             }
             catch (Exception $e)
             {
