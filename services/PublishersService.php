@@ -11,7 +11,7 @@
          *
          * @param string $name
          */
-        public function AddPublisher(string $name): void
+        public function Add(string $name): void
         {
             try
             {

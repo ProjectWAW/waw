@@ -16,7 +16,7 @@
           json_decode(file_get_contents("php://input"), true, 512, JSON_THROW_ON_ERROR);
 
         $service = new PublishersService();
-        $service->AddPublisher($data["name"]);
+        $service->Add($data["name"]);
 
         http_response_code(204);
     }
