@@ -3,15 +3,21 @@
     require_once __DIR__ . "/../config.php";
     require_once SITE_ROOT . "/services/DataService.php";
     require_once SITE_ROOT . "/models/Publisher.php";
+    require_once SITE_ROOT . "/vendor/autoload.php";
+
+    use Ramsey\Uuid\Uuid;
 
     class PublishersService extends DataService
     {
+
         /**
          * Add a new Publisher to the publishers table
          *
          * @param string $name
+         *
+         * @return \Publisher
          */
-        public function Add(string $name): void
+        public function Add(string $name): Publisher
         {
             try
             {
@@ -24,11 +30,17 @@
 
                 $statement = $conn->prepare("INSERT INTO publishers (id, name) VALUES (:id, :name)");
 
-                $id = uniqid('', true);
+                $id = Uuid::uuid4();
 
-                $statement->bindParam(':id', $id);
-                $statement->bindParam(':name', $name);
+                $newPublisher = new Publisher();
+                $newPublisher->id = $id;
+                $newPublisher->name = $name;
+
+                $statement->bindParam(':id', $newPublisher->id);
+                $statement->bindParam(':name', $newPublisher->name);
                 $statement->execute();
+
+                return $newPublisher;
             }
             catch (Exception $e)
             {

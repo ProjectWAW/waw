@@ -16,9 +16,10 @@
           json_decode(file_get_contents("php://input"), true, 512, JSON_THROW_ON_ERROR);
 
         $service = new PublishersService();
-        $service->Add($data["name"]);
+        $publisher = $service->Add($data["name"]);
 
-        http_response_code(204);
+        http_response_code(200);
+        echo json_encode($publisher, JSON_THROW_ON_ERROR);
     }
     catch (Exception $e)
     {

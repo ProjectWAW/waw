@@ -1,7 +1,9 @@
 <?php
 
+    use Ramsey\Uuid\UuidInterface;
+
     class Publisher
     {
-        public string $id;
+        public UuidInterface $id;
         public string $name;
     }
