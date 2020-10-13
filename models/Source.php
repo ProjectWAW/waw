@@ -1,11 +1,13 @@
 <?php
 
+    use Ramsey\Uuid\UuidInterface;
+
     class Source
     {
-        public string $id;
-        public string $type;
-        public string $author;
+        public UuidInterface $id;
+        public UuidInterface $type;
+        public UuidInterface $author;
         public string $title;
-        public string $publisher;
+        public UuidInterface $publisher;
         public string $date;
     }

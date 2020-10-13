@@ -3,6 +3,9 @@
     require_once __DIR__ . "/../config.php";
     require_once SITE_ROOT . "/services/DataService.php";
     require_once SITE_ROOT . "/models/Source.php";
+    require_once SITE_ROOT . "/vendor/autoload.php";
+
+    use Ramsey\Uuid\Uuid;
 
     class SourcesService extends DataService
     {
@@ -14,8 +17,10 @@
          * @param string $title
          * @param string $publisher
          * @param string $date
+         *
+         * @return \Source
          */
-        public function Add(string $type, string $author, string $title, string $publisher, string $date): void
+        public function Add(string $type, string $author, string $title, string $publisher, string $date): Source
         {
             try
             {
@@ -31,7 +36,15 @@
                             VALUES (:id, :type, :author, :title, :publisher, :date)"
                 );
 
-                $id = uniqid('', true);
+                $id = Uuid::uuid4();
+
+                $newSource = new Source();
+                $newSource->id = $id;
+                $newSource->type = Uuid::fromString($type);
+                $newSource->author = Uuid::fromString($author);
+                $newSource->title = $title;
+                $newSource->publisher = Uuid::fromString($publisher);
+                $newSource->date = $date;
 
                 $statement->bindParam(':id', $id);
                 $statement->bindParam(':type', $type);
@@ -40,6 +53,8 @@
                 $statement->bindParam(':publisher', $publisher);
                 $statement->bindParam(':date', $date);
                 $statement->execute();
+
+                return $newSource;
             }
             catch (Exception $e)
             {
