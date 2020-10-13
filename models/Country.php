@@ -1,8 +1,10 @@
 <?php
 
+    use Ramsey\Uuid\UuidInterface;
+
     class Country
     {
-        public string $id;
+        public UuidInterface $id;
         public string $name;
         public string $status;
         public string $government;

@@ -1,7 +1,11 @@
 <?php
 
-    include "DataService.php";
-    include "../models/Country.php";
+    require_once __DIR__ . "/../config.php";
+    require_once SITE_ROOT . "/services/DataService.php";
+    require_once SITE_ROOT . "/models/Country.php";
+    require_once SITE_ROOT . "/vendor/autoload.php";
+
+    use Ramsey\Uuid\Uuid;
 
     class CountriesService extends DataService
     {
@@ -13,6 +17,8 @@
          * @param string $government
          * @param string $party
          * @param string $headOfGovernment
+         *
+         * @return \Country
          */
         public function Add(
           string $name,
@@ -20,7 +26,7 @@
           string $government,
           string $party,
           string $headOfGovernment
-        ): void
+        ): Country
         {
             try
             {
@@ -40,15 +46,25 @@
                        head_of_government
                        ) VALUES (:id, :name, :status, :government, :party, :headOfGovernment)");
 
-                $id = uniqid('', true);
+                $id = Uuid::uuid4();
 
-                $statement->bindParam(':id', $id);
-                $statement->bindParam('name', $name);
-                $statement->bindParam('status', $status);
-                $statement->bindParam('government', $government);
-                $statement->bindParam('party', $party);
-                $statement->bindParam('headOfGovernment', $headOfGovernment);
+                $newCountry = new Country();
+                $newCountry->id = $id;
+                $newCountry->name = $name;
+                $newCountry->status = $status;
+                $newCountry->government = $government;
+                $newCountry->party = $party;
+                $newCountry->headOfGovernment = $headOfGovernment;
+
+                $statement->bindParam(':id', $newCountry->id);
+                $statement->bindParam('name', $newCountry->name);
+                $statement->bindParam('status', $newCountry->status);
+                $statement->bindParam('government', $newCountry->government);
+                $statement->bindParam('party', $newCountry->party);
+                $statement->bindParam('headOfGovernment', $newCountry->headOfGovernment);
                 $statement->execute();
+
+                return $newCountry;
             }
             catch (Exception $e)
             {
