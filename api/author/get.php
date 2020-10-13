@@ -11,7 +11,8 @@
     {
         $service = new AuthorsService();
 
-        if (isset($_GET['id'])) {
+        if (isset($_GET['id']))
+        {
             $response = $service->Get($_GET['id']);
 
             if ($response === null)
