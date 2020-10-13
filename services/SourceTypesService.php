@@ -3,6 +3,9 @@
     require_once __DIR__ . "/../config.php";
     require_once SITE_ROOT . "/services/DataService.php";
     require_once SITE_ROOT . "/models/SourceType.php";
+    require_once SITE_ROOT . "/vendor/autoload.php";
+
+    use Ramsey\Uuid\Uuid;
 
     class SourceTypesService extends DataService
     {
@@ -10,8 +13,10 @@
          * Adds a new SourceType to the source_types table
          *
          * @param string $type
+         *
+         * @return \SourceType
          */
-        public function Add(string $type): void
+        public function Add(string $type): SourceType
         {
             try
             {
@@ -24,11 +29,17 @@
 
                 $statement = $conn->prepare("INSERT INTO source_types (id, type) VALUES (:id, :type)");
 
-                $id = uniqid('', true);
+                $id = Uuid::uuid4();
 
-                $statement->bindParam(':id', $id);
-                $statement->bindParam(':type', $type);
+                $newSourceType = new SourceType();
+                $newSourceType->id = $id;
+                $newSourceType->type = $type;
+
+                $statement->bindParam(':id', $newSourceType->id);
+                $statement->bindParam(':type', $newSourceType->type);
                 $statement->execute();
+
+                return $newSourceType;
             }
             catch (Exception $e)
             {

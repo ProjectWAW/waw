@@ -1,7 +1,9 @@
 <?php
 
+    use Ramsey\Uuid\UuidInterface;
+
     class SourceType
     {
-        public string $id;
+        public UuidInterface $id;
         public string $type;
     }

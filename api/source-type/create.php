@@ -15,10 +15,11 @@
         $data =
           json_decode(file_get_contents("php://input"), true, 512, JSON_THROW_ON_ERROR);
 
-        $service = new PublishersService();
-        $service->AddPublisher($data["type"]);
+        $service = new SourceTypesService();
+        $sourceType = $service->Add($data["type"]);
 
-        http_response_code(204);
+        http_response_code(200);
+        echo json_encode($sourceType, JSON_THROW_ON_ERROR);
     }
     catch (Exception $e)
     {
