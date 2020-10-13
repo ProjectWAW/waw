@@ -9,7 +9,6 @@
 
     class AuthorsService extends DataService
     {
-
         /**
          * Adds a new Author to the authors table
          *

@@ -9,7 +9,6 @@
 
     class PublishersService extends DataService
     {
-
         /**
          * Add a new Publisher to the publishers table
          *
