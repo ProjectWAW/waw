@@ -1,7 +1,11 @@
 <?php
 
-    include "DataService.php";
-    include "../models/Marker.php";
+    require_once __DIR__ . "/../config.php";
+    require_once SITE_ROOT . "/services/DataService.php";
+    require_once SITE_ROOT . "/models/Marker.php";
+    require_once SITE_ROOT . "/vendor/autoload.php";
+
+    use Ramsey\Uuid\Uuid;
 
     class MarkersService extends DataService
     {
@@ -9,8 +13,10 @@
          * Adds a new Marker to the markers table
          *
          * @param string $name
+         *
+         * @return \Marker
          */
-        public function Add(string $name): void
+        public function Add(string $name): Marker
         {
             try
             {
@@ -23,11 +29,17 @@
 
                 $statement = $conn->prepare("INSERT INTO markers (id, name) VALUES (:id, :name)");
 
-                $id = uniqid('', true);
+                $id = Uuid::uuid4();
 
-                $statement->bindParam(':id', $id);
-                $statement->bindParam('name', $name);
+                $newMarker = new Marker();
+                $newMarker->id = $id;
+                $newMarker->name = $name;
+
+                $statement->bindParam(':id', $newMarker->id);
+                $statement->bindParam('name', $newMarker->name);
                 $statement->execute();
+
+                return $newMarker;
             }
             catch (Exception $e)
             {
