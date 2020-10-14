@@ -1,7 +1,11 @@
 <?php
 
-    include "DataService.php";
-    include "../models/MapEvent.php";
+    require_once __DIR__ . "/../config.php";
+    require_once SITE_ROOT . "/services/DataService.php";
+    require_once SITE_ROOT . "/models/MapEvent.php";
+    require_once SITE_ROOT . "/vendor/autoload.php";
+
+    use Ramsey\Uuid\Uuid;
 
     class MapEventsService extends DataService
     {
@@ -16,6 +20,8 @@
          * @param string $conflictID
          * @param string $countryID
          * @param string $sourceID
+         *
+         * @return \MapEvent
          */
         public function Add(
           string $date,
@@ -26,7 +32,7 @@
           string $conflictID,
           string $countryID,
           string $sourceID
-        ): void {
+        ): MapEvent {
             try
             {
                 $conn = $this->TryConnect();
@@ -40,18 +46,31 @@
                         id, date, marker, location, text, css_class, conflict, country, source
                         ) VALUES (:id, :date, :marker, :location, :text, :css_class, :conflict, :country, :source)");
 
-                $id = uniqid('', true);
+                $id = Uuid::uuid4();
 
-                $statement->bindParam(':id', $id);
-                $statement->bindParam('date', $date);
-                $statement->bindParam('marker', $markerID);
-                $statement->bindParam('location', $location);
-                $statement->bindParam('text', $text);
-                $statement->bindParam('css_class', $cssClass);
-                $statement->bindParam('conflict', $conflictID);
-                $statement->bindParam('country', $countryID);
-                $statement->bindParam('source', $sourceID);
+                $newEvent = new MapEvent();
+                $newEvent->id = $id;
+                $newEvent->date = $date;
+                $newEvent->marker = Uuid::fromstring($markerID);
+                $newEvent->location = json_encode($location, JSON_THROW_ON_ERROR);
+                $newEvent->text = $text;
+                $newEvent->cssClass = $cssClass;
+                $newEvent->conflict = Uuid::fromstring($conflictID);
+                $newEvent->country = Uuid::fromstring($countryID);
+                $newEvent->source = Uuid::fromstring($sourceID);
+
+                $statement->bindParam(':id', $newEvent->id);
+                $statement->bindParam('date', $newEvent->date);
+                $statement->bindParam('marker', $newEvent->marker);
+                $statement->bindParam('location', $newEvent->location);
+                $statement->bindParam('text', $newEvent->text);
+                $statement->bindParam('css_class', $newEvent->cssClass);
+                $statement->bindParam('conflict', $newEvent->conflict);
+                $statement->bindParam('country', $newEvent->country);
+                $statement->bindParam('source', $newEvent->source);
                 $statement->execute();
+
+                return $newEvent;
             }
             catch (Exception $e)
             {
