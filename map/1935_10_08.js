@@ -182,7 +182,7 @@ countries = [
   ["yunnan_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["china", uf, "1935_10_03", "uf", null],
 
-  ["chinese_soviet_republic", comintern, "1935_10_08", "comintern", null],
+  ["chinese_soviet_republic", comintern, "1935_10_08", "comintern", stripes_comintern],
 
   ["east_chahar", axis_puppet, "1935_10_03", "axis_puppet", null],
   ["manchukuo", axis_puppet, "1935_10_03", "axis_puppet", null],

@@ -1,17 +1,1 @@
-{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {"Name": "", "Status": "", "Government": "", "Party": "", "HoG": ""},
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            
-          ]
-        ]
-      }
-    }
-  ]
-}
+{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"Name":"","Status":"","Government":"","Party":"","HoG":""},"geometry":{"type":"Polygon","coordinates":[[[-79.628906,0.35156],[-75.058594,-1.230374],[-79.277344,-4.915833],[-79.628906,0.35156]]]}}]}

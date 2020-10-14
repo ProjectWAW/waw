@@ -184,7 +184,7 @@ countries = [
   ["china", uf, "1935_10_03", "uf", null],
 
   ["chinese_soviet_republic", comintern, "1935_10_22", "neutral", null],
-  ["brazil_communist_uprising", comintern, "1935_11_23", "comintern", stripes_comintern],
+  ["brazil_communist_uprising", comintern, "1935_11_23", "comintern", null],
 
   ["east_chahar", axis_puppet, "1935_10_03", "axis_puppet", null],
   ["manchukuo", axis_puppet, "1935_10_03", "axis_puppet", null],
