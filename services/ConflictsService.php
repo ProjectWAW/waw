@@ -1,7 +1,11 @@
 <?php
 
-    include "DataService.php";
-    include "../models/Conflict.php";
+    require_once __DIR__ . "/../config.php";
+    require_once SITE_ROOT . "/services/DataService.php";
+    require_once SITE_ROOT . "/models/Conflict.php";
+    require_once SITE_ROOT . "/vendor/autoload.php";
+
+    use Ramsey\Uuid\Uuid;
 
     class ConflictsService extends DataService
     {
@@ -9,8 +13,10 @@
          * Adds a new Conflict to the conflicts table
          *
          * @param string $name
+         *
+         * @return \Conflict
          */
-        public function Add(string $name): void
+        public function Add(string $name): Conflict
         {
             try
             {
@@ -23,11 +29,17 @@
 
                 $statement = $conn->prepare("INSERT INTO conflicts (id, name) VALUES (:id, :name)");
 
-                $id = uniqid('', true);
+                $id = Uuid::uuid4();
 
-                $statement->bindParam(':id', $id);
-                $statement->bindParam('name', $name);
+                $newConflict = new Conflict();
+                $newConflict->id = $id;
+                $newConflict->name = $name;
+
+                $statement->bindParam(':id', $newConflict->id);
+                $statement->bindParam('name', $newConflict->name);
                 $statement->execute();
+
+                return $newConflict;
             }
             catch (Exception $e)
             {
