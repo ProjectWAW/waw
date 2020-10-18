@@ -377,7 +377,7 @@
       zoomControl: true
     }).addTo(mymap);
 
- /*var topleft = L.latLng(37.291535, 115.378418),
+ var topleft = L.latLng(37.291535, 115.378418),
 	topright   = L.latLng(38.539573, 123.068848),
   bottomleft = L.latLng(34.633208, 115.290527);
   
@@ -385,7 +385,7 @@
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/621362697593683993/727962399482576956/unknown.png", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fweaponsandwarfare.files.wordpress.com%2F2016%2F02%2F1195px-batalla_de_guadalajara-_avance_italiano_8-11_marzo_1937.jpg&f=1&nofb=1", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
@@ -397,14 +397,14 @@ function repositionImage() {
 		
 		marker1.on('drag dragend', repositionImage);
 		marker2.on('drag dragend', repositionImage);
-		marker3.on('drag dragend', repositionImage);*/
+		marker3.on('drag dragend', repositionImage);
 
     function start(val) {
 
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1937_02_17/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1937_03_08/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);
