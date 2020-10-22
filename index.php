@@ -691,16 +691,30 @@ var normal = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_
   attribution: ' Map data &copy; <a href="">PWAW</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
   minZoom: 3,
-  maxZoom: 13
+  maxZoom: 14
 });
 
 var sattelite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { // https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x} // https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}
   attribution: ' Map data &copy; <a href="">PWAW</a> &copy; Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
   minZoom: 3,
-  maxZoom: 13
+  maxZoom: 14
 });
 
 normal.addTo(mymap);
+
+function clearMap(){
+    for(i in mymap._layers){        
+        if(mymap._layers[i]._path != undefined)
+        {
+            try{
+              mymap.removeLayer(mymap._layers[i]);
+            }
+            catch(e){
+                console.log("problem with " + e + mymap._layers[i]);
+            }
+        }
+    }
+}
 
 date = '<?php echo $date;?>';
 
@@ -1167,6 +1181,8 @@ $(function() {
       $('#keys-content').load('keys/keys_1.php');
     }
 
+    clearMap();
+
     $.getScript('map/'+date+'.js', function() {
       for (let country of countries) {
         country_layers = L.layerGroup();
@@ -1387,6 +1403,8 @@ $(function() {
     if (date.substr(0, 4) == "1935") {
       $('#keys-content').load('keys/keys_1.php');
     }
+
+    clearMap();
 
     $.getScript('map/'+date+'.js', function() {
       for (let country of countries) {
