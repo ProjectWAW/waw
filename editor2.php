@@ -385,7 +385,7 @@
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fweaponsandwarfare.files.wordpress.com%2F2016%2F02%2F1195px-batalla_de_guadalajara-_avance_italiano_8-11_marzo_1937.jpg&f=1&nofb=1", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Map_of_East_Hebei_Autonomous_Council.svg/1200px-Map_of_East_Hebei_Autonomous_Council.svg.png", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
@@ -404,7 +404,7 @@ function repositionImage() {
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1937_06_22/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1935_11_15/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);
