@@ -1,5 +1,5 @@
 countries = [
-  ["neutral_zone_iraq", neutral_zone, "1935_10_03", "neutral_zone", null],
+  ["neutral_zone_iraq", neutral_zone, "1935_10_03", "neutral_zone", stripes_zone],
 
   ["afghanistan", neutral, "1935_10_03", "neutral", null],
   ["albania", neutral, "1935_10_03", "neutral", null],
@@ -181,12 +181,12 @@ countries = [
   ["tunganistan", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["xikang_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["yunnan_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
-  ["china", uf, "1935_10_03", "uf", null],
+  ["china", uf, "1935_12_18", "uf", null],
 
   ["chinese_soviet_republic", comintern, "1935_10_22", "neutral", null],
 
   ["east_chahar", axis_puppet, "1935_10_03", "axis_puppet", null],
-  ["east_hebei", axis_puppet, "1935_11_15", "neutral", null],
+  ["east_hebei", axis_puppet, "1935_11_25", "axis_puppet", null],
   ["manchukuo", axis_puppet, "1935_10_03", "axis_puppet", null],
   ["japan", axis, "1935_10_03", "axis", null],
   ["japanese_korea", axis_puppet, "1935_10_03", "axis_puppet", null],

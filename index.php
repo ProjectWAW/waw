@@ -466,6 +466,7 @@ var stripes_axis = new L.StripePattern({weight: 5, color: 'black', spaceWeight: 
 var stripes_comintern = new L.StripePattern({weight: 5, color: '#b30000', spaceWeight: 5, angle: 45});
 var stripes_finland = new L.StripePattern({weight: 5, color: 'purple', spaceWeight: 5, angle: 45});
 var stripes_neutral = new L.StripePattern({weight: 5, color: '#ffad46', spaceWeight: 5, angle: 45});
+var stripes_zone = new L.StripePattern({weight: 5, color: '#ffad46', spaceWeight: 2, angle: 45});
 
 <?php include 'markers.js';?>
 </script>
