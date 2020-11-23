@@ -33,6 +33,7 @@ countries = [
   ["hungary", neutral, "1935_10_03", "neutral", null],
   ["iceland", neutral, "1935_10_03", "neutral", null],
   ["ifni", neutral, "1935_10_03", "neutral", null],
+  ["international_concessions", neutral, "1935_10_03", "neutral", null],
   ["iran", neutral, "1935_10_03", "neutral", null],
   ["iraq", neutral, "1935_10_03", "neutral", null],
   ["ireland", neutral, "1935_10_03", "neutral", null],
@@ -80,6 +81,7 @@ countries = [
   ["yemen", neutral, "1935_10_03", "neutral", null],
   ["yugoslavia", neutral, "1935_10_03", "neutral", null],
 
+  ["aden_protectorate", neutral, "1935_10_03", "neutral", null],
   ["australia", neutral, "1935_10_03", "neutral", null],
   ["bahamas", neutral, "1935_10_03", "neutral", null],
   ["bahrain", neutral, "1935_10_03", "neutral", null],
@@ -88,6 +90,7 @@ countries = [
   ["bechuanaland", neutral, "1935_10_03", "neutral", null],
   ["bermuda", neutral, "1935_10_03", "neutral", null],
   ["british_burma", neutral, "1935_10_03", "neutral", null],
+  ["british_concessions", neutral, "1935_10_03", "neutral", null],
   ["british_guiana", neutral, "1935_10_03", "neutral", null],
   ["british_honduras", neutral, "1935_10_03", "neutral", null],
   ["british_hong_kong", neutral, "1935_10_03", "neutral", null],
@@ -138,6 +141,7 @@ countries = [
 
   ["france", neutral, "1935_10_03", "neutral", null],
   ["french_cameroon", neutral, "1935_10_03", "neutral", null],
+  ["french_concessions", neutral, "1935_10_03", "neutral", null],
   ["french_equatorial_africa", neutral, "1935_10_03", "neutral", null],
   ["french_guiana", neutral, "1935_10_03", "neutral", null],
   ["french_india", neutral, "1935_10_03", "neutral", null],
@@ -189,6 +193,7 @@ countries = [
   ["east_hebei", axis_puppet, "1935_11_25", "axis_puppet", null],
   ["manchukuo", axis_puppet, "1935_10_03", "axis_puppet", null],
   ["japan", axis, "1935_10_03", "axis", null],
+  ["japanese_concessions", axis_puppet, "1935_10_03", "axis_puppet", null],
   ["japanese_korea", axis_puppet, "1935_10_03", "axis_puppet", null],
   ["japanese_taiwan", axis_puppet, "1935_10_03", "axis_puppet", null],
   ["kwantung_leased_territory", axis_puppet, "1935_10_03", "axis_puppet", null],
@@ -197,6 +202,7 @@ countries = [
   ["ethiopia", finland, "1936_01_20", "neutral", null],
 
   ["italy", italy, "1935_10_03", "italy", null],
+  ["italian_concessions", italy_puppet, "1935_10_03", "italy_puppet", null],
   ["italian_ethiopia", italy_occupied, "1936_01_20", "neutral", null],
   ["italian_eritrea", italy_puppet, "1935_11_23", "italy_puppet", null],
   ["italian_libya", italy_puppet, "1935_10_03", "italy_puppet", null],
