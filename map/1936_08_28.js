@@ -164,7 +164,7 @@ countries = [
   ["chengdu_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["chongqing_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["hebei_chahar_council", uf_puppet, "1935_12_18", "uf_puppet", null],
-  ["hunan_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
+  ["hunan_clique", uf_puppet, "1936_07_18", "uf_puppet", null],
   ["mianyang_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["nanchong_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["ningxia_ma_clique", uf_puppet, "1935_10_22", "uf_puppet", null],
@@ -179,6 +179,7 @@ countries = [
   ["yunnan_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["china", uf, "1936_07_19", "uf", null],
 
+  ["hunan_invasion", allies_occupied, "1936_07_18", "allies_occupied", null],
   ["new_guanxi_clique", allies, "1935_10_03", "allies", null],
 
   ["chinese_soviet_republic", comintern, "1935_10_22", "comintern", null],

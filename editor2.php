@@ -249,6 +249,7 @@
   <option value="hebei_chahar_council">hebei_chahar_council</option>
   <option value="honduras">honduras</option>
   <option value="hunan_clique">hunan_clique</option>
+  <option value="hunan_invasion">hunan_invasion</option>
   <option value="hungary">hungary</option>
   <option value="iceland">iceland</option>
   <option value="ifni">ifni</option>
@@ -405,7 +406,7 @@ function repositionImage() {
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1935_10_28/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1936_06_09/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);
