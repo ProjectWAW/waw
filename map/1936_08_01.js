@@ -170,7 +170,6 @@ countries = [
   ["ningxia_ma_clique", uf_puppet, "1935_10_22", "uf_puppet", null],
   ["northeastern_army", uf_puppet, "1935_10_23", "uf_puppet", null],
   ["ningxia_ma_clique", uf_puppet, "1935_10_04", "uf_puppet", null],
-  ["pailingmiao_council", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["qinghai_ma_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["shandong_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["shanxi_clique", uf_puppet, "1935_10_23", "uf_puppet", null],
@@ -184,9 +183,9 @@ countries = [
 
   ["chinese_soviet_republic", comintern, "1935_10_22", "comintern", null],
 
-  ["east_chahar", axis_puppet, "1935_10_03", "axis_puppet", null],
   ["east_hebei", axis_puppet, "1935_11_15", "axis_puppet", null],
   ["manchukuo", axis_puppet, "1935_10_03", "axis_puppet", null],
+  ["mongol_military_government", axis_puppet, "1936_05_12", "axis_puppet", null],
   ["japan", axis, "1935_10_03", "axis", null],
   ["japanese_concessions", axis_puppet, "1935_10_03", "axis_puppet", null],
   ["japanese_korea", axis_puppet, "1935_10_03", "axis_puppet", null],
