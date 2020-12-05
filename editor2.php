@@ -338,6 +338,7 @@
   <option value="spanish_africa">spanish_africa</option>
   <option value="spanish_morocco">spanish_morocco</option>
   <option value="spanish_sahara">spanish_sahara</option>
+  <option value="suiyuan_occupied">suiyuan_occupied</option>
   <option value="swaziland">swaziland</option>
   <option value="sweden">sweden</option>
   <option value="switzerland">switzerland</option>
@@ -406,7 +407,7 @@ function repositionImage() {
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1935_10_24/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1936_12_09/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);

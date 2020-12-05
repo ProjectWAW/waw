@@ -175,19 +175,18 @@ countries = [
   ["mianyang_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["nanchong_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["new_guanxi_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
-  ["ningxia_ma_clique", uf_puppet, "1935_10_22", "neutral", null],
-  ["northeastern_army", uf_puppet, "1935_10_23", "neutral", null],
-  ["ningxia_ma_clique", uf_puppet, "1935_10_04", "uf_puppet", null],
+  ["ningxia_ma_clique", uf_puppet, "1935_10_25", "uf_puppet", null],
+  ["northeastern_army", uf_puppet, "1935_10_25", "uf_puppet", null],
   ["pailingmiao_council", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["qinghai_ma_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["shandong_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
-  ["shanxi_clique", uf_puppet, "1935_10_23", "uf_puppet", null],
+  ["shanxi_clique", uf_puppet, "1935_10_25", "uf_puppet", null],
   ["tunganistan", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["xikang_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["yunnan_clique", uf_puppet, "1935_10_03", "uf_puppet", null],
   ["china", uf, "1935_12_18", "uf", null],
 
-  ["chinese_soviet_republic", comintern, "1935_10_22", "neutral", null],
+  ["chinese_soviet_republic", comintern, "1935_10_25", "comintern", null],
   
   ["ethiopia", finland, "1935_12_18", "neutral", null],
   
