@@ -1,5 +1,5 @@
 countries = [
-  ["neutral_zone_iraq", neutral_zone, "1935_10_03", "neutral_zone", null],
+  ["neutral_zone_iraq", neutral_zone, "1935_10_03", "neutral_zone", stripes_zone],
 
   ["afghanistan", neutral, "1935_10_03", "neutral", null],
   ["albania", neutral, "1935_10_03", "neutral", null],
@@ -201,7 +201,7 @@ countries = [
 
   ["italy", italy, "1935_10_03", "italy", null],
   ["italian_concessions", italy_puppet, "1935_10_03", "italy_puppet", null],
-  ["italian_ethiopia", italy_occupied, "1935_12_17", "neutral", null],
+  ["italian_ethiopia", italy_occupied, "1935_12_16", "neutral", null],
   ["italian_eritrea", italy_puppet, "1935_11_23", "italy_puppet", null],
   ["italian_libya", italy_puppet, "1935_10_03", "italy_puppet", null],
   ["italian_somalia", italy_puppet, "1935_10_03", "italy_puppet", null]

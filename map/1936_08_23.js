@@ -1,5 +1,5 @@
 countries = [
-  ["neutral_zone_iraq", neutral_zone, "1935_10_03", "neutral_zone", null],
+  ["neutral_zone_iraq", neutral_zone, "1935_10_03", "neutral_zone", stripes_zone],
   
   ["afghanistan", neutral, "1935_10_03", "neutral", null],
   ["albania", neutral, "1935_10_03", "neutral", null],

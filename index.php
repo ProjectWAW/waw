@@ -462,11 +462,13 @@ var virus = 'fas fa-virus'
 var iconColor = '#FFF'
 var markerStrokeWidth = 1
 
-var stripes_axis = new L.StripePattern({weight: 5, color: 'black', spaceWeight: 5, angle: 45});
-var stripes_comintern = new L.StripePattern({weight: 5, color: '#b30000', spaceWeight: 5, angle: 45});
-var stripes_finland = new L.StripePattern({weight: 5, color: 'purple', spaceWeight: 5, angle: 45});
-var stripes_neutral = new L.StripePattern({weight: 5, color: '#ffad46', spaceWeight: 5, angle: 45});
-var stripes_zone = new L.StripePattern({weight: 5, color: '#ffad46', spaceWeight: 2, angle: 45});
+var stripes_axis = new L.StripePattern({weight: 5, color: 'black', spaceWeight: 5, angle: 45})
+var stripes_italy_occupied = new L.StripePattern({weight: 5, color: '#80c904', spaceWeight: 5, angle: 45})
+var stripes_italy_puppet = new L.StripePattern({weight: 5, color: '#66a103', spaceWeight: 5, angle: 45})
+var stripes_comintern = new L.StripePattern({weight: 5, color: '#b30000', spaceWeight: 5, angle: 45})
+var stripes_finland = new L.StripePattern({weight: 5, color: 'purple', spaceWeight: 5, angle: 45})
+var stripes_neutral = new L.StripePattern({weight: 5, color: '#ffad46', spaceWeight: 5, angle: 45})
+var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight: 2, angle: 45})
 
 <?php include 'markers.js';?>
 </script>
@@ -672,9 +674,12 @@ function forEachFeature(feature, layer) {
 }
 
 stripes_axis.addTo(mymap);
+stripes_italy_occupied.addTo(mymap);
+stripes_italy_puppet.addTo(mymap);
 stripes_comintern.addTo(mymap);
 stripes_finland.addTo(mymap);
 stripes_neutral.addTo(mymap);
+stripes_zone.addTo(mymap);
 
 mymap.createPane('neutral_zone');
 mymap.createPane('neutral');
