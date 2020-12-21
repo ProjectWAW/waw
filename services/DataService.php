@@ -3,43 +3,46 @@
     require_once __DIR__ . "/../config.php";
     require_once __DIR__ . '/DataServiceInterface.php';
 
+    use MongoDB\Client;
+    use MongoDB\Database;
+
     abstract class DataService implements DataServiceInterface
     {
         private string $host;
-        private string $dbname;
-        private string $dbUsername;
-        private string $dbPass;
 
         /**
          * DataService constructor.
          */
         public function __construct()
         {
-            $this->host = DB["host"];
-            $this->dbname = DB["db"];
-            $this->dbUsername = DB["user"];
-            $this->dbPass = DB["password"];
+            $this->host = config["host"];
         }
 
         /**
          * Tries to establish DB connection, logs an exception and returns null if unable
          *
-         * @return \PDO|null
+         * @return \MongoDB\Database|null
          */
-        public function TryConnect(): ?PDO
+        public function TryConnect(): ?Database
         {
             try
             {
-                $conn = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->dbUsername, $this->dbPass);
-                $conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-                $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $db = (new Client($this->host))->waw;
 
-                return $conn;
+                if (!$db) {
+                    throw new \RuntimeException("Database connection is Null");
+                }
+
+                return $db;
             }
-            catch (PDOException $e)
+            catch (\MongoDB\Exception\Exception $e)
             {
-                //logSomeError("Something is off" . mysqli_connect_error());
+                //TODO: Add logging
+                echo "DB Connection Failed: " . $e->getMessage();
+            }
+            catch (\RuntimeException $e)
+            {
+                //TODO: Add logging
                 echo "DB Connection Failed: " . $e->getMessage();
             }
 

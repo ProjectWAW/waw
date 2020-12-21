@@ -1,6 +1,3 @@
 {
-  "host": "",
-  "db": "",
-  "user": "",
-  "password": ""
+  "host": "mongodb://localhost:27017"
 }
