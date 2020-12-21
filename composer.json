@@ -1,5 +1,8 @@
 {
     "require": {
-        "ramsey/uuid": "^4.1"
+        "ramsey/uuid": "^4.1",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "mongodb/mongodb": "^1.8"
     }
 }
