@@ -650,7 +650,7 @@ function clearMap(){
 date = '<?php echo $date;?>';
 
 if (date.substr(0, 4) == "1935" || date.substr(0, 7) == "1936_01" || date.substr(0, 7) == "1936_02" || date.substr(0, 7) == "1936_03" || date.substr(0, 7) == "1936_04" || date.substr(0, 7) == "1936_05" || date.substr(0, 7) == "1936_06" || date.substr(0, 9) == "1936_07_0" || date.substr(0, 10) == "1936_07_11" || date.substr(0, 10) == "1936_07_12" || date.substr(0, 10) == "1936_07_13" || date.substr(0, 10) == "1936_07_14") {
-  mymap.setView([9.013776, 38.754616], 5);
+  mymap.setView([9.013776, 38.754616], 6);
 } else if (date.substr(0, 10) == "1936_07_15" || date.substr(0, 10) == "1936_07_16" || date.substr(0, 10) == "1936_07_17" || date.substr(0, 10) == "1936_07_18" || date.substr(0, 10) == "1936_07_19" || date.substr(0, 9) == "1936_07_2"  || date.substr(0, 9) == "1936_07_3" || date.substr(0, 7) == "1936_08" || date.substr(0, 7) == "1936_09" || date.substr(0, 7) == "1936_10" || date.substr(0, 7) == "1936_11" || date.substr(0, 7) == "1936_12") {
   mymap.setView([40.418201, -3.704109], 6);
 } else {
