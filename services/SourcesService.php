@@ -43,19 +43,24 @@
          *
          * @return array
          */
-        public function GetAll(): array
+        public function GetAll(): ?array
         {
             try
             {
-                $collection = $this->GetCollection("sources");
+                $collection = $this->GetCollection("Sources");
 
-                return $collection->find()->toArray();
+//                return $collection->find()->toArray();
+
+                $jm = new JsonMapper();
+                return $jm->mapArray($collection->find()->toArray(), array(), "Source");
             }
             catch (Exception $e)
             {
                 // log error
                 echo "Getting all Sources failed: " . $e->getMessage();
             }
+
+            return null;
         }
 
         /**
