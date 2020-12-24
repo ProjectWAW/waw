@@ -69,10 +69,11 @@
         {
             try
             {
-                $collection = $this->GetCollection("sources");
+                $collection = $this->GetCollection("Sources");
 
-                //TODO: Resolve this warning?
-                 return $collection->findOne(['_id' => $id], ['typeMap' => [ 'document' => 'Source' ]]);
+                $jm = new JsonMapper();
+                return $jm->
+                    map($collection->findOne(['_id' => $id]), new Source());
             }
             catch (Exception $e)
             {

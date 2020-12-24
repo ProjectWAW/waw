@@ -15,8 +15,8 @@
         $data =
           json_decode(file_get_contents("php://input"), false, 512, JSON_THROW_ON_ERROR);
 
-        $mapper = new JsonMapper();
-        $newSource = $mapper->map($data, new Source());
+        $jm = new JsonMapper();
+        $newSource = $jm->map($data, new Source());
         $service = new SourcesService();
         $source = $service->Add($newSource);
 
