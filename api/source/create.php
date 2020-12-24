@@ -13,10 +13,12 @@
     try
     {
         $data =
-          json_decode(file_get_contents("php://input"), true, 512, JSON_THROW_ON_ERROR);
+          json_decode(file_get_contents("php://input"), false, 512, JSON_THROW_ON_ERROR);
 
+        $mapper = new JsonMapper();
+        $newSource = $mapper->map($data, new Source());
         $service = new SourcesService();
-        $source = $service->Add($data["type"], $data["author"], $data["title"], $data["publisher"], $data["date"]);
+        $source = $service->Add($newSource);
 
         http_response_code(200);
         echo json_encode($source, JSON_THROW_ON_ERROR);

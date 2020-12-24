@@ -5,66 +5,41 @@
     require_once SITE_ROOT . "/models/Source.php";
     require_once SITE_ROOT . "/vendor/autoload.php";
 
+    use MongoDB\Collection;
     use Ramsey\Uuid\Uuid;
 
     class SourcesService extends DataService
     {
+
         /**
-         * Add a new Source to the sources table
+         * Add a new Source document to the sources collection and returns the document id
          *
-         * @param string $type
-         * @param string $author
-         * @param string $title
-         * @param string $publisher
-         * @param string $date
+         * @param Source $newSource
          *
-         * @return \Source
+         * @return string
          */
-        public function Add(string $type, string $author, string $title, string $publisher, string $date): Source
+        public function Add(Source $newSource): string
         {
             try
             {
-                $conn = $this->TryConnect();
+                $newSource->_id = Uuid::uuid4()->toString();
 
-                if (!$conn)
-                {
-                    throw new RuntimeException("Database connection cannot be null");
-                }
+                $collection = $this->GetCollection("Sources");
+                $insertOneResult = $collection->insertOne($newSource);
 
-                $statement = $conn->prepare(
-                  "INSERT INTO sources (id, type, author, title, publisher, date)
-                            VALUES (:id, :type, :author, :title, :publisher, :date)"
-                );
-
-                $id = Uuid::uuid4();
-
-                $newSource = new Source();
-                $newSource->id = $id;
-                $newSource->type = Uuid::fromString($type);
-                $newSource->author = Uuid::fromString($author);
-                $newSource->title = $title;
-                $newSource->publisher = Uuid::fromString($publisher);
-                $newSource->date = $date;
-
-                $statement->bindParam(':id', $id);
-                $statement->bindParam(':type', $type);
-                $statement->bindParam(':author', $author);
-                $statement->bindParam(':title', $title);
-                $statement->bindParam(':publisher', $publisher);
-                $statement->bindParam(':date', $date);
-                $statement->execute();
-
-                return $newSource;
+                return $insertOneResult->getInsertedId();
             }
             catch (Exception $e)
             {
                 // log error
                 echo "Adding SourceType failed: " . $e->getMessage();
             }
+
+            return "Internal Server Error";
         }
 
         /**
-         * Gets all Sources from the sources table
+         * Gets all Sources from the sources collection
          *
          * @return array
          */
@@ -72,15 +47,9 @@
         {
             try
             {
-                $conn = $this->TryConnect();
+                $collection = $this->GetCollection("sources");
 
-                if (!$conn)
-                {
-                    throw new RuntimeException("Database connection cannot be null");
-                }
-
-                return $conn->query("SELECT * FROM sources")
-                  ->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_UNIQUE, 'Source');
+                return $collection->find()->toArray();
             }
             catch (Exception $e)
             {
@@ -90,32 +59,54 @@
         }
 
         /**
-         * Gets a Source by ID from the sources table
+         * Gets a Source by ID from the sources collection
          *
          * @param string $id
          *
          * @return Source
          */
-        public function Get(string $id): Source
+        public function Get(string $id): ?Source
         {
             try
             {
-                $conn = $this->TryConnect();
+                $collection = $this->GetCollection("sources");
 
-                if (!$conn)
-                {
-                    throw new RuntimeException("Database connection cannot be null");
-                }
-
-                $statement = $conn->prepare("SELECT * FROM sources WHERE id = :id");
-                $statement->bindParam(':id', $id);
-                $statement->execute();
-                return $statement->fetchObject('Source');
+                //TODO: Resolve this warning?
+                 return $collection->findOne(['_id' => $id], ['typeMap' => [ 'document' => 'Source' ]]);
             }
             catch (Exception $e)
             {
                 // log error
                 echo "Getting Source failed: " . $e->getMessage();
             }
+
+            return null;
+        }
+
+
+        /**
+         * Get Mongo Collection
+         *
+         * @param string $collectionName
+         *
+         * @return \MongoDB\Collection
+         */
+        private function GetCollection(string $collectionName): Collection
+        {
+            $db = $this->TryConnect();
+
+            if (!$db)
+            {
+                throw new \RuntimeException("Database Connection is null");
+            }
+
+            $collection = $db->selectCollection($collectionName);
+
+            if (!$collection)
+            {
+                throw new \RuntimeException("Database connection cannot be null");
+            }
+
+            return $collection;
         }
     }

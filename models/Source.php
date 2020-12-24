@@ -4,10 +4,12 @@
 
     class Source
     {
-        public UuidInterface $id;
-        public UuidInterface $type;
-        public UuidInterface $author;
+        public string $_id;
+        public string $author;
+        public DateTime $accessed;
+        public DateTime $publishDate;
+        public string $publisher;
         public string $title;
-        public UuidInterface $publisher;
-        public string $date;
+        public string $type;
+        public string $url;
     }
