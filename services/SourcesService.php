@@ -89,7 +89,6 @@
             return null;
         }
 
-
         /**
          * Get Mongo Collection
          *
@@ -97,7 +96,7 @@
          *
          * @return \MongoDB\Collection
          */
-        private function GetCollection(string $collectionName): Collection
+        public function GetCollection(string $collectionName): Collection
         {
             $db = $this->TryConnect();
 
