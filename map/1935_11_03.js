@@ -198,9 +198,9 @@ countries = [
 
   ["ethiopia", finland, "1935_10_30", "neutral", null],
 
-  ["italy", italy, "1935_10_03", "italy", null],
+  ["italy", italy, "1935_10_28", "italy", null],
   ["italian_concessions", italy_puppet, "1935_10_03", "italy_puppet", null],
-  ["italian_ethiopia", italy_occupied, "1935_10_30", "neutral", null],
+  ["italian_ethiopia", italy_occupied, "1935_10_28", "neutral", null],
   ["italian_eritrea", italy_puppet, "1935_10_03", "italy_puppet", null],
   ["italian_libya", italy_puppet, "1935_10_03", "italy_puppet", null],
   ["italian_somalia", italy_puppet, "1935_10_03", "italy_puppet", null]
