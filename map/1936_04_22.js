@@ -197,12 +197,12 @@ countries = [
   ["kwantung_leased_territory", axis_puppet, "1935_10_03", "axis_puppet", null],
   ["south_seas_mandate", axis_puppet, "1935_10_03", "axis_puppet", null],
   
-  ["ethiopia", finland, "1936_04_15", "finland", null],
+  ["ethiopia", finland, "1936_04_22", "finland", null],
   
   ["italy", italy, "1935_10_03", "italy", null],
   ["italian_concessions", italy_puppet, "1935_10_03", "italy_puppet", null],
   ["italian_aussa", italy_puppet, "1936_01_19", "italy_puppet", stripes_italy_puppet],
-  ["italian_ethiopia", italy_occupied, "1936_04_15", "italy_occupied", null],
+  ["italian_ethiopia", italy_occupied, "1936_04_22", "italy_occupied", null],
   ["italian_eritrea", italy_puppet, "1935_11_23", "italy_puppet", null],
   ["italian_libya", italy_puppet, "1935_10_03", "italy_puppet", null],
   ["italian_somalia", italy_puppet, "1935_10_03", "italy_puppet", null]
