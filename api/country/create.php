@@ -13,11 +13,12 @@
     try
     {
         $data =
-          json_decode(file_get_contents("php://input"), true, 512, JSON_THROW_ON_ERROR);
+          json_decode(file_get_contents("php://input"), false, 512, JSON_THROW_ON_ERROR);
 
+        $jm = new JsonMapper();
+        $newCountry = $jm->map($data, new Event());
         $service = new CountriesService();
-        $country = $service->
-            Add($data["name"], $data['status'], $data['government'], $data['party'], $data['headOfGovernment']);
+        $country = $service->Add($newCountry);
 
         http_response_code(200);
         echo json_encode($country, JSON_THROW_ON_ERROR);

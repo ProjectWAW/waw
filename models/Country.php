@@ -4,7 +4,7 @@
 
     class Country
     {
-        public UuidInterface $id;
+        public string $id;
         public string $name;
         public string $status;
         public string $government;

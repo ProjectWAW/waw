@@ -10,122 +10,77 @@
     class CountriesService extends DataService
     {
         /**
-         * Adds a new Country to the countries table
+         * Adds a new Country to the countries collection and returns the country id
          *
-         * @param string $name
-         * @param string $status
-         * @param string $government
-         * @param string $party
-         * @param string $headOfGovernment
+         * @param Country $newCountry
          *
-         * @return \Country
+         * @return string
          */
-        public function Add(
-          string $name,
-          string $status,
-          string $government,
-          string $party,
-          string $headOfGovernment
-        ): Country
+        public function Add(Country $newCountry): string
         {
             try
             {
-                $conn = $this->TryConnect();
+                $newCountry->id = Uuid::uuid4()->toString();
 
-                if (!$conn)
-                {
-                    throw new RuntimeException("Database connection cannot be null");
-                }
+                $collection = $this->GetCollection("Countries");
+                $insertOneResult = $collection->insertOne($newCountry);
 
-                $statement = $conn->prepare("INSERT INTO countries (
-                       id,
-                       name,
-                       status,
-                       government,
-                       party,
-                       head_of_government
-                       ) VALUES (:id, :name, :status, :government, :party, :headOfGovernment)");
-
-                $id = Uuid::uuid4();
-
-                $newCountry = new Country();
-                $newCountry->id = $id;
-                $newCountry->name = $name;
-                $newCountry->status = $status;
-                $newCountry->government = $government;
-                $newCountry->party = $party;
-                $newCountry->headOfGovernment = $headOfGovernment;
-
-                $statement->bindParam(':id', $newCountry->id);
-                $statement->bindParam('name', $newCountry->name);
-                $statement->bindParam('status', $newCountry->status);
-                $statement->bindParam('government', $newCountry->government);
-                $statement->bindParam('party', $newCountry->party);
-                $statement->bindParam('headOfGovernment', $newCountry->headOfGovernment);
-                $statement->execute();
-
-                return $newCountry;
+                return $insertOneResult->getInsertedId();
             }
             catch (Exception $e)
             {
                 // log error
                 echo "Adding Country failed: " . $e->getMessage();
             }
+
+            return "Internal Server Error";
         }
 
         /**
-         * Gets all Countries in the countries table
+         * Gets all Countries in the countries collection
          *
          * @return array
          */
-        public function GetAll(): array
+        public function GetAll(): ?array
         {
             try
             {
-                $conn = $this->TryConnect();
+                $collection = $this->GetCollection("Countries");
 
-                if (!$conn)
-                {
-                    throw new RuntimeException("Database connection cannot be null");
-                }
-
-                return $conn->query("SELECT * FROM countries")
-                  ->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_UNIQUE, 'Country');
+                $jm = new JsonMapper();
+                return $jm->mapArray($collection->find()->toArray(), array(), "Country");
             }
             catch (Exception $e)
             {
                 // log error
                 echo "Getting all Countries failed: " . $e->getMessage();
             }
+
+            return null;
         }
 
         /**
-         * Gets a Country by ID from the countries table
+         * Gets a Country by ID from the countries collection
          *
          * @param string $id
          *
          * @return Country
          */
-        public function Get(string $id): Country
+        public function Get(string $id): ?Country
         {
             try
             {
-                $conn = $this->TryConnect();
+                $collection = $this->GetCollection("Countries");
 
-                if (!$conn)
-                {
-                    throw new RuntimeException("Database connection cannot be null");
-                }
-
-                $statement = $conn->prepare("SELECT * FROM countries WHERE id = :id");
-                $statement->bindParam(':id', $id);
-                $statement->execute();
-                return $statement->fetchObject('Country');
+                $jm = new JsonMapper();
+                return $jm->map($collection->findOne(['_id' => $id]), new Country());
             }
             catch (Exception $e)
             {
                 // log error
                 echo "Getting Country failed: " . $e->getMessage();
             }
+
+            return null;
         }
     }
