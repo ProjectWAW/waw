@@ -24,14 +24,14 @@
          *
          * @return \MongoDB\Database|null
          */
-        public function TryConnect(): ?Database
+        private function TryConnect(): ?Database
         {
             try
             {
                 $db = (new Client($this->host))->waw;
 
                 if (!$db) {
-                    throw new \RuntimeException("Database connection is Null");
+                    throw new RuntimeException("Database connection is Null");
                 }
 
                 return $db;
@@ -41,7 +41,7 @@
                 //TODO: Add logging
                 echo "DB Connection Failed: " . $e->getMessage();
             }
-            catch (\RuntimeException $e)
+            catch (RuntimeException $e)
             {
                 //TODO: Add logging
                 echo "DB Connection Failed: " . $e->getMessage();
@@ -63,14 +63,14 @@
 
             if (!$db)
             {
-                throw new \RuntimeException("Database Connection is null");
+                throw new RuntimeException("Database Connection is null");
             }
 
             $collection = $db->selectCollection($collectionName);
 
             if (!$collection)
             {
-                throw new \RuntimeException("Database connection cannot be null");
+                throw new RuntimeException("Database connection cannot be null");
             }
 
             return $collection;
