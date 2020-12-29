@@ -1,7 +1,7 @@
 <?php
 
     require_once __DIR__ . "/../../config.php";
-    require_once SITE_ROOT . "/services/MapEventsService.php";
+    require_once SITE_ROOT . "/services/EventsService.php";
 
     // Headers
     header('Access-Control-Allow-Origin: *');
