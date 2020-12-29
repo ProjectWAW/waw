@@ -5,7 +5,7 @@
 
     class Source implements Persistable
     {
-        public string $_id;
+        public string $id;
         public string $author;
         public DateTime $accessDate;
         public DateTime $publishDate;
@@ -14,10 +14,10 @@
         public string $type;
         public string $url;
 
-        public function bsonSerialize()
+        public function bsonSerialize(): array
         {
             return [
-                "_id" => $this->_id,
+                "_id" => $this->id,
                 "author" => $this->author,
                 "accessDate" => new MongoDate($this->accessDate),
                 "publishDate" => new MongoDate($this->publishDate),

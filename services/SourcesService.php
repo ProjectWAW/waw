@@ -5,7 +5,6 @@
     require_once SITE_ROOT . "/models/Source.php";
     require_once SITE_ROOT . "/vendor/autoload.php";
 
-    use MongoDB\Collection;
     use Ramsey\Uuid\Uuid;
 
     class SourcesService extends DataService
@@ -22,7 +21,7 @@
         {
             try
             {
-                $newSource->_id = Uuid::uuid4()->toString();
+                $newSource->id = Uuid::uuid4()->toString();
 
                 $collection = $this->GetCollection("Sources");
                 $insertOneResult = $collection->insertOne($newSource);
@@ -48,8 +47,6 @@
             try
             {
                 $collection = $this->GetCollection("Sources");
-
-//                return $collection->find()->toArray();
 
                 $jm = new JsonMapper();
                 return $jm->mapArray($collection->find()->toArray(), array(), "Source");
@@ -77,8 +74,7 @@
                 $collection = $this->GetCollection("Sources");
 
                 $jm = new JsonMapper();
-                return $jm->
-                    map($collection->findOne(['_id' => $id]), new Source());
+                return $jm->map($collection->findOne(['_id' => $id]), new Source());
             }
             catch (Exception $e)
             {
@@ -87,31 +83,5 @@
             }
 
             return null;
-        }
-
-        /**
-         * Get Mongo Collection
-         *
-         * @param string $collectionName
-         *
-         * @return \MongoDB\Collection
-         */
-        public function GetCollection(string $collectionName): Collection
-        {
-            $db = $this->TryConnect();
-
-            if (!$db)
-            {
-                throw new \RuntimeException("Database Connection is null");
-            }
-
-            $collection = $db->selectCollection($collectionName);
-
-            if (!$collection)
-            {
-                throw new \RuntimeException("Database connection cannot be null");
-            }
-
-            return $collection;
         }
     }

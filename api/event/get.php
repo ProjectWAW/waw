@@ -9,7 +9,7 @@
 
     try
     {
-        $service = new MapEventsService();
+        $service = new EventsService();
 
         if (isset($_GET['id']))
         {

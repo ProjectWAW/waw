@@ -4,6 +4,7 @@
     require_once __DIR__ . '/DataServiceInterface.php';
 
     use MongoDB\Client;
+    use MongoDB\Collection;
     use MongoDB\Database;
 
     abstract class DataService implements DataServiceInterface
@@ -47,5 +48,31 @@
             }
 
             return null;
+        }
+
+        /**
+         * Get Mongo Collection
+         *
+         * @param string $collectionName
+         *
+         * @return \MongoDB\Collection
+         */
+        public function GetCollection(string $collectionName): Collection
+        {
+            $db = $this->TryConnect();
+
+            if (!$db)
+            {
+                throw new \RuntimeException("Database Connection is null");
+            }
+
+            $collection = $db->selectCollection($collectionName);
+
+            if (!$collection)
+            {
+                throw new \RuntimeException("Database connection cannot be null");
+            }
+
+            return $collection;
         }
     }
