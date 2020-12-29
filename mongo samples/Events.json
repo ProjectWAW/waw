@@ -1,0 +1,24 @@
+[
+  {
+    "_id": "aa10c6ec-e11a-45d9-9d45-da8127d61885",
+    "conflict": "Pollenist Rebellion",
+    "country": "8eb1c021-4151-44e3-9cda-553683297a0f",
+    "cssClass": "icon-gun-right",
+    "date": "1936-10-02",
+    "location": "14.495184,39.393883",
+    "marker": "green_bullhorn",
+    "source": "88fdb0a9-f81f-42d6-ad49-fdb8df0cfa74",
+    "text": "BEEEEEEEEEEESSSS"
+  },
+  {
+    "_id": "03c83d65-548d-4d7d-8a19-aee2d1887fbc",
+    "conflict": "Spanish Civil War",
+    "country": "8eb1c021-4151-44e3-9cda-553683297a0f",
+    "cssClass": "icon-gun-right",
+    "date": "1936-10-02",
+    "location": "5.190791,45.079651",
+    "marker": "green-gun-right",
+    "source": "88fdb0a9-f81f-42d6-ad49-fdb8df0cfa74",
+    "text": "Bang bang, boom boom"
+  }
+]

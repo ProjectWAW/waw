@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "b0f3d905-f1dc-47d6-b9e8-acda1d8816ce",
+    "author": "Bob Merkal",
+    "publishDate": "1980-01-01",
+    "publisher": "Little House",
+    "title": "War in the East",
+    "type": "book"
+  },
+  {
+    "_id": "cdfc072f-3f5a-4d6b-8c69-7135cb1f6e62",
+    "author": "Harriet Jones",
+    "accessed": "2020-06-17",
+    "publishDate": "2012-06-28",
+    "publisher": "Gold Leaf Publishing",
+    "title": "Secret Bob Ross: 2020",
+    "type": "web",
+    "url": "www.example.com"
+  }
+]
