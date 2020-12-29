@@ -20,7 +20,7 @@
         {
             try
             {
-                $newCountry->id = Uuid::uuid4()->toString();
+                $newCountry->_id = Uuid::uuid4()->toString();
 
                 $collection = $this->GetCollection("Countries");
                 $insertOneResult = $collection->insertOne($newCountry);

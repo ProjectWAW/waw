@@ -19,7 +19,7 @@
         public function Add(Event $newEvent): string {
             try
             {
-                $newEvent->id = Uuid::uuid4()->toString();
+                $newEvent->_id = Uuid::uuid4()->toString();
 
                 $collection = $this->GetCollection("Events");
                 $insertOneResult = $collection->insertOne($newEvent);

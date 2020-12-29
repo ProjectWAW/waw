@@ -1,13 +1,25 @@
 <?php
 
-    use Ramsey\Uuid\UuidInterface;
+    use MongoDB\BSON\Serializable;
 
-    class Country
+    class Country implements Serializable
     {
-        public string $id;
-        public string $name;
-        public string $status;
+        public string $_id;
         public string $government;
-        public string $party;
         public string $headOfGovernment;
+        public string $name;
+        public string $party;
+        public string $status;
+
+        public function bsonSerialize()
+        {
+            return [
+                "_id" => $this->_id,
+                "government" => $this->government,
+                "headOfGovernment" => $this->headOfGovernment,
+                "name" => $this->name,
+                "party" => $this->party,
+                "status" => $this->status
+            ];
+        }
     }

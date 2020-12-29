@@ -21,7 +21,7 @@
         {
             try
             {
-                $newSource->id = Uuid::uuid4()->toString();
+                $newSource->_id = Uuid::uuid4()->toString();
 
                 $collection = $this->GetCollection("Sources");
                 $insertOneResult = $collection->insertOne($newSource);

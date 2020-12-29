@@ -16,7 +16,7 @@
           json_decode(file_get_contents("php://input"), false, 512, JSON_THROW_ON_ERROR);
 
         $jm = new JsonMapper();
-        $newCountry = $jm->map($data, new Event());
+        $newCountry = $jm->map($data, new Country());
         $service = new CountriesService();
         $country = $service->Add($newCountry);
 

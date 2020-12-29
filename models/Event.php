@@ -1,37 +1,31 @@
 <?php
 
-    use MongoDB\BSON\Persistable;
+    use MongoDB\BSON\Serializable;
 
-    class Event implements Persistable
+    class Event implements Serializable
     {
-        public string $id;
-        public string $date;
-        public string $marker;
-        public string $location;
-        public string $text;
-        public string $cssClass;
+        public string $_id;
         public string $conflict;
         public string $country;
+        public string $cssClass;
+        public string $date;
+        public string $location;
+        public string $marker;
         public string $source;
+        public string $text;
 
         public function bsonSerialize(): array
         {
             return [
-                "_id" => $this->id,
-                "date" => $this->date,
-                "marker" => $this->marker,
-                "location" => $this->location,
-                "text" => $this->text,
-                "cssClass" => $this->cssClass,
+                "_id" => $this->_id,
                 "conflict" => $this->conflict,
                 "country" => $this->country,
-                "source" => $this->source
+                "cssClass" => $this->cssClass,
+                "date" => $this->date,
+                "location" => $this->location,
+                "marker" => $this->marker,
+                "source" => $this->source,
+                "text" => $this->text
             ];
         }
-
-        public function bsonUnserialize(array $data): void
-        {
-            // Nothing needs to happen here
-        }
-
     }

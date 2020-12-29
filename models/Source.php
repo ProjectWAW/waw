@@ -1,11 +1,10 @@
 <?php
 
-    use MongoDB\BSON\Persistable;
-    use MongoDb\BSON\UTCDateTime;
+    use MongoDB\BSON\Serializable;
 
-    class Source implements Persistable
+    class Source implements Serializable
     {
-        public string $id;
+        public string $_id;
         public string $author;
         public DateTime $accessDate;
         public DateTime $publishDate;
@@ -17,7 +16,7 @@
         public function bsonSerialize(): array
         {
             return [
-                "_id" => $this->id,
+                "_id" => $this->_id,
                 "author" => $this->author,
                 "accessDate" => new MongoDate($this->accessDate),
                 "publishDate" => new MongoDate($this->publishDate),
@@ -26,21 +25,5 @@
                 "type" => $this->type,
                 "url" => $this->url
             ];
-        }
-
-        public function bsonUnserialize(array $data): void
-        {
-            if (!isset($data["accessDate"]) || !$data["accessDate"] instanceof UTCDateTime)
-            {
-                throw new RuntimeException("Expected 'accessDate' field to be a UTCDateTime");
-            }
-
-            if (!isset($data["publishDate"]) || !$data["accessDate"] instanceof UTCDateTime)
-            {
-                throw new RuntimeException("Expected 'publishDate' field to be a UTCDateTime");
-            }
-
-            $this->accessDate = new DateTIme($data["accessDate"]);
-            $this->publishDate = new DateTime($data["publishDate"]);
         }
     }
