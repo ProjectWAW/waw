@@ -727,7 +727,7 @@ for (let country of countries) {
   country_layers = L.layerGroup();
   $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
     sites = L.geoJson(data, {
-      "onEachFeature": forEachFeature,
+      //"onEachFeature": forEachFeature,
       "style": {color: country[1], fillPattern: country[4]},
       "pane": country[3]
     });

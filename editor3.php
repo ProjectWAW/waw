@@ -373,14 +373,14 @@
   <script>
     var mymap = L.map('map').setView([40.418201, -3.704109], 6);
     
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</a>',
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: ' Map data &copy; <a href="">PWAW</a> &copy; Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
       minZoom: 3,
       maxZoom: 14,
       zoomControl: true
     }).addTo(mymap);
 
- var topleft = L.latLng(37.291535, 115.378418),
+ /*var topleft = L.latLng(37.291535, 115.378418),
 	topright   = L.latLng(38.539573, 123.068848),
   bottomleft = L.latLng(34.633208, 115.290527);
   
@@ -392,7 +392,7 @@ var overlay = L.imageOverlay.rotated("https://p3-bk.byteimg.com/tos-cn-i-mlhdmxs
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
-}).addTo(mymap);
+}).addTo(mymap);*/
 
 function repositionImage() {
 			overlay.reposition(marker1.getLatLng(), marker2.getLatLng(), marker3.getLatLng());
