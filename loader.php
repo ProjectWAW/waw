@@ -116,13 +116,13 @@
       "WWII casualties totaled between 50 and 70 million people. More than 80% of this total came from four countries: Russia, China, Germany, and Poland. More than half of these casualties were civilians, most of whom were women and children.",
       "Japan and Russia never formally ended hostilities after WWII. Plans for them to sign an official peace treaty in 2000 failed because Japan wanted Russia to return four offshore islands it had taken after the war.",
       "In the 1928 elections, less than 3% of Germans voted for the Nazi party. In 1938, Hitler was Time magazine’s man of the year.",
-      "The Germans used the first jet fighters in World War II, among them the Messerschmitt ME-262. However, they were developed too late to change the course of the war."
+      "The Germans used the first jet fighters in WWII, among them the Messerschmitt ME-262. However, they were developed too late to change the course of the war."
     );
     var fact = facts[Math.floor(Math.random() * facts.length)];
-    document.getElementById("fun-fact").innerHTML = "Did you know? "+fact;
+    document.getElementById("fun-fact").innerHTML = "Did you know?: "+fact;
     setInterval(function() {
       var fact = facts[Math.floor(Math.random() * facts.length)];
-      document.getElementById("fun-fact").innerHTML = "Did you know? "+fact;
+      document.getElementById("fun-fact").innerHTML = "Did you know?: "+fact;
     }, 14000);
   </script>
 </div>
