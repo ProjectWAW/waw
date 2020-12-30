@@ -97,11 +97,11 @@
       "The original abbreviation of the National Socialist Party was Nasos. The word “Nazi” derives from a Bavarian word that means “simple minded” and was first used as a term of derision by journalist Konrad Heiden (1901-1966).",
       "Approximately 600,000 Jews served in the United States armed forces during WWII. More than 35,000 were killed, wounded, captured, or missing. Approximately 8,000 died in combat. However, only two Jewish soldiers were awarded the Medal of Honor in WWII.",
       "The Battle of the Bulge is the largest and deadliest battle for U.S. troops to date, with more than 80,000 American casualties.",
-      "More Soviets (military and civilians) lost their lives during the Siege of Leningrad than did American and British soldiers combined in all of WWII.",
-      "The swastika is an ancient religious symbol. It derives from the Sanskrit name for a hooked cross, which was used by ancient civilizations as a symbol of fertility and good fortune. It has been found in the ruins of Greece, Egypt, China, India, and Hindu temples.",
-      "Many historians believe that the Battle at Stalingrad (1942-1943) is not only arguably the bloodiest battle in history (800,000-1,600,000 casualties), but also the turning point of WWII in Europe.",
+      "More Soviets (military and civilians) lost their lives during the Siege of Leningrad than American and British soldiers combined did in all of WWII."
+      "The swastika is an ancient religious symbol. It derives from the Sanskrit name for a hooked cross, which was used by ancient civilizations as a symbol of fertility and good fortune. It has been found in Greek, Egyptian, Chinese, and Indian ruins, as well as Hindu temples.",
+      "Many historians believe that the Battle at Stalingrad (1942-1943) was not only arguably the bloodiest battle in history (800,000-1,600,000 casualties), but also the turning point of WWII in Europe.",
       "WWII ended on September 2, 1945, when Japan signed a surrender agreement on the USS Missouri in Tokyo Bay.",
-      "From 1940-1945, the U.S. defense budget increased form $1.9 billion to $59.8 billion.",
+      "From 1940-1945, the U.S. defense budget increased from $1.9 billion to $59.8 billion.",
       "During WWII, hamburgers in the U.S. were dubbed “Liberty Steaks” to avoid the German-sounding name.",
       "The ace of all fighter aces of all nations is German fighter pilot Erich Hartmann (“the Blond Knight”) with 352 “kills.”",
       "William Hitler, a nephew of Adolf Hitler, was in the U.S. Navy during WWII. He changed his name after the war.",
@@ -109,7 +109,7 @@
       "The greatest tank battle in history occurred between the Germans and Soviets at the Kursk salient in Russia from July 4-22, 1943. More than 3,600 tanks were involved.",
       "Germany had a total of 3,363 generals during the war while the U.S. had just over 1,500.",
       "Prisoners of war in Soviet camps experienced an 85% mortality rate.",
-      "World War II was the most destructive conflict in history. It cost more money, damaged more property, killed more people, and caused more far-reaching changes than any other war in history.",
+      "WWII was the most destructive conflict in history. It cost more money, damaged more property, killed more people, and caused more far-reaching changes than any other war in history.",
       "On July 14, 1941, the Soviets introduced a new weapon, the Katyusha, which could fire 320 rockets in 25 seconds. More than 50 years later, the Katyusha remains an effective weapon",
       "Hitler designed the Nazi flag. Red stood for the social idea of Nazism, white for nationalism, and the black swastika for the struggle of the Aryan man.",
       "The most important medical advance that saved soldiers’ lives during WWII was the blood transfusion.",
@@ -119,10 +119,10 @@
       "The Germans used the first jet fighters in World War II, among them the Messerschmitt ME-262. However, they were developed too late to change the course of the war."
     );
     var fact = facts[Math.floor(Math.random() * facts.length)];
-    document.getElementById("fun-fact").innerHTML = "Did you know: "+fact;
+    document.getElementById("fun-fact").innerHTML = "Did you know? "+fact;
     setInterval(function() {
       var fact = facts[Math.floor(Math.random() * facts.length)];
-      document.getElementById("fun-fact").innerHTML = "Did you know: "+fact;
+      document.getElementById("fun-fact").innerHTML = "Did you know? "+fact;
     }, 14000);
   </script>
 </div>
