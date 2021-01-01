@@ -379,15 +379,15 @@
       zoomControl: true
     }).addTo(mymap);
 
- /*var topleft = L.latLng(34.379713, 97.261963),
-	topright   = L.latLng(34.334364, 114.675293),
-  bottomleft = L.latLng(26.007424, 97.196045);
+ var topleft = L.latLng(39.749434, 105.210571),
+	topright   = L.latLng(39.656456, 111.313477),
+  bottomleft = L.latLng(32.319634, 105.095215);
   
   var marker1 = L.marker(topleft, {draggable: true} ).addTo(mymap),
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/621362697593683993/736255024103030834/unknown.png", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/726896429318144080/794588992946700308/W020180920568422438647.png", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
@@ -399,7 +399,7 @@ function repositionImage() {
 		
 	marker1.on('drag dragend', repositionImage);
 	marker2.on('drag dragend', repositionImage);
-	marker3.on('drag dragend', repositionImage);*/
+	marker3.on('drag dragend', repositionImage);
 
     function start(val) {
 
