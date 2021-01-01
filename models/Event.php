@@ -11,6 +11,7 @@
         public string $date;
         public string $location;
         public string $marker;
+        public int $pageWeight;
         public string $source;
         public string $text;
 
@@ -24,6 +25,7 @@
                 "date" => $this->date,
                 "location" => $this->location,
                 "marker" => $this->marker,
+                "pageWeight" => $this->pageWeight,
                 "source" => $this->source,
                 "text" => $this->text
             ];
