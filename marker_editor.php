@@ -69,15 +69,34 @@ select {
       <option value="fas fa-virus">Virus</option>
     </select><br><hr>
 
-    <label for="source">Source:</label><br>
-    <select name="source" id="source">
+    <label for="conflict">Period:</label><br>
+    <select name="conflict" id="conflict">
       <option value="italo_ethiopian_war">Italo-Ethiopian War</option>
       <option value="spanish_civil_war">Spanish Civil War</option>
       <option value="invasion_of_poland">Invasion of Poland</option>
       <option value="phoney_war">Phoney War</option>
-    </select>
+    </select><br><hr>
 
-    <br><hr><input type="submit" id="submit" name="submit" class="submit" value="Submit">
+    <label for="source_type">Source type:</label><br>
+    <select name="source_type" id="source_type">
+      <option value="book">Book</option>
+      <option value="website">Website</option>
+      <option value="journal">Journal</option>
+    </select><br><hr>
+
+    <label for="source_author">Source author:</label><br>
+    <input type="text" id="source_author" name="source_author" placeholder="Beevor, Anthony"><br><hr>
+
+    <label for="source_title">Source title:</label><br>
+    <input type="text" id="source_title" name="source_title" placeholder="The Battle for Spain the Spanish Civil War 1936-1939"><br><hr>
+
+    <label for="source_title">Source publisher:</label><br>
+    <input type="text" id="source_publisher" name="source_publisher" placeholder="Phoenix"><br><hr>
+
+    <label for="source_title">Source date published:</label><br>
+    <input type="text" id="source_date_published" name="source_date_published" placeholder="(Book/Journal - write the year and add 01-01) 2007-01-01 / (Website - write the full date) 2007-07-12">
+
+    <br><hr><input type="submit" id="submit" name="submit" class="submit" value="Submit"><br><br><br>
   </form>
 </div>
 </body>
