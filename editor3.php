@@ -373,8 +373,8 @@
   <script>
     var mymap = L.map('map').setView([40.418201, -3.704109], 6);
     
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-      attribution: ' Map data &copy; <a href="">PWAW</a> &copy; Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
+      attribution: ' Map data &copy; <a href="">PWAW</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
       minZoom: 3,
       maxZoom: 14,
       zoomControl: true
@@ -420,7 +420,7 @@ function repositionImage() {
         data.append('gdata', geoJSONData);
 
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', "ajax_store_geojson_after_edit2.php", true);
+        xhr.open('POST', "ajax_store_geojson_after_edit3.php", true);
         xhr.onload = function() {
           console.log(this.response);
         };
