@@ -97,7 +97,7 @@
       "The original abbreviation of the National Socialist Party was Nasos. The word “Nazi” derives from a Bavarian word that means “simple minded” and was first used as a term of derision by journalist Konrad Heiden (1901-1966).",
       "Approximately 600,000 Jews served in the United States armed forces during WWII. More than 35,000 were killed, wounded, captured, or missing. Approximately 8,000 died in combat. However, only two Jewish soldiers were awarded the Medal of Honor in WWII.",
       "The Battle of the Bulge is the largest and deadliest battle for U.S. troops to date, with more than 80,000 American casualties.",
-      "More Soviets (military and civilians) lost their lives during the Siege of Leningrad than American and British soldiers combined did in all of WWII."
+      "More Soviets (military and civilians) lost their lives during the Siege of Leningrad than American and British soldiers combined did in all of WWII.",
       "The swastika is an ancient religious symbol. It derives from the Sanskrit name for a hooked cross, which was used by ancient civilizations as a symbol of fertility and good fortune. It has been found in Greek, Egyptian, Chinese, and Indian ruins, as well as Hindu temples.",
       "Many historians believe that the Battle at Stalingrad (1942-1943) was not only arguably the bloodiest battle in history (800,000-1,600,000 casualties), but also the turning point of WWII in Europe.",
       "WWII ended on September 2, 1945, when Japan signed a surrender agreement on the USS Missouri in Tokyo Bay.",
