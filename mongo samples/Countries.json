@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "da8031a1-5db6-452a-a629-d4a9919c6e1c",
+    "government": "Hippie Commune",
+    "headOfGovernment": "Bob Ross",
+    "name": "Boblandia",
+    "party": "Pollenators United Front",
+    "status": "Benevolent Dictatorship?"
+  },
+  {
+    "_id": "28648202-3b66-439c-984f-046c3fbc9d81",
+    "government": "Unitary personalist dictatorship",
+    "headOfGovernment": "Francisco Franco",
+    "name": "Spanish State",
+    "party": "National Movement (Movimiento Nacional)",
+    "status": "Nationalist faction in the Spanish civil war"
+  }
+]

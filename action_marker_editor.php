@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['submit'])) {
-  $var = '["'.$_POST["id"].'", "info_'.$_POST["id"].'", '.$_POST["colour_and_icon"].', ['.$_POST["location"].'], "'.$_POST["information"].'", "'.$_POST["icon"].'", "'.$_POST["source"].'", "'.$_POST["country"].'"],';
+  $var = '["'.$_POST["id"].'", "info_'.$_POST["id"].'", '.$_POST["colour_and_icon"].', ['.$_POST["location"].'], "'.$_POST["information"].'", "'.$_POST["icon"].'", "'.$_POST["conflict"].'", "'.$_POST["country"].'"],';
 
 var_dump($var);
 

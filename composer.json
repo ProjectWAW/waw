@@ -1,0 +1,10 @@
+{
+    "require": {
+        "ramsey/uuid": "^4.1",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "mongodb/mongodb": "^1.8",
+        "netresearch/jsonmapper": "^4.0",
+      "ext-mongo": "*"
+    }
+}
