@@ -4,9 +4,9 @@
 <?php require 'page_head.php';?>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
-<script src="js/leaflet.ajax.min.js"></script>
-<link rel="stylesheet" href="js/leaflet-geoman.css"/>
-<script src="js/leaflet-geoman.min.js"></script>
+<script src="leaflet/leaflet.ajax.min.js"></script>
+<link rel="stylesheet" href="leaflet/leaflet-geoman.css"/>
+<script src="leaflet/leaflet-geoman.min.js"></script>
 <title>Editor - Project: World at War</title>
 <style>
 .navbar {
@@ -168,6 +168,7 @@
 <br><br><br>
 <select id="countries_dropdown" onchange="start(this.value)">
   <option value="a">a</option>
+  <option value="aden_protectorate">aden_protectorate</option>
   <option value="afghanistan">afghanistan</option>
   <option value="albania">albania</option>
   <option value="andorra">andorra</option>
@@ -245,9 +246,10 @@
   <option value="guatemala">guatemala</option>
   <option value="guizhou_clique">guizhou_clique</option>
   <option value="haiti">haiti</option>
-  <option value="hebei_clique">hebei_clique</option>
+  <option value="hebei_chahar_council">hebei_chahar_council</option>
   <option value="honduras">honduras</option>
   <option value="hunan_clique">hunan_clique</option>
+  <option value="hunan_invasion">hunan_invasion</option>
   <option value="hungary">hungary</option>
   <option value="iceland">iceland</option>
   <option value="ifni">ifni</option>
@@ -336,6 +338,7 @@
   <option value="spanish_africa">spanish_africa</option>
   <option value="spanish_morocco">spanish_morocco</option>
   <option value="spanish_sahara">spanish_sahara</option>
+  <option value="suiyuan_occupied">suiyuan_occupied</option>
   <option value="swaziland">swaziland</option>
   <option value="sweden">sweden</option>
   <option value="switzerland">switzerland</option>
@@ -377,15 +380,15 @@
       zoomControl: true
     }).addTo(mymap);
 
- /*var topleft = L.latLng(37.291535, 115.378418),
-	topright   = L.latLng(38.539573, 123.068848),
-  bottomleft = L.latLng(34.633208, 115.290527);
+ var topleft = L.latLng(40.539373,-4.171371),
+	topright   = L.latLng(40.539112,-3.839035),
+  bottomleft = L.latLng(40.347591,-4.179268);
   
   var marker1 = L.marker(topleft, {draggable: true} ).addTo(mymap),
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/621362697593683993/727962399482576956/unknown.png", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://upload.wikimedia.org/wikipedia/commons/c/c7/BatallaBrunete1.png", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
@@ -397,14 +400,14 @@ function repositionImage() {
 		
 		marker1.on('drag dragend', repositionImage);
 		marker2.on('drag dragend', repositionImage);
-		marker3.on('drag dragend', repositionImage);*/
+		marker3.on('drag dragend', repositionImage);
 
     function start(val) {
 
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1937_01_07/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1937_07_07/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);

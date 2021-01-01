@@ -27,7 +27,7 @@ if (isset($_GET['d'])) {
     $date_month = "December";
   }
   $date_year = substr($date, 0, 4);
-  $date_month2 = substr($date, 4,4);
+  $date_month2 = substr($date, 4, 4);
   $date_day = substr($date, 8, 10);
   $date_info = "".$date_day." ".$date_month." ".$date_year."";
 } else if (isset($_COOKIE['date'])) {
@@ -58,14 +58,14 @@ if (isset($_GET['d'])) {
     $date_month = "December";
   }
   $date_year = substr($date, 0, 4);
-  $date_month2 = substr($date, 4,4);
+  $date_month2 = substr($date, 4, 4);
   $date_day = substr($date, 8, 10);
   $date_info = "".$date_day." ".$date_month." ".$date_year."";
 } else {
   $date = "1935_10_03";
   $date_info = "03 October 1935";
   $date_year = substr($date, 0, 4);
-  $date_month2 = substr($date, 4,4);
+  $date_month2 = substr($date, 4, 4);
   $date_day = substr($date, 8, 10);
 }
 ?>
@@ -74,68 +74,28 @@ if (isset($_GET['d'])) {
 <head>
 <?php require 'page_head.php';?>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
-<link rel="stylesheet" href="https://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.css">
 <link rel="stylesheet" href="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
-<link rel="stylesheet" href="server/L.Icon.FontAwesome.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="leaflet/L.Icon.FontAwesome.css">
+<link rel="stylesheet" href="custom-icons.css">
 <script>
 function checkNightMode() {
   if (localStorage.getItem("dark-mode") !== "on") {
-    $('head').append('<link rel="stylesheet" type="text/css" href="all.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="css/all.css">');
   } else {
-    $('head').append('<link rel="stylesheet" type="text/css" href="dark.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="css/dark.css">');
   }
-}
-function getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
 }
 </script>
 <script src="https://kit.fontawesome.com/02faa02085.js"></script>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 <script src="https://teastman.github.io/Leaflet.pattern/leaflet.pattern.js"></script>
-<script src="https://xguaita.github.io/Leaflet.MapCenterCoord/dist/L.Control.MapCenterCoord.min.js"></script>
 <script src="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
-<script src="server/L.Icon.FontAwesome.js"></script>
-<script src="js/leaflet.ajax.min.js"></script>
+<script src="leaflet/L.Icon.FontAwesome.js"></script>
+<script src="leaflet/leaflet.ajax.min.js"></script>
 <title>Project: World at War</title>
 <style>
-#overlay{
-  position: fixed;
-  z-index: 99999;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0,0,0,0.9);
-  transition: 1s 0.4s;
-}
-#progress-container {
-  height: 13px;
-  border: 1px solid #fff;
-  top: 50%;
-  left: 5%;
-  right: 5%;
-  position: absolute;
-}
-#progress{
-  height: 11px;
-  background: #fff;
-  width: 0;
-  transition: 1s;
-}
-#progstat{
-  font-size: 2em;
-  position: absolute;
-  top: 50%;
-  margin-top: -45px;
-  width: 100%;
-  text-align: center;
-  color: #fff;
-}
 .navbar {
   -webkit-box-shadow: 0 0 0;
   box-shadow: 0 0 0;
@@ -418,43 +378,10 @@ span.fa-info {
 <?php 
   require 'navbar.php';
   echo '<script>document.cookie = "date = '.$date.'";</script>';
+  include 'loader.php';
 ?>
 <noscript>This website requires javascript to run properly.</noscript>
 <script>
-(function(){
-  function id(v) {
-    return document.getElementById(v);
-  }
-  function loadbar() {
-    var ovrl = id("overlay"),
-    prog = id("progress"),
-    stat = id("progstat"),
-    img = document.images,
-    c = 0,
-    tot = img.length;
-    if (tot == 0) return doneLoading();
-    function imgLoaded() {
-      c += 1;
-      var perc = ((100/tot*c) << 0) +"%";
-      prog.style.width = perc;
-      stat.innerHTML = "Loading: "+ perc;
-      if(c===tot) return doneLoading();
-    }
-    function doneLoading() {
-      ovrl.style.opacity = 0;
-      setTimeout(function(){ 
-        ovrl.style.display = "none";
-      }, 1200);
-    }
-    for(var i=0; i<tot; i++) {
-      var tImg = new Image();
-      tImg.onload = imgLoaded;
-      tImg.onerror = imgLoaded;
-      tImg.src = img[i].src;
-    }    
-  }
-  document.addEventListener('DOMContentLoaded', loadbar, false);
-}());
 
 /***** COLORS *****/
 var axis = 'black'
@@ -535,17 +462,16 @@ var virus = 'fas fa-virus'
 var iconColor = '#FFF'
 var markerStrokeWidth = 1
 
-var stripes_axis = new L.StripePattern({weight: 5, color: 'black', spaceWeight: 5, angle: 45});
-var stripes_comintern = new L.StripePattern({weight: 5, color: '#b30000', spaceWeight: 5, angle: 45});
-var stripes_finland = new L.StripePattern({weight: 5, color: 'purple', spaceWeight: 5, angle: 45});
-var stripes_neutral = new L.StripePattern({weight: 5, color: '#ffad46', spaceWeight: 5, angle: 45});
+var stripes_axis = new L.StripePattern({weight: 5, color: 'black', spaceWeight: 5, angle: 45})
+var stripes_italy_occupied = new L.StripePattern({weight: 5, color: '#80c904', spaceWeight: 5, angle: 45})
+var stripes_italy_puppet = new L.StripePattern({weight: 5, color: '#66a103', spaceWeight: 5, angle: 45})
+var stripes_comintern = new L.StripePattern({weight: 5, color: '#b30000', spaceWeight: 5, angle: 45})
+var stripes_finland = new L.StripePattern({weight: 5, color: 'purple', spaceWeight: 5, angle: 45})
+var stripes_neutral = new L.StripePattern({weight: 5, color: '#ffad46', spaceWeight: 5, angle: 45})
+var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight: 2, angle: 45})
 
 <?php include 'markers.js';?>
 </script>
-<div id="overlay">
-  <div id="progstat">Loading: 0%</div>
-  <div id="progress-container"><div id="progress"></div></div>
-</div>
 <div id="mobile-nav">
   <button id="showMap" class="mobile-nav-button mobile-active" onClick="showMap()">Map</button>
   <button id="showSidebar" class="mobile-nav-button" onClick="showSidebar()">Sidebar</button>
@@ -696,21 +622,35 @@ var normal = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_
   attribution: ' Map data &copy; <a href="">PWAW</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
   minZoom: 3,
-  maxZoom: 13
+  maxZoom: 14
 });
 
 var sattelite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { // https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x} // https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}
   attribution: ' Map data &copy; <a href="">PWAW</a> &copy; Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
   minZoom: 3,
-  maxZoom: 13
+  maxZoom: 14
 });
 
 normal.addTo(mymap);
 
+function clearMap(){
+    for(i in mymap._layers){        
+        if(mymap._layers[i]._path != undefined)
+        {
+            try{
+              mymap.removeLayer(mymap._layers[i]);
+            }
+            catch(e){
+                console.log("problem with " + e + mymap._layers[i]);
+            }
+        }
+    }
+}
+
 date = '<?php echo $date;?>';
 
 if (date.substr(0, 4) == "1935" || date.substr(0, 7) == "1936_01" || date.substr(0, 7) == "1936_02" || date.substr(0, 7) == "1936_03" || date.substr(0, 7) == "1936_04" || date.substr(0, 7) == "1936_05" || date.substr(0, 7) == "1936_06" || date.substr(0, 9) == "1936_07_0" || date.substr(0, 10) == "1936_07_11" || date.substr(0, 10) == "1936_07_12" || date.substr(0, 10) == "1936_07_13" || date.substr(0, 10) == "1936_07_14") {
-  mymap.setView([9.013776, 38.754616], 5);
+  mymap.setView([9.013776, 38.754616], 6);
 } else if (date.substr(0, 10) == "1936_07_15" || date.substr(0, 10) == "1936_07_16" || date.substr(0, 10) == "1936_07_17" || date.substr(0, 10) == "1936_07_18" || date.substr(0, 10) == "1936_07_19" || date.substr(0, 9) == "1936_07_2"  || date.substr(0, 9) == "1936_07_3" || date.substr(0, 7) == "1936_08" || date.substr(0, 7) == "1936_09" || date.substr(0, 7) == "1936_10" || date.substr(0, 7) == "1936_11" || date.substr(0, 7) == "1936_12") {
   mymap.setView([40.418201, -3.704109], 6);
 } else {
@@ -734,9 +674,12 @@ function forEachFeature(feature, layer) {
 }
 
 stripes_axis.addTo(mymap);
+stripes_italy_occupied.addTo(mymap);
+stripes_italy_puppet.addTo(mymap);
 stripes_comintern.addTo(mymap);
 stripes_finland.addTo(mymap);
 stripes_neutral.addTo(mymap);
+stripes_zone.addTo(mymap);
 
 mymap.createPane('neutral_zone');
 mymap.createPane('neutral');
@@ -758,6 +701,7 @@ mymap.createPane('axis_occupied');
 mymap.createPane('axis_puppet');
 mymap.createPane('axis');
 
+mymap.on('load', function() {
 mymap.getPane('neutral_zone').style.zIndex = 252;
 mymap.getPane('neutral').style.zIndex = 253;
 mymap.getPane('uf_occupied').style.zIndex = 254;
@@ -777,6 +721,7 @@ mymap.getPane('italy').style.zIndex = 267;
 mymap.getPane('axis_occupied').style.zIndex = 268;
 mymap.getPane('axis_puppet').style.zIndex = 269;
 mymap.getPane('axis').style.zIndex = 270;
+});
 
 for (let country of countries) {
   country_layers = L.layerGroup();
@@ -820,12 +765,6 @@ if (isset($_GET['m'])) {
   zoom'.$marker.'();';
 }
 ?>
-
-L.control.mapCenterCoord({
-  icon: false,
-  position: 'bottomright',
-  latlngFormat: 'DMS'
-}).addTo(mymap);
 
 L.control.scale({
   position: 'bottomright'
@@ -1170,6 +1109,8 @@ $(function() {
       $('#keys-content').load('keys/keys_1.php');
     }
 
+    clearMap();
+
     $.getScript('map/'+date+'.js', function() {
       for (let country of countries) {
         country_layers = L.layerGroup();
@@ -1390,6 +1331,8 @@ $(function() {
     if (date.substr(0, 4) == "1935") {
       $('#keys-content').load('keys/keys_1.php');
     }
+
+    clearMap();
 
     $.getScript('map/'+date+'.js', function() {
       for (let country of countries) {
