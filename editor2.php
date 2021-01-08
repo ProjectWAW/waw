@@ -380,15 +380,15 @@
       zoomControl: true
     }).addTo(mymap);
 
- var topleft = L.latLng(40.539373,-4.171371),
-	topright   = L.latLng(40.539112,-3.839035),
-  bottomleft = L.latLng(40.347591,-4.179268);
+    var topleft = L.latLng(39.749434, 105.210571),
+	topright   = L.latLng(39.656456, 111.313477),
+  bottomleft = L.latLng(32.319634, 105.095215);
   
   var marker1 = L.marker(topleft, {draggable: true} ).addTo(mymap),
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://upload.wikimedia.org/wikipedia/commons/c/c7/BatallaBrunete1.png", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/726896429318144080/794588992946700308/W020180920568422438647.png", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
@@ -407,7 +407,7 @@ function repositionImage() {
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1937_07_07/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1935_10_28/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);

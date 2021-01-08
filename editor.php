@@ -387,7 +387,7 @@
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/726896429318144080/794588992946700308/W020180920568422438647.png", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Cameroon_boundary_changes.PNG/1200px-Cameroon_boundary_changes.PNG", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
