@@ -332,6 +332,7 @@
   <option value="shanxi_clique">shanxi_clique</option>
   <option value="siam">siam</option>
   <option value="sichuan_clique">sichuan_clique</option>
+  <option value="sierra_leone">sierra_leone</option>
   <option value="south_africa">south_africa</option>
   <option value="southern_rhodesia">southern_rhodesia</option>
   <option value="spain">spain</option>
@@ -379,15 +380,15 @@
       zoomControl: true
     }).addTo(mymap);
 
- var topleft = L.latLng(39.749434, 105.210571),
-	topright   = L.latLng(39.656456, 111.313477),
-  bottomleft = L.latLng(32.319634, 105.095215);
+ var topleft = L.latLng(38.938048, 109.890747)
+	topright   = L.latLng(38.972222, 113.35144),
+  bottomleft = L.latLng(35.05698, 109.918213);
   
   var marker1 = L.marker(topleft, {draggable: true} ).addTo(mymap),
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Cameroon_boundary_changes.PNG/1200px-Cameroon_boundary_changes.PNG", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/726896429318144080/796365226801889280/m.png", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
