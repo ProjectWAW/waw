@@ -1,8 +1,8 @@
-<?php require 'action_marker_editor.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <?php require 'page_head.php';?>
+<?php require 'action_marker_editor.php';?>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="">
 <title>Editor - Project: World at War</title>
 <style>

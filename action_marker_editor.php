@@ -1,17 +1,15 @@
 <?php
-if (isset($_POST['submit'])) {
-  $var = '["'.$_POST["id"].'", "info_'.$_POST["id"].'", '.$_POST["colour_and_icon"].', ['.$_POST["location"].'], "'.$_POST["information"].'", "'.$_POST["icon"].'", "'.$_POST["conflict"].'", "'.$_POST["country"].'"],';
-
-var_dump($var);
-
-function debug_to_console($data) {
-  $output = $data;
-  if (is_array($output))
-      $output = implode(',', $output);
-
-  echo "<script>console.log('$output');</script>";
-}
-
-debug_to_console($var);
+if (isset($_POST['submit1'])) {
+  echo '<script>
+  $.ajax({
+    type: "POST", url: "api/countries/create.php", dataType:"json", data: {name: "test1"},
+    success: function(data) {
+    },
+    error:function (xhr, ajaxOptions, thrownError) {
+      document.write(xhr.status);
+      document.write(thrownError);
+    }
+  });
+  </script>';
 }
 ?>
