@@ -24,7 +24,7 @@ select {
 <body>
 <?php require 'navbar.php';?>
 <div class="content">
-  <h2>Country</h2>
+<u><h2>Country</h2></u>
   <form method="post" action="/marker_editor.php">
     <label for="name">Name:</label><br>
     <input type="text" id="name" name="name" placeholder="Republic of China"><br><hr>
@@ -45,21 +45,27 @@ select {
     <input type="text" id="hog" name="hog" placeholder="Wang Jingwei"><br><hr>
 
     <label for="capital">Capital:</label><br>
-    <input type="text" id="capital" name="capital" placeholder="Nanjing"><br><hr>
+    <input type="text" id="capital" name="capital" placeholder="Nanjing (南京)"><br><hr>
     
     <input type="submit" id="submit1" name="submit1" class="submit" value="Submit"><br><br><br>
   </form>
-  <h2>Marker</h2>
+  <u><h2>Marker</h2></u>
   <form method="post" action="/marker_editor.php">
 
   <label for="date">Date:</label><br>
   <input type="text" id="date" name="date" placeholder="1936-12-31"><br><hr>
+
+  <label for="country">Country:</label><br>
+  <input type="text" id="country" name="country" placeholder="Italy"><br><hr>
 
   <label for="location">Location:</label><br>
   <input type="text" id="location" name="location" placeholder="41.8919300, 12.5113300"><br><hr>
 
   <label for="information">Information:</label><br>
   <input type="text" id="information" name="information" placeholder="Italy starts an invasion of Ethiopia without a formal declaration of war, shortly after the league exonerated both parties in the Walwal incident."><br><hr>
+  
+  <label for="colour_and_icon">Colour and icon:</label><br>
+  <input type="text" id="colour_and_icon" name="colour_and_icon" placeholder="green_bullhorn"><br><hr>
 
   <label for="icon">Icon:</label><br>
     <select name="icon" id="source">
@@ -98,8 +104,15 @@ select {
       <option value="phoney_war">Phoney War</option>
     </select><br><hr>
 
+    <label for="source">Source:</label><br>
+    <input type="text" id="source" name="source" placeholder=""><br><hr>
+
+    <label for="position">Page position:</label><br>
+    <input type="number" id="position" name="position" placeholder="5"><br><hr>
+
+    <input type="submit" id="submit2" name="submit2" class="submit" value="Submit"><br><br><br>
   </form>
-  <h2>Source</h2>
+  <u><h2>Source</h2></u>
   <form method="post" action="/marker_editor.php">
   </form>
 

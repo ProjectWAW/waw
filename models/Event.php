@@ -9,7 +9,7 @@
         public string $country;
         public string $cssClass;
         public string $date;
-        public string $location;
+        public array $location;
         public string $marker;
         public int $pageWeight;
         public string $source;

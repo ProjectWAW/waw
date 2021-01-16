@@ -498,30 +498,57 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
     <div id="date_info_content">
       <script>
       <?php include 'map/'.$date.'.js';?>
+      
+      $.ajax({
+        type: 'GET', url: 'api/events/get.php', data: {},
+        success: function(data){
+          for (var i = 0; i < data.length; i++){
+            if (data[i].date == date) {
+              let aBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
+              aBlock.id = data[i]._id;
 
-      for (let marker of markers) {
-
-        let aBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
-        aBlock.id = marker[0];
+              var dic = document.getElementById(data[i]._id);
+              var newhr = document.createElement('hr');
+              dic.parentNode.insertBefore(newhr, dic.nextSibling);
         
-        var dic = document.getElementById(marker[0]);
-        var newhr = document.createElement('hr');
-        dic.parentNode.insertBefore(newhr, dic.nextSibling);
+              id5 = data[i]._id;
+              location5 = data[i].location;
+              text5 = data[i].text;
+              class5 = data[i].cssClass;
+              conflict5 = data[i].conflict;
 
-        $.ajax({
-          url: 'ajax.php',
-          type: "POST",
-          dataType:'json',
-          data: ({id: marker[0], location: marker[3], text: marker[4], class: marker[5], conflict: marker[6], country: marker[7]}),
-          error: function(xhr, status, error) {
-            var err = JSON.parse(xhr.responseText);
-            alert(err.Message);
-          },
-          success: function(data){
-            $(aBlock).html(data);
+              $.ajax({
+                type: 'GET', url: 'api/countries/get.php', data: {},
+                success: function(data1) {
+                  console.log('1.5');
+                  for (var b = 0; b < data1.length; b++){
+                    if (data1[b]._id == data[b].country) {
+        
+                      $.ajax({
+                        url: 'ajax.php',
+                        type: "POST",
+                        dataType:'json',
+                        data: ({id: id5, location: location5, text: text5, class: class5, conflict: conflict5, country: data1[b].name}),
+                        error: function(xhr, status, error) {
+                          var err = JSON.parse(xhr.responseText);
+                          alert(err.Message);
+                        },
+                        success: function(data6){
+                          $(aBlock).html(data6);
+                        }
+                      });
+                    }
+                  }
+                }
+              });
+            }
           }
-        });
-      }
+        },
+        error:function (xhr, ajaxOptions, thrownError) {
+          document.write(xhr.status);
+          document.write(thrownError);
+        }
+      });
       </script>
     </div>
   </div>
@@ -669,8 +696,28 @@ var popup = L.popup();
 mymap.on('click', onMapClick);
 
 function forEachFeature(feature, layer) {
-  var popupContent = "<b>Name</b>: "+feature.properties.Name+"<br><b>Status</b>: "+feature.properties.Status+"<br><b>Government</b>: "+feature.properties.Government+"<br><b>Ruling Party</b>: "+feature.properties.Party+"<br><b>Head of Government</b>: "+feature.properties.HoG+"";
+  $.ajax({
+    type: 'GET', url: 'api/countries/get.php', data: {},
+    success: function(data1){
+      for (var i = 0; i < data1.length; i++){
+        if (data1[i]._id == feature.properties.id){
+          var name = (data1[i].name);
+          var government = (data1[i].government);
+          var hos = (data1[i].headOfState);
+          var hog = (data1[i].headOfGovernment);
+          var party = (data1[i].party);
+          var status = (data1[i].status);
+          var capital = (data1[i].capital);
+          var popupContent = "<b>Name</b>: "+name+"<br><b>Status</b>: "+status+"<br><b>Government</b>: "+government+"<br><b>Capital</b>: "+capital+"<br><b>Ruling Party</b>: "+party+"<br><b>Head of State</b>: "+hos+"<br><b>Head of Government</b>: "+hog+"";
   layer.bindPopup(popupContent);
+        }
+      }
+    },
+    error:function (xhr, ajaxOptions, thrownError) {
+      document.write(xhr.status);
+      document.write(thrownError);
+    }
+  });
 }
 
 stripes_axis.addTo(mymap);
@@ -727,7 +774,7 @@ for (let country of countries) {
   country_layers = L.layerGroup();
   $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
     sites = L.geoJson(data, {
-      //"onEachFeature": forEachFeature,
+      "onEachFeature": forEachFeature,
       "style": {color: country[1], fillPattern: country[4]},
       "pane": country[3]
     });
@@ -738,23 +785,32 @@ for (let country of countries) {
 
 marker_group = new L.FeatureGroup();
 
-for (let marker of markers) {
-  marker[1] = L.marker(marker[3], {
-    id: 'marker'+marker[0],
-    icon: marker[2],
-    title: marker[4]
-  });
-
-  marker_group.addLayer(marker[1]);
-  mymap.addLayer(marker_group);
-
-  marker[1].on("click", function () {
-    onClick1();
-    location.href='#'+marker[0]+'';
-    infoClicked = document.getElementById(""+marker[0]+"");
-    onClick2();
-  });
-}
+$.ajax({
+  type: 'GET', url: 'api/events/get.php', data: {},
+  success: function(data1){
+    for (var i = 0; i < data1.length; i++){
+      if (data1[i].date == date) {
+        data1[i]._id = L.marker(data1[i].location, {
+          id: data1[i]._id+i,
+          icon: window[data1[i].marker],
+          title: data1[i].text
+        });
+        marker_group.addLayer(data1[i]._id);
+        mymap.addLayer(marker_group);
+        data1[i]._id.on("click", function () {
+          onClick1();
+          location.href='#'+data1[i]._id+'';
+          infoClicked = document.getElementById(""+data1[i]._id+"");
+          onClick2();
+        });
+      }
+    }
+  },
+  error:function (xhr, ajaxOptions, thrownError) {
+    document.write(xhr.status);
+    document.write(thrownError);
+  }
+});
 
 <?php
 if (isset($_GET['m'])) {
