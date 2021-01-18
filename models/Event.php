@@ -5,7 +5,6 @@
     class Event implements Serializable
     {
         public string $_id;
-        public string $conflict;
         public string $country;
         public string $cssClass;
         public string $date;
@@ -19,7 +18,6 @@
         {
             return [
                 "_id" => $this->_id,
-                "conflict" => $this->conflict,
                 "country" => $this->country,
                 "cssClass" => $this->cssClass,
                 "date" => $this->date,

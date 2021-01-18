@@ -1,7 +1,6 @@
 [
   {
     "_id": "82ac5780-eeb7-4b8d-aad9-17e2c9260d96",
-    "conflict": "Pollenist Rebellion",
     "country": "8eb1c021-4151-44e3-9cda-553683297a0f",
     "cssClass": "icon-gun-right",
     "date": "1936-10-02",
@@ -13,7 +12,6 @@
   },
   {
     "_id": "a4bfe0f0-2374-4f48-b507-0742857e1aac",
-    "conflict": "Spanish Civil War",
     "country": "8eb1c021-4151-44e3-9cda-553683297a0f",
     "cssClass": "icon-gun-right",
     "date": "1936-10-02",

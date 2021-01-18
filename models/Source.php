@@ -6,8 +6,7 @@
     {
         public string $_id;
         public string $author;
-        public DateTime $accessDate;
-        public DateTime $publishDate;
+        public string $publishDate;
         public string $publisher;
         public string $title;
         public string $type;
@@ -18,8 +17,7 @@
             return [
                 "_id" => $this->_id,
                 "author" => $this->author,
-                "accessDate" => new MongoDate($this->accessDate),
-                "publishDate" => new MongoDate($this->publishDate),
+                "publishDate" => $this->publishDate,
                 "publisher" => $this->publisher,
                 "title" => $this->title,
                 "type" => $this->type,
