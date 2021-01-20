@@ -533,34 +533,34 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                 success: function(data1) {
                   for (var o = 0; o < data1.length; o++){
                     if (data1[o]._id == source5) {
-                      if (data1[o].publishDate.substr(5, 2) == "01") {
+                      if (data1[o].accessDate.substr(5, 2) == "01") {
                         info_month = "January";
-                      } else if (data1[o].publishDate.substr(5, 2) == "02") {
+                      } else if (data1[o].accessDate.substr(5, 2) == "02") {
                         info_month = "February";
-                      } else if (data1[o].publishDate.substr(5, 2) == "03") {
+                      } else if (data1[o].accessDate.substr(5, 2) == "03") {
                         info_month = "March";
-                      } else if (data1[o].publishDate.substr(5, 2) == "04") {
+                      } else if (data1[o].accessDate.substr(5, 2) == "04") {
                         info_month = "April";
-                      } else if (data1[o].publishDate.substr(5, 2) == "05") {
+                      } else if (data1[o].accessDate.substr(5, 2) == "05") {
                         info_month = "May";
-                      } else if (data1[o].publishDate.substr(5, 2) == "06") {
+                      } else if (data1[o].accessDate.substr(5, 2) == "06") {
                         info_month = "June";
-                      } else if (data1[o].publishDate.substr(5, 2) == "07") {
+                      } else if (data1[o].accessDate.substr(5, 2) == "07") {
                         info_month = "July";
-                      } else if (data1[o].publishDate.substr(5, 2) == "08") {
+                      } else if (data1[o].accessDate.substr(5, 2) == "08") {
                         info_month = "August";
-                      } else if (data1[o].publishDate.substr(5, 2) == "09") {
+                      } else if (data1[o].accessDate.substr(5, 2) == "09") {
                         info_month = "September";
-                      } else if (data1[o].publishDate.substr(5, 2) == "10") {
+                      } else if (data1[o].accessDate.substr(5, 2) == "10") {
                         info_month = "October";
-                      } else if (data1[o].publishDate.substr(5, 2) == "11") {
+                      } else if (data1[o].accessDate.substr(5, 2) == "11") {
                         info_month = "November";
-                      } else if (data1[o].publishDate.substr(5, 2) == "12") {
+                      } else if (data1[o].accessDate.substr(5, 2) == "12") {
                         info_month = "December";
                       }
                       if (data1[o].type == "website") {
-                        publishDateSource = data1[o].publishDate.substr(9, 10)+" "+info_month+" "+data1[o].publishDate.substr(0, 4);
-                        src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+publishDateSource+", "+data1[o].url+"";
+                        accessDateSource = data1[o].accessDate.substr(8, 10)+" "+info_month+" "+data1[o].accessDate.substr(0, 4);
+                        src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+"";
                       } else {
                         src = ""+data1[o].author+". "+data1[o].title+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
                       }
@@ -1285,8 +1285,8 @@ $(function() {
                   for (var o = 0; o < data1.length; o++){
                     if (data1[o]._id == source5) {
                       if (data1[o].type == "website") {
-                        publishDateSource = data1[o].publishDate.substr(9, 10)+" "+info_month+" "+data1[o].publishDate.substr(0, 4);
-                        src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+publishDateSource+", "+data1[o].url+"";
+                        accessDateSource = data1[o].accessDate.substr(9, 10)+" "+info_month+" "+data1[o].accessDate.substr(0, 4);
+                        src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+"";
                       } else {
                         src = ""+data1[o].author+". "+data1[o].title+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
                       }
@@ -1563,8 +1563,8 @@ $(function() {
                   for (var o = 0; o < data1.length; o++){
                     if (data1[o]._id == source5) {
                       if (data1[o].type == "website") {
-                        publishDateSource = data1[o].publishDate.substr(9, 10)+" "+info_month+" "+data1[o].publishDate.substr(0, 4);
-                        src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+publishDateSource+", "+data1[o].url+"";
+                        accessDateSource = data1[o].accessDate.substr(9, 10)+" "+info_month+" "+data1[o].accessDate.substr(0, 4);
+                        src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+"";
                       } else {
                         src = ""+data1[o].author+". "+data1[o].title+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
                       }

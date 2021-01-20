@@ -210,7 +210,7 @@ countries = [
 ]
 
 markers = []
-
+/*
 info_1936_07_17_1 = getCookie("info_1936_07_17_1");
 marker1936_07_17_1_location = [28.472917, -16.262512];
 marker1936_07_17_1 = L.marker(marker1936_07_17_1_location, {
@@ -351,4 +351,4 @@ function zoom1936_07_17_7() {
 }
 function zoom1936_07_17_8() {
   mymap.setView(marker1936_07_17_8_location);
-}
+}*/

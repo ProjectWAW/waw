@@ -134,7 +134,7 @@ datalist.option {
     <input type="text" id="source_publisher" name="source_publisher" placeholder="Phoenix" required><br><hr>
 
     <label for="source_title">Source date published:</label><br>
-    <input type="text" id="source_date_published" name="source_date_published" placeholder="(Book/Journal - write only the year) 2007 / (Website - write the full date) 27 July 2007" required><br><hr>
+    <input type="text" id="source_date_published" name="source_date_published" placeholder="(Book/Journal - write only the year) 2007 / (Website - write the full date) 2007-12-31" required><br><hr>
 
     <label for="source_title">Website</label><br>
     <input type="text" id="url" name="url" placeholder="laguerracivilenaragon.blogspot.com/2014/02/frente-de-aragon.html (ONLY IF YOUR SOURCE IS A WEBSITE, NOT A BOOK OR A JOURNAL!"><br><hr>
