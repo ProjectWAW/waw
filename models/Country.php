@@ -5,21 +5,25 @@
     class Country implements Serializable
     {
         public string $_id;
-        public string $government;
-        public string $headOfGovernment;
         public string $name;
+        public string $government;
+        public string $headOfState;
+        public string $headOfGovernment;
         public string $party;
         public string $status;
+        public string $capital;
 
         public function bsonSerialize()
         {
             return [
                 "_id" => $this->_id,
-                "government" => $this->government,
-                "headOfGovernment" => $this->headOfGovernment,
                 "name" => $this->name,
+                "government" => $this->government,
+                "headOfState" => $this->headOfState,
+                "headOfGovernment" => $this->headOfGovernment,
                 "party" => $this->party,
-                "status" => $this->status
+                "status" => $this->status,
+                "capital" => $this->capital
             ];
         }
     }

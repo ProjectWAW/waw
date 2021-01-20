@@ -21,7 +21,7 @@
                 $response = "";
             }
 
-            echo json_encode($response, JSON_THROW_ON_ERROR);
+            echo json_encode($response, JSON_PRETTY_PRINT);
         }
         elseif (isset($_GET['date']))
         {
@@ -33,7 +33,7 @@
                 $response = "";
             }
 
-            echo json_encode($response, JSON_THROW_ON_ERROR);
+            echo json_encode($response, JSON_PRETTY_PRINT);
         }
         else
         {
@@ -45,11 +45,11 @@
                 $response = "";
             }
 
-            echo json_encode($response, JSON_THROW_ON_ERROR);
+            echo json_encode($response, JSON_PRETTY_PRINT);
         }
     }
     catch (Exception $e)
     {
         http_response_code(500);
-        echo json_encode($e->getMessage(), JSON_THROW_ON_ERROR);
+        echo json_encode($e->getMessage(), JSON_PRETTY_PRINT);
     }

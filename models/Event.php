@@ -5,11 +5,10 @@
     class Event implements Serializable
     {
         public string $_id;
-        public string $conflict;
         public string $country;
         public string $cssClass;
         public string $date;
-        public string $location;
+        public array $location;
         public string $marker;
         public int $pageWeight;
         public string $source;
@@ -19,7 +18,6 @@
         {
             return [
                 "_id" => $this->_id,
-                "conflict" => $this->conflict,
                 "country" => $this->country,
                 "cssClass" => $this->cssClass,
                 "date" => $this->date,
