@@ -76,7 +76,7 @@ if (isset($_POST['submit3'])) {
  
        objXMLHttpRequest.open('POST', 'api/sources/create.php');
        objXMLHttpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-       objXMLHttpRequest.send('{\"author\": \"".$_POST['source_author']."\",\"publishDate\": \"".$_POST['source_date_published']."\",\"publisher\": \"".$_POST['source_publisher']."\",\"title\": \"".$_POST['source_title']."\",\"type\": \"".$_POST['source_type']."\",\"url\": \"".$_POST['url']."\"}');
+       objXMLHttpRequest.send('{\"author\": \"".$_POST['source_author']."\",\"accessDate\": \"".$_POST['source_date_published']."\",\"publishDate\": \"/\",\"publisher\": \"".$_POST['source_publisher']."\",\"title\": \"".$_POST['source_title']."\",\"type\": \"".$_POST['source_type']."\",\"url\": \"".$_POST['url']."\"}');
      });
    }
  
@@ -103,7 +103,7 @@ if (isset($_POST['submit3'])) {
  
        objXMLHttpRequest.open('POST', 'api/sources/create.php');
        objXMLHttpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-       objXMLHttpRequest.send('{\"author\": \"".$_POST['source_author']."\",\"publishDate\": \"".$_POST['source_date_published']."\",\"publisher\": \"".$_POST['source_publisher']."\",\"title\": \"".$_POST['source_title']."\",\"type\": \"".$_POST['source_type']."\",\"url\": \"/\"}');
+       objXMLHttpRequest.send('{\"author\": \"".$_POST['source_author']."\",\"accessDate\": \"/\",\"publishDate\": \"".$_POST['source_date_published']."\",\"publisher\": \"".$_POST['source_publisher']."\",\"title\": \"".$_POST['source_title']."\",\"type\": \"".$_POST['source_type']."\",\"url\": \"/\"}');
      });
    }
  
