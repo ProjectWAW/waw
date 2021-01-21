@@ -264,6 +264,7 @@
   <option value="italy">italy</option>
   <option value="jamaica">jamaica</option>
   <option value="japan">japan</option>
+  <option value="japanese_china_occupied">japanese_china_occupied</option>
   <option value="japanese_korea">japanese_korea</option>
   <option value="japanese_taiwan">japanese_taiwan</option>
   <option value="kenya">kenya</option>
@@ -407,7 +408,7 @@ function repositionImage() {
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1935_10_28/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1937_07_26/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);

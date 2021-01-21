@@ -264,6 +264,7 @@
   <option value="italy">italy</option>
   <option value="jamaica">jamaica</option>
   <option value="japan">japan</option>
+  <option value="japanese_china_occupied">japanese_china_occupied</option>
   <option value="japanese_korea">japanese_korea</option>
   <option value="japanese_taiwan">japanese_taiwan</option>
   <option value="kenya">kenya</option>
@@ -394,20 +395,20 @@ var overlay = L.imageOverlay.rotated("https://p3-bk.byteimg.com/tos-cn-i-mlhdmxs
 	attribution: "Medonci"
 }).addTo(mymap);*/
 
-function repositionImage() {
+/*function repositionImage() {
 			overlay.reposition(marker1.getLatLng(), marker2.getLatLng(), marker3.getLatLng());
 		};
 		
 		marker1.on('drag dragend', repositionImage);
 		marker2.on('drag dragend', repositionImage);
-		marker3.on('drag dragend', repositionImage);
+		marker3.on('drag dragend', repositionImage);*/
 
     function start(val) {
 
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1935_11_25/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1937_07_26/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);
