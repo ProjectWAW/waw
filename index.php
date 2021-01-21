@@ -516,17 +516,17 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
               let aBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
               aBlock.id = data[i]._id;
 
-              var dic = document.getElementById(data[i]._id);
-              var newhr = document.createElement('hr');
+              let dic = document.getElementById(data[i]._id);
+              let newhr = document.createElement('hr');
               dic.parentNode.insertBefore(newhr, dic.nextSibling);
         
-              id5 = data[i]._id;
-              location5 = data[i].location;
-              text5 = data[i].text;
-              class5 = data[i].cssClass;
-              source5 = data[i].source;
-              country5 = data[i].country;
-              pw5 = data[i].pageWeight;
+              let id5 = data[i]._id;
+              let location5 = data[i].location;
+              let text5 = data[i].text;
+              let class5 = data[i].cssClass;
+              let source5 = data[i].source;
+              let country5 = data[i].country;
+              let pw5 = data[i].pageWeight;
 
               $.ajax({
                 type: 'GET', url: 'api/sources/get.php', data: {},
@@ -560,38 +560,62 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                       }
                       if (data1[o].type == "website") {
                         accessDateSource = data1[o].accessDate.substr(8, 10)+" "+info_month+" "+data1[o].accessDate.substr(0, 4);
-                        src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+"";
+                        let src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+""; bbb = src;
+                        $.ajax({
+                          type: 'GET', url: 'api/countries/get.php', data: {},
+                          success: function(data2) {
+                            for (var b = 0; b < data2.length; b++){
+                              if (data2[b]._id == country5) {
+                                countryname = data2[b].name;
+                                $.ajax({
+                                  url: 'ajax.php',
+                                  type: "POST",
+                                  dataType:'json',
+                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  error: function(xhr, status, error) {
+                                    var err = JSON.parse(xhr.responseText);
+                                    alert(err.Message);
+                                  },
+                                  success: function(data6){
+                                    $(aBlock).html(data6);
+                                  }
+                                });
+                              }
+                            }
+                          }
+                        });
                       } else {
-                        src = ""+data1[o].author+". "+data1[o].title+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
+                        let src = ""+data1[o].author+". "+data1[o].title+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
+                        $.ajax({
+                          type: 'GET', url: 'api/countries/get.php', data: {},
+                          success: function(data2) {
+                            for (var b = 0; b < data2.length; b++){
+                              if (data2[b]._id == country5) {
+                                countryname = data2[b].name;
+                                $.ajax({
+                                  url: 'ajax.php',
+                                  type: "POST",
+                                  dataType:'json',
+                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  error: function(xhr, status, error) {
+                                    var err = JSON.parse(xhr.responseText);
+                                    alert(err.Message);
+                                  },
+                                  success: function(data6){
+                                    $(aBlock).html(data6);
+                                  }
+                                });
+                              }
+                            }
+                          }
+                        });
                       }
                       
                     }
                   }
                 }
               });
-              $.ajax({
-                type: 'GET', url: 'api/countries/get.php', data: {},
-                success: function(data2) {
-                  for (var b = 0; b < data2.length; b++){
-                    if (data2[b]._id == country5) {
-                      countryname = data2[b].name;
-                      $.ajax({
-                        url: 'ajax.php',
-                        type: "POST",
-                        dataType:'json',
-                        data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
-                        error: function(xhr, status, error) {
-                          var err = JSON.parse(xhr.responseText);
-                          alert(err.Message);
-                        },
-                        success: function(data6){
-                          $(aBlock).html(data6);
-                        }
-                      });
-                    }
-                  }
-                }
-              });
+              
             }
           }
         },
@@ -839,6 +863,7 @@ $.ajax({
   success: function(data1){
     for (var i = 0; i < data1.length; i++){
       if (data1[i].date == date) {
+        let ogdataid = data1[i]._id;
         data1[i]._id = L.marker(data1[i].location, {
           id: data1[i]._id+i,
           icon: window[data1[i].marker],
@@ -846,12 +871,12 @@ $.ajax({
         });
         marker_group.addLayer(data1[i]._id);
         mymap.addLayer(marker_group);
-        /*data1[i]._id.on("click", function () {
+        data1[i]._id.on("click", function () {
           onClick1();
-          location.href='#'+data1[i]._id+'';
-          infoClicked = document.getElementById(""+data1[i]._id+"");
+          location.href='#'+ogdataid+'';
+          infoClicked = document.getElementById(ogdataid);
           onClick2();
-        });*/
+        });
       }
     }
   },
@@ -1237,6 +1262,7 @@ $(function() {
         success: function(data1){
           for (var i = 0; i < data1.length; i++){
             if (data1[i].date == date) {
+              let ogdataid = data1[i]._id;
               data1[i]._id = L.marker(data1[i].location, {
                 id: data1[i]._id+i,
                 icon: window[data1[i].marker],
@@ -1244,12 +1270,12 @@ $(function() {
               });
               marker_group.addLayer(data1[i]._id);
               mymap.addLayer(marker_group);
-              /*data1[i]._id.on("click", function () {
+              data1[i]._id.on("click", function () {
                 onClick1();
-                location.href='#'+data1[i]._id+'';
-                infoClicked = document.getElementById(""+data1[i]._id+"");
+                location.href='#'+ogdataid+'';
+                infoClicked = document.getElementById(ogdataid);
                 onClick2();
-              });*/
+              });
             }
           }
         },
@@ -1266,18 +1292,18 @@ $(function() {
             if (data[i].date == date) {
               let aBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
               aBlock.id = data[i]._id;
-              
-              var dic = document.getElementById(data[i]._id);
-              var newhr = document.createElement('hr');
+
+              let dic = document.getElementById(data[i]._id);
+              let newhr = document.createElement('hr');
               dic.parentNode.insertBefore(newhr, dic.nextSibling);
         
-              id5 = data[i]._id;
-              location5 = data[i].location;
-              text5 = data[i].text;
-              class5 = data[i].cssClass;
-              source5 = data[i].source;
-              country5 = data[i].country;
-              pw5 = data[i].pageWeight;
+              let id5 = data[i]._id;
+              let location5 = data[i].location;
+              let text5 = data[i].text;
+              let class5 = data[i].cssClass;
+              let source5 = data[i].source;
+              let country5 = data[i].country;
+              let pw5 = data[i].pageWeight;
 
               $.ajax({
                 type: 'GET', url: 'api/sources/get.php', data: {},
@@ -1285,39 +1311,63 @@ $(function() {
                   for (var o = 0; o < data1.length; o++){
                     if (data1[o]._id == source5) {
                       if (data1[o].type == "website") {
-                        accessDateSource = data1[o].accessDate.substr(9, 10)+" "+info_month+" "+data1[o].accessDate.substr(0, 4);
-                        src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+"";
+                        accessDateSource = data1[o].accessDate.substr(8, 10)+" "+info_month+" "+data1[o].accessDate.substr(0, 4);
+                        let src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+""; bbb = src;
+                        $.ajax({
+                          type: 'GET', url: 'api/countries/get.php', data: {},
+                          success: function(data2) {
+                            for (var b = 0; b < data2.length; b++){
+                              if (data2[b]._id == country5) {
+                                countryname = data2[b].name;
+                                $.ajax({
+                                  url: 'ajax.php',
+                                  type: "POST",
+                                  dataType:'json',
+                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  error: function(xhr, status, error) {
+                                    var err = JSON.parse(xhr.responseText);
+                                    alert(err.Message);
+                                  },
+                                  success: function(data6){
+                                    $(aBlock).html(data6);
+                                  }
+                                });
+                              }
+                            }
+                          }
+                        });
                       } else {
-                        src = ""+data1[o].author+". "+data1[o].title+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
+                        let src = ""+data1[o].author+". "+data1[o].title+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
+                        $.ajax({
+                          type: 'GET', url: 'api/countries/get.php', data: {},
+                          success: function(data2) {
+                            for (var b = 0; b < data2.length; b++){
+                              if (data2[b]._id == country5) {
+                                countryname = data2[b].name;
+                                $.ajax({
+                                  url: 'ajax.php',
+                                  type: "POST",
+                                  dataType:'json',
+                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  error: function(xhr, status, error) {
+                                    var err = JSON.parse(xhr.responseText);
+                                    alert(err.Message);
+                                  },
+                                  success: function(data6){
+                                    $(aBlock).html(data6);
+                                  }
+                                });
+                              }
+                            }
+                          }
+                        });
                       }
                       
                     }
                   }
                 }
               });
-              $.ajax({
-                type: 'GET', url: 'api/countries/get.php', data: {},
-                success: function(data2) {
-                  for (var b = 0; b < data2.length; b++){
-                    if (data2[b]._id == country5) {
-                      countryname = data2[b].name;
-                      $.ajax({
-                        url: 'ajax.php',
-                        type: "POST",
-                        dataType:'json',
-                        data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
-                        error: function(xhr, status, error) {
-                          var err = JSON.parse(xhr.responseText);
-                          alert(err.Message);
-                        },
-                        success: function(data6){
-                          $(aBlock).html(data6);
-                        }
-                      });
-                    }
-                  }
-                }
-              });
+              
             }
           }
         },
@@ -1515,6 +1565,7 @@ $(function() {
         success: function(data1){
           for (var i = 0; i < data1.length; i++){
             if (data1[i].date == date) {
+              let ogdataid = data1[i]._id;
               data1[i]._id = L.marker(data1[i].location, {
                 id: data1[i]._id+i,
                 icon: window[data1[i].marker],
@@ -1522,12 +1573,12 @@ $(function() {
               });
               marker_group.addLayer(data1[i]._id);
               mymap.addLayer(marker_group);
-              /*data1[i]._id.on("click", function () {
+              data1[i]._id.on("click", function () {
                 onClick1();
-                location.href='#'+data1[i]._id+'';
-                infoClicked = document.getElementById(""+data1[i]._id+"");
+                location.href='#'+ogdataid+'';
+                infoClicked = document.getElementById(ogdataid);
                 onClick2();
-              });*/
+              });
             }
           }
         },
@@ -1544,18 +1595,18 @@ $(function() {
             if (data[i].date == date) {
               let aBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
               aBlock.id = data[i]._id;
-              
-              var dic = document.getElementById(data[i]._id);
-              var newhr = document.createElement('hr');
+
+              let dic = document.getElementById(data[i]._id);
+              let newhr = document.createElement('hr');
               dic.parentNode.insertBefore(newhr, dic.nextSibling);
         
-              id5 = data[i]._id;
-              location5 = data[i].location;
-              text5 = data[i].text;
-              class5 = data[i].cssClass;
-              source5 = data[i].source;
-              country5 = data[i].country;
-              pw5 = data[i].pageWeight;
+              let id5 = data[i]._id;
+              let location5 = data[i].location;
+              let text5 = data[i].text;
+              let class5 = data[i].cssClass;
+              let source5 = data[i].source;
+              let country5 = data[i].country;
+              let pw5 = data[i].pageWeight;
 
               $.ajax({
                 type: 'GET', url: 'api/sources/get.php', data: {},
@@ -1563,39 +1614,63 @@ $(function() {
                   for (var o = 0; o < data1.length; o++){
                     if (data1[o]._id == source5) {
                       if (data1[o].type == "website") {
-                        accessDateSource = data1[o].accessDate.substr(9, 10)+" "+info_month+" "+data1[o].accessDate.substr(0, 4);
-                        src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+"";
+                        accessDateSource = data1[o].accessDate.substr(8, 10)+" "+info_month+" "+data1[o].accessDate.substr(0, 4);
+                        let src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+""; bbb = src;
+                        $.ajax({
+                          type: 'GET', url: 'api/countries/get.php', data: {},
+                          success: function(data2) {
+                            for (var b = 0; b < data2.length; b++){
+                              if (data2[b]._id == country5) {
+                                countryname = data2[b].name;
+                                $.ajax({
+                                  url: 'ajax.php',
+                                  type: "POST",
+                                  dataType:'json',
+                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  error: function(xhr, status, error) {
+                                    var err = JSON.parse(xhr.responseText);
+                                    alert(err.Message);
+                                  },
+                                  success: function(data6){
+                                    $(aBlock).html(data6);
+                                  }
+                                });
+                              }
+                            }
+                          }
+                        });
                       } else {
-                        src = ""+data1[o].author+". "+data1[o].title+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
+                        let src = ""+data1[o].author+". "+data1[o].title+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
+                        $.ajax({
+                          type: 'GET', url: 'api/countries/get.php', data: {},
+                          success: function(data2) {
+                            for (var b = 0; b < data2.length; b++){
+                              if (data2[b]._id == country5) {
+                                countryname = data2[b].name;
+                                $.ajax({
+                                  url: 'ajax.php',
+                                  type: "POST",
+                                  dataType:'json',
+                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  error: function(xhr, status, error) {
+                                    var err = JSON.parse(xhr.responseText);
+                                    alert(err.Message);
+                                  },
+                                  success: function(data6){
+                                    $(aBlock).html(data6);
+                                  }
+                                });
+                              }
+                            }
+                          }
+                        });
                       }
                       
                     }
                   }
                 }
               });
-              $.ajax({
-                type: 'GET', url: 'api/countries/get.php', data: {},
-                success: function(data2) {
-                  for (var b = 0; b < data2.length; b++){
-                    if (data2[b]._id == country5) {
-                      countryname = data2[b].name;
-                      $.ajax({
-                        url: 'ajax.php',
-                        type: "POST",
-                        dataType:'json',
-                        data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
-                        error: function(xhr, status, error) {
-                          var err = JSON.parse(xhr.responseText);
-                          alert(err.Message);
-                        },
-                        success: function(data6){
-                          $(aBlock).html(data6);
-                        }
-                      });
-                    }
-                  }
-                }
-              });
+              
             }
           }
         },
