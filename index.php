@@ -1,27 +1,27 @@
 <?php
 if (isset($_GET['d'])) {
   $date = $_GET['d'];
-  if (strpos($date, '_01_') !== false) {
+  if (strpos($date, '-01-') !== false) {
     $date_month = "January";
-  } elseif (strpos($date, '_02_') !== false) {
+  } elseif (strpos($date, '-02-') !== false) {
     $date_month = "February";
-  } elseif (strpos($date, '_03_') !== false) {
+  } elseif (strpos($date, '-03-') !== false) {
     $date_month = "March";
-  } elseif (strpos($date, '_04_') !== false) {
+  } elseif (strpos($date, '-04-') !== false) {
     $date_month = "April";
-  } elseif (strpos($date, '_05_') !== false) {
+  } elseif (strpos($date, '-05-') !== false) {
     $date_month = "May";
-  } elseif (strpos($date, '_06_') !== false) {
+  } elseif (strpos($date, '-06-') !== false) {
     $date_month = "June";
-  } elseif (strpos($date, '_07_') !== false) {
+  } elseif (strpos($date, '-07-') !== false) {
     $date_month = "July";
-  } elseif (strpos($date, '_08_') !== false) {
+  } elseif (strpos($date, '-08-') !== false) {
     $date_month = "August";
-  } elseif (strpos($date, '_09_') !== false) {
+  } elseif (strpos($date, '-09-') !== false) {
     $date_month = "September";
-  } elseif (strpos($date, '_10_') !== false) {
+  } elseif (strpos($date, '-10-') !== false) {
     $date_month = "October";
-  } elseif (strpos($date, '_11_') !== false) {
+  } elseif (strpos($date, '-11-') !== false) {
     $date_month = "November";
   } else {
     $date_month = "December";
@@ -32,27 +32,27 @@ if (isset($_GET['d'])) {
   $date_info = "".$date_day." ".$date_month." ".$date_year."";
 } else if (isset($_COOKIE['date'])) {
   $date = $_COOKIE["date"];
-  if (strpos($date, '_01_') !== false) {
+  if (strpos($date, '-01-') !== false) {
     $date_month = "January";
-  } elseif (strpos($date, '_02_') !== false) {
+  } elseif (strpos($date, '-02-') !== false) {
     $date_month = "February";
-  } elseif (strpos($date, '_03_') !== false) {
+  } elseif (strpos($date, '-03-') !== false) {
     $date_month = "March";
-  } elseif (strpos($date, '_04_') !== false) {
+  } elseif (strpos($date, '-04-') !== false) {
     $date_month = "April";
-  } elseif (strpos($date, '_05_') !== false) {
+  } elseif (strpos($date, '-05-') !== false) {
     $date_month = "May";
-  } elseif (strpos($date, '_06_') !== false) {
+  } elseif (strpos($date, '-06-') !== false) {
     $date_month = "June";
-  } elseif (strpos($date, '_07_') !== false) {
+  } elseif (strpos($date, '-07-') !== false) {
     $date_month = "July";
-  } elseif (strpos($date, '_08_') !== false) {
+  } elseif (strpos($date, '-08-') !== false) {
     $date_month = "August";
-  } elseif (strpos($date, '_09_') !== false) {
+  } elseif (strpos($date, '-09-') !== false) {
     $date_month = "September";
-  } elseif (strpos($date, '_10_') !== false) {
+  } elseif (strpos($date, '-10-') !== false) {
     $date_month = "October";
-  } elseif (strpos($date, '_11_') !== false) {
+  } elseif (strpos($date, '-11-') !== false) {
     $date_month = "November";
   } else {
     $date_month = "December";
@@ -62,7 +62,7 @@ if (isset($_GET['d'])) {
   $date_day = substr($date, 8, 10);
   $date_info = "".$date_day." ".$date_month." ".$date_year."";
 } else {
-  $date = "1935_10_03";
+  $date = "1935-10-03";
   $date_info = "03 October 1935";
   $date_year = substr($date, 0, 4);
   $date_month2 = substr($date, 4, 4);
@@ -88,7 +88,8 @@ function checkNightMode() {
 }
 </script>
 <script src="https://kit.fontawesome.com/02faa02085.js"></script>
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" 
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 <script src="https://teastman.github.io/Leaflet.pattern/leaflet.pattern.js"></script>
 <script src="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
@@ -671,9 +672,9 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
     <?php
       if ($date_year == "1935" && strpos($date, '12_25') === false && strpos($date, '12_26') === false && strpos($date, '12_27') === false && strpos($date, '12_28') === false && strpos($date, '12_29') === false && strpos($date, '12_30') === false && strpos($date, '12_31') === false) {
         include 'keys/keys_1.php';
-      } elseif (strpos($date, '1936_01') || strpos($date, '1936_02') || strpos($date, '1936_03') || strpos($date, '1936_04') || strpos($date, '1936_05') || strpos($date, '1936_06') || strpos($date, '1936_07_0') || strpos($date, '1936_07_17') === false || strpos($date, '1936_07_18') === false || strpos($date, '1936_07_19') === false) {
+      } elseif (strpos($date, '1936_01') || strpos($date, '1936_02') || strpos($date, '1936_03') || strpos($date, '1936_04') || strpos($date, '1936_05') || strpos($date, '1936_06') || strpos($date, '1936-07-0') || strpos($date, '1936-07-17') === false || strpos($date, '1936-07-18') === false || strpos($date, '1936-07-19') === false) {
         include 'keys/keys_2.php';
-      } elseif (strpos($date, '1936_07_17') || strpos($date, '1936_07_18') || strpos($date, '1936_07_19') || strpos($date, '1936_07_2') || strpos($date, '1936_07_3') || strpos($date, '1936_08')) {
+      } elseif (strpos($date, '1936-07-17') || strpos($date, '1936-07-18') || strpos($date, '1936-07-19') || strpos($date, '1936-07-2') || strpos($date, '1936-07-3') || strpos($date, '1936_08')) {
         include 'keys/keys_3.php';
       }
     ?>
@@ -749,9 +750,9 @@ function clearMap(){
     }
 }
 
-if (date.substr(0, 4) == "1935" || date.substr(0, 7) == "1936_01" || date.substr(0, 7) == "1936_02" || date.substr(0, 7) == "1936_03" || date.substr(0, 7) == "1936_04" || date.substr(0, 7) == "1936_05" || date.substr(0, 7) == "1936_06" || date.substr(0, 9) == "1936_07_0" || date.substr(0, 10) == "1936_07_11" || date.substr(0, 10) == "1936_07_12" || date.substr(0, 10) == "1936_07_13" || date.substr(0, 10) == "1936_07_14") {
+if (date.substr(0, 4) == "1935" || date.substr(0, 7) == "1936_01" || date.substr(0, 7) == "1936_02" || date.substr(0, 7) == "1936_03" || date.substr(0, 7) == "1936_04" || date.substr(0, 7) == "1936_05" || date.substr(0, 7) == "1936_06" || date.substr(0, 9) == "1936-07-0" || date.substr(0, 10) == "1936-07-11" || date.substr(0, 10) == "1936-07-12" || date.substr(0, 10) == "1936-07-13" || date.substr(0, 10) == "1936-07-14") {
   mymap.setView([9.013776, 38.754616], 6);
-} else if (date.substr(0, 10) == "1936_07_15" || date.substr(0, 10) == "1936_07_16" || date.substr(0, 10) == "1936_07_17" || date.substr(0, 10) == "1936_07_18" || date.substr(0, 10) == "1936_07_19" || date.substr(0, 9) == "1936_07_2"  || date.substr(0, 9) == "1936_07_3" || date.substr(0, 7) == "1936_08" || date.substr(0, 7) == "1936_09" || date.substr(0, 7) == "1936_10" || date.substr(0, 7) == "1936_11" || date.substr(0, 7) == "1936_12") {
+} else if (date.substr(0, 10) == "1936-07-15" || date.substr(0, 10) == "1936-07-16" || date.substr(0, 10) == "1936-07-17" || date.substr(0, 10) == "1936-07-18" || date.substr(0, 10) == "1936-07-19" || date.substr(0, 9) == "1936-07-2"  || date.substr(0, 9) == "1936-07-3" || date.substr(0, 7) == "1936_08" || date.substr(0, 7) == "1936_09" || date.substr(0, 7) == "1936_10" || date.substr(0, 7) == "1936_11" || date.substr(0, 7) == "1936_12") {
   mymap.setView([40.418201, -3.704109], 6);
 } else {
   mymap.setView([40.418201, -3.704109], 6);
@@ -858,16 +859,33 @@ for (let country of countries) {
 
 marker_group = new L.FeatureGroup();
 
+// Force zIndex of Leaflet
+(function(global){
+  var MarkerMixin = {
+    _updateZIndex: function (offset) {
+      this._icon.style.zIndex = this.options.forceZIndex ? (this.options.forceZIndex + (this.options.zIndexOffset || 0)) : (this._zIndex + offset);
+    },
+    setForceZIndex: function(forceZIndex) {
+      this.options.forceZIndex = forceZIndex ? forceZIndex : null;
+    }
+  };
+  if (global) global.include(MarkerMixin);
+})(L.Marker);
+
 $.ajax({
   type: 'GET', url: 'api/events/get.php', data: {},
   success: function(data1){
+    data1.sort(function(a, b){
+      return a.pageWeight - b.pageWeight;
+    });
     for (var i = 0; i < data1.length; i++){
       if (data1[i].date == date) {
         let ogdataid = data1[i]._id;
-        data1[i]._id = L.marker(data1[i].location, {
+        data1[i]._id = new L.marker(data1[i].location, {
           id: data1[i]._id+i,
           icon: window[data1[i].marker],
-          title: data1[i].text
+          title: data1[i].text,
+          clickable: true
         });
         marker_group.addLayer(data1[i]._id);
         mymap.addLayer(marker_group);
@@ -1094,9 +1112,9 @@ $(function() {
     date_year = date.substr(0, 4);
     date_month = date.substr(5, 2);
     date_day = date.substr(8, 7);
-    if (date == "1945_09_02") {
+    if (date == "1945-09-02") {
 
-    } else if (date.substr(5, 5) == "01_31" || date == "1937_02_28" || date == "1938_02_28" || date == "1939_02_28" || date == "1941_02_28" || date == "1942_02_28" || date == "1943_02_28" || date == "1945_02_28" || date.substr(5, 5) == "02_29" || date.substr(5, 5) == "03_31" || date.substr(5, 5) == "04_30" || date.substr(5, 5) == "05_31" || date.substr(5, 5) == "06_30" || date.substr(5, 5) == "07_31" || date.substr(5, 5) == "08_31" || date.substr(5, 5) == "09_30" || date.substr(5, 5) == "10_31" || date.substr(5, 5) == "11_30") {
+    } else if (date.substr(5, 5) == "01_31" || date == "1937-02-28" || date == "1938-02-28" || date == "1939-02-28" || date == "1941-02-28" || date == "1942-02-28" || date == "1943-02-28" || date == "1945-02-28" || date.substr(5, 5) == "02_29" || date.substr(5, 5) == "03_31" || date.substr(5, 5) == "04_30" || date.substr(5, 5) == "05_31" || date.substr(5, 5) == "06_30" || date.substr(5, 5) == "07_31" || date.substr(5, 5) == "08_31" || date.substr(5, 5) == "09_30" || date.substr(5, 5) == "10_31" || date.substr(5, 5) == "11_30") {
       date_day = '01';
       if (date_month == "01") {
         date_month = "02";
@@ -1226,7 +1244,7 @@ $(function() {
       info_month = "December";
     }
 
-    date = date_year+"_"+date_month+"_"+date_day;
+    date = date_year+"-"+date_month+"-"+date_day;
 
     document.cookie = "date = "+date+"";
 
@@ -1260,13 +1278,17 @@ $(function() {
       $.ajax({
         type: 'GET', url: 'api/events/get.php', data: {},
         success: function(data1){
+          data1.sort(function(a, b){
+            return a.pageWeight - b.pageWeight;
+          });
           for (var i = 0; i < data1.length; i++){
             if (data1[i].date == date) {
               let ogdataid = data1[i]._id;
-              data1[i]._id = L.marker(data1[i].location, {
+              data1[i]._id = new L.marker(data1[i].location, {
                 id: data1[i]._id+i,
                 icon: window[data1[i].marker],
-                title: data1[i].text
+                title: data1[i].text,
+                clickable: true
               });
               marker_group.addLayer(data1[i]._id);
               mymap.addLayer(marker_group);
@@ -1395,7 +1417,7 @@ $(function() {
     date_year = date.substr(0, 4);
     date_month = date.substr(5, 2);
     date_day = date.substr(8, 7);
-    if (date == "1935_10_03") {
+    if (date == "1935-10-03") {
 
     } else if (date_day == "01") {
       if (date_month == "02") {
@@ -1529,7 +1551,7 @@ $(function() {
       info_month = "December";
     }
 
-    date = date_year+"_"+date_month+"_"+date_day;
+    date = date_year+"-"+date_month+"-"+date_day;
 
     document.cookie = "date = "+date+"";
 
@@ -1563,13 +1585,17 @@ $(function() {
       $.ajax({
         type: 'GET', url: 'api/events/get.php', data: {},
         success: function(data1){
+          data1.sort(function(a, b){
+            return a.pageWeight - b.pageWeight;
+          });
           for (var i = 0; i < data1.length; i++){
             if (data1[i].date == date) {
               let ogdataid = data1[i]._id;
-              data1[i]._id = L.marker(data1[i].location, {
+              data1[i]._id = new L.marker(data1[i].location, {
                 id: data1[i]._id+i,
                 icon: window[data1[i].marker],
-                title: data1[i].text
+                title: data1[i].text,
+                clickable: true
               });
               marker_group.addLayer(data1[i]._id);
               mymap.addLayer(marker_group);

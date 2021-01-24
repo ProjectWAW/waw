@@ -209,25 +209,25 @@ countries = [
 
 markers = []
 
-info_1935_10_18_1 = getCookie("info_1935_10_18_1");
-marker1935_10_18_1_location = [52.518715, 13.376125];
-marker1935_10_18_1 = L.marker(marker1935_10_18_1_location, {
-  id: "marker1935_10_18_1",
+info_1935-10-18_1 = getCookie("info_1935-10-18_1");
+marker1935-10-18_1_location = [52.518715, 13.376125];
+marker1935-10-18_1 = L.marker(marker1935-10-18_1_location, {
+  id: "marker1935-10-18_1",
   icon: orange_bullhorn,
-  title: info_1935_10_18_1
+  title: info_1935-10-18_1
 });
 
-marker_group.addLayer(marker1935_10_18_1);
+marker_group.addLayer(marker1935-10-18_1);
 
 mymap.addLayer(marker_group);
 
-marker1935_10_18_1.on("click", function () {
+marker1935-10-18_1.on("click", function () {
   onClick1();
-  location.href='#1935_10_18_1';
-  infoClicked = document.getElementById("1935_10_18_1");
+  location.href='#1935-10-18_1';
+  infoClicked = document.getElementById("1935-10-18_1");
   onClick2();
 });
 
-function zoom1935_10_18_1() {
-  mymap.setView(marker1935_10_18_1_location);
+function zoom1935-10-18_1() {
+  mymap.setView(marker1935-10-18_1_location);
 }
