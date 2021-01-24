@@ -209,44 +209,44 @@ countries = [
 
 markers = []
 
-info_1935_11_28_1 = getCookie("info_1935_11_28_1");
-marker1935_11_28_1_location = [9.030392, 38.764603];
-marker1935_11_28_1 = L.marker(marker1935_11_28_1_location, {
-  id: "marker1935_11_28_1",
+info_1935-11-28_1 = getCookie("info_1935-11-28_1");
+marker1935-11-28_1_location = [9.030392, 38.764603];
+marker1935-11-28_1 = L.marker(marker1935-11-28_1_location, {
+  id: "marker1935-11-28_1",
   icon: purple_truck,
-  title: info_1935_11_28_1
+  title: info_1935-11-28_1
 });
 
-info_1935_11_28_2 = getCookie("info_1935_11_28_2");
-marker1935_11_28_2_location = [15.332049, 38.930152];
-marker1935_11_28_2 = L.marker(marker1935_11_28_2_location, {
-  id: "marker1935_11_28_2",
+info_1935-11-28_2 = getCookie("info_1935-11-28_2");
+marker1935-11-28_2_location = [15.332049, 38.930152];
+marker1935-11-28_2 = L.marker(marker1935-11-28_2_location, {
+  id: "marker1935-11-28_2",
   icon: green_bullhorn,
-  title: info_1935_11_28_2
+  title: info_1935-11-28_2
 });
 
-marker_group.addLayer(marker1935_11_28_1);
-marker_group.addLayer(marker1935_11_28_2);
+marker_group.addLayer(marker1935-11-28_1);
+marker_group.addLayer(marker1935-11-28_2);
 
 mymap.addLayer(marker_group);
 
-marker1935_11_28_1.on("click", function () {
+marker1935-11-28_1.on("click", function () {
   onClick1();
-  location.href='#1935_11_28_1';
-  infoClicked = document.getElementById("1935_11_28_1");
+  location.href='#1935-11-28_1';
+  infoClicked = document.getElementById("1935-11-28_1");
   onClick2();
 });
 
-marker1935_11_28_2.on("click", function () {
+marker1935-11-28_2.on("click", function () {
   onClick1();
-  location.href='#1935_11_28_2';
-  infoClicked = document.getElementById("1935_11_28_2");
+  location.href='#1935-11-28_2';
+  infoClicked = document.getElementById("1935-11-28_2");
   onClick2();
 });
 
-function zoom1935_11_28_1() {
-  mymap.setView(marker1935_11_28_1_location);
+function zoom1935-11-28_1() {
+  mymap.setView(marker1935-11-28_1_location);
 }
-function zoom1935_11_28_2() {
-  mymap.setView(marker1935_11_28_2_location);
+function zoom1935-11-28_2() {
+  mymap.setView(marker1935-11-28_2_location);
 }

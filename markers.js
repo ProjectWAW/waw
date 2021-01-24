@@ -258,6 +258,16 @@ red_info = L.icon.fontAwesome({
   iconXOffset: -2.5,
   iconYOffset: 0
 });
+red_plane = L.icon.fontAwesome({
+  iconClasses: plane,
+  markerColor: redMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: redMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2,
+  iconYOffset: 0
+});
 
 green_bullhorn = L.icon.fontAwesome({
   iconClasses: bullhorn,
