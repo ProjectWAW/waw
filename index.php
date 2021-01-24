@@ -512,6 +512,9 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
       $.ajax({
         type: 'GET', url: 'api/events/get.php', data: {},
         success: function(data){
+          data.sort(function(a, b){
+            return a.pageWeight - b.pageWeight;
+          });
           for (var i = 0; i < data.length; i++){
             if (data[i].date == date) {
               let aBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
@@ -876,7 +879,7 @@ $.ajax({
   type: 'GET', url: 'api/events/get.php', data: {},
   success: function(data1){
     data1.sort(function(a, b){
-      return a.pageWeight - b.pageWeight;
+      return b.location[0] - a.location[0];
     });
     for (var i = 0; i < data1.length; i++){
       if (data1[i].date == date) {
@@ -1279,7 +1282,7 @@ $(function() {
         type: 'GET', url: 'api/events/get.php', data: {},
         success: function(data1){
           data1.sort(function(a, b){
-            return a.pageWeight - b.pageWeight;
+            return b.location[0] - a.location[0];
           });
           for (var i = 0; i < data1.length; i++){
             if (data1[i].date == date) {
@@ -1310,6 +1313,9 @@ $(function() {
       $.ajax({
         type: 'GET', url: 'api/events/get.php', data: {},
         success: function(data){
+          data.sort(function(a, b){
+            return a.pageWeight - b.pageWeight;
+          });
           for (var i = 0; i < data.length; i++){
             if (data[i].date == date) {
               let aBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
@@ -1586,7 +1592,7 @@ $(function() {
         type: 'GET', url: 'api/events/get.php', data: {},
         success: function(data1){
           data1.sort(function(a, b){
-            return a.pageWeight - b.pageWeight;
+            return b.location[0] - a.location[0];
           });
           for (var i = 0; i < data1.length; i++){
             if (data1[i].date == date) {
@@ -1617,6 +1623,9 @@ $(function() {
       $.ajax({
         type: 'GET', url: 'api/events/get.php', data: {},
         success: function(data){
+          data.sort(function(a, b){
+            return a.pageWeight - b.pageWeight;
+          });
           for (var i = 0; i < data.length; i++){
             if (data[i].date == date) {
               let aBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
