@@ -1,20 +1,22 @@
 [
   {
-    "_id": "b0f3d905-f1dc-47d6-b9e8-acda1d8816ce",
-    "author": "Bob Merkal",
-    "publishDate": "1980-01-01",
-    "publisher": "Little House",
-    "title": "War in the East",
-    "type": "book"
+    "_id": "d9035b1e-958e-4959-8ef6-24c092447e48",
+    "author": "Hurtado, Víctor, and Martín Ramos José Luis",
+    "accessDate": "/",
+    "publishDate": "2011",
+    "publisher": "DAU",
+    "title": "La Sublevación: Atlas De La Guerra Civil Española",
+    "type": "book",
+    "url": "/"
   },
   {
-    "_id": "cdfc072f-3f5a-4d6b-8c69-7135cb1f6e62",
-    "author": "Harriet Jones",
-    "accessed": "2020-06-17",
-    "publishDate": "2012-06-28",
-    "publisher": "Gold Leaf Publishing",
-    "title": "Secret Bob Ross: 2020",
-    "type": "web",
-    "url": "www.example.com"
+    "_id": "ee7023f6-e583-4356-a42b-6a171b0f90bf",
+    "author": "Beevor, Anthony",
+    "accessDate": "/",
+    "publishDate": "2007",
+    "publisher": "Phoenix",
+    "title": "The Battle for Spain the Spanish Civil War 1936-1939",
+    "type": "book",
+    "url": "/"
   }
 ]
