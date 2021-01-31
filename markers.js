@@ -12,8 +12,12 @@ function onClick1 () {
 }
 function onClick2() {
   infoClicked.classList.add("info-clicked");
+  var elems = document.querySelectorAll(".info-clicked");
+
   setTimeout(function () {
-    infoClicked.classList.remove("info-clicked");
+    [].forEach.call(elems, function(eln) {
+      eln.classList.remove("info-clicked");
+    });
   }, 5000);
 }
 
@@ -177,6 +181,16 @@ black_plane = L.icon.fontAwesome({
   iconXOffset: 0,
   iconYOffset: 0
 });
+black_plane_slash = L.icon.fontAwesome({
+  iconClasses: plane_slash,
+  markerColor: blackMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: blackMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -3,
+  iconYOffset: 0
+});
 black_chart_line = L.icon.fontAwesome({
   iconClasses: chart_line,
   markerColor: blackMarkerColor,
@@ -238,6 +252,26 @@ red_bullhorn = L.icon.fontAwesome({
   iconXOffset: -2.5,
   iconYOffset: 0
 });
+red_flag = L.icon.fontAwesome({
+  iconClasses: flag,
+  markerColor: redMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: redMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: 0,
+  iconYOffset: 0
+});
+red_gun_left = L.icon.fontAwesome({
+  iconClasses: gun_left,
+  markerColor: redMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: redMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
+  iconYOffset: 0
+});
 red_gun_right = L.icon.fontAwesome({
   iconClasses: gun_right,
   markerColor: redMarkerColor,
@@ -266,6 +300,16 @@ red_plane = L.icon.fontAwesome({
   iconColor: iconColor,
   iconSize: [15, 15],
   iconXOffset: -2,
+  iconYOffset: 0
+});
+red_truck = L.icon.fontAwesome({
+  iconClasses: truck,
+  markerColor: redMarkerColor,
+  markerStrokeWidth: markerStrokeWidth,
+  markerStrokeColor: redMarkerStroke,
+  iconColor: iconColor,
+  iconSize: [15, 15],
+  iconXOffset: -2.5,
   iconYOffset: 0
 });
 

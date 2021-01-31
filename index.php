@@ -258,6 +258,12 @@ h4 {
 .fas, .far {
   font-size: 19px;
 }
+.fa-truck {
+  font-size: 18px;
+}
+.fa-plane-slash {
+  font-size: 17px;
+}
 .marker-img {
   position: absolute;
   max-height: 100%;
@@ -589,7 +595,7 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                           }
                         });
                       } else {
-                        let src = ""+data1[o].author+". "+data1[o].title+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
+                        let src = ""+data1[o].author+". "+data1[o].title.italics()+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
                         $.ajax({
                           type: 'GET', url: 'api/countries/get.php', data: {},
                           success: function(data2) {
@@ -862,19 +868,6 @@ for (let country of countries) {
 
 marker_group = new L.FeatureGroup();
 
-// Force zIndex of Leaflet
-(function(global){
-  var MarkerMixin = {
-    _updateZIndex: function (offset) {
-      this._icon.style.zIndex = this.options.forceZIndex ? (this.options.forceZIndex + (this.options.zIndexOffset || 0)) : (this._zIndex + offset);
-    },
-    setForceZIndex: function(forceZIndex) {
-      this.options.forceZIndex = forceZIndex ? forceZIndex : null;
-    }
-  };
-  if (global) global.include(MarkerMixin);
-})(L.Marker);
-
 $.ajax({
   type: 'GET', url: 'api/events/get.php', data: {},
   success: function(data1){
@@ -887,8 +880,7 @@ $.ajax({
         data1[i]._id = new L.marker(data1[i].location, {
           id: data1[i]._id+i,
           icon: window[data1[i].marker],
-          title: data1[i].text,
-          clickable: true
+          title: data1[i].text
         });
         marker_group.addLayer(data1[i]._id);
         mymap.addLayer(marker_group);
@@ -1290,8 +1282,7 @@ $(function() {
               data1[i]._id = new L.marker(data1[i].location, {
                 id: data1[i]._id+i,
                 icon: window[data1[i].marker],
-                title: data1[i].text,
-                clickable: true
+                title: data1[i].text
               });
               marker_group.addLayer(data1[i]._id);
               mymap.addLayer(marker_group);
@@ -1365,7 +1356,7 @@ $(function() {
                           }
                         });
                       } else {
-                        let src = ""+data1[o].author+". "+data1[o].title+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
+                        let src = ""+data1[o].author+". "+data1[o].title.italics()+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
                         $.ajax({
                           type: 'GET', url: 'api/countries/get.php', data: {},
                           success: function(data2) {
@@ -1600,8 +1591,7 @@ $(function() {
               data1[i]._id = new L.marker(data1[i].location, {
                 id: data1[i]._id+i,
                 icon: window[data1[i].marker],
-                title: data1[i].text,
-                clickable: true
+                title: data1[i].text
               });
               marker_group.addLayer(data1[i]._id);
               mymap.addLayer(marker_group);
@@ -1675,7 +1665,7 @@ $(function() {
                           }
                         });
                       } else {
-                        let src = ""+data1[o].author+". "+data1[o].title+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
+                        let src = ""+data1[o].author+". "+data1[o].title.italics()+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
                         $.ajax({
                           type: 'GET', url: 'api/countries/get.php', data: {},
                           success: function(data2) {
