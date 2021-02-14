@@ -512,6 +512,7 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
     <h4 id="date_info"><?php echo $date_info; ?></h4>
     <hr>
     <div id="date_info_content">
+    <h4 id="loading">test</h4>
       <script>
       <?php include 'map/'.$date.'.js';?>
 
@@ -521,15 +522,11 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
           data.sort(function(a, b){
             return a.pageWeight - b.pageWeight;
           });
-          for (var i = 0; i < data.length; i++){
+          for (var i = 0; i < data.length; i++) {
             if (data[i].date == date) {
               let aBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
               aBlock.id = data[i]._id;
 
-              let dic = document.getElementById(data[i]._id);
-              let newhr = document.createElement('hr');
-              dic.parentNode.insertBefore(newhr, dic.nextSibling);
-        
               let id5 = data[i]._id;
               let location5 = data[i].location;
               let text5 = data[i].text;
@@ -570,7 +567,7 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                       }
                       if (data1[o].type == "website") {
                         accessDateSource = data1[o].accessDate.substr(8, 10)+" "+info_month+" "+data1[o].accessDate.substr(0, 4);
-                        let src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+""; bbb = src;
+                        let src = "“"+data1[o].title+"” "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+"";
                         $.ajax({
                           type: 'GET', url: 'api/countries/get.php', data: {},
                           success: function(data2) {
@@ -587,6 +584,7 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                                     alert(err.Message);
                                   },
                                   success: function(data6){
+                                    document.getElementById("loading").innerHTML = '';
                                     $(aBlock).html(data6);
                                   }
                                 });
@@ -594,6 +592,60 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                             }
                           }
                         });
+                      } else if (data1[o].type == "newspapers") {
+                        if (data1[o].author == "/") {
+                          let src = "“"+data1[o].title+"”. "+data1[o].publisher.italics()+", "+data1[o].publishDate.substr(0, 4)+".";
+                          $.ajax({
+                          type: 'GET', url: 'api/countries/get.php', data: {},
+                          success: function(data2) {
+                            for (var b = 0; b < data2.length; b++){
+                              if (data2[b]._id == country5) {
+                                countryname = data2[b].name;
+                                $.ajax({
+                                  url: 'ajax.php',
+                                  type: "POST",
+                                  dataType:'json',
+                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  error: function(xhr, status, error) {
+                                    var err = JSON.parse(xhr.responseText);
+                                    alert(err.Message);
+                                  },
+                                  success: function(data6){
+                                    document.getElementById("loading").innerHTML = '';
+                                    $(aBlock).html(data6);
+                                  }
+                                });
+                              }
+                            }
+                          }
+                        });
+                        } else {
+                          let src = data1[o].author+". “"+data1[o].title+"” "+data1[o].publisher.italics()+", "+data1[o].publishDate.substr(0, 4)+".";
+                          $.ajax({
+                            type: 'GET', url: 'api/countries/get.php', data: {},
+                            success: function(data2) {
+                              for (var b = 0; b < data2.length; b++){
+                                if (data2[b]._id == country5) {
+                                  countryname = data2[b].name;
+                                  $.ajax({
+                                    url: 'ajax.php',
+                                    type: "POST",
+                                    dataType:'json',
+                                    data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                    error: function(xhr, status, error) {
+                                      var err = JSON.parse(xhr.responseText);
+                                      alert(err.Message);
+                                    },
+                                    success: function(data6){
+                                      document.getElementById("loading").innerHTML = '';
+                                      $(aBlock).html(data6);
+                                    }
+                                  });
+                                }
+                              }
+                            }
+                          });
+                        }
                       } else {
                         let src = ""+data1[o].author+". "+data1[o].title.italics()+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
                         $.ajax({
@@ -612,6 +664,7 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                                     alert(err.Message);
                                   },
                                   success: function(data6){
+                                    document.getElementById("loading").innerHTML = '';
                                     $(aBlock).html(data6);
                                   }
                                 });
@@ -620,12 +673,10 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                           }
                         });
                       }
-                      
                     }
                   }
                 }
               });
-              
             }
           }
         },
@@ -1109,7 +1160,7 @@ $(function() {
     date_day = date.substr(8, 7);
     if (date == "1945-09-02") {
 
-    } else if (date.substr(5, 5) == "01_31" || date == "1937-02-28" || date == "1938-02-28" || date == "1939-02-28" || date == "1941-02-28" || date == "1942-02-28" || date == "1943-02-28" || date == "1945-02-28" || date.substr(5, 5) == "02_29" || date.substr(5, 5) == "03_31" || date.substr(5, 5) == "04_30" || date.substr(5, 5) == "05_31" || date.substr(5, 5) == "06_30" || date.substr(5, 5) == "07_31" || date.substr(5, 5) == "08_31" || date.substr(5, 5) == "09_30" || date.substr(5, 5) == "10_31" || date.substr(5, 5) == "11_30") {
+    } else if (date.substr(5, 5) == "01-31" || date == "1937-02-28" || date == "1938-02-28" || date == "1939-02-28" || date == "1941-02-28" || date == "1942-02-28" || date == "1943-02-28" || date == "1945-02-28" || date.substr(5, 5) == "02-29" || date.substr(5, 5) == "03-31" || date.substr(5, 5) == "04-30" || date.substr(5, 5) == "05-31" || date.substr(5, 5) == "06-30" || date.substr(5, 5) == "07-31" || date.substr(5, 5) == "08-31" || date.substr(5, 5) == "09-30" || date.substr(5, 5) == "10-31" || date.substr(5, 5) == "11-30") {
       date_day = '01';
       if (date_month == "01") {
         date_month = "02";
@@ -1145,7 +1196,7 @@ $(function() {
         date_month = "12";
         info_month = "December";
       }
-    } else if (date.substr(5, 5) == "12_31") {
+    } else if (date.substr(5, 5) == "12-31") {
       date_year++;
       date_month = "01";
       info_month = "January";
@@ -1331,7 +1382,7 @@ $(function() {
                     if (data1[o]._id == source5) {
                       if (data1[o].type == "website") {
                         accessDateSource = data1[o].accessDate.substr(8, 10)+" "+info_month+" "+data1[o].accessDate.substr(0, 4);
-                        let src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+""; bbb = src;
+                        let src = "“"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+""; bbb = src;
                         $.ajax({
                           type: 'GET', url: 'api/countries/get.php', data: {},
                           success: function(data2) {
@@ -1355,6 +1406,58 @@ $(function() {
                             }
                           }
                         });
+                      } else if (data1[o].type == "newspapers") {
+                        if (data1[o].author == "/") {
+                          let src = "“"+data1[o].title+"” "+data1[o].publisher.italics()+", "+data1[o].publishDate.substr(0, 4)+".";
+                          $.ajax({
+                          type: 'GET', url: 'api/countries/get.php', data: {},
+                          success: function(data2) {
+                            for (var b = 0; b < data2.length; b++){
+                              if (data2[b]._id == country5) {
+                                countryname = data2[b].name;
+                                $.ajax({
+                                  url: 'ajax.php',
+                                  type: "POST",
+                                  dataType:'json',
+                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  error: function(xhr, status, error) {
+                                    var err = JSON.parse(xhr.responseText);
+                                    alert(err.Message);
+                                  },
+                                  success: function(data6){
+                                    $(aBlock).html(data6);
+                                  }
+                                });
+                              }
+                            }
+                          }
+                        });
+                        } else {
+                          let src = data1[o].author+". “"+data1[o].title+"” "+data1[o].publisher.italics()+", "+data1[o].publishDate.substr(0, 4)+".";
+                          $.ajax({
+                            type: 'GET', url: 'api/countries/get.php', data: {},
+                            success: function(data2) {
+                              for (var b = 0; b < data2.length; b++){
+                                if (data2[b]._id == country5) {
+                                  countryname = data2[b].name;
+                                  $.ajax({
+                                    url: 'ajax.php',
+                                    type: "POST",
+                                    dataType:'json',
+                                    data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                    error: function(xhr, status, error) {
+                                      var err = JSON.parse(xhr.responseText);
+                                      alert(err.Message);
+                                    },
+                                    success: function(data6){
+                                      $(aBlock).html(data6);
+                                    }
+                                  });
+                                }
+                              }
+                            }
+                          });
+                        }
                       } else {
                         let src = ""+data1[o].author+". "+data1[o].title.italics()+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
                         $.ajax({
@@ -1568,7 +1671,7 @@ $(function() {
         country_layers = L.layerGroup();
         $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
           sites = L.geoJson(data, {
-            //"onEachFeature": forEachFeature,
+            "onEachFeature": forEachFeature,
             "style": {color: country[1], fillPattern: country[4]},
             "pane": country[3]
           });
@@ -1640,7 +1743,7 @@ $(function() {
                     if (data1[o]._id == source5) {
                       if (data1[o].type == "website") {
                         accessDateSource = data1[o].accessDate.substr(8, 10)+" "+info_month+" "+data1[o].accessDate.substr(0, 4);
-                        let src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+""; bbb = src;
+                        let src = "“"+data1[o].title+"” "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+""; bbb = src;
                         $.ajax({
                           type: 'GET', url: 'api/countries/get.php', data: {},
                           success: function(data2) {
@@ -1664,6 +1767,58 @@ $(function() {
                             }
                           }
                         });
+                      } else if (data1[o].type == "newspapers") {
+                        if (data1[o].author == "/") {
+                          let src = "“"+data1[o].title+"” "+data1[o].publisher.italics()+", "+data1[o].publishDate.substr(0, 4)+".";
+                          $.ajax({
+                          type: 'GET', url: 'api/countries/get.php', data: {},
+                          success: function(data2) {
+                            for (var b = 0; b < data2.length; b++){
+                              if (data2[b]._id == country5) {
+                                countryname = data2[b].name;
+                                $.ajax({
+                                  url: 'ajax.php',
+                                  type: "POST",
+                                  dataType:'json',
+                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  error: function(xhr, status, error) {
+                                    var err = JSON.parse(xhr.responseText);
+                                    alert(err.Message);
+                                  },
+                                  success: function(data6){
+                                    $(aBlock).html(data6);
+                                  }
+                                });
+                              }
+                            }
+                          }
+                        });
+                        } else {
+                          let src = data1[o].author+". “"+data1[o].title+"” "+data1[o].publisher.italics()+", "+data1[o].publishDate.substr(0, 4)+".";
+                          $.ajax({
+                            type: 'GET', url: 'api/countries/get.php', data: {},
+                            success: function(data2) {
+                              for (var b = 0; b < data2.length; b++){
+                                if (data2[b]._id == country5) {
+                                  countryname = data2[b].name;
+                                  $.ajax({
+                                    url: 'ajax.php',
+                                    type: "POST",
+                                    dataType:'json',
+                                    data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                    error: function(xhr, status, error) {
+                                      var err = JSON.parse(xhr.responseText);
+                                      alert(err.Message);
+                                    },
+                                    success: function(data6){
+                                      $(aBlock).html(data6);
+                                    }
+                                  });
+                                }
+                              }
+                            }
+                          });
+                        }
                       } else {
                         let src = ""+data1[o].author+". "+data1[o].title.italics()+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
                         $.ajax({

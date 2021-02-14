@@ -61,6 +61,7 @@ countries = [
   ["portuguese_timor", neutral, "1935-10-03", "neutral", null],
   ["portuguese_west_africa", neutral, "1935-10-03", "neutral", null],
   ["romania", neutral, "1935-10-03", "neutral", null],
+  ["ruanda_urundi", neutral, "1935-10-03", "neutral", null],
   ["san_marino", neutral, "1935-10-03", "neutral", null],
   ["sao_tome_and_principe", neutral, "1935-10-03", "neutral", null],
   ["saudi_arabia", neutral, "1935-10-03", "neutral", null],
