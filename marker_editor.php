@@ -125,10 +125,11 @@ datalist.option {
       <option value="book" selected="selected">Book</option>
       <option value="website">Website</option>
       <option value="journal">Journal</option>
+      <option value="newspapers">Newspapers</option>
     </select><br><hr>
 
     <label for="source_author">Source author:</label><br>
-    <input type="text" id="source_author" name="source_author" placeholder="Beevor, Anthony (Last name, First name)" required><br><hr>
+    <input type="text" id="source_author" name="source_author" placeholder="Beevor, Anthony (Last name, First name) (If no author, write '/'!)" required><br><hr>
 
     <label for="source_title">Source title:</label><br>
     <input type="text" id="source_title" name="source_title" placeholder="The Battle for Spain the Spanish Civil War 1936-1939" required><br><hr>
