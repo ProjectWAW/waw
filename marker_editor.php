@@ -39,6 +39,9 @@ datalist.option {
     <label for="status">Status:</label><br>
     <input type="text" id="status" name="status" placeholder="Independent country" required><br><hr>
 
+    <label for="flag">Flag:</label><br>
+    <input type="text" id="flag" name="flag" placeholder="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" required><br><hr>
+
     <label for="government">Government:</label><br>
     <input type="text" id="government" name="government" placeholder="Unitary military dictatorship" required><br><hr>
 

@@ -210,6 +210,7 @@
   <option value="cuba">cuba</option>
   <option value="cyprus">cyprus</option>
   <option value="czechoslovakia">czechoslovakia</option>
+  <option value="croatia">croatia</option>
   <option value="danzig">danzig</option>
   <option value="denmark">denmark</option>
   <option value="dominican_republic">dominican_republic</option>
@@ -287,6 +288,7 @@
   <option value="mianyang_clique">mianyang_clique</option>
   <option value="monaco">monaco</option>
   <option value="mongolia">mongolia</option>
+  <option value="montenegro">montenegro</option>
   <option value="morocco">morocco</option>
   <option value="nationalist_spain">nationalist_spain</option>
   <option value="nepal">nepal</option>
@@ -328,6 +330,7 @@
   <option value="san_marino">sao_tome_and_principe</option>
   <option value="sarawak">sarawak</option>
   <option value="saudi_arabia">saudi_arabia</option>
+  <option value="serbia">serbia</option>
   <option value="seychelles">seychelles</option>
   <option value="shandong_clique">shandong_clique</option>
   <option value="shanxi_clique">shanxi_clique</option>
@@ -389,7 +392,7 @@
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/726896429318144080/794588992946700308/W020180920568422438647.png", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://upload.wikimedia.org/wikipedia/commons/9/9c/GovernateOfMontenegro.png", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"
@@ -408,7 +411,7 @@ function repositionImage() {
       country = val;
       console.log(country);
 
-      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1937-07-26/" + country + ".geojson");
+      var geojsonLayer = new L.GeoJSON.AJAX("geojson_files/1941-04-17/" + country + ".geojson");
 
       geojsonLayer.on('data:loaded', function() {
         geojsonLayer.addTo(mymap);

@@ -6,6 +6,7 @@
     {
         public string $_id;
         public string $name;
+        public string $flag;
         public string $government;
         public string $headOfState;
         public string $headOfGovernment;
@@ -18,6 +19,7 @@
             return [
                 "_id" => $this->_id,
                 "name" => $this->name,
+                "flag" => $this->flag,
                 "government" => $this->government,
                 "headOfState" => $this->headOfState,
                 "headOfGovernment" => $this->headOfGovernment,

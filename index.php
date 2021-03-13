@@ -199,6 +199,10 @@ hr {
 .key-hr {
   background-color: #DEDEDE;
 }
+.key-row {
+  display: inline-block;
+  width: 100%;
+}
 h4 {
   text-align: center;
 }
@@ -307,6 +311,29 @@ span.fa-info {
 }
 .tooltip-inner {
   max-width: 100%;
+}
+.flag-right {
+  float: right;
+  display: inline-block;
+  margin-right: 5px;
+}
+.actual-flag {
+  width: 56px;
+  height: 38px;
+  border-radius: 5px;
+  border: 1px solid darkslategray;
+  object-fit: cover;
+}
+.popupflag {
+  width: 66px;
+  height: 44px;
+  border-radius: 5px;
+  border: 1px solid darkslategray;
+  float: right;
+  margin-left: 4px;
+}
+.leaflet-popup-content {
+  font-size: 13px;
 }
 @media screen and (max-width: 920px) {
   h4 {
@@ -578,7 +605,7 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -605,7 +632,7 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -631,7 +658,7 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                                     url: 'ajax.php',
                                     type: "POST",
                                     dataType:'json',
-                                    data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                    data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
                                     error: function(xhr, status, error) {
                                       var err = JSON.parse(xhr.responseText);
                                       alert(err.Message);
@@ -658,7 +685,7 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -796,18 +823,17 @@ var sattelite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/service
 
 normal.addTo(mymap);
 
-function clearMap(){
-    for(i in mymap._layers){        
-        if(mymap._layers[i]._path != undefined)
-        {
-            try{
-              mymap.removeLayer(mymap._layers[i]);
-            }
-            catch(e){
-                console.log("problem with " + e + mymap._layers[i]);
-            }
-        }
+function clearMap() {
+  for (i in mymap._layers) {        
+    if (mymap._layers[i]._path != undefined) {
+      try {
+        mymap.removeLayer(mymap._layers[i]);
+      }
+      catch(e){
+        console.log("problem with " + e + mymap._layers[i]);
+      }
     }
+  }
 }
 
 if (date.substr(0, 4) == "1935" || date.substr(0, 7) == "1936_01" || date.substr(0, 7) == "1936_02" || date.substr(0, 7) == "1936_03" || date.substr(0, 7) == "1936_04" || date.substr(0, 7) == "1936_05" || date.substr(0, 7) == "1936_06" || date.substr(0, 9) == "1936-07-0" || date.substr(0, 10) == "1936-07-11" || date.substr(0, 10) == "1936-07-12" || date.substr(0, 10) == "1936-07-13" || date.substr(0, 10) == "1936-07-14") {
@@ -832,22 +858,23 @@ mymap.on('click', onMapClick);
 function forEachFeature(feature, layer) {
   $.ajax({
     type: 'GET', url: 'api/countries/get.php', data: {},
-    success: function(data1){
-      for (var i = 0; i < data1.length; i++){
-        if (data1[i]._id == feature.properties.id){
+    success: function(data1) {
+      for (var i = 0; i < data1.length; i++) {
+        if (data1[i]._id == feature.properties.id) {
           var name = (data1[i].name);
+          var flag = (data1[i].flag);
           var government = (data1[i].government);
           var hos = (data1[i].headOfState);
           var hog = (data1[i].headOfGovernment);
           var party = (data1[i].party);
           var status = (data1[i].status);
           var capital = (data1[i].capital);
-          var popupContent = "<b>Name</b>: "+name+"<br><b>Status</b>: "+status+"<br><b>Government</b>: "+government+"<br><b>Capital</b>: "+capital+"<br><b>Ruling Party</b>: "+party+"<br><b>Head of State</b>: "+hos+"<br><b>Head of Government</b>: "+hog+"";
-  layer.bindPopup(popupContent);
+          var popupContent = "<img class='popupflag' src='"+flag+"' alt='404'><b style='font-size:17px;'>"+name+"</b><br><b>Status</b>: "+status+"<br><b>Government</b>: "+government+"<br><b>Capital</b>: "+capital+"<br><b>Ruling Party</b>: "+party+"<br><b>Head of State</b>: "+hos+"<br><b>Head of Government</b>: "+hog+"";
+          layer.bindPopup(popupContent);
         }
       }
     },
-    error:function (xhr, ajaxOptions, thrownError) {
+    error: function (xhr, ajaxOptions, thrownError) {
       document.write(xhr.status);
       document.write(thrownError);
     }
@@ -1310,7 +1337,7 @@ $(function() {
         country_layers = L.layerGroup();
         $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
           sites = L.geoJson(data, {
-            //"onEachFeature": forEachFeature,
+            "onEachFeature": forEachFeature,
             "style": {color: country[1], fillPattern: country[4]},
             "pane": country[3]
           });
@@ -1393,7 +1420,7 @@ $(function() {
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -1419,7 +1446,7 @@ $(function() {
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -1444,7 +1471,7 @@ $(function() {
                                     url: 'ajax.php',
                                     type: "POST",
                                     dataType:'json',
-                                    data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                    data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
                                     error: function(xhr, status, error) {
                                       var err = JSON.parse(xhr.responseText);
                                       alert(err.Message);
@@ -1470,7 +1497,7 @@ $(function() {
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, slocation: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -1754,7 +1781,7 @@ $(function() {
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -1780,7 +1807,7 @@ $(function() {
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -1805,7 +1832,7 @@ $(function() {
                                     url: 'ajax.php',
                                     type: "POST",
                                     dataType:'json',
-                                    data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                    data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
                                     error: function(xhr, status, error) {
                                       var err = JSON.parse(xhr.responseText);
                                       alert(err.Message);
@@ -1831,7 +1858,7 @@ $(function() {
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);

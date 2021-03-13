@@ -91,6 +91,7 @@ countries = [
   ["bechuanaland", neutral, "1935-10-03", "neutral", null],
   ["bermuda", neutral, "1935-10-03", "neutral", null],
   ["british_burma", neutral, "1935-10-03", "neutral", null],
+  ["british_cameroons", neutral, "1935-10-03", "neutral", null],
   ["british_concessions", neutral, "1935-10-03", "neutral", null],
   ["british_guiana", neutral, "1935-10-03", "neutral", null],
   ["british_honduras", neutral, "1935-10-03", "neutral", null],
@@ -212,7 +213,7 @@ markers = [
   ["1935-10-04_1", "info_1935-10-04_1", green_flag, [14.278039, 39.464150], "Italian forces capture Adigat, Inticho and Daro Tacle.", "fas fa-flag", "italo_ethiopian_war", "Italy"],
 ]
 
-info_1935-10-04_1 = getCookie("info_1935-10-04_1");
+/*info_1935-10-04_1 = getCookie("info_1935-10-04_1");
 marker1935-10-04_1_location = [14.278039, 39.464150];
 marker1935-10-04_1 = L.marker(marker1935-10-04_1_location, {
   id: "marker1935-10-04_1",
@@ -287,3 +288,4 @@ function zoom1935-10-04_3() {
 function zoom1935-10-04_4() {
   mymap.setView(marker1935-10-04_4_location);
 }
+*/

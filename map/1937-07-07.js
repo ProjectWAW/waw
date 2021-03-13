@@ -85,6 +85,7 @@ countries = [
   ["bechuanaland", neutral, "1935-10-03", "neutral", null],
   ["bermuda", neutral, "1935-10-03", "neutral", null],
   ["british_burma", neutral, "1935-10-03", "neutral", null],
+  ["british_cameroons", neutral, "1935-10-03", "neutral", null],
   ["british_concessions", neutral, "1935-10-03", "neutral", null],
   ["british_guiana", neutral, "1935-10-03", "neutral", null],
   ["british_honduras", neutral, "1935-10-03", "neutral", null],

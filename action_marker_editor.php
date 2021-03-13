@@ -17,7 +17,7 @@ if (isset($_POST['submit1'])) {
 
       objXMLHttpRequest.open('POST', 'api/countries/create.php');
       objXMLHttpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      objXMLHttpRequest.send('{\"name\": \"".$_POST['name']."\",\"government\": \"".$_POST['government']."\",\"headOfState\": \"".$_POST['hos']."\",\"headOfGovernment\": \"".$_POST['hog']."\",\"party\": \"".$_POST['party']."\",\"status\": \"".$_POST['status']."\",\"capital\": \"".$_POST['capital']."\"}');
+      objXMLHttpRequest.send('{\"name\": \"".$_POST['name']."\",\"flag\": \"".$_POST['flag']."\",\"government\": \"".$_POST['government']."\",\"headOfState\": \"".$_POST['hos']."\",\"headOfGovernment\": \"".$_POST['hog']."\",\"party\": \"".$_POST['party']."\",\"status\": \"".$_POST['status']."\",\"capital\": \"".$_POST['capital']."\"}');
     });
   }
 
