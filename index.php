@@ -318,15 +318,14 @@ span.fa-info {
   margin-right: 5px;
 }
 .actual-flag {
-  width: 56px;
-  height: 38px;
+  width: 59px;
+  height: 40px;
   border-radius: 5px;
   border: 1px solid darkslategray;
-  object-fit: cover;
 }
 .popupflag {
-  width: 66px;
-  height: 44px;
+  width: 68px;
+  height: 46px;
   border-radius: 5px;
   border: 1px solid darkslategray;
   float: right;
