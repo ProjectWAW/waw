@@ -192,6 +192,7 @@
   <option value="british_leeward_islands">british_leeward_islands</option>
   <option value="british_malaya">british_malaya</option>
   <option value="british_somaliland">british_somaliland</option>
+  <option value="british_togoland">british_togoland</option>
   <option value="british_western_pacific_territories">british_western_pacific_territories</option>
   <option value="british_windward_islands">british_windward_islands</option>
   <option value="brunei">brunei</option>
@@ -344,6 +345,7 @@
   <option value="swaziland">swaziland</option>
   <option value="sweden">sweden</option>
   <option value="switzerland">switzerland</option>
+  <option value="sudan">sudan</option>
   <option value="tanganyika">tanganyika</option>
   <option value="tangiers">tangiers</option>
   <option value="tannu_tuva">tannu_tuva</option>
@@ -391,7 +393,7 @@
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://upload.wikimedia.org/wikipedia/commons/5/51/Chad-Libya_border_1935_%28Aouzou_Strip%29.png", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://upload.wikimedia.org/wikipedia/commons/a/a1/Algeria-Libya_boundary.jpg", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"

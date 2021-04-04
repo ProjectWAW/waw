@@ -552,7 +552,7 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
             if (data[i].date == date) {
               let aBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
               aBlock.id = data[i]._id;
-
+              document.getElementById('date_info_content').appendChild(document.createElement('hr'));
               let id5 = data[i]._id;
               let location5 = data[i].location;
               let text5 = data[i].text;
