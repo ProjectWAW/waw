@@ -1,6 +1,6 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content=""> <!-- -->
+<meta name="description" content="Project: World at War is an interactive map showing the events and frontline changes during World War II"> <!-- -->
 <meta name="keywords" content=""> <!-- -->
 <meta property="image" content=""> <!-- -->
 <meta name="theme-color" content=""> <!-- -->
