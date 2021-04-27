@@ -599,12 +599,11 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                           success: function(data2) {
                             for (var b = 0; b < data2.length; b++){
                               if (data2[b]._id == country5) {
-                                countryname = data2[b].name;
                                 $.ajax({
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -626,12 +625,11 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                           success: function(data2) {
                             for (var b = 0; b < data2.length; b++){
                               if (data2[b]._id == country5) {
-                                countryname = data2[b].name;
                                 $.ajax({
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -652,12 +650,11 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                             success: function(data2) {
                               for (var b = 0; b < data2.length; b++){
                                 if (data2[b]._id == country5) {
-                                  countryname = data2[b].name;
                                   $.ajax({
                                     url: 'ajax.php',
                                     type: "POST",
                                     dataType:'json',
-                                    data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                    data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                     error: function(xhr, status, error) {
                                       var err = JSON.parse(xhr.responseText);
                                       alert(err.Message);
@@ -679,12 +676,11 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                           success: function(data2) {
                             for (var b = 0; b < data2.length; b++){
                               if (data2[b]._id == country5) {
-                                countryname = data2[b].name;
                                 $.ajax({
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -934,7 +930,7 @@ for (let country of countries) {
   country_layers = L.layerGroup();
   $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
     sites = L.geoJson(data, {
-      "onEachFeature": forEachFeature,
+      //"onEachFeature": forEachFeature,
       "style": {color: country[1], fillPattern: country[4]},
       "pane": country[3]
     });
@@ -1414,12 +1410,11 @@ $(function() {
                           success: function(data2) {
                             for (var b = 0; b < data2.length; b++){
                               if (data2[b]._id == country5) {
-                                countryname = data2[b].name;
                                 $.ajax({
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -1440,12 +1435,11 @@ $(function() {
                           success: function(data2) {
                             for (var b = 0; b < data2.length; b++){
                               if (data2[b]._id == country5) {
-                                countryname = data2[b].name;
                                 $.ajax({
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -1465,12 +1459,11 @@ $(function() {
                             success: function(data2) {
                               for (var b = 0; b < data2.length; b++){
                                 if (data2[b]._id == country5) {
-                                  countryname = data2[b].name;
                                   $.ajax({
                                     url: 'ajax.php',
                                     type: "POST",
                                     dataType:'json',
-                                    data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                    data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                     error: function(xhr, status, error) {
                                       var err = JSON.parse(xhr.responseText);
                                       alert(err.Message);
@@ -1491,12 +1484,11 @@ $(function() {
                           success: function(data2) {
                             for (var b = 0; b < data2.length; b++){
                               if (data2[b]._id == country5) {
-                                countryname = data2[b].name;
                                 $.ajax({
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, flag: data2[b].flag, slocation: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, slocation: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -1775,12 +1767,11 @@ $(function() {
                           success: function(data2) {
                             for (var b = 0; b < data2.length; b++){
                               if (data2[b]._id == country5) {
-                                countryname = data2[b].name;
                                 $.ajax({
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -1801,12 +1792,11 @@ $(function() {
                           success: function(data2) {
                             for (var b = 0; b < data2.length; b++){
                               if (data2[b]._id == country5) {
-                                countryname = data2[b].name;
                                 $.ajax({
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -1826,12 +1816,11 @@ $(function() {
                             success: function(data2) {
                               for (var b = 0; b < data2.length; b++){
                                 if (data2[b]._id == country5) {
-                                  countryname = data2[b].name;
                                   $.ajax({
                                     url: 'ajax.php',
                                     type: "POST",
                                     dataType:'json',
-                                    data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                    data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                     error: function(xhr, status, error) {
                                       var err = JSON.parse(xhr.responseText);
                                       alert(err.Message);
@@ -1852,12 +1841,11 @@ $(function() {
                           success: function(data2) {
                             for (var b = 0; b < data2.length; b++){
                               if (data2[b]._id == country5) {
-                                countryname = data2[b].name;
                                 $.ajax({
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
