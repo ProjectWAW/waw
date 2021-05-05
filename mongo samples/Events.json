@@ -1,24 +1,24 @@
 [
   {
-    "_id": "82ac5780-eeb7-4b8d-aad9-17e2c9260d96",
-    "country": "8eb1c021-4151-44e3-9cda-553683297a0f",
-    "cssClass": "icon-gun-right",
-    "date": "1936-10-02",
-    "location": "14.495184,39.393883",
-    "marker": "green_bullhorn",
+    "_id": "e523c731-aa26-420c-b37b-d7234286ed87",
+    "country": "5cf7b120-cd0c-4db0-9f75-c88f8991ceec",
+    "cssClass": "fas fa-info",
+    "date": "1936-07-17",
+    "location": [28.472917, -16.262512],
+    "marker": "black_info",
     "pageWeight": 1,
-    "source": "88fdb0a9-f81f-42d6-ad49-fdb8df0cfa74",
-    "text": "BEEEEEEEEEEESSSS"
+    "source": "d9035b1e-958e-4959-8ef6-24c092447e48",
+    "text": "Franco arrives at dawn in Las Palmas with his wife and daughter, under the pretext of attending General Balmes' funeral at 8:30 AM."
   },
   {
-    "_id": "a4bfe0f0-2374-4f48-b507-0742857e1aac",
-    "country": "8eb1c021-4151-44e3-9cda-553683297a0f",
-    "cssClass": "icon-gun-right",
-    "date": "1936-10-02",
-    "location": "5.190791,45.079651",
-    "marker": "green-gun-right",
+    "_id": "63444e84-0da6-45b9-a855-6eb5c5803f93",
+    "country": "5cf7b120-cd0c-4db0-9f75-c88f8991ceec",
+    "cssClass": "icon-gun-left",
+    "date": "1936-07-17",
+    "location": [35.570843, -5.380812],
+    "marker": "black_gun_left",
     "pageWeight": 2,
-    "source": "88fdb0a9-f81f-42d6-ad49-fdb8df0cfa74",
-    "text": "Bang bang, boom boom"
+    "source": "ee7023f6-e583-4356-a42b-6a171b0f90bf",
+    "text": "The Spanish Legion rebels in the Spanish protectorate of Morocco. Tétouan and Larache offer some resistance to the rebels, but they soon come under heavy attack."
   }
 ]

@@ -199,6 +199,10 @@ hr {
 .key-hr {
   background-color: #DEDEDE;
 }
+.key-row {
+  display: inline-block;
+  width: 100%;
+}
 h4 {
   text-align: center;
 }
@@ -258,6 +262,12 @@ h4 {
 .fas, .far {
   font-size: 19px;
 }
+.fa-truck {
+  font-size: 18px;
+}
+.fa-plane-slash {
+  font-size: 17px;
+}
 .marker-img {
   position: absolute;
   max-height: 100%;
@@ -281,10 +291,19 @@ h4 {
   padding-top: 6px;
   margin-left: 50px;
 }
+.move-dates {
+  border: 2px solid black;
+  width: 281px;
+  position: absolute;
+  margin-left: 50px;
+}
 .date-change {
   float: left;
   width: 50px;
   text-align: center;
+}
+.date-change:hover {
+  cursor: pointer;
 }
 /* MARKER MODIFICATIONS */
 span.fa-info {
@@ -301,6 +320,28 @@ span.fa-info {
 }
 .tooltip-inner {
   max-width: 100%;
+}
+.flag-right {
+  float: right;
+  display: inline-block;
+  margin-right: 5px;
+}
+.actual-flag {
+  width: 59px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid darkslategray;
+}
+.popupflag {
+  width: 68px;
+  height: 46px;
+  border-radius: 5px;
+  border: 1px solid darkslategray;
+  float: right;
+  margin-left: 4px;
+}
+.leaflet-popup-content {
+  font-size: 13px;
 }
 @media screen and (max-width: 920px) {
   h4 {
@@ -503,9 +544,10 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
     </ul>
   </div>
   <div id="Info" class="tabcontent">
-    <h4 id="date_info"><?php echo $date_info; ?></h4>
+    <h4 id="date_info"><b><?php echo $date_info;?></b></h4>
     <hr>
     <div id="date_info_content">
+    <h4 id="loading">test</h4>
       <script>
       <?php include 'map/'.$date.'.js';?>
 
@@ -515,15 +557,11 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
           data.sort(function(a, b){
             return a.pageWeight - b.pageWeight;
           });
-          for (var i = 0; i < data.length; i++){
+          for (var i = 0; i < data.length; i++) {
             if (data[i].date == date) {
               let aBlock = document.getElementById('date_info_content').appendChild(document.createElement('div'));
               aBlock.id = data[i]._id;
-
-              let dic = document.getElementById(data[i]._id);
-              let newhr = document.createElement('hr');
-              dic.parentNode.insertBefore(newhr, dic.nextSibling);
-        
+              document.getElementById('date_info_content').appendChild(document.createElement('hr'));
               let id5 = data[i]._id;
               let location5 = data[i].location;
               let text5 = data[i].text;
@@ -564,23 +602,23 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                       }
                       if (data1[o].type == "website") {
                         accessDateSource = data1[o].accessDate.substr(8, 10)+" "+info_month+" "+data1[o].accessDate.substr(0, 4);
-                        let src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+""; bbb = src;
+                        let src = "“"+data1[o].title+"” "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+"";
                         $.ajax({
                           type: 'GET', url: 'api/countries/get.php', data: {},
                           success: function(data2) {
                             for (var b = 0; b < data2.length; b++){
                               if (data2[b]._id == country5) {
-                                countryname = data2[b].name;
                                 $.ajax({
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
                                   },
                                   success: function(data6){
+                                    document.getElementById("loading").innerHTML = '';
                                     $(aBlock).html(data6);
                                   }
                                 });
@@ -588,24 +626,76 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                             }
                           }
                         });
-                      } else {
-                        let src = ""+data1[o].author+". "+data1[o].title+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
-                        $.ajax({
+                      } else if (data1[o].type == "newspapers") {
+                        if (data1[o].author == "/") {
+                          let src = "“"+data1[o].title+"”. "+data1[o].publisher.italics()+", "+data1[o].publishDate.substr(0, 4)+".";
+                          $.ajax({
                           type: 'GET', url: 'api/countries/get.php', data: {},
                           success: function(data2) {
                             for (var b = 0; b < data2.length; b++){
                               if (data2[b]._id == country5) {
-                                countryname = data2[b].name;
                                 $.ajax({
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
                                   },
                                   success: function(data6){
+                                    document.getElementById("loading").innerHTML = '';
+                                    $(aBlock).html(data6);
+                                  }
+                                });
+                              }
+                            }
+                          }
+                        });
+                        } else {
+                          let src = data1[o].author+". “"+data1[o].title+"” "+data1[o].publisher.italics()+", "+data1[o].publishDate.substr(0, 4)+".";
+                          $.ajax({
+                            type: 'GET', url: 'api/countries/get.php', data: {},
+                            success: function(data2) {
+                              for (var b = 0; b < data2.length; b++){
+                                if (data2[b]._id == country5) {
+                                  $.ajax({
+                                    url: 'ajax.php',
+                                    type: "POST",
+                                    dataType:'json',
+                                    data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
+                                    error: function(xhr, status, error) {
+                                      var err = JSON.parse(xhr.responseText);
+                                      alert(err.Message);
+                                    },
+                                    success: function(data6){
+                                      document.getElementById("loading").innerHTML = '';
+                                      $(aBlock).html(data6);
+                                    }
+                                  });
+                                }
+                              }
+                            }
+                          });
+                        }
+                      } else {
+                        let src = ""+data1[o].author+". "+data1[o].title.italics()+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
+                        $.ajax({
+                          type: 'GET', url: 'api/countries/get.php', data: {},
+                          success: function(data2) {
+                            for (var b = 0; b < data2.length; b++){
+                              if (data2[b]._id == country5) {
+                                $.ajax({
+                                  url: 'ajax.php',
+                                  type: "POST",
+                                  dataType:'json',
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
+                                  error: function(xhr, status, error) {
+                                    var err = JSON.parse(xhr.responseText);
+                                    alert(err.Message);
+                                  },
+                                  success: function(data6){
+                                    document.getElementById("loading").innerHTML = '';
                                     $(aBlock).html(data6);
                                   }
                                 });
@@ -614,12 +704,10 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
                           }
                         });
                       }
-                      
                     }
                   }
                 }
               });
-              
             }
           }
         },
@@ -632,44 +720,41 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
     </div>
   </div>
   <div id="Date" class="tabcontent" style="display:none">
-    <h4>Date Selection</h4>
+    <h4><b>Date Selection</b></h4>
     <hr>
     <div class="date-selection">
-      <h4>placeholder</h4>
-      <div style="border: 2px solid black;
-    width: 281px;
-    position: absolute;
-    margin-left: 50px;">
-        <div class="date-change" id="change-backward"><i style="font-size:40px;" class="fas fa-chevron-left"></i></div>
+      <h4>Move Dates</h4>
+      <div class="move-dates">
+        <div class="date-change" title="Go one day backwards" id="change-backward"><i style="font-size:40px;" class="fas fa-chevron-left"></i></div>
         <h4 style="float:left;width:177px;font-weight:bold;margin-top:11px;" id="date_info_2"><?php echo $date_info; ?></h4>
-        <div class="date-change" id="change-forward"><i style="font-size:40px;" class="fas fa-chevron-right"></i></div>
+        <div class="date-change" title="Go one day ahead" id="change-forward"><i style="font-size:40px;" class="fas fa-chevron-right"></i></div>
       </div>
-      <h4 style="margin-top:75px">Jump to date</h4>
-      <!--<div class="year">1935</div>
+      <h4 style="margin-top:75px">Jump to Date</h4>
+      <div class="year">1935</div>
 
-    <div class="year">1936</div>
+      <div class="year">1936</div>
 
-    <div class="year">1937</div>
+      <div class="year">1937</div>
 
-    <div class="year">1938</div>
+      <div class="year">1938</div>
 
-    <div class="year">1939</div>
+      <div class="year">1939</div>
 
-    <div class="year">1940</div>
+      <div class="year">1940</div>
 
-    <div class="year">1941</div>
+      <div class="year">1941</div>
 
-    <div class="year">1942</div>
+      <div class="year">1942</div>
 
-    <div class="year">1943</div>
+      <div class="year">1943</div>
 
-    <div class="year">1944</div>
+      <div class="year">1944</div>
 
-    <div class="year">1945</div>-->
+      <div class="year">1945</div>
     </div>
   </div>
   <div id="Keys" class="tabcontent" style="display:none">
-    <h4>Map Keys</h4>
+    <h4><b>Map Keys</b></h4>
     <hr>
     <div class="keys-content" id="keys-content">
     <?php
@@ -739,18 +824,17 @@ var sattelite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/service
 
 normal.addTo(mymap);
 
-function clearMap(){
-    for(i in mymap._layers){        
-        if(mymap._layers[i]._path != undefined)
-        {
-            try{
-              mymap.removeLayer(mymap._layers[i]);
-            }
-            catch(e){
-                console.log("problem with " + e + mymap._layers[i]);
-            }
-        }
+function clearMap() {
+  for (i in mymap._layers) {        
+    if (mymap._layers[i]._path != undefined) {
+      try {
+        mymap.removeLayer(mymap._layers[i]);
+      }
+      catch(e){
+        console.log("problem with " + e + mymap._layers[i]);
+      }
     }
+  }
 }
 
 if (date.substr(0, 4) == "1935" || date.substr(0, 7) == "1936_01" || date.substr(0, 7) == "1936_02" || date.substr(0, 7) == "1936_03" || date.substr(0, 7) == "1936_04" || date.substr(0, 7) == "1936_05" || date.substr(0, 7) == "1936_06" || date.substr(0, 9) == "1936-07-0" || date.substr(0, 10) == "1936-07-11" || date.substr(0, 10) == "1936-07-12" || date.substr(0, 10) == "1936-07-13" || date.substr(0, 10) == "1936-07-14") {
@@ -775,22 +859,23 @@ mymap.on('click', onMapClick);
 function forEachFeature(feature, layer) {
   $.ajax({
     type: 'GET', url: 'api/countries/get.php', data: {},
-    success: function(data1){
-      for (var i = 0; i < data1.length; i++){
-        if (data1[i]._id == feature.properties.id){
+    success: function(data1) {
+      for (var i = 0; i < data1.length; i++) {
+        if (data1[i]._id == feature.properties.id) {
           var name = (data1[i].name);
+          var flag = (data1[i].flag);
           var government = (data1[i].government);
           var hos = (data1[i].headOfState);
           var hog = (data1[i].headOfGovernment);
           var party = (data1[i].party);
           var status = (data1[i].status);
           var capital = (data1[i].capital);
-          var popupContent = "<b>Name</b>: "+name+"<br><b>Status</b>: "+status+"<br><b>Government</b>: "+government+"<br><b>Capital</b>: "+capital+"<br><b>Ruling Party</b>: "+party+"<br><b>Head of State</b>: "+hos+"<br><b>Head of Government</b>: "+hog+"";
-  layer.bindPopup(popupContent);
+          var popupContent = "<img class='popupflag' src='"+flag+"' alt='404'><b style='font-size:17px;'>"+name+"</b><br><b>Status</b>: "+status+"<br><b>Government</b>: "+government+"<br><b>Capital</b>: "+capital+"<br><b>Ruling Party</b>: "+party+"<br><b>Head of State</b>: "+hos+"<br><b>Head of Government</b>: "+hog+"";
+          layer.bindPopup(popupContent);
         }
       }
     },
-    error:function (xhr, ajaxOptions, thrownError) {
+    error: function (xhr, ajaxOptions, thrownError) {
       document.write(xhr.status);
       document.write(thrownError);
     }
@@ -851,7 +936,7 @@ for (let country of countries) {
   country_layers = L.layerGroup();
   $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
     sites = L.geoJson(data, {
-      "onEachFeature": forEachFeature,
+      //"onEachFeature": forEachFeature,
       "style": {color: country[1], fillPattern: country[4]},
       "pane": country[3]
     });
@@ -861,19 +946,6 @@ for (let country of countries) {
 }
 
 marker_group = new L.FeatureGroup();
-
-// Force zIndex of Leaflet
-(function(global){
-  var MarkerMixin = {
-    _updateZIndex: function (offset) {
-      this._icon.style.zIndex = this.options.forceZIndex ? (this.options.forceZIndex + (this.options.zIndexOffset || 0)) : (this._zIndex + offset);
-    },
-    setForceZIndex: function(forceZIndex) {
-      this.options.forceZIndex = forceZIndex ? forceZIndex : null;
-    }
-  };
-  if (global) global.include(MarkerMixin);
-})(L.Marker);
 
 $.ajax({
   type: 'GET', url: 'api/events/get.php', data: {},
@@ -887,8 +959,7 @@ $.ajax({
         data1[i]._id = new L.marker(data1[i].location, {
           id: data1[i]._id+i,
           icon: window[data1[i].marker],
-          title: data1[i].text,
-          clickable: true
+          title: data1[i].text
         });
         marker_group.addLayer(data1[i]._id);
         mymap.addLayer(marker_group);
@@ -1117,7 +1188,7 @@ $(function() {
     date_day = date.substr(8, 7);
     if (date == "1945-09-02") {
 
-    } else if (date.substr(5, 5) == "01_31" || date == "1937-02-28" || date == "1938-02-28" || date == "1939-02-28" || date == "1941-02-28" || date == "1942-02-28" || date == "1943-02-28" || date == "1945-02-28" || date.substr(5, 5) == "02_29" || date.substr(5, 5) == "03_31" || date.substr(5, 5) == "04_30" || date.substr(5, 5) == "05_31" || date.substr(5, 5) == "06_30" || date.substr(5, 5) == "07_31" || date.substr(5, 5) == "08_31" || date.substr(5, 5) == "09_30" || date.substr(5, 5) == "10_31" || date.substr(5, 5) == "11_30") {
+    } else if (date.substr(5, 5) == "01-31" || date == "1937-02-28" || date == "1938-02-28" || date == "1939-02-28" || date == "1941-02-28" || date == "1942-02-28" || date == "1943-02-28" || date == "1945-02-28" || date.substr(5, 5) == "02-29" || date.substr(5, 5) == "03-31" || date.substr(5, 5) == "04-30" || date.substr(5, 5) == "05-31" || date.substr(5, 5) == "06-30" || date.substr(5, 5) == "07-31" || date.substr(5, 5) == "08-31" || date.substr(5, 5) == "09-30" || date.substr(5, 5) == "10-31" || date.substr(5, 5) == "11-30") {
       date_day = '01';
       if (date_month == "01") {
         date_month = "02";
@@ -1153,7 +1224,7 @@ $(function() {
         date_month = "12";
         info_month = "December";
       }
-    } else if (date.substr(5, 5) == "12_31") {
+    } else if (date.substr(5, 5) == "12-31") {
       date_year++;
       date_month = "01";
       info_month = "January";
@@ -1267,7 +1338,7 @@ $(function() {
         country_layers = L.layerGroup();
         $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
           sites = L.geoJson(data, {
-            //"onEachFeature": forEachFeature,
+            "onEachFeature": forEachFeature,
             "style": {color: country[1], fillPattern: country[4]},
             "pane": country[3]
           });
@@ -1290,8 +1361,7 @@ $(function() {
               data1[i]._id = new L.marker(data1[i].location, {
                 id: data1[i]._id+i,
                 icon: window[data1[i].marker],
-                title: data1[i].text,
-                clickable: true
+                title: data1[i].text
               });
               marker_group.addLayer(data1[i]._id);
               mymap.addLayer(marker_group);
@@ -1340,18 +1410,17 @@ $(function() {
                     if (data1[o]._id == source5) {
                       if (data1[o].type == "website") {
                         accessDateSource = data1[o].accessDate.substr(8, 10)+" "+info_month+" "+data1[o].accessDate.substr(0, 4);
-                        let src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+""; bbb = src;
+                        let src = "“"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+""; bbb = src;
                         $.ajax({
                           type: 'GET', url: 'api/countries/get.php', data: {},
                           success: function(data2) {
                             for (var b = 0; b < data2.length; b++){
                               if (data2[b]._id == country5) {
-                                countryname = data2[b].name;
                                 $.ajax({
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -1364,19 +1433,68 @@ $(function() {
                             }
                           }
                         });
+                      } else if (data1[o].type == "newspapers") {
+                        if (data1[o].author == "/") {
+                          let src = "“"+data1[o].title+"” "+data1[o].publisher.italics()+", "+data1[o].publishDate.substr(0, 4)+".";
+                          $.ajax({
+                          type: 'GET', url: 'api/countries/get.php', data: {},
+                          success: function(data2) {
+                            for (var b = 0; b < data2.length; b++){
+                              if (data2[b]._id == country5) {
+                                $.ajax({
+                                  url: 'ajax.php',
+                                  type: "POST",
+                                  dataType:'json',
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
+                                  error: function(xhr, status, error) {
+                                    var err = JSON.parse(xhr.responseText);
+                                    alert(err.Message);
+                                  },
+                                  success: function(data6){
+                                    $(aBlock).html(data6);
+                                  }
+                                });
+                              }
+                            }
+                          }
+                        });
+                        } else {
+                          let src = data1[o].author+". “"+data1[o].title+"” "+data1[o].publisher.italics()+", "+data1[o].publishDate.substr(0, 4)+".";
+                          $.ajax({
+                            type: 'GET', url: 'api/countries/get.php', data: {},
+                            success: function(data2) {
+                              for (var b = 0; b < data2.length; b++){
+                                if (data2[b]._id == country5) {
+                                  $.ajax({
+                                    url: 'ajax.php',
+                                    type: "POST",
+                                    dataType:'json',
+                                    data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
+                                    error: function(xhr, status, error) {
+                                      var err = JSON.parse(xhr.responseText);
+                                      alert(err.Message);
+                                    },
+                                    success: function(data6){
+                                      $(aBlock).html(data6);
+                                    }
+                                  });
+                                }
+                              }
+                            }
+                          });
+                        }
                       } else {
-                        let src = ""+data1[o].author+". "+data1[o].title+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
+                        let src = ""+data1[o].author+". "+data1[o].title.italics()+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
                         $.ajax({
                           type: 'GET', url: 'api/countries/get.php', data: {},
                           success: function(data2) {
                             for (var b = 0; b < data2.length; b++){
                               if (data2[b]._id == country5) {
-                                countryname = data2[b].name;
                                 $.ajax({
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, slocation: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -1577,7 +1695,7 @@ $(function() {
         country_layers = L.layerGroup();
         $.getJSON('geojson_files/'+country[2]+'/'+country[0]+'.geojson', function(data) {
           sites = L.geoJson(data, {
-            //"onEachFeature": forEachFeature,
+            "onEachFeature": forEachFeature,
             "style": {color: country[1], fillPattern: country[4]},
             "pane": country[3]
           });
@@ -1600,8 +1718,7 @@ $(function() {
               data1[i]._id = new L.marker(data1[i].location, {
                 id: data1[i]._id+i,
                 icon: window[data1[i].marker],
-                title: data1[i].text,
-                clickable: true
+                title: data1[i].text
               });
               marker_group.addLayer(data1[i]._id);
               mymap.addLayer(marker_group);
@@ -1650,18 +1767,17 @@ $(function() {
                     if (data1[o]._id == source5) {
                       if (data1[o].type == "website") {
                         accessDateSource = data1[o].accessDate.substr(8, 10)+" "+info_month+" "+data1[o].accessDate.substr(0, 4);
-                        let src = "'"+data1[o].title+"' "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+""; bbb = src;
+                        let src = "“"+data1[o].title+"” "+data1[o].author+", "+data1[o].publisher+", "+accessDateSource+", "+data1[o].url+""; bbb = src;
                         $.ajax({
                           type: 'GET', url: 'api/countries/get.php', data: {},
                           success: function(data2) {
                             for (var b = 0; b < data2.length; b++){
                               if (data2[b]._id == country5) {
-                                countryname = data2[b].name;
                                 $.ajax({
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);
@@ -1674,19 +1790,68 @@ $(function() {
                             }
                           }
                         });
+                      } else if (data1[o].type == "newspapers") {
+                        if (data1[o].author == "/") {
+                          let src = "“"+data1[o].title+"” "+data1[o].publisher.italics()+", "+data1[o].publishDate.substr(0, 4)+".";
+                          $.ajax({
+                          type: 'GET', url: 'api/countries/get.php', data: {},
+                          success: function(data2) {
+                            for (var b = 0; b < data2.length; b++){
+                              if (data2[b]._id == country5) {
+                                $.ajax({
+                                  url: 'ajax.php',
+                                  type: "POST",
+                                  dataType:'json',
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
+                                  error: function(xhr, status, error) {
+                                    var err = JSON.parse(xhr.responseText);
+                                    alert(err.Message);
+                                  },
+                                  success: function(data6){
+                                    $(aBlock).html(data6);
+                                  }
+                                });
+                              }
+                            }
+                          }
+                        });
+                        } else {
+                          let src = data1[o].author+". “"+data1[o].title+"” "+data1[o].publisher.italics()+", "+data1[o].publishDate.substr(0, 4)+".";
+                          $.ajax({
+                            type: 'GET', url: 'api/countries/get.php', data: {},
+                            success: function(data2) {
+                              for (var b = 0; b < data2.length; b++){
+                                if (data2[b]._id == country5) {
+                                  $.ajax({
+                                    url: 'ajax.php',
+                                    type: "POST",
+                                    dataType:'json',
+                                    data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
+                                    error: function(xhr, status, error) {
+                                      var err = JSON.parse(xhr.responseText);
+                                      alert(err.Message);
+                                    },
+                                    success: function(data6){
+                                      $(aBlock).html(data6);
+                                    }
+                                  });
+                                }
+                              }
+                            }
+                          });
+                        }
                       } else {
-                        let src = ""+data1[o].author+". "+data1[o].title+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
+                        let src = ""+data1[o].author+". "+data1[o].title.italics()+". "+data1[o].publisher+", "+data1[o].publishDate.substr(0, 4)+".";
                         $.ajax({
                           type: 'GET', url: 'api/countries/get.php', data: {},
                           success: function(data2) {
                             for (var b = 0; b < data2.length; b++){
                               if (data2[b]._id == country5) {
-                                countryname = data2[b].name;
                                 $.ajax({
                                   url: 'ajax.php',
                                   type: "POST",
                                   dataType:'json',
-                                  data: ({id: id5, location: location5, text: text5, class: class5, country: data2[b].name, pageweight: pw5, source: src}),
+                                  data: ({id: id5, flag: data2[b].flag, location: location5, text: text5, class: class5, country: data2[b].shortName, pageweight: pw5, source: src}),
                                   error: function(xhr, status, error) {
                                     var err = JSON.parse(xhr.responseText);
                                     alert(err.Message);

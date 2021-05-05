@@ -13,12 +13,15 @@
 }
 input {
   width: 80%;
+  height: 35px;
 }
 select {
   width: 80%;
+  height: 35px;
 }
 .submit {
   height: 40px;
+  background-color: lightgreen;
 }
 datalist.option {
   width: 500px;
@@ -35,6 +38,9 @@ datalist.option {
     
     <label for="status">Status:</label><br>
     <input type="text" id="status" name="status" placeholder="Independent country" required><br><hr>
+
+    <label for="flag">Flag:</label><br>
+    <input type="text" id="flag" name="flag" placeholder="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Flag_of_Ireland.svg/66px-Flag_of_Ireland.svg.png (MAKE SURE IT'S .PNG!!)" required><br><hr>
 
     <label for="government">Government:</label><br>
     <input type="text" id="government" name="government" placeholder="Unitary military dictatorship" required><br><hr>
@@ -60,7 +66,7 @@ datalist.option {
   <input type="text" id="date" name="date" placeholder="1936-12-31" required><br><hr>
 
   <label for="country">Country:</label><br>
-  <input type="text" id="country" list="country_list" name="country" placeholder="Italy" required><br><hr>
+  <input type="text" id="country" list="country_list" name="country" placeholder="Italy" value="5cf7b120-cd0c-4db0-9f75-c88f8991ceec" required><br><hr>
   <datalist id="country_list">
     <option value="Default"></option>
   </datalist>
@@ -83,7 +89,7 @@ datalist.option {
       <option value="fas fa-atom">Atom</option>
       <option value="fas fa-bahai">Bahai</option>
       <option value="fas fa-biohazard">Biohazard</option>
-      <option value="fas fa-bomb">Bomb</option>
+      <option value="icon-bomb">Bomb</option>
       <option value="fas fa-bullhorn">Bullhorn</option>
       <option value="fas fa-chart_line">Chart Line</option>
       <option value="fas fa-crosshairs">Crosshairs</option>
@@ -122,10 +128,11 @@ datalist.option {
       <option value="book" selected="selected">Book</option>
       <option value="website">Website</option>
       <option value="journal">Journal</option>
+      <option value="newspapers">Newspapers</option>
     </select><br><hr>
 
     <label for="source_author">Source author:</label><br>
-    <input type="text" id="source_author" name="source_author" placeholder="Beevor, Anthony (Last name, First name)" required><br><hr>
+    <input type="text" id="source_author" name="source_author" placeholder="Beevor, Anthony (Last name, First name) (If no author, write '/'!)" required><br><hr>
 
     <label for="source_title">Source title:</label><br>
     <input type="text" id="source_title" name="source_title" placeholder="The Battle for Spain the Spanish Civil War 1936-1939" required><br><hr>

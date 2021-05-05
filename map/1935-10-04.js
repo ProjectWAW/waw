@@ -62,6 +62,7 @@ countries = [
   ["portuguese_timor", neutral, "1935-10-03", "neutral", null],
   ["portuguese_west_africa", neutral, "1935-10-03", "neutral", null],
   ["romania", neutral, "1935-10-03", "neutral", null],
+  ["ruanda_urundi", neutral, "1935-10-03", "neutral", null],
   ["san_marino", neutral, "1935-10-03", "neutral", null],
   ["sao_tome_and_principe", neutral, "1935-10-03", "neutral", null],
   ["saudi_arabia", neutral, "1935-10-03", "neutral", null],
@@ -90,6 +91,7 @@ countries = [
   ["bechuanaland", neutral, "1935-10-03", "neutral", null],
   ["bermuda", neutral, "1935-10-03", "neutral", null],
   ["british_burma", neutral, "1935-10-03", "neutral", null],
+  ["british_cameroons", neutral, "1935-10-03", "neutral", null],
   ["british_concessions", neutral, "1935-10-03", "neutral", null],
   ["british_guiana", neutral, "1935-10-03", "neutral", null],
   ["british_honduras", neutral, "1935-10-03", "neutral", null],
@@ -97,6 +99,7 @@ countries = [
   ["british_leeward_islands", neutral, "1935-10-03", "neutral", null],
   ["british_malaya", neutral, "1935-10-03", "neutral", null],
   ["british_somaliland", neutral, "1935-10-03", "neutral", null],
+  ["british_togoland", neutral, "1935-10-03", "neutral", null],
   ["british_western_pacific_territories", neutral, "1935-10-03", "neutral", null],
   ["british_windward_islands", neutral, "1935-10-03", "neutral", null],
   ["brunei", neutral, "1935-10-03", "neutral", null],
@@ -130,7 +133,9 @@ countries = [
   ["sierra_leone", neutral, "1935-10-03", "neutral", null],
   ["south_africa", neutral, "1935-10-03", "neutral", null],
   ["southern_rhodesia", neutral, "1935-10-03", "neutral", null],
+  ["sudan", neutral, "1935-10-03", "neutral", null],
   ["swaziland", neutral, "1935-10-03", "neutral", null],
+  ["tanganyika", neutral, "1935-10-03", "neutral", null],
   ["transjordania", neutral, "1935-10-03", "neutral", null],
   ["trinidad_and_tobago", neutral, "1935-10-03", "neutral", null],
   ["tristan_de_cunha", neutral, "1935-10-03", "neutral", null],
@@ -211,7 +216,7 @@ markers = [
   ["1935-10-04_1", "info_1935-10-04_1", green_flag, [14.278039, 39.464150], "Italian forces capture Adigat, Inticho and Daro Tacle.", "fas fa-flag", "italo_ethiopian_war", "Italy"],
 ]
 
-info_1935-10-04_1 = getCookie("info_1935-10-04_1");
+/*info_1935-10-04_1 = getCookie("info_1935-10-04_1");
 marker1935-10-04_1_location = [14.278039, 39.464150];
 marker1935-10-04_1 = L.marker(marker1935-10-04_1_location, {
   id: "marker1935-10-04_1",
@@ -286,3 +291,4 @@ function zoom1935-10-04_3() {
 function zoom1935-10-04_4() {
   mymap.setView(marker1935-10-04_4_location);
 }
+*/

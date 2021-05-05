@@ -13,6 +13,7 @@
         <li><a href="/editor.php">(Dev build) Editor</a></li>
         <li><a href="/editor2.php">(Dev build) Editor 2</a></li>
         <li><a href="/editor3.php">(Dev build) Editor 3</a></li>
+        <li><a href="/editor4.php">(Dev build) Editor 4</a></li>
         <li><a href="/marker_editor.php">(Dev build) Marker Editor</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

@@ -185,12 +185,14 @@
   <option value="bermuda">bermuda</option>
   <option value="bhutan">bhutan</option>
   <option value="british_burma">british_burma</option>
+  <option value="british_cameroons">british_cameroons</option>
   <option value="british_guiana">british_guiana</option>
   <option value="british_honduras">british_honduras</option>
   <option value="british_hong_kong">british_hong_kong</option>
   <option value="british_leeward_islands">british_leeward_islands</option>
   <option value="british_malaya">british_malaya</option>
   <option value="british_somaliland">british_somaliland</option>
+  <option value="british_togoland">british_togoland</option>
   <option value="british_western_pacific_territories">british_western_pacific_territories</option>
   <option value="british_windward_islands">british_windward_islands</option>
   <option value="brunei">brunei</option>
@@ -317,6 +319,7 @@
   <option value="portuguese_timor">portuguese_timor</option>
   <option value="portuguese_west_africa">portuguese_west_africa</option>
   <option value="qatar">qatar</option>
+  <option value="ruanda_urundi">ruanda_urundi</option>
   <option value="qinghai_ma_clique">qinghai_ma_clique</option>
   <option value="republican_spain">republican_spain</option>
   <option value="righteous_army">righteous_army</option>
@@ -342,6 +345,8 @@
   <option value="swaziland">swaziland</option>
   <option value="sweden">sweden</option>
   <option value="switzerland">switzerland</option>
+  <option value="sudan">sudan</option>
+  <option value="tanganyika">tanganyika</option>
   <option value="tangiers">tangiers</option>
   <option value="tannu_tuva">tannu_tuva</option>
   <option value="tetua_airfield">tetua_airfield</option>
@@ -388,7 +393,7 @@
 	marker2 = L.marker(topright, {draggable: true} ).addTo(mymap),
 	marker3 = L.marker(bottomleft, {draggable: true} ).addTo(mymap);
 
-var overlay = L.imageOverlay.rotated("https://cdn.discordapp.com/attachments/726896429318144080/796365226801889280/m.png", topleft, topright, bottomleft, {
+var overlay = L.imageOverlay.rotated("https://upload.wikimedia.org/wikipedia/commons/a/a1/Algeria-Libya_boundary.jpg", topleft, topright, bottomleft, {
 	opacity: 0.6,
 	interactive: true,
 	attribution: "Medonci"

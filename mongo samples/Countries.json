@@ -1,18 +1,22 @@
 [
   {
-    "_id": "da8031a1-5db6-452a-a629-d4a9919c6e1c",
-    "government": "Hippie Commune",
-    "headOfGovernment": "Bob Ross",
-    "name": "Boblandia",
-    "party": "Pollenators United Front",
-    "status": "Benevolent Dictatorship?"
+    "_id": "5cf7b120-cd0c-4db0-9f75-c88f8991ceec",
+    "name": "Spanish Republic",
+    "government": "Unitary semi-presidential republic",
+    "headOfState": "Manuel Azaña",
+    "headOfGovernment": "Santiago Casares Quiroga",
+    "party": "Popular Front (Frente Popular)",
+    "status": "Republican faction in the Spanish civil war",
+    "capital": "Madrid"
   },
   {
-    "_id": "28648202-3b66-439c-984f-046c3fbc9d81",
-    "government": "Unitary personalist dictatorship",
-    "headOfGovernment": "Francisco Franco",
+    "_id": "29d1b72b-9aa5-4702-a9cf-a587d1c4aa32",
     "name": "Spanish State",
-    "party": "National Movement (Movimiento Nacional)",
-    "status": "Nationalist faction in the Spanish civil war"
+    "government": "Unitary personalist dictatorship",
+    "headOfState": "José Sanjurjo",
+    "headOfGovernment": "José Sanjurjo",
+    "party": "Military Junta",
+    "status": "Nationalist faction in the Spanish civil war",
+    "capital": "/"
   }
 ]
