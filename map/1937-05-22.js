@@ -129,6 +129,7 @@ countries = [
   ["southern_rhodesia", neutral, "1935-10-03", "neutral", null],
   ["sudan", neutral, "1935-10-03", "neutral", null],
   ["swaziland", neutral, "1935-10-03", "neutral", null],
+  ["tanganyika", neutral, "1935-10-03", "neutral", null],
   ["transjordania", neutral, "1935-10-03", "neutral", null],
   ["trinidad_and_tobago", neutral, "1935-10-03", "neutral", null],
   ["tristan_de_cunha", neutral, "1935-10-03", "neutral", null],

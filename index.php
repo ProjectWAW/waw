@@ -291,10 +291,19 @@ h4 {
   padding-top: 6px;
   margin-left: 50px;
 }
+.move-dates {
+  border: 2px solid black;
+  width: 281px;
+  position: absolute;
+  margin-left: 50px;
+}
 .date-change {
   float: left;
   width: 50px;
   text-align: center;
+}
+.date-change:hover {
+  cursor: pointer;
 }
 /* MARKER MODIFICATIONS */
 span.fa-info {
@@ -535,7 +544,7 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
     </ul>
   </div>
   <div id="Info" class="tabcontent">
-    <h4 id="date_info"><?php echo $date_info; ?></h4>
+    <h4 id="date_info"><b><?php echo $date_info;?></b></h4>
     <hr>
     <div id="date_info_content">
     <h4 id="loading">test</h4>
@@ -711,44 +720,41 @@ var stripes_zone = new L.StripePattern({weight: 2, color: '#ffad46', spaceWeight
     </div>
   </div>
   <div id="Date" class="tabcontent" style="display:none">
-    <h4>Date Selection</h4>
+    <h4><b>Date Selection</b></h4>
     <hr>
     <div class="date-selection">
-      <h4>placeholder</h4>
-      <div style="border: 2px solid black;
-    width: 281px;
-    position: absolute;
-    margin-left: 50px;">
-        <div class="date-change" id="change-backward"><i style="font-size:40px;" class="fas fa-chevron-left"></i></div>
+      <h4>Move Dates</h4>
+      <div class="move-dates">
+        <div class="date-change" title="Go one day backwards" id="change-backward"><i style="font-size:40px;" class="fas fa-chevron-left"></i></div>
         <h4 style="float:left;width:177px;font-weight:bold;margin-top:11px;" id="date_info_2"><?php echo $date_info; ?></h4>
-        <div class="date-change" id="change-forward"><i style="font-size:40px;" class="fas fa-chevron-right"></i></div>
+        <div class="date-change" title="Go one day ahead" id="change-forward"><i style="font-size:40px;" class="fas fa-chevron-right"></i></div>
       </div>
-      <h4 style="margin-top:75px">Jump to date</h4>
-      <!--<div class="year">1935</div>
+      <h4 style="margin-top:75px">Jump to Date</h4>
+      <div class="year">1935</div>
 
-    <div class="year">1936</div>
+      <div class="year">1936</div>
 
-    <div class="year">1937</div>
+      <div class="year">1937</div>
 
-    <div class="year">1938</div>
+      <div class="year">1938</div>
 
-    <div class="year">1939</div>
+      <div class="year">1939</div>
 
-    <div class="year">1940</div>
+      <div class="year">1940</div>
 
-    <div class="year">1941</div>
+      <div class="year">1941</div>
 
-    <div class="year">1942</div>
+      <div class="year">1942</div>
 
-    <div class="year">1943</div>
+      <div class="year">1943</div>
 
-    <div class="year">1944</div>
+      <div class="year">1944</div>
 
-    <div class="year">1945</div>-->
+      <div class="year">1945</div>
     </div>
   </div>
   <div id="Keys" class="tabcontent" style="display:none">
-    <h4>Map Keys</h4>
+    <h4><b>Map Keys</b></h4>
     <hr>
     <div class="keys-content" id="keys-content">
     <?php
